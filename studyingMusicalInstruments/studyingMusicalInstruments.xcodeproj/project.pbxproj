@@ -14,6 +14,8 @@
 		771A05EB1B6F781D00552816 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EA1B6F781D00552816 /* Images.xcassets */; };
 		771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EC1B6F781D00552816 /* LaunchScreen.xib */; };
 		771A05FA1B6F781D00552816 /* studyingMusicalInstrumentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */; };
+		771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06051B6FB5A300552816 /* APMusicalInstrument.m */; };
+		771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		771A05F31B6F781D00552816 /* studyingMusicalInstrumentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = studyingMusicalInstrumentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		771A05F81B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = studyingMusicalInstrumentsTests.m; sourceTree = "<group>"; };
+		771A06041B6FB5A300552816 /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
+		771A06051B6FB5A300552816 /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
+		771A06071B6FBB4B00552816 /* APAllMusicalInstruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAllMusicalInstruments.h; sourceTree = "<group>"; };
+		771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAllMusicalInstruments.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,10 @@
 		771A06031B6F7AE100552816 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				771A06041B6FB5A300552816 /* APMusicalInstrument.h */,
+				771A06051B6FB5A300552816 /* APMusicalInstrument.m */,
+				771A06071B6FBB4B00552816 /* APAllMusicalInstruments.h */,
+				771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -227,6 +237,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */,
+				771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */,
 				771A05E61B6F781D00552816 /* ViewController.m in Sources */,
 				771A05E31B6F781D00552816 /* AppDelegate.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,
