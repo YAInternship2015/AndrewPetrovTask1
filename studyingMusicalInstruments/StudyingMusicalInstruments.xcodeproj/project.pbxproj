@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		771A05DA1B6F781D00552816 /* studyingMusicalInstruments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studyingMusicalInstruments.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyingMusicalInstruments.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		771A05DE1B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771A05DF1B6F781D00552816 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		771A05E11B6F781D00552816 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		771A05E81B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		771A05EA1B6F781D00552816 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		771A05ED1B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		771A05F31B6F781D00552816 /* studyingMusicalInstrumentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = studyingMusicalInstrumentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		771A05F31B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		771A05F81B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = studyingMusicalInstrumentsTests.m; sourceTree = "<group>"; };
 		771A06041B6FB5A300552816 /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 		771A05DB1B6F781D00552816 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				771A05DA1B6F781D00552816 /* studyingMusicalInstruments.app */,
-				771A05F31B6F781D00552816 /* studyingMusicalInstrumentsTests.xctest */,
+				771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */,
+				771A05F31B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		771A05D91B6F781D00552816 /* studyingMusicalInstruments */ = {
+		771A05D91B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "studyingMusicalInstruments" */;
+			buildConfigurationList = 771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				771A05D61B6F781D00552816 /* Sources */,
 				771A05D71B6F781D00552816 /* Frameworks */,
@@ -152,14 +152,14 @@
 			);
 			dependencies = (
 			);
-			name = studyingMusicalInstruments;
+			name = StudyingMusicalInstruments.temp_caseinsensitive_rename;
 			productName = studyingMusicalInstruments;
-			productReference = 771A05DA1B6F781D00552816 /* studyingMusicalInstruments.app */;
+			productReference = 771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		771A05F21B6F781D00552816 /* studyingMusicalInstrumentsTests */ = {
+		771A05F21B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 771A06001B6F781D00552816 /* Build configuration list for PBXNativeTarget "studyingMusicalInstrumentsTests" */;
+			buildConfigurationList = 771A06001B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				771A05EF1B6F781D00552816 /* Sources */,
 				771A05F01B6F781D00552816 /* Frameworks */,
@@ -170,9 +170,9 @@
 			dependencies = (
 				771A05F51B6F781D00552816 /* PBXTargetDependency */,
 			);
-			name = studyingMusicalInstrumentsTests;
+			name = StudyingMusicalInstruments.temp_caseinsensitive_renameTests;
 			productName = studyingMusicalInstrumentsTests;
-			productReference = 771A05F31B6F781D00552816 /* studyingMusicalInstrumentsTests.xctest */;
+			productReference = 771A05F31B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -193,7 +193,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 771A05D51B6F781D00552816 /* Build configuration list for PBXProject "studyingMusicalInstruments" */;
+			buildConfigurationList = 771A05D51B6F781D00552816 /* Build configuration list for PBXProject "StudyingMusicalInstruments" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -206,8 +206,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				771A05D91B6F781D00552816 /* studyingMusicalInstruments */,
-				771A05F21B6F781D00552816 /* studyingMusicalInstrumentsTests */,
+				771A05D91B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename */,
+				771A05F21B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,7 +258,7 @@
 /* Begin PBXTargetDependency section */
 		771A05F51B6F781D00552816 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 771A05D91B6F781D00552816 /* studyingMusicalInstruments */;
+			target = 771A05D91B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename */;
 			targetProxy = 771A05F41B6F781D00552816 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -371,7 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = studyingMusicalInstruments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_rename;
 			};
 			name = Debug;
 		};
@@ -381,7 +381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = studyingMusicalInstruments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_rename;
 			};
 			name = Release;
 		};
@@ -399,7 +399,7 @@
 				);
 				INFOPLIST_FILE = studyingMusicalInstrumentsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studyingMusicalInstruments.app/studyingMusicalInstruments";
 			};
 			name = Debug;
@@ -414,7 +414,7 @@
 				);
 				INFOPLIST_FILE = studyingMusicalInstrumentsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studyingMusicalInstruments.app/studyingMusicalInstruments";
 			};
 			name = Release;
@@ -422,7 +422,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		771A05D51B6F781D00552816 /* Build configuration list for PBXProject "studyingMusicalInstruments" */ = {
+		771A05D51B6F781D00552816 /* Build configuration list for PBXProject "StudyingMusicalInstruments" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				771A05FB1B6F781D00552816 /* Debug */,
@@ -431,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "studyingMusicalInstruments" */ = {
+		771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				771A05FE1B6F781D00552816 /* Debug */,
@@ -440,7 +440,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		771A06001B6F781D00552816 /* Build configuration list for PBXNativeTarget "studyingMusicalInstrumentsTests" */ = {
+		771A06001B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				771A06011B6F781D00552816 /* Debug */,
