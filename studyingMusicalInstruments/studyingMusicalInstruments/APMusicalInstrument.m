@@ -8,6 +8,14 @@
 
 #import "APMusicalInstrument.h"
 
+@interface APMusicalInstrument ()
+
+@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* instrumentDescription;
+@property (strong, nonatomic) UIImage* instrumentImage;
+
+@end
+
 @implementation APMusicalInstrument
 
 +(APMusicalInstrument*) initWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image{
