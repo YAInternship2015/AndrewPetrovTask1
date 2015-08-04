@@ -16,6 +16,17 @@
 		771A05FA1B6F781D00552816 /* studyingMusicalInstrumentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */; };
 		771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06051B6FB5A300552816 /* APMusicalInstrument.m */; };
 		771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */; };
+		771A060C1B6FF3D200552816 /* APTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A060B1B6FF3D200552816 /* APTableViewCell.m */; };
+		771A06191B6FFC4300552816 /* drumkit.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A060F1B6FFC4300552816 /* drumkit.JPG */; };
+		771A061A1B6FFC4300552816 /* electro_guitar.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06101B6FFC4300552816 /* electro_guitar.JPG */; };
+		771A061B1B6FFC4300552816 /* guitar.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06111B6FFC4300552816 /* guitar.JPG */; };
+		771A061C1B6FFC4300552816 /* harp.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06121B6FFC4300552816 /* harp.JPG */; };
+		771A061D1B6FFC4300552816 /* piano.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06131B6FFC4300552816 /* piano.JPG */; };
+		771A061E1B6FFC4300552816 /* tambourine.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06141B6FFC4300552816 /* tambourine.JPG */; };
+		771A061F1B6FFC4300552816 /* trombone.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06151B6FFC4300552816 /* trombone.JPG */; };
+		771A06201B6FFC4300552816 /* trumpet.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06161B6FFC4300552816 /* trumpet.JPG */; };
+		771A06211B6FFC4300552816 /* violin.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06171B6FFC4300552816 /* violin.JPG */; };
+		771A06221B6FFC4300552816 /* xylophone.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06181B6FFC4300552816 /* xylophone.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +57,18 @@
 		771A06051B6FB5A300552816 /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
 		771A06071B6FBB4B00552816 /* APAllMusicalInstruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAllMusicalInstruments.h; sourceTree = "<group>"; };
 		771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAllMusicalInstruments.m; sourceTree = "<group>"; };
+		771A060A1B6FF3D200552816 /* APTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTableViewCell.h; path = ../StudyingMusicalInstruments/APTableViewCell.h; sourceTree = "<group>"; };
+		771A060B1B6FF3D200552816 /* APTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APTableViewCell.m; path = ../StudyingMusicalInstruments/APTableViewCell.m; sourceTree = "<group>"; };
+		771A060F1B6FFC4300552816 /* drumkit.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drumkit.JPG; sourceTree = "<group>"; };
+		771A06101B6FFC4300552816 /* electro_guitar.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = electro_guitar.JPG; sourceTree = "<group>"; };
+		771A06111B6FFC4300552816 /* guitar.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guitar.JPG; sourceTree = "<group>"; };
+		771A06121B6FFC4300552816 /* harp.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = harp.JPG; sourceTree = "<group>"; };
+		771A06131B6FFC4300552816 /* piano.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = piano.JPG; sourceTree = "<group>"; };
+		771A06141B6FFC4300552816 /* tambourine.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tambourine.JPG; sourceTree = "<group>"; };
+		771A06151B6FFC4300552816 /* trombone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trombone.JPG; sourceTree = "<group>"; };
+		771A06161B6FFC4300552816 /* trumpet.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trumpet.JPG; sourceTree = "<group>"; };
+		771A06171B6FFC4300552816 /* violin.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = violin.JPG; sourceTree = "<group>"; };
+		771A06181B6FFC4300552816 /* xylophone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xylophone.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +92,9 @@
 		771A05D11B6F781D00552816 = {
 			isa = PBXGroup;
 			children = (
-				771A05DC1B6F781D00552816 /* studyingMusicalInstruments */,
-				771A05F61B6F781D00552816 /* studyingMusicalInstrumentsTests */,
+				771A060D1B6FF3F900552816 /* cells */,
+				771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */,
+				771A05F61B6F781D00552816 /* StudyingMusicalInstrumentsTests */,
 				771A05DB1B6F781D00552816 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,20 +108,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		771A05DC1B6F781D00552816 /* studyingMusicalInstruments */ = {
+		771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */ = {
 			isa = PBXGroup;
 			children = (
 				771A05E11B6F781D00552816 /* AppDelegate.h */,
 				771A05E21B6F781D00552816 /* AppDelegate.m */,
 				771A05E41B6F781D00552816 /* ViewController.h */,
 				771A05E51B6F781D00552816 /* ViewController.m */,
+				771A060E1B6FFC4300552816 /* music insruments */,
 				771A06031B6F7AE100552816 /* model */,
 				771A05E71B6F781D00552816 /* Main.storyboard */,
 				771A05EA1B6F781D00552816 /* Images.xcassets */,
 				771A05EC1B6F781D00552816 /* LaunchScreen.xib */,
 				771A05DD1B6F781D00552816 /* Supporting Files */,
 			);
-			path = studyingMusicalInstruments;
+			path = StudyingMusicalInstruments;
 			sourceTree = "<group>";
 		};
 		771A05DD1B6F781D00552816 /* Supporting Files */ = {
@@ -109,12 +134,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		771A05F61B6F781D00552816 /* studyingMusicalInstrumentsTests */ = {
+		771A05F61B6F781D00552816 /* StudyingMusicalInstrumentsTests */ = {
 			isa = PBXGroup;
 			children = (
 				771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */,
 				771A05F71B6F781D00552816 /* Supporting Files */,
 			);
+			name = StudyingMusicalInstrumentsTests;
 			path = studyingMusicalInstrumentsTests;
 			sourceTree = "<group>";
 		};
@@ -135,6 +161,32 @@
 				771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		771A060D1B6FF3F900552816 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				771A060A1B6FF3D200552816 /* APTableViewCell.h */,
+				771A060B1B6FF3D200552816 /* APTableViewCell.m */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		771A060E1B6FFC4300552816 /* music insruments */ = {
+			isa = PBXGroup;
+			children = (
+				771A060F1B6FFC4300552816 /* drumkit.JPG */,
+				771A06101B6FFC4300552816 /* electro_guitar.JPG */,
+				771A06111B6FFC4300552816 /* guitar.JPG */,
+				771A06121B6FFC4300552816 /* harp.JPG */,
+				771A06131B6FFC4300552816 /* piano.JPG */,
+				771A06141B6FFC4300552816 /* tambourine.JPG */,
+				771A06151B6FFC4300552816 /* trombone.JPG */,
+				771A06161B6FFC4300552816 /* trumpet.JPG */,
+				771A06171B6FFC4300552816 /* violin.JPG */,
+				771A06181B6FFC4300552816 /* xylophone.JPG */,
+			);
+			path = "music insruments";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,9 +269,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771A06201B6FFC4300552816 /* trumpet.JPG in Resources */,
 				771A05E91B6F781D00552816 /* Main.storyboard in Resources */,
 				771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */,
+				771A061C1B6FFC4300552816 /* harp.JPG in Resources */,
+				771A06221B6FFC4300552816 /* xylophone.JPG in Resources */,
+				771A061E1B6FFC4300552816 /* tambourine.JPG in Resources */,
+				771A06191B6FFC4300552816 /* drumkit.JPG in Resources */,
+				771A06211B6FFC4300552816 /* violin.JPG in Resources */,
+				771A061B1B6FFC4300552816 /* guitar.JPG in Resources */,
+				771A061A1B6FFC4300552816 /* electro_guitar.JPG in Resources */,
 				771A05EB1B6F781D00552816 /* Images.xcassets in Resources */,
+				771A061D1B6FFC4300552816 /* piano.JPG in Resources */,
+				771A061F1B6FFC4300552816 /* trombone.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +301,7 @@
 			files = (
 				771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */,
 				771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */,
+				771A060C1B6FF3D200552816 /* APTableViewCell.m in Sources */,
 				771A05E61B6F781D00552816 /* ViewController.m in Sources */,
 				771A05E31B6F781D00552816 /* AppDelegate.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,

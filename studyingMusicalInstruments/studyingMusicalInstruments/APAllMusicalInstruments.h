@@ -13,8 +13,9 @@
 
 @property (strong, nonatomic) NSArray* musicalInstruments;
 
-- (void) addMusicalInstrumentWithName:(NSString*) name andPicture: (UIImage*) picture;
+- (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image;
 - (void) removeMusicalInstrumentWithName:(NSString*) name;
++ (APAllMusicalInstruments*) createBasicSetOfInsruments;
 
 
 @end

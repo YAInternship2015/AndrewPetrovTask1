@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "APTableViewCell.h"
+#import "APMusicalInstrument.h"
+#import "APAllMusicalInstruments.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) APAllMusicalInstruments* AllMusicalInstruments;
 
 @end
 
@@ -16,7 +21,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+        self.AllMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return YES;
 }
 
@@ -40,6 +55,26 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.AllMusicalInstruments.musicalInstruments.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    static NSString* cellIdentifier = @"cell";
+    [self.tableView registerClass:[APTableViewCell class] forCellReuseIdentifier:cellIdentifier];
+    
+    APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+
+    
 }
 
 @end

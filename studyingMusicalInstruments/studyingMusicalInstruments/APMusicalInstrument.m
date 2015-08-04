@@ -10,11 +10,12 @@
 
 @implementation APMusicalInstrument
 
-+ (APMusicalInstrument*) initWithName: (NSString*) name andPicture: (UIImage*) picture{
++(APMusicalInstrument*) initWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image{
     
     APMusicalInstrument* newMusicalInstrument = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name = name;
-    newMusicalInstrument.picture = picture;
+    newMusicalInstrument.description = description;
+    newMusicalInstrument.image = image;
     return newMusicalInstrument;
 }
 

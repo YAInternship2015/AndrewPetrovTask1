@@ -10,9 +10,13 @@
 
 @implementation APAllMusicalInstruments
 
-- (void) addMusicalInstrumentWithName:(NSString*) name andPicture: (UIImage*) picture{
+- (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image{
     
-    APMusicalInstrument* newMusicalInstrument = [APMusicalInstrument initWithName:name andPicture:picture];
+    APMusicalInstrument* newMusicalInstrument = [APMusicalInstrument initWithName:name description:description andImage:image];
+    
+    if (!self.musicalInstruments) {
+        self.musicalInstruments = [[NSArray alloc] init];
+    }
     NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:self.musicalInstruments];
     [tempArray addObject:newMusicalInstrument];
     self.musicalInstruments = [tempArray copy];
@@ -29,6 +33,18 @@
         }
     }
      self.musicalInstruments = [tempArray copy];
+}
+
++ (APAllMusicalInstruments*) createBasicSetOfInsruments{
+    
+    self.musicalInstruments = [[NSArray alloc] init];
+
+    [self addMusicalInstrumentWithName:NSLocalizedString(@"drumkit", nil)
+                           description:NSLocalizedString(@"drumkitDescription", nil)
+                              andImage:[UIImage imageNamed:@"drumkit.JPG"]];
+    
+    
+    
 }
 
 @end
