@@ -8,6 +8,13 @@
 
 #import "APAllMusicalInstruments.h"
 
+@interface APAllMusicalInstruments ()
+
+@property (strong, nonatomic) NSArray* musicalInstruments;
+
+@end
+
+
 @implementation APAllMusicalInstruments
 
 - (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image{
@@ -50,5 +57,16 @@
                                                andImage:[UIImage imageNamed:@"electro_guitar.JPG"]];
     return AllMusicalInstruments;
 }
+
+- (APMusicalInstrument*) musicalInstrumentAtIndex: (NSInteger) index{
+    
+    return (APMusicalInstrument*)self.musicalInstruments[index];
+}
+
+- (NSInteger) musicalInstrumentsCount{
+    
+    return self.musicalInstruments.count;
+}
+
 
 @end

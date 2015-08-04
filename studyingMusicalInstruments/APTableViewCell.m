@@ -9,6 +9,8 @@
 #import "APTableViewCell.h"
 #import "APMusicalInstrument.h"
 
+
+
 @interface APTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *insrumentImageView;
@@ -32,6 +34,7 @@
     
     self.nameLabel.text = instrument.name;
     self.descriptionLabel.text = instrument.instrumentDescription;
+    self.nameLabel.textColor = [UIColor blackColor];
     self.imageView.image = instrument.instrumentImage;
 }
 
