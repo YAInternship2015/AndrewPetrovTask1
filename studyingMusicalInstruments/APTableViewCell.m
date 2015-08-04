@@ -9,6 +9,14 @@
 #import "APTableViewCell.h"
 #import "APMusicalInstrument.h"
 
+@interface APTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *insrumentImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@end
+
 @implementation APTableViewCell
 
 - (void)awakeFromNib {

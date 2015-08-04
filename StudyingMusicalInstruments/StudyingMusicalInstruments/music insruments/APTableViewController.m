@@ -10,21 +10,21 @@
 #import "APAllMusicalInstruments.h"
 #import "APMusicalInstrument.h"
 
-@interface APTableViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface APTableViewController ()
 
-//@property (weak, nonatomic) UITableView* tableView;
-@property (strong, nonatomic) APAllMusicalInstruments* AllMusicalInstruments;
+@property (strong, nonatomic) APAllMusicalInstruments* allMusicalInstruments;
 
 @end
 
 @implementation APTableViewController
 
-- (instancetype)init
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super init];
+    self = [super initWithCoder:coder];
     if (self) {
-        NSLog(@"APAllMusicalInstruments created");
-        self.AllMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
+//        NSLog(@"APAllMusicalInstruments created");
+        self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
+
     }
     return self;
 }
@@ -42,7 +42,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return self.AllMusicalInstruments.musicalInstruments.count;
+    return self.allMusicalInstruments.musicalInstruments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -52,7 +52,7 @@
     
     APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
-    [cell takeInstrument:self.AllMusicalInstruments.musicalInstruments[indexPath.row]];
+    [cell takeInstrument:self.allMusicalInstruments.musicalInstruments[indexPath.row]];
     return cell;
 }
 

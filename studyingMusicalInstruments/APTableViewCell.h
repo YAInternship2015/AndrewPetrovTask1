@@ -12,9 +12,7 @@
 @interface APTableViewCell : UITableViewCell
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *insrumentImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
 
 - (void) takeInstrument:(APMusicalInstrument*) instrument;
 
