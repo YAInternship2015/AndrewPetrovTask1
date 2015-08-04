@@ -42,19 +42,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return self.AllMusicalInstruments.musicalInstruments.count;
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     static NSString* cellIdentifier = @"cell";
     [self.tableView registerClass:[APTableViewCell class] forCellReuseIdentifier:cellIdentifier];
     
     APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    
-    
+
+    [cell takeInstrument:self.AllMusicalInstruments.musicalInstruments[indexPath.row]];
+    return cell;
 }
 
 
