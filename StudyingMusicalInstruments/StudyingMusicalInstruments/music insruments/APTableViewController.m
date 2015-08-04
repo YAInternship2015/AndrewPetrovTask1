@@ -9,6 +9,8 @@
 #import "APTableViewCell.h"
 #import "APAllMusicalInstruments.h"
 #import "APMusicalInstrument.h"
+//#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface APTableViewController ()
 
@@ -22,21 +24,33 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-//        NSLog(@"APAllMusicalInstruments created");
+        NSLog(@"allMusicalInstruments initWithCoder");
         self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
-
     }
     return self;
 }
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame
+{
+//    no one of ancestors has method initWithFrame
+//    self = [super initWithFrame:frame];
+    self = [super init];
+    if (self) {
+        NSLog(@"allMusicalInstruments initWithFrame");
+        self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
+    }
+    return self;
 }
-*/
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        NSLog(@"allMusicalInstruments initWithStyle");
+        self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
+    }
+    return self;
+}
 
 #pragma mark - UITableViewDataSource
 
