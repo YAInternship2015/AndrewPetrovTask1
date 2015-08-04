@@ -30,16 +30,15 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-//    no one of ancestors has method initWithFrame
-//    self = [super initWithFrame:frame];
-    self = [super init];
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    
+    self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
     if (self) {
-        NSLog(@"allMusicalInstruments initWithFrame");
+        NSLog(@"allMusicalInstruments initWithStyle");
         [self initPrepearing];
     }
     return self;
+    
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
