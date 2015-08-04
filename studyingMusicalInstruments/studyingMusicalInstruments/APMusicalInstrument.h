@@ -12,8 +12,8 @@
 @interface APMusicalInstrument : NSObject
 
 @property (strong, nonatomic) NSString* name;
-@property (strong, nonatomic) NSString* description;
-@property (strong, nonatomic) UIImage* image;
+@property (strong, nonatomic) NSString* instrumentDescription;
+@property (strong, nonatomic) UIImage* instrumentImage;
 
 +(APMusicalInstrument*) initWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image;
 

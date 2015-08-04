@@ -12,7 +12,7 @@
 
 @interface APTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) UITableView* tableView;
+//@property (weak, nonatomic) UITableView* tableView;
 @property (strong, nonatomic) APAllMusicalInstruments* AllMusicalInstruments;
 
 @end
@@ -23,6 +23,7 @@
 {
     self = [super init];
     if (self) {
+        NSLog(@"APAllMusicalInstruments created");
         self.AllMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
     }
     return self;

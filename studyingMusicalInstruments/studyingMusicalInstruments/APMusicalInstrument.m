@@ -14,8 +14,8 @@
     
     APMusicalInstrument* newMusicalInstrument = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name = name;
-    newMusicalInstrument.description = description;
-    newMusicalInstrument.image = image;
+    newMusicalInstrument.instrumentDescription = description;
+    newMusicalInstrument.instrumentImage = image;
     return newMusicalInstrument;
 }
 

@@ -23,8 +23,8 @@
 - (void) takeInstrument:(APMusicalInstrument*) instrument{
     
     self.nameLabel.text = instrument.name;
-    self.descriptionLabel.text = instrument.description;
-    self.imageView.image = instrument.image;
+    self.descriptionLabel.text = instrument.instrumentDescription;
+    self.imageView.image = instrument.instrumentImage;
 }
 
 
