@@ -11,9 +11,9 @@
 #import "APMusicalInstrument.h"
 #import "APAllMusicalInstruments.h"
 
-@interface AppDelegate () <UITableViewDelegate, UITableViewDataSource>
+@interface AppDelegate () 
 
-@property (strong, nonatomic) APAllMusicalInstruments* AllMusicalInstruments;
+
 
 @end
 
@@ -21,16 +21,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-        self.AllMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
-    
-    
-    
-    
-    
-    
-    
-    
     
     return YES;
 }
@@ -58,23 +48,6 @@
 }
 
 
-#pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return self.AllMusicalInstruments.musicalInstruments.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    static NSString* cellIdentifier = @"cell";
-    [self.tableView registerClass:[APTableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    
-    APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-
-    
-}
 
 @end

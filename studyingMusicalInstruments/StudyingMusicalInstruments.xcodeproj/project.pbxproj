@@ -27,6 +27,7 @@
 		771A06201B6FFC4300552816 /* trumpet.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06161B6FFC4300552816 /* trumpet.JPG */; };
 		771A06211B6FFC4300552816 /* violin.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06171B6FFC4300552816 /* violin.JPG */; };
 		771A06221B6FFC4300552816 /* xylophone.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06181B6FFC4300552816 /* xylophone.JPG */; };
+		77D35A961B714CC700FD84A6 /* APTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D35A951B714CC700FD84A6 /* APTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		771A06161B6FFC4300552816 /* trumpet.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trumpet.JPG; sourceTree = "<group>"; };
 		771A06171B6FFC4300552816 /* violin.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = violin.JPG; sourceTree = "<group>"; };
 		771A06181B6FFC4300552816 /* xylophone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xylophone.JPG; sourceTree = "<group>"; };
+		77D35A941B714CC700FD84A6 /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTableViewController.h; path = "music insruments/APTableViewController.h"; sourceTree = "<group>"; };
+		77D35A951B714CC700FD84A6 /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APTableViewController.m; path = "music insruments/APTableViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				771A05E21B6F781D00552816 /* AppDelegate.m */,
 				771A05E41B6F781D00552816 /* ViewController.h */,
 				771A05E51B6F781D00552816 /* ViewController.m */,
+				77D35A941B714CC700FD84A6 /* APTableViewController.h */,
+				77D35A951B714CC700FD84A6 /* APTableViewController.m */,
 				771A060E1B6FFC4300552816 /* music insruments */,
 				771A06031B6F7AE100552816 /* model */,
 				771A05E71B6F781D00552816 /* Main.storyboard */,
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D35A961B714CC700FD84A6 /* APTableViewController.m in Sources */,
 				771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */,
 				771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */,
 				771A060C1B6FF3D200552816 /* APTableViewCell.m in Sources */,

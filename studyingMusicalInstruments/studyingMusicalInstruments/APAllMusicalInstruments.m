@@ -37,14 +37,18 @@
 
 + (APAllMusicalInstruments*) createBasicSetOfInsruments{
     
-    self.musicalInstruments = [[NSArray alloc] init];
+    APAllMusicalInstruments* AllMusicalInstruments = [[APAllMusicalInstruments alloc] init];
+    
+    AllMusicalInstruments.musicalInstruments = [[NSArray alloc] init];
 
-    [self addMusicalInstrumentWithName:NSLocalizedString(@"drumkit", nil)
-                           description:NSLocalizedString(@"drumkitDescription", nil)
-                              andImage:[UIImage imageNamed:@"drumkit.JPG"]];
+    [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit", nil)
+                                            description:NSLocalizedString(@"drumkit description", nil)
+                                               andImage:[UIImage imageNamed:@"drumkit.JPG"]];
     
-    
-    
+    [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"electro guitar", nil)
+                                            description:NSLocalizedString(@"electro guitar description", nil)
+                                               andImage:[UIImage imageNamed:@"electro_guitar.JPG"]];
+    return AllMusicalInstruments;
 }
 
 @end

@@ -7,7 +7,7 @@
         <!--Table View Controller-->
         <scene sceneID="MFg-HT-QDT">
             <objects>
-                <tableViewController id="EtX-M6-bpl" sceneMemberID="viewController">
+                <tableViewController id="EtX-M6-bpl" customClass="APTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="22" sectionFooterHeight="22" id="bFl-tM-St6" customClass="APTableView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,15 +44,11 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EtX-M6-bpl" id="q4L-cX-HuV"/>
-                            <outlet property="delegate" destination="EtX-M6-bpl" id="NnX-Jt-zCp"/>
-                        </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7p-wa-2tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="569"/>
+            <point key="canvasLocation" x="462" y="531"/>
         </scene>
     </scenes>
 </document>

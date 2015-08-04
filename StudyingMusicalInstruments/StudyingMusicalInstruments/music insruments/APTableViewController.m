@@ -5,9 +5,28 @@
 //  Created by Андрей on 8/3/15.
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
+#import "APTableViewController.h"
+#import "APTableViewCell.h"
+#import "APAllMusicalInstruments.h"
+#import "APMusicalInstrument.h"
 
+@interface APTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@implementation APTableViewController 
+@property (weak, nonatomic) UITableView* tableView;
+@property (strong, nonatomic) APAllMusicalInstruments* AllMusicalInstruments;
+
+@end
+
+@implementation APTableViewController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.AllMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
+    }
+    return self;
+}
 
 
 /*
@@ -17,6 +36,26 @@
     // Drawing code
 }
 */
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return self.AllMusicalInstruments.musicalInstruments.count;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    static NSString* cellIdentifier = @"cell";
+    [self.tableView registerClass:[APTableViewCell class] forCellReuseIdentifier:cellIdentifier];
+    
+    APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    
+    
+}
 
 
 @end
