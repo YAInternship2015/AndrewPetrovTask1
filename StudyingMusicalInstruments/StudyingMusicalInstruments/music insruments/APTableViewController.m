@@ -25,7 +25,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         NSLog(@"allMusicalInstruments initWithCoder");
-        [self initPrepearing];
+        self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
     }
     return self;
 }
@@ -35,7 +35,7 @@
     self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
     if (self) {
         NSLog(@"allMusicalInstruments initWithStyle");
-        [self initPrepearing];
+        self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
     }
     return self;
     
@@ -46,7 +46,7 @@
     self = [super initWithStyle:style];
     if (self) {
         NSLog(@"allMusicalInstruments initWithStyle");
-        [self initPrepearing];
+        self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
     }
     return self;
 }
@@ -59,16 +59,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
+    
+    APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier];
     [cell takeInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
     return cell;
 }
 
-- (void) initPrepearing{
-    self.allMusicalInstruments = [APAllMusicalInstruments createBasicSetOfInsruments];
-    [self.tableView registerClass:[APTableViewCell class] forCellReuseIdentifier:cellIdentifier];
+-(void) viewDidLoad{
+    [self.tableView registerClass:[APTableViewCell class] forCellReuseIdentifier:APTableViewCellIdentifier];
 }
-
 
 @end

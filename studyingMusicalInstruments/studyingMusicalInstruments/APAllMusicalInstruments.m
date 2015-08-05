@@ -17,7 +17,7 @@
 
 @implementation APAllMusicalInstruments
 
-- (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image{
+- (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage:(UIImage*) image{
     
     APMusicalInstrument* newMusicalInstrument = [APMusicalInstrument initWithName:name description:description andImage:image];
     
@@ -47,13 +47,21 @@
     APAllMusicalInstruments* AllMusicalInstruments = [[APAllMusicalInstruments alloc] init];
     
     AllMusicalInstruments.musicalInstruments = [[NSArray alloc] init];
-
-    [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit", nil)
-                                            description:NSLocalizedString(@"drumkit description", nil)
+//
+//    [AllMusicalInstruments addMusicalInstrumentWithName:@"drumkit"
+//                                            description:NSLocalizedString(@"drumkit description", nil)
+//                                               andImage:[UIImage imageNamed:@"drumkit.JPG"]];
+//    
+//    [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"electro guitar", nil)
+//                                            description:NSLocalizedString(@"electro guitar description", nil)
+//                                               andImage:[UIImage imageNamed:@"electro_guitar.JPG"]];
+    
+    [AllMusicalInstruments addMusicalInstrumentWithName:@"drumkit"
+                                            description:@"drumkit description"
                                                andImage:[UIImage imageNamed:@"drumkit.JPG"]];
     
-    [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"electro guitar", nil)
-                                            description:NSLocalizedString(@"electro guitar description", nil)
+    [AllMusicalInstruments addMusicalInstrumentWithName:@"electro guitar"
+                                            description:@"electro guitar description"
                                                andImage:[UIImage imageNamed:@"electro_guitar.JPG"]];
     return AllMusicalInstruments;
 }

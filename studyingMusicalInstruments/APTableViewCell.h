@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class APMusicalInstrument;
-static NSString* cellIdentifier = @"cell";
+
+extern NSString* const APTableViewCellIdentifier;
 
 
 @interface APTableViewCell : UITableViewCell

@@ -9,7 +9,7 @@
 #import "APTableViewCell.h"
 #import "APMusicalInstrument.h"
 
-
+NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
 @interface APTableViewCell ()
 
@@ -34,7 +34,9 @@
     
     self.nameLabel.text = instrument.name;
     self.descriptionLabel.text = instrument.instrumentDescription;
+    self.nameLabel.text = @"uygytfytfy";
     self.nameLabel.textColor = [UIColor blackColor];
+    self.nameLabel.backgroundColor = [UIColor redColor];
     self.imageView.image = instrument.instrumentImage;
 }
 
