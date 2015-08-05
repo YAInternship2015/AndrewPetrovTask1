@@ -10,81 +10,40 @@
 		771712B61B7233C100AFEB4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 771712B51B7233C100AFEB4D /* Localizable.strings */; };
 		771A05E01B6F781D00552816 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05DF1B6F781D00552816 /* main.m */; };
 		771A05E31B6F781D00552816 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05E21B6F781D00552816 /* AppDelegate.m */; };
-		771A05E61B6F781D00552816 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05E51B6F781D00552816 /* ViewController.m */; };
 		771A05E91B6F781D00552816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771A05E71B6F781D00552816 /* Main.storyboard */; };
 		771A05EB1B6F781D00552816 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EA1B6F781D00552816 /* Images.xcassets */; };
 		771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EC1B6F781D00552816 /* LaunchScreen.xib */; };
-		771A05FA1B6F781D00552816 /* studyingMusicalInstrumentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */; };
 		771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06051B6FB5A300552816 /* APMusicalInstrument.m */; };
 		771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */; };
-		771A060C1B6FF3D200552816 /* APTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A060B1B6FF3D200552816 /* APTableViewCell.m */; };
-		771A06191B6FFC4300552816 /* drumkit.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A060F1B6FFC4300552816 /* drumkit.JPG */; };
-		771A061A1B6FFC4300552816 /* electro_guitar.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06101B6FFC4300552816 /* electro_guitar.JPG */; };
-		771A061B1B6FFC4300552816 /* guitar.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06111B6FFC4300552816 /* guitar.JPG */; };
-		771A061C1B6FFC4300552816 /* harp.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06121B6FFC4300552816 /* harp.JPG */; };
-		771A061D1B6FFC4300552816 /* piano.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06131B6FFC4300552816 /* piano.JPG */; };
-		771A061E1B6FFC4300552816 /* tambourine.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06141B6FFC4300552816 /* tambourine.JPG */; };
-		771A061F1B6FFC4300552816 /* trombone.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06151B6FFC4300552816 /* trombone.JPG */; };
-		771A06201B6FFC4300552816 /* trumpet.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06161B6FFC4300552816 /* trumpet.JPG */; };
-		771A06211B6FFC4300552816 /* violin.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06171B6FFC4300552816 /* violin.JPG */; };
-		771A06221B6FFC4300552816 /* xylophone.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 771A06181B6FFC4300552816 /* xylophone.JPG */; };
-		77D35A961B714CC700FD84A6 /* APTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D35A951B714CC700FD84A6 /* APTableViewController.m */; };
+		773B08CE1B7244D500442E1E /* APTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 773B08CD1B7244D500442E1E /* APTableViewCell.m */; };
+		773B08D31B7244FB00442E1E /* APTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773B08D01B7244FB00442E1E /* APTableViewController.m */; };
+		773B08D41B7244FB00442E1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773B08D21B7244FB00442E1E /* ViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		771A05F41B6F781D00552816 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 771A05D21B6F781D00552816 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 771A05D91B6F781D00552816;
-			remoteInfo = studyingMusicalInstruments;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		771712B51B7233C100AFEB4D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../../Resource/Localizable.strings; sourceTree = "<group>"; };
-		771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyingMusicalInstruments.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		771712B51B7233C100AFEB4D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyingMusicalInstruments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		771A05DE1B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771A05DF1B6F781D00552816 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		771A05E11B6F781D00552816 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		771A05E21B6F781D00552816 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		771A05E41B6F781D00552816 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		771A05E51B6F781D00552816 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		771A05E81B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		771A05EA1B6F781D00552816 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		771A05ED1B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		771A05F31B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		771A05F81B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = studyingMusicalInstrumentsTests.m; sourceTree = "<group>"; };
 		771A06041B6FB5A300552816 /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
 		771A06051B6FB5A300552816 /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
 		771A06071B6FBB4B00552816 /* APAllMusicalInstruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAllMusicalInstruments.h; sourceTree = "<group>"; };
 		771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAllMusicalInstruments.m; sourceTree = "<group>"; };
-		771A060A1B6FF3D200552816 /* APTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTableViewCell.h; path = ../StudyingMusicalInstruments/APTableViewCell.h; sourceTree = "<group>"; };
-		771A060B1B6FF3D200552816 /* APTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APTableViewCell.m; path = ../StudyingMusicalInstruments/APTableViewCell.m; sourceTree = "<group>"; };
-		771A060F1B6FFC4300552816 /* drumkit.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drumkit.JPG; sourceTree = "<group>"; };
-		771A06101B6FFC4300552816 /* electro_guitar.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = electro_guitar.JPG; sourceTree = "<group>"; };
-		771A06111B6FFC4300552816 /* guitar.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guitar.JPG; sourceTree = "<group>"; };
-		771A06121B6FFC4300552816 /* harp.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = harp.JPG; sourceTree = "<group>"; };
-		771A06131B6FFC4300552816 /* piano.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = piano.JPG; sourceTree = "<group>"; };
-		771A06141B6FFC4300552816 /* tambourine.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tambourine.JPG; sourceTree = "<group>"; };
-		771A06151B6FFC4300552816 /* trombone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trombone.JPG; sourceTree = "<group>"; };
-		771A06161B6FFC4300552816 /* trumpet.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trumpet.JPG; sourceTree = "<group>"; };
-		771A06171B6FFC4300552816 /* violin.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = violin.JPG; sourceTree = "<group>"; };
-		771A06181B6FFC4300552816 /* xylophone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xylophone.JPG; sourceTree = "<group>"; };
-		77D35A941B714CC700FD84A6 /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewController.h; sourceTree = "<group>"; };
-		77D35A951B714CC700FD84A6 /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewController.m; sourceTree = "<group>"; };
+		773B08CC1B7244D500442E1E /* APTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewCell.h; sourceTree = "<group>"; };
+		773B08CD1B7244D500442E1E /* APTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewCell.m; sourceTree = "<group>"; };
+		773B08CF1B7244FB00442E1E /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewController.h; sourceTree = "<group>"; };
+		773B08D01B7244FB00442E1E /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewController.m; sourceTree = "<group>"; };
+		773B08D11B7244FB00442E1E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		773B08D21B7244FB00442E1E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		771A05D71B6F781D00552816 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		771A05F01B6F781D00552816 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -99,15 +58,14 @@
 			children = (
 				771712B51B7233C100AFEB4D /* Localizable.strings */,
 			);
-			path = Resource;
+			name = Resource;
+			path = ../Resource;
 			sourceTree = "<group>";
 		};
 		771A05D11B6F781D00552816 = {
 			isa = PBXGroup;
 			children = (
-				771A060D1B6FF3F900552816 /* cells */,
 				771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */,
-				771A05F61B6F781D00552816 /* StudyingMusicalInstrumentsTests */,
 				771A05DB1B6F781D00552816 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,8 +73,7 @@
 		771A05DB1B6F781D00552816 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */,
-				771A05F31B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest */,
+				771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,18 +81,14 @@
 		771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */ = {
 			isa = PBXGroup;
 			children = (
-				771712B41B7233A000AFEB4D /* Resource */,
 				771A05E11B6F781D00552816 /* AppDelegate.h */,
 				771A05E21B6F781D00552816 /* AppDelegate.m */,
-				771A05E41B6F781D00552816 /* ViewController.h */,
-				771A05E51B6F781D00552816 /* ViewController.m */,
-				77D35A941B714CC700FD84A6 /* APTableViewController.h */,
-				77D35A951B714CC700FD84A6 /* APTableViewController.m */,
-				771A060E1B6FFC4300552816 /* music insruments */,
+				773B08CB1B7244B300442E1E /* UI */,
 				771A06031B6F7AE100552816 /* model */,
 				771A05E71B6F781D00552816 /* Main.storyboard */,
 				771A05EA1B6F781D00552816 /* Images.xcassets */,
 				771A05EC1B6F781D00552816 /* LaunchScreen.xib */,
+				771712B41B7233A000AFEB4D /* Resource */,
 				771A05DD1B6F781D00552816 /* Supporting Files */,
 			);
 			path = StudyingMusicalInstruments;
@@ -150,24 +103,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		771A05F61B6F781D00552816 /* StudyingMusicalInstrumentsTests */ = {
-			isa = PBXGroup;
-			children = (
-				771A05F91B6F781D00552816 /* studyingMusicalInstrumentsTests.m */,
-				771A05F71B6F781D00552816 /* Supporting Files */,
-			);
-			name = StudyingMusicalInstrumentsTests;
-			path = studyingMusicalInstrumentsTests;
-			sourceTree = "<group>";
-		};
-		771A05F71B6F781D00552816 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				771A05F81B6F781D00552816 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		771A06031B6F7AE100552816 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,41 +111,28 @@
 				771A06071B6FBB4B00552816 /* APAllMusicalInstruments.h */,
 				771A06081B6FBB4B00552816 /* APAllMusicalInstruments.m */,
 			);
-			name = model;
+			path = model;
 			sourceTree = "<group>";
 		};
-		771A060D1B6FF3F900552816 /* cells */ = {
+		773B08CB1B7244B300442E1E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				771A060A1B6FF3D200552816 /* APTableViewCell.h */,
-				771A060B1B6FF3D200552816 /* APTableViewCell.m */,
+				773B08CF1B7244FB00442E1E /* APTableViewController.h */,
+				773B08D01B7244FB00442E1E /* APTableViewController.m */,
+				773B08D11B7244FB00442E1E /* ViewController.h */,
+				773B08D21B7244FB00442E1E /* ViewController.m */,
+				773B08CC1B7244D500442E1E /* APTableViewCell.h */,
+				773B08CD1B7244D500442E1E /* APTableViewCell.m */,
 			);
-			name = cells;
-			sourceTree = "<group>";
-		};
-		771A060E1B6FFC4300552816 /* music insruments */ = {
-			isa = PBXGroup;
-			children = (
-				771A060F1B6FFC4300552816 /* drumkit.JPG */,
-				771A06101B6FFC4300552816 /* electro_guitar.JPG */,
-				771A06111B6FFC4300552816 /* guitar.JPG */,
-				771A06121B6FFC4300552816 /* harp.JPG */,
-				771A06131B6FFC4300552816 /* piano.JPG */,
-				771A06141B6FFC4300552816 /* tambourine.JPG */,
-				771A06151B6FFC4300552816 /* trombone.JPG */,
-				771A06161B6FFC4300552816 /* trumpet.JPG */,
-				771A06171B6FFC4300552816 /* violin.JPG */,
-				771A06181B6FFC4300552816 /* xylophone.JPG */,
-			);
-			path = "music insruments";
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		771A05D91B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename */ = {
+		771A05D91B6F781D00552816 /* StudyingMusicalInstruments */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_rename" */;
+			buildConfigurationList = 771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments" */;
 			buildPhases = (
 				771A05D61B6F781D00552816 /* Sources */,
 				771A05D71B6F781D00552816 /* Frameworks */,
@@ -220,28 +142,10 @@
 			);
 			dependencies = (
 			);
-			name = StudyingMusicalInstruments.temp_caseinsensitive_rename;
+			name = StudyingMusicalInstruments;
 			productName = studyingMusicalInstruments;
-			productReference = 771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */;
+			productReference = 771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.app */;
 			productType = "com.apple.product-type.application";
-		};
-		771A05F21B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 771A06001B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_renameTests" */;
-			buildPhases = (
-				771A05EF1B6F781D00552816 /* Sources */,
-				771A05F01B6F781D00552816 /* Frameworks */,
-				771A05F11B6F781D00552816 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				771A05F51B6F781D00552816 /* PBXTargetDependency */,
-			);
-			name = StudyingMusicalInstruments.temp_caseinsensitive_renameTests;
-			productName = studyingMusicalInstrumentsTests;
-			productReference = 771A05F31B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -254,10 +158,6 @@
 				TargetAttributes = {
 					771A05D91B6F781D00552816 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					771A05F21B6F781D00552816 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 771A05D91B6F781D00552816;
 					};
 				};
 			};
@@ -274,8 +174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				771A05D91B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename */,
-				771A05F21B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_renameTests */,
+				771A05D91B6F781D00552816 /* StudyingMusicalInstruments */,
 			);
 		};
 /* End PBXProject section */
@@ -285,27 +184,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771A06201B6FFC4300552816 /* trumpet.JPG in Resources */,
 				771A05E91B6F781D00552816 /* Main.storyboard in Resources */,
 				771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */,
-				771A061C1B6FFC4300552816 /* harp.JPG in Resources */,
-				771A06221B6FFC4300552816 /* xylophone.JPG in Resources */,
-				771A061E1B6FFC4300552816 /* tambourine.JPG in Resources */,
-				771A06191B6FFC4300552816 /* drumkit.JPG in Resources */,
-				771A06211B6FFC4300552816 /* violin.JPG in Resources */,
 				771712B61B7233C100AFEB4D /* Localizable.strings in Resources */,
-				771A061B1B6FFC4300552816 /* guitar.JPG in Resources */,
-				771A061A1B6FFC4300552816 /* electro_guitar.JPG in Resources */,
 				771A05EB1B6F781D00552816 /* Images.xcassets in Resources */,
-				771A061D1B6FFC4300552816 /* piano.JPG in Resources */,
-				771A061F1B6FFC4300552816 /* trombone.JPG in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		771A05F11B6F781D00552816 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,33 +198,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77D35A961B714CC700FD84A6 /* APTableViewController.m in Sources */,
+				773B08D41B7244FB00442E1E /* ViewController.m in Sources */,
+				773B08D31B7244FB00442E1E /* APTableViewController.m in Sources */,
 				771A06091B6FBB4B00552816 /* APAllMusicalInstruments.m in Sources */,
 				771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */,
-				771A060C1B6FF3D200552816 /* APTableViewCell.m in Sources */,
-				771A05E61B6F781D00552816 /* ViewController.m in Sources */,
 				771A05E31B6F781D00552816 /* AppDelegate.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		771A05EF1B6F781D00552816 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				771A05FA1B6F781D00552816 /* studyingMusicalInstrumentsTests.m in Sources */,
+				773B08CE1B7244D500442E1E /* APTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		771A05F51B6F781D00552816 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 771A05D91B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename */;
-			targetProxy = 771A05F41B6F781D00552816 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		771A05E71B6F781D00552816 /* Main.storyboard */ = {
@@ -452,7 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = studyingMusicalInstruments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_rename;
+				PRODUCT_NAME = StudyingMusicalInstruments;
 			};
 			name = Debug;
 		};
@@ -462,41 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = studyingMusicalInstruments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_rename;
-			};
-			name = Release;
-		};
-		771A06011B6F781D00552816 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = studyingMusicalInstrumentsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_renameTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studyingMusicalInstruments.app/studyingMusicalInstruments";
-			};
-			name = Debug;
-		};
-		771A06021B6F781D00552816 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = studyingMusicalInstrumentsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = StudyingMusicalInstruments.temp_caseinsensitive_renameTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studyingMusicalInstruments.app/studyingMusicalInstruments";
+				PRODUCT_NAME = StudyingMusicalInstruments;
 			};
 			name = Release;
 		};
@@ -512,20 +344,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_rename" */ = {
+		771A05FD1B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				771A05FE1B6F781D00552816 /* Debug */,
 				771A05FF1B6F781D00552816 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		771A06001B6F781D00552816 /* Build configuration list for PBXNativeTarget "StudyingMusicalInstruments.temp_caseinsensitive_renameTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				771A06011B6F781D00552816 /* Debug */,
-				771A06021B6F781D00552816 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
