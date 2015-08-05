@@ -38,9 +38,9 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
     
     self.nameLabel.text = instrument.name;
     self.descriptionLabel.text = instrument.instrumentDescription;
-    self.nameLabel.text = @"test text";
-    self.nameLabel.textColor = [UIColor blackColor];
-    self.nameLabel.backgroundColor = [UIColor redColor];
+//    self.nameLabel.text = @"test text";
+//    self.nameLabel.textColor = [UIColor blackColor];
+//    self.nameLabel.backgroundColor = [UIColor redColor];
     self.insrumentImageView.image = instrument.instrumentImage;
 }
 

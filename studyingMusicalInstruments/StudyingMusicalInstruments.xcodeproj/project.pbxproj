@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771712B61B7233C100AFEB4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 771712B51B7233C100AFEB4D /* Localizable.strings */; };
 		771A05E01B6F781D00552816 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05DF1B6F781D00552816 /* main.m */; };
 		771A05E31B6F781D00552816 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05E21B6F781D00552816 /* AppDelegate.m */; };
 		771A05E61B6F781D00552816 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05E51B6F781D00552816 /* ViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		771712B51B7233C100AFEB4D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../../Resource/Localizable.strings; sourceTree = "<group>"; };
 		771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyingMusicalInstruments.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		771A05DE1B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771A05DF1B6F781D00552816 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		771712B41B7233A000AFEB4D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				771712B51B7233C100AFEB4D /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		771A05D11B6F781D00552816 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 		771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */ = {
 			isa = PBXGroup;
 			children = (
+				771712B41B7233A000AFEB4D /* Resource */,
 				771A05E11B6F781D00552816 /* AppDelegate.h */,
 				771A05E21B6F781D00552816 /* AppDelegate.m */,
 				771A05E41B6F781D00552816 /* ViewController.h */,
@@ -282,6 +293,7 @@
 				771A061E1B6FFC4300552816 /* tambourine.JPG in Resources */,
 				771A06191B6FFC4300552816 /* drumkit.JPG in Resources */,
 				771A06211B6FFC4300552816 /* violin.JPG in Resources */,
+				771712B61B7233C100AFEB4D /* Localizable.strings in Resources */,
 				771A061B1B6FFC4300552816 /* guitar.JPG in Resources */,
 				771A061A1B6FFC4300552816 /* electro_guitar.JPG in Resources */,
 				771A05EB1B6F781D00552816 /* Images.xcassets in Resources */,
