@@ -32,7 +32,7 @@
     
     self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
     if (self) {
-        NSLog(@"allMusicalInstruments initWithStyle");
+        NSLog(@"allMusicalInstruments initWithNibName");
         self.allMusicalInstruments = [APMusicalInstrumentsManager createBasicSetOfInsruments];
     }
     return self;
@@ -59,7 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier];
-    [cell setModel:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
+    [cell setModel:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row + 1]];
     return cell;
 }
 

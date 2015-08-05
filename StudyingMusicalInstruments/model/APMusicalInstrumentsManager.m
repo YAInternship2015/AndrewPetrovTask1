@@ -47,7 +47,7 @@
     APMusicalInstrumentsManager* AllMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
     
     AllMusicalInstruments.musicalInstruments = [[NSArray alloc] init];
-//NSString stringWithFormat:NSLocalizedString(@"Yesterday you sold %@ apps", nil),
+
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit_name", nil)
                                             description:NSLocalizedString(@"drumkit_description", nil)
@@ -93,6 +93,10 @@
 
 - (APMusicalInstrument*) musicalInstrumentAtIndex: (NSInteger) index{
     // todo: add checking
+    
+    if (index < 0 || index >= self.musicalInstruments.count){
+        return nil;
+    }
     return (APMusicalInstrument*)self.musicalInstruments[index];
 }
 

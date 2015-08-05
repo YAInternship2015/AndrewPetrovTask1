@@ -28,38 +28,20 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 - (void) setModel:(APMusicalInstrument*) instrument{
-    
-    if (self.contentView){
-        NSLog(@"contentView exist");
-    }
-    
+
     if (!instrument) {
         
-        self.nameLabel.text = @"no instrument";
-        self.descriptionLabel.text = @"no instrument descripion";;
-        //    self.nameLabel.text = @"test text";
-        //    self.nameLabel.textColor = [UIColor blackColor];
-        //    self.nameLabel.backgroundColor = [UIColor redColor];
+        self.nameLabel.text = NSLocalizedString(@"no_instrument", nil);
+        self.descriptionLabel.text = @"";
         self.insrumentImageView.image = [UIImage cellStumbImage];
-//
+        return;
     }
     
     self.nameLabel.text = instrument.name;
     self.descriptionLabel.text = instrument.instrumentDescription;
-//    self.nameLabel.text = @"test text";
-//    self.nameLabel.textColor = [UIColor blackColor];
-//    self.nameLabel.backgroundColor = [UIColor redColor];
     self.insrumentImageView.image = instrument.instrumentImage;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    
-    NSLog(@"Cell created");
-    return [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
-}
 @end
