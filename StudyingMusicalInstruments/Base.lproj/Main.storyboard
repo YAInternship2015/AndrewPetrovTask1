@@ -39,6 +39,7 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="L4w-M7-8am"/>
+                                                    <exclude reference="tWp-QX-L5G"/>
                                                 </mask>
                                             </variation>
                                         </label>
@@ -51,13 +52,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="e8k-HJ-1nK" firstAttribute="top" secondItem="zW0-I2-Mkx" secondAttribute="top" id="C5d-uV-13W"/>
-                                        <constraint firstItem="zW0-I2-Mkx" firstAttribute="trailing" secondItem="IZp-dd-m1u" secondAttribute="trailing" id="G3E-2j-ScI"/>
                                         <constraint firstItem="e8k-HJ-1nK" firstAttribute="leading" secondItem="QdP-vQ-wlI" secondAttribute="leadingMargin" constant="2" id="IWU-K9-Ghy"/>
                                         <constraint firstItem="IZp-dd-m1u" firstAttribute="width" secondItem="zW0-I2-Mkx" secondAttribute="width" id="J8o-7L-V07"/>
                                         <constraint firstItem="e8k-HJ-1nK" firstAttribute="bottom" secondItem="IZp-dd-m1u" secondAttribute="bottom" id="L7K-EF-Tn0"/>
                                         <constraint firstItem="zW0-I2-Mkx" firstAttribute="centerX" secondItem="QdP-vQ-wlI" secondAttribute="centerX" multiplier="0.6" id="Pqa-4F-D6S"/>
                                         <constraint firstItem="zW0-I2-Mkx" firstAttribute="leading" secondItem="IZp-dd-m1u" secondAttribute="leading" id="Rfj-J5-7i1"/>
                                         <constraint firstItem="IZp-dd-m1u" firstAttribute="top" secondItem="zW0-I2-Mkx" secondAttribute="bottom" constant="10" id="gze-h9-PUH"/>
+                                        <constraint firstItem="zW0-I2-Mkx" firstAttribute="leading" secondItem="e8k-HJ-1nK" secondAttribute="trailing" constant="10" id="kOh-O9-Z4D"/>
                                         <constraint firstItem="e8k-HJ-1nK" firstAttribute="top" secondItem="QdP-vQ-wlI" secondAttribute="topMargin" constant="2" id="lQc-mo-seL"/>
                                         <constraint firstAttribute="centerY" secondItem="e8k-HJ-1nK" secondAttribute="centerY" constant="1" id="mmI-Ar-9a0"/>
                                         <constraint firstItem="zW0-I2-Mkx" firstAttribute="leading" secondItem="e8k-HJ-1nK" secondAttribute="trailing" constant="10" id="rGd-S6-XRZ"/>
@@ -68,6 +69,7 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="zqc-3K-N6q"/>
+                                            <exclude reference="Pqa-4F-D6S"/>
                                             <exclude reference="rGd-S6-XRZ"/>
                                             <exclude reference="zvP-LZ-feB"/>
                                         </mask>
