@@ -63,5 +63,24 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    switch (section) {
+        case 0:
+            return NSLocalizedString(@"Musical_Insruments", nil);
+            break;
+            
+        default:
+            break;
+    }
+    return nil;
+}
+
+- (void) viewDidLoad{
+
+    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+}
+
+
 
 @end
