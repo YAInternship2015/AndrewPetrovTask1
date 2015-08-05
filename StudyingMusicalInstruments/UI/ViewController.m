@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "APAllMusicalInstruments.h"
+#import "APMusicalInstrumentsManager.h"
 
 @interface ViewController () 
 @end

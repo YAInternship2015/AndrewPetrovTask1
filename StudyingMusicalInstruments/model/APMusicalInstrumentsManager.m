@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "APAllMusicalInstruments.h"
+#import "APMusicalInstrumentsManager.h"
 
-@interface APAllMusicalInstruments ()
+@interface APMusicalInstrumentsManager ()
 
 @property (strong, nonatomic) NSArray* musicalInstruments;
 
 @end
 
 
-@implementation APAllMusicalInstruments
+@implementation APMusicalInstrumentsManager
 
 - (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage:(UIImage*) image{
     
@@ -42,57 +42,57 @@
      self.musicalInstruments = [tempArray copy];
 }
 
-+ (APAllMusicalInstruments*) createBasicSetOfInsruments{
++ (APMusicalInstrumentsManager*) createBasicSetOfInsruments{
     
-    APAllMusicalInstruments* AllMusicalInstruments = [[APAllMusicalInstruments alloc] init];
+    APMusicalInstrumentsManager* AllMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
     
     AllMusicalInstruments.musicalInstruments = [[NSArray alloc] init];
 //NSString stringWithFormat:NSLocalizedString(@"Yesterday you sold %@ apps", nil),
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit_name", nil)
                                             description:NSLocalizedString(@"drumkit_description", nil)
-                                               andImage:[UIImage imageNamed:@"drumkit.JPG"]];
+                                               andImage:[UIImage imageNamed:@"drumkit"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"electro_guitar_name", nil)
                                             description:NSLocalizedString(@"electro_guitar_description", nil)
-                                               andImage:[UIImage imageNamed:@"electro_guitar.JPG"]];
+                                               andImage:[UIImage imageNamed:@"electro_guitar"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"guitar_name", nil)
                                             description:NSLocalizedString(@"guitar_description", nil)
-                                               andImage:[UIImage imageNamed:@"guitar.JPG"]];
+                                               andImage:[UIImage imageNamed:@"guitar"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"harp_name", nil)
                                             description:NSLocalizedString(@"harp_description", nil)
-                                               andImage:[UIImage imageNamed:@"harp.JPG"]];
+                                               andImage:[UIImage imageNamed:@"harp"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"piano_name", nil)
                                             description:NSLocalizedString(@"piano_description", nil)
-                                               andImage:[UIImage imageNamed:@"piano.JPG"]];
+                                               andImage:[UIImage imageNamed:@"piano"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"tambourine_name", nil)
                                             description:NSLocalizedString(@"tambourine_description", nil)
-                                               andImage:[UIImage imageNamed:@"tambourine.JPG"]];
+                                               andImage:[UIImage imageNamed:@"tambourine"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"trombone_name", nil)
                                             description:NSLocalizedString(@"trombone_description", nil)
-                                               andImage:[UIImage imageNamed:@"trombone.JPG"]];
+                                               andImage:[UIImage imageNamed:@"trombone"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"trumpet_name", nil)
                                             description:NSLocalizedString(@"trumpet_description", nil)
-                                               andImage:[UIImage imageNamed:@"trumpet.JPG"]];
+                                               andImage:[UIImage imageNamed:@"trumpet"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"violin_name", nil)
                                             description:NSLocalizedString(@"violin_description", nil)
-                                               andImage:[UIImage imageNamed:@"violin.JPG"]];
+                                               andImage:[UIImage imageNamed:@"violin"]];
     
     [AllMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"xylophone_name", nil)
                                             description:NSLocalizedString(@"xylophone_description", nil)
-                                               andImage:[UIImage imageNamed:@"xylophone.JPG"]];
+                                               andImage:[UIImage imageNamed:@"xylophone"]];
     return AllMusicalInstruments;
 }
 
 - (APMusicalInstrument*) musicalInstrumentAtIndex: (NSInteger) index{
-    
+    // todo: add checking
     return (APMusicalInstrument*)self.musicalInstruments[index];
 }
 

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "APTableViewCell.h"
 #import "APMusicalInstrument.h"
-#import "APAllMusicalInstruments.h"
+#import "APMusicalInstrumentsManager.h"
 
 @interface AppDelegate () 
 

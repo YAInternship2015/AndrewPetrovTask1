@@ -8,6 +8,7 @@
 
 #import "APTableViewCell.h"
 #import "APMusicalInstrument.h"
+#import "UIImage+StudyingMusicalInstruments.h"
 
 NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
@@ -30,10 +31,21 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
     // Configure the view for the selected state
 }
-- (void) takeInstrument:(APMusicalInstrument*) instrument{
+- (void) setModel:(APMusicalInstrument*) instrument{
     
     if (self.contentView){
         NSLog(@"contentView exist");
+    }
+    
+    if (!instrument) {
+        
+        self.nameLabel.text = @"no instrument";
+        self.descriptionLabel.text = @"no instrument descripion";;
+        //    self.nameLabel.text = @"test text";
+        //    self.nameLabel.textColor = [UIColor blackColor];
+        //    self.nameLabel.backgroundColor = [UIColor redColor];
+        self.insrumentImageView.image = [UIImage cellStumbImage];
+//
     }
     
     self.nameLabel.text = instrument.name;
