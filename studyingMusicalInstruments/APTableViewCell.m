@@ -32,13 +32,22 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 }
 - (void) takeInstrument:(APMusicalInstrument*) instrument{
     
+    if (self.contentView){
+        NSLog(@"contentView exist");
+    }
+    
     self.nameLabel.text = instrument.name;
     self.descriptionLabel.text = instrument.instrumentDescription;
-    self.nameLabel.text = @"uygytfytfy";
+    self.nameLabel.text = @"test text";
     self.nameLabel.textColor = [UIColor blackColor];
     self.nameLabel.backgroundColor = [UIColor redColor];
-    self.imageView.image = instrument.instrumentImage;
+    self.insrumentImageView.image = instrument.instrumentImage;
 }
 
-
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
+    NSLog(@"Cell created");
+    return [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+}
 @end

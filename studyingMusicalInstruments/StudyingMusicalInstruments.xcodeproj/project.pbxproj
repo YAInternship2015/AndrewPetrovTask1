@@ -70,8 +70,8 @@
 		771A06161B6FFC4300552816 /* trumpet.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trumpet.JPG; sourceTree = "<group>"; };
 		771A06171B6FFC4300552816 /* violin.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = violin.JPG; sourceTree = "<group>"; };
 		771A06181B6FFC4300552816 /* xylophone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xylophone.JPG; sourceTree = "<group>"; };
-		77D35A941B714CC700FD84A6 /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTableViewController.h; path = "music insruments/APTableViewController.h"; sourceTree = "<group>"; };
-		77D35A951B714CC700FD84A6 /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APTableViewController.m; path = "music insruments/APTableViewController.m"; sourceTree = "<group>"; };
+		77D35A941B714CC700FD84A6 /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewController.h; sourceTree = "<group>"; };
+		77D35A951B714CC700FD84A6 /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
