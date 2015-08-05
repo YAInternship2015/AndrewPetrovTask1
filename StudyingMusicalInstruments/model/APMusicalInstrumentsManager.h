@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-@interface APAllMusicalInstruments : NSObject
+@interface APMusicalInstrumentsManager : NSObject
 
 
-+ (APAllMusicalInstruments*) createBasicSetOfInsruments;
++ (APMusicalInstrumentsManager*) createBasicSetOfInsruments;
 - (APMusicalInstrument*) musicalInstrumentAtIndex: (NSInteger) index;
 - (NSInteger) musicalInstrumentsCount;
 - (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image;

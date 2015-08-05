@@ -14,8 +14,6 @@ extern NSString* const APTableViewCellIdentifier;
 
 @interface APTableViewCell : UITableViewCell
 
-- (void) takeInstrument:(APMusicalInstrument*) instrument;
-
-
+- (void) setModel:(APMusicalInstrument*) instrument;
 
 @end

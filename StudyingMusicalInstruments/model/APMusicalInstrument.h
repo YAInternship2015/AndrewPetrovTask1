@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface APMusicalInstrument : NSObject
