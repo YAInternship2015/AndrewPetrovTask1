@@ -12,7 +12,7 @@
 @implementation UIImage (StudyingMusicalInstruments)
 
 
-+ (UIImage*) cellStumbImage{
++ (UIImage*) stubInstrumentCellImage{
     
     return [UIImage imageNamed:@"sellStumbImage"];
     

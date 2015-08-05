@@ -33,9 +33,9 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
     if (!instrument) {
         
-        self.nameLabel.text = NSLocalizedString(@"no_instrument", nil);
+        self.nameLabel.text = NSLocalizedString(@"stub_instrument_name", nil);
         self.descriptionLabel.text = @"";
-        self.insrumentImageView.image = [UIImage cellStumbImage];
+        self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
         return;
     }
     

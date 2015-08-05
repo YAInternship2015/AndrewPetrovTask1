@@ -10,7 +10,7 @@
 
 @interface UIImage (StudyingMusicalInstruments)
 
-+ (UIImage*) cellStumbImage;
++ (UIImage*) stubInstrumentCellImage;
 
 
 @end
