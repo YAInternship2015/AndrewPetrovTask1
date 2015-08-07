@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#warning Зачем нужен это класс? Все лишнее удаляй сразу, если что - всегда можно вернуться по коммитам в гите и найти удаленный код
+
 @interface ViewController : UIViewController
 
 

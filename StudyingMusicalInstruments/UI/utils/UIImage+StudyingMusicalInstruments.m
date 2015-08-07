@@ -11,7 +11,7 @@
 
 @implementation UIImage (StudyingMusicalInstruments)
 
-
+#warning Форматирование
 + (UIImage*) stubInstrumentCellImage{
     
     return [UIImage imageNamed:@"sellStumbImage"];

@@ -10,6 +10,7 @@
 
 @interface APMusicalInstrumentsManager ()
 
+#warning форматирование
 @property (strong, nonatomic) NSArray* musicalInstruments;
 
 @end
@@ -21,6 +22,7 @@
     
     APMusicalInstrument* newMusicalInstrument = [APMusicalInstrument initWithName:name description:description andImage:image];
     
+#warning почему было не сделать musicalInstruments NSMutableArray? Не было бы проблем с добавлением айтемов
     if (!self.musicalInstruments) {
         self.musicalInstruments = [[NSArray alloc] init];
     }
@@ -29,7 +31,7 @@
     self.musicalInstruments = [tempArray copy];
 }
 
-
+#warning Этот метод никем не используется
 - (void) removeMusicalInstrumentWithName:(NSString*) name{
     
     NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:self.musicalInstruments];
@@ -42,13 +44,16 @@
      self.musicalInstruments = [tempArray copy];
 }
 
+#warning Статические методы в *.m файле должны идти первыми
+#warning Есть замечание к имени данного метода. В имени ничего не сказано о создании объекта APMusicalInstrumentsManager. Это фабричный иниализатор, так что его имя должно начинаться с имени сущности. Я бы его назвал managerWithBasicSetOfInstruments
 + (APMusicalInstrumentsManager*) createBasicSetOfInsruments{
     
     APMusicalInstrumentsManager* allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
     
     allMusicalInstruments.musicalInstruments = [[NSArray alloc] init];
 
-    
+#warning Можно было все эти данные зашить в какой-ниюудь plist и загрузить их из файла
+#warning И вообще, так как ты находишься внутри класса, не обязательно добавлять новые айтемы через такой интерфейс. Ты знаешь, что есть внутренний массив musicalInstruments, так что можно было создавать айтемы, складировать их в некий временный NSMutableArray и затем напрямую их засеттить в musicalInstruments
     [allMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit_name", nil)
                                             description:NSLocalizedString(@"drumkit_description", nil)
                                                andImage:[UIImage imageNamed:@"drumkit"]];
@@ -91,6 +96,7 @@
     return allMusicalInstruments;
 }
 
+#warning форматирование!!
 - (APMusicalInstrument*) musicalInstrumentAtIndex: (NSInteger) index{
     // todo: add checking
     

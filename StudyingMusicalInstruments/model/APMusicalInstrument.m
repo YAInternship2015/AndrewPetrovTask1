@@ -10,6 +10,7 @@
 
 @interface APMusicalInstrument ()
 
+#warning форматирование
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* instrumentDescription;
 @property (strong, nonatomic) UIImage* instrumentImage;

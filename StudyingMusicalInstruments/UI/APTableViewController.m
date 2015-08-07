@@ -12,6 +12,7 @@
 
 @interface APTableViewController ()
 
+#warning Тут конечно дело каждого лично, но мы все пишем (nonatomic, strong) :)
 @property (strong, nonatomic) APMusicalInstrumentsManager* allMusicalInstruments;
 
 @end
@@ -23,11 +24,13 @@
     self = [super initWithCoder:coder];
     if (self) {
         NSLog(@"allMusicalInstruments initWithCoder");
+#warning чтобы не дублировать инициализацию APMusicalInstrumentsManager, можно вынести ее, скажем, во viewDidLoad. Пока нет вьюхи, тебе этот менеджер все равно не нужен
         self.allMusicalInstruments = [APMusicalInstrumentsManager createBasicSetOfInsruments];
     }
     return self;
 }
 
+#warning Обрати внимание, что ты по разному расставляешь открывающуюся фигурну скобку. По гайдам Ялантис она ставится на той же строке, что и имя метода, через пробел
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     
     self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
@@ -64,7 +67,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
+#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
     switch (section) {
         case 0:
             return NSLocalizedString(@"Musical_Insruments", nil);
@@ -76,6 +79,7 @@
     return nil;
 }
 
+#warning такие пустые по факту методы надо удалять
 - (void) viewDidLoad{
 
 //    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
