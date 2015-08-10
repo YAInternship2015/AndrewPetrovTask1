@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+
+#warning Здесь много лишних импортов. Не стоит в классах показывать больше информации, чем им требуется для работы
 #import "APTableViewCell.h"
 #import "APMusicalInstrument.h"
 #import "APMusicalInstrumentsManager.h"
@@ -24,6 +26,8 @@
     
     return YES;
 }
+
+#warning Пустые методы принято удалять, это мусор
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
