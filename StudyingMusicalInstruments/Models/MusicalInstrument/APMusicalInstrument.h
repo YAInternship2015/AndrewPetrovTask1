@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-enum MusicalInsrymentType{
+enum MusicalInsrymentType {
     Wind,
     Stringed,
     Percussion,
