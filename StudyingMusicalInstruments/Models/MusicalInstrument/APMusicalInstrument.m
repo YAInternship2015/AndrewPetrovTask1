@@ -21,7 +21,11 @@
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                    andImage:(UIImage *)image {
-
+    
+    if (!(name.length > 0)) {
+        return nil;
+    }
+    
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name                  = name;
     newMusicalInstrument.instrumentDescription = description;

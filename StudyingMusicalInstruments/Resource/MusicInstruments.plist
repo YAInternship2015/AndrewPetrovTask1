@@ -2,6 +2,60 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>xylophone</key>
+	<dict>
+		<key>description</key>
+		<string>xylophone_description</string>
+		<key>image</key>
+		<string>xylophone</string>
+		<key>name</key>
+		<string>xylophone_name</string>
+	</dict>
+	<key>violin</key>
+	<dict>
+		<key>description</key>
+		<string>violin_description</string>
+		<key>image</key>
+		<string>violin</string>
+		<key>name</key>
+		<string>violin_name</string>
+	</dict>
+	<key>trumpet</key>
+	<dict>
+		<key>description</key>
+		<string>trumpet_description</string>
+		<key>image</key>
+		<string>trumpet</string>
+		<key>name</key>
+		<string>trumpet_name</string>
+	</dict>
+	<key>trombone</key>
+	<dict>
+		<key>description</key>
+		<string>trombone_description</string>
+		<key>image</key>
+		<string>trombone</string>
+		<key>name</key>
+		<string>trombone_name</string>
+	</dict>
+	<key>tambourine</key>
+	<dict>
+		<key>description</key>
+		<string>tambourine_description</string>
+		<key>image</key>
+		<string>tambourine</string>
+		<key>name</key>
+		<string>tambourine_name</string>
+	</dict>
+	<key>piano</key>
+	<dict>
+		<key>description</key>
+		<string>piano_description</string>
+		<key>image</key>
+		<string>piano</string>
+		<key>name</key>
+		<string>piano_name</string>
+	</dict>
 	<key>harp</key>
 	<dict>
 		<key>description</key>

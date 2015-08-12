@@ -126,8 +126,8 @@
 		771FF5E01B7B3B8C00BF8D94 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				771FF5F41B7B3CB300BF8D94 /* ViewControllers */,
 				771FF5E41B7B3B8C00BF8D94 /* Utils */,
+				771FF5F41B7B3CB300BF8D94 /* ViewControllers */,
 				771FF5EA1B7B3B8C00BF8D94 /* Views */,
 			);
 			path = Presentation;
