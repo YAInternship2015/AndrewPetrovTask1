@@ -9,6 +9,9 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 
+const NSString *musicalInstrumentNameKey = @"name";
+const NSString *musicalInstrumentDescriptionKey = @"description";
+const NSString *musicalInstrumentImageKey = @"image";
 @interface APMusicalInstrumentsManager ()
 
 //#warning форматирование
@@ -31,16 +34,16 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
-    NSArray *namesArray = [dictionary allKeys];
-    
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     
-    for (NSString *musicalInstrument in namesArray) {
-        NSDictionary *instrumentDictionary = [dictionary objectForKey:musicalInstrument];
+    for (NSString *musicalInstrumentKey in [dictionary allKeys]) {
+        NSDictionary *instrumentDictionary = dictionary[musicalInstrumentKey];
         APMusicalInstrument *newInstrument =
-        [APMusicalInstrument instrumentWithName:NSLocalizedString([instrumentDictionary objectForKey:@"name"], nil)
-                                    description:NSLocalizedString([instrumentDictionary objectForKey:@"description"], nil)
-                                       andImage:[UIImage imageNamed:[instrumentDictionary objectForKey:@"image"]]];
+        [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[musicalInstrumentNameKey], nil)
+                                    description:NSLocalizedString(instrumentDictionary[musicalInstrumentDescriptionKey], nil)
+                                       andImage:[UIImage imageNamed:instrumentDictionary[musicalInstrumentImageKey]]];
+        if (!newInstrument) continue;
+        
         [tempArray addObject:newInstrument];
     }
     allMusicalInstruments.musicalInstruments = tempArray;
