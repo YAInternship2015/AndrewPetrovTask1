@@ -12,7 +12,7 @@
 
 //#warning Форматирование
 + (UIImage *)stubInstrumentCellImage {
-    return [UIImage imageNamed:@"sellStumbImage"];
+    return [UIImage imageNamed:@"sellStubImage"];
 }
 
 @end
