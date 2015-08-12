@@ -37,6 +37,7 @@ const NSString *musicalInstrumentImageKey = @"image";
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     
     for (NSString *musicalInstrumentKey in [dictionary allKeys]) {
+        
         NSDictionary *instrumentDictionary = dictionary[musicalInstrumentKey];
         APMusicalInstrument *newInstrument =
         [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[musicalInstrumentNameKey], nil)
