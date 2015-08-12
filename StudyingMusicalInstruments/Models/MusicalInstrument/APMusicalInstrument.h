@@ -10,10 +10,10 @@
 
 
 typedef enum {
-    Wind,
-    Stringed,
-    Percussion,
-    Keyboard
+    Wind       = 1,
+    Stringed   = 2,
+    Percussion = 3,
+    Keyboard   = 4
 } MusicalInsrymentType;
 
 //#warning За отдельную модель данных - зачёт)

@@ -75,9 +75,9 @@
 		<key>image</key>
 		<string>drumkit</string>
 		<key>type</key>
-		<string>Percussion</string>
-		<key>name</key>
 		<integer>2</integer>
+		<key>name</key>
+		<string>drumkit_name</string>
 	</dict>
 	<key>electro_guitar</key>
 	<dict>
