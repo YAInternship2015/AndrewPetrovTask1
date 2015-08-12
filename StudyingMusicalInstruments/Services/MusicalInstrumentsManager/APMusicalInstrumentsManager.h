@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 //#warning Здесь можно было обойтись @class APMusicalInstrument; и не импортировать класс
-//#import "APMusicalInstrument.h"
 @class APMusicalInstrument;
 @class UIImage;
 //#warning Абсолютно правильная идея - создать отдельный "датасорс" для вью контроллера, а не лепить все данные прямо во вью контроллере. Зачёт

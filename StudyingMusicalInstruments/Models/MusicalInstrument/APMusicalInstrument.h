@@ -23,7 +23,7 @@ enum MusicalInsrymentType{
 //#warning (nonatomic, strong, readonly)
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *instrumentDescription;
-@property (nonatomic, assign, readonly) enum MusicalInsrymentType type;
+//@property (nonatomic, assign, readonly) enum MusicalInsrymentType type;
 @property (nonatomic, strong, readonly) UIImage *instrumentImage;
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
