@@ -24,7 +24,7 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 @implementation APTableViewCell
 
 //#warning По правилам именования методов если ты передаешь модель Instrument, то метод должен звучать setInstrument:
-- (void)setinstrument:(APMusicalInstrument *)instrument {
+- (void)setInstrument:(APMusicalInstrument *)instrument {
 
     if (!instrument) {
         self.nameLabel.text = NSLocalizedString(@"stub_instrument_name", nil);

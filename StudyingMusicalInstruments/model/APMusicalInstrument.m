@@ -12,23 +12,23 @@
 //#warning форматирование
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *instrumentDescription;
-@property (nonatomic, assign) enum MusicalInsrymentType type;
+//@property (nonatomic, assign) enum MusicalInsrymentType type;
 @property (nonatomic, strong) UIImage *instrumentImage;
 
 @end
 
 @implementation APMusicalInstrument
 
-+ (APMusicalInstrument *)initWithName:(NSString *)name
-                          description:(NSString *)description
-                                 type:(enum MusicalInsrymentType)type
-                             andImage:(UIImage *)image {
++ (APMusicalInstrument *)instrumentWithName:(NSString *)name
+                                description:(NSString *)description
+//                                       type:(enum MusicalInsrymentType)type
+                                   andImage:(UIImage *)image {
     
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name                  = name;
     newMusicalInstrument.instrumentDescription = description;
     newMusicalInstrument.instrumentImage       = image;
-    newMusicalInstrument.type                  = type;
+//    newMusicalInstrument.type                  = type;
     return newMusicalInstrument;
 }
 

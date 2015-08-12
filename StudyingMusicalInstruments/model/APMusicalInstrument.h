@@ -18,7 +18,6 @@ enum MusicalInsrymentType{
 
 //#warning За отдельную модель данных - зачёт)
 
-
 @interface APMusicalInstrument : NSObject
 
 //#warning (nonatomic, strong, readonly)
@@ -33,10 +32,10 @@ enum MusicalInsrymentType{
                              andImage:(UIImage *)image;
 
 //#warning снова форматирование поехало
-#warning init методы всегда делаются методами объекта (-). Если хочешь статически создавать объект (+), то тебе нужен так называемый фабричный инициализатор, но он должен называться instrumentWithName:..., по аналогии с [NSArray arrayWith...]
-+(APMusicalInstrument *) initWithName:(NSString *)name
-                          description:(NSString *)description
-                             andImage:(UIImage *)image;
+//#warning init методы всегда делаются методами объекта (-). Если хочешь статически создавать объект (+), то тебе нужен так называемый фабричный инициализатор, но он должен называться instrumentWithName:..., по аналогии с [NSArray arrayWith...]
++(APMusicalInstrument *) instrumentWithName:(NSString *)name
+                                description:(NSString *)description
+                                   andImage:(UIImage *)image;
 
 
 @end

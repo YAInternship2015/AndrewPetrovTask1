@@ -17,6 +17,6 @@ extern NSString *const APTableViewCellIdentifier;
 @interface APTableViewCell : UITableViewCell
 
 //#warning Почитай наши гайды по отступам, вроде мелочь, но очень важная https://github.com/Yalantis/iOS-Guidelines
-- (void)setinstrument:(APMusicalInstrument *)instrument;
+- (void)setInstrument:(APMusicalInstrument *)instrument;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "APMusicalInstrumentsManager.h"
+#import "APMusicalInstrument.h"
 
 @interface APMusicalInstrumentsManager ()
 
@@ -68,14 +69,16 @@
     [allMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"xylophone_name", nil)
                                             description:NSLocalizedString(@"xylophone_description", nil)
                                                andImage:[UIImage imageNamed:@"xylophone"]];
+    
+    
     return allMusicalInstruments;
 }
 
 - (void)addMusicalInstrumentWithName:(NSString *)name description:(NSString *)description andImage:(UIImage *)image {
     
-    APMusicalInstrument *newMusicalInstrument = [APMusicalInstrument initWithName:name
-                                                                      description:description
-                                                                         andImage:image];
+    APMusicalInstrument *newMusicalInstrument = [APMusicalInstrument instrumentWithName:name
+                                                                            description:description
+                                                                               andImage:image];
     
 //#warning почему было не сделать musicalInstruments NSMutableArray? Не было бы проблем с добавлением айтемов
     if (!self.musicalInstruments) {
@@ -84,8 +87,6 @@
     [self.musicalInstruments addObject:newMusicalInstrument];
 }
 
-
-
 //#warning форматирование!!
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
     // todo: add checking
@@ -93,7 +94,7 @@
     if (index < 0 || index >= self.musicalInstruments.count){
         return nil;
     }
-    return (APMusicalInstrument*)self.musicalInstruments[index];
+    return (APMusicalInstrument *)self.musicalInstruments[index];
 }
 
 - (NSInteger)musicalInstrumentsCount {
