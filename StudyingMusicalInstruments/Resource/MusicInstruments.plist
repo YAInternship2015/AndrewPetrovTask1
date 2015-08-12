@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>harp</key>
+	<dict>
+		<key>description</key>
+		<string>harp_description</string>
+		<key>image</key>
+		<string>harp</string>
+		<key>name</key>
+		<string>harp_name</string>
+	</dict>
+	<key>guitar</key>
+	<dict>
+		<key>description</key>
+		<string>guitar_description</string>
+		<key>image</key>
+		<string>guitar</string>
+		<key>name</key>
+		<string>guitar_name</string>
+	</dict>
+	<key>drumkit</key>
+	<dict>
+		<key>description</key>
+		<string>drumkit_description</string>
+		<key>image</key>
+		<string>drumkit</string>
+		<key>name</key>
+		<string>drumkit_name</string>
+	</dict>
+	<key>electro_guitar</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+</dict>
+</plist>

@@ -30,7 +30,7 @@
     
 #warning Можно было все эти данные зашить в какой-ниюудь plist и загрузить их из файла
 #warning И вообще, так как ты находишься внутри класса, не обязательно добавлять новые айтемы через такой интерфейс. Ты знаешь, что есть внутренний массив musicalInstruments, так что можно было создавать айтемы, складировать их в некий временный NSMutableArray и затем напрямую их засеттить в musicalInstruments
-    [allMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit_name", nil)
+    /*[allMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"drumkit_name", nil)
                                             description:NSLocalizedString(@"drumkit_description", nil)
                                                andImage:[UIImage imageNamed:@"drumkit"]];
     
@@ -68,26 +68,44 @@
     
     [allMusicalInstruments addMusicalInstrumentWithName:NSLocalizedString(@"xylophone_name", nil)
                                             description:NSLocalizedString(@"xylophone_description", nil)
-                                               andImage:[UIImage imageNamed:@"xylophone"]];
+                                               andImage:[UIImage imageNamed:@"xylophone"]];*/
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    NSArray *namesArray = [dictionary allKeys];
+    
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    
+    for (NSString *musicalInstrument in namesArray) {
+        NSDictionary *instrumentDictionary = [dictionary objectForKey:musicalInstrument];
+        APMusicalInstrument *newInstrument =
+        [APMusicalInstrument instrumentWithName:[instrumentDictionary objectForKey:@"name"]
+                                    description:[instrumentDictionary objectForKey:@"description"]
+                                       andImage:[UIImage imageNamed:[instrumentDictionary objectForKey:@"image"]]];
+        [tempArray addObject:newInstrument];
+    }
+    NSLog(@"%@", tempArray);
+    
+    allMusicalInstruments.musicalInstruments = tempArray;
     
     return allMusicalInstruments;
 }
 
 - (void)addMusicalInstrumentWithName:(NSString *)name description:(NSString *)description andImage:(UIImage *)image {
 //     убрать а выше через врем массив
+
     APMusicalInstrument *newMusicalInstrument = [APMusicalInstrument instrumentWithName:name
                                                                             description:description
                                                                                andImage:image];
-    
-//#warning почему было не сделать musicalInstruments NSMutableArray? Не было бы проблем с добавлением айтемов
+
     if (!self.musicalInstruments) {
         self.musicalInstruments = [[NSMutableArray alloc] init];
     }
     [self.musicalInstruments addObject:newMusicalInstrument];
 }
 
-//#warning форматирование!!
+
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
     
     if (index < 0 || index >= self.musicalInstruments.count) {

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 //#warning За отдельную модель данных - зачёт)
 
 @interface APMusicalInstrument : NSObject
