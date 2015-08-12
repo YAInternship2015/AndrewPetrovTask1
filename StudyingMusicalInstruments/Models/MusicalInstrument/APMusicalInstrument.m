@@ -12,7 +12,7 @@
 //#warning форматирование
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *instrumentDescription;
-//@property (nonatomic, assign) enum MusicalInsrymentType type;
+@property (nonatomic, assign) MusicalInsrymentType type;
 @property (nonatomic, strong) UIImage *instrumentImage;
 
 @end
@@ -21,14 +21,18 @@
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
-//                                       type:(enum MusicalInsrymentType)type
+                                       type:(MusicalInsrymentType)type
                                    andImage:(UIImage *)image {
+    
+    if ([name isEqualToString:@""] || !name || !type ) {
+        return nil;
+    }
     
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name                  = name;
     newMusicalInstrument.instrumentDescription = description;
     newMusicalInstrument.instrumentImage       = image;
-//    newMusicalInstrument.type                  = type;
+    newMusicalInstrument.type                  = type;
     return newMusicalInstrument;
 }
 

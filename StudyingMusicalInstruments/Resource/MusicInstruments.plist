@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>electro_guitar - 2</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<string>Stringed</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+	<key>electro_guitar - 3</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<string>Stringed</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+	<key>electro_guitar - 4</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<string>Stringed</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+	<key>electro_guitar - 5</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<string>Stringed</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+	<key>electro_guitar - 6</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<string>Stringed</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+	<key>electro_guitar - 7</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<string>Stringed</string>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+	<key>drumkit</key>
+	<dict>
+		<key>description</key>
+		<string>drumkit_description</string>
+		<key>image</key>
+		<string>drumkit</string>
+		<key>type</key>
+		<string>Percussion</string>
+		<key>name</key>
+		<integer>2</integer>
+	</dict>
+	<key>electro_guitar</key>
+	<dict>
+		<key>description</key>
+		<string>electro_guitar_description</string>
+		<key>image</key>
+		<string>electro_guitar</string>
+		<key>type</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>electro_guitar_name</string>
+	</dict>
+</dict>
+</plist>
