@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-enum MusicalInsrymentType {
-    Wind,
-    Stringed,
-    Percussion,
-    Keyboard
-};
-
 //#warning За отдельную модель данных - зачёт)
 
 @interface APMusicalInstrument : NSObject
@@ -23,12 +16,10 @@ enum MusicalInsrymentType {
 //#warning (nonatomic, strong, readonly)
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *instrumentDescription;
-//@property (nonatomic, assign, readonly) enum MusicalInsrymentType type;
 @property (nonatomic, strong, readonly) UIImage *instrumentImage;
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
-//                                       type:(enum MusicalInsrymentType)type
                                    andImage:(UIImage *)image;
 
 //#warning снова форматирование поехало
