@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "APMusicalInstrument.h"
 
 //#warning Здесь можно было обойтись @class APMusicalInstrument; и не импортировать класс
 @class APMusicalInstrument;
