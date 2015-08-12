@@ -14,40 +14,29 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
 @interface APTableViewCell ()
 
-#warning (nonatomic, weak)
-@property (weak, nonatomic) IBOutlet UIImageView *insrumentImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+//#warning (nonatomic, weak)
+@property (nonatomic, weak) IBOutlet UIImageView *insrumentImageView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
 @end
 
 @implementation APTableViewCell
 
-#warning пустой метод
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-#warning этот метод также можно удалить, ты в нем ничего не изменил по сравнению с оригинальной реализацией
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-}
-
-#warning По правилам именования методов если ты передаешь модель Instrument, то метод должен звучать setInstrument:
-- (void) setModel:(APMusicalInstrument*) instrument{
+//#warning По правилам именования методов если ты передаешь модель Instrument, то метод должен звучать setInstrument:
+- (void)setinstrument:(APMusicalInstrument *)instrument {
 
     if (!instrument) {
-        
         self.nameLabel.text = NSLocalizedString(@"stub_instrument_name", nil);
         self.descriptionLabel.text = @"";
         self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
-#warning здесь вместо return лучше было использовать if-else
-        return;
+//#warning здесь вместо return лучше было использовать if-else        
     }
-    
-    self.nameLabel.text = instrument.name;
-    self.descriptionLabel.text = instrument.instrumentDescription;
-    self.insrumentImageView.image = instrument.instrumentImage;
+    else {
+        self.nameLabel.text = instrument.name;
+        self.descriptionLabel.text = instrument.instrumentDescription;
+        self.insrumentImageView.image = instrument.instrumentImage;
+    }
 }
 
 @end

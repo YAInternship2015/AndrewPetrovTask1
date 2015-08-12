@@ -16,7 +16,6 @@
 		771A06091B6FBB4B00552816 /* APMusicalInstrumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A06081B6FBB4B00552816 /* APMusicalInstrumentsManager.m */; };
 		773B08CE1B7244D500442E1E /* APTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 773B08CD1B7244D500442E1E /* APTableViewCell.m */; };
 		773B08D31B7244FB00442E1E /* APTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773B08D01B7244FB00442E1E /* APTableViewController.m */; };
-		773B08D41B7244FB00442E1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773B08D21B7244FB00442E1E /* ViewController.m */; };
 		77CFE8D31B725407006A3CF5 /* UIImage+StudyingMusicalInstruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CFE8D21B725407006A3CF5 /* UIImage+StudyingMusicalInstruments.m */; };
 		77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CFE8D41B725446006A3CF5 /* Images.xcassets */; };
 /* End PBXBuildFile section */
@@ -38,8 +37,6 @@
 		773B08CD1B7244D500442E1E /* APTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewCell.m; sourceTree = "<group>"; };
 		773B08CF1B7244FB00442E1E /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewController.h; sourceTree = "<group>"; };
 		773B08D01B7244FB00442E1E /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewController.m; sourceTree = "<group>"; };
-		773B08D11B7244FB00442E1E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		773B08D21B7244FB00442E1E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		77CFE8D11B725407006A3CF5 /* UIImage+StudyingMusicalInstruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StudyingMusicalInstruments.h"; sourceTree = "<group>"; };
 		77CFE8D21B725407006A3CF5 /* UIImage+StudyingMusicalInstruments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+StudyingMusicalInstruments.m"; sourceTree = "<group>"; };
 		77CFE8D41B725446006A3CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				77CFE8D01B725407006A3CF5 /* utils */,
-				773B08D11B7244FB00442E1E /* ViewController.h */,
-				773B08D21B7244FB00442E1E /* ViewController.m */,
 				773B08CF1B7244FB00442E1E /* APTableViewController.h */,
 				773B08D01B7244FB00442E1E /* APTableViewController.m */,
 				773B08CC1B7244D500442E1E /* APTableViewCell.h */,
@@ -211,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				773B08D41B7244FB00442E1E /* ViewController.m in Sources */,
 				773B08D31B7244FB00442E1E /* APTableViewController.m in Sources */,
 				771A06091B6FBB4B00552816 /* APMusicalInstrumentsManager.m in Sources */,
 				771A06061B6FB5A300552816 /* APMusicalInstrument.m in Sources */,

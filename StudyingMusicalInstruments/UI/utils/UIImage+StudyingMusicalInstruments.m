@@ -8,14 +8,11 @@
 
 #import "UIImage+StudyingMusicalInstruments.h"
 
-
 @implementation UIImage (StudyingMusicalInstruments)
 
-#warning Форматирование
-+ (UIImage*) stubInstrumentCellImage{
-    
+//#warning Форматирование
++ (UIImage *)stubInstrumentCellImage {
     return [UIImage imageNamed:@"sellStumbImage"];
-    
 }
 
 @end

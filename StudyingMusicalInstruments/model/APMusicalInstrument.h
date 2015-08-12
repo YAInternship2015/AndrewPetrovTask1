@@ -16,24 +16,27 @@ enum MusicalInsrymentType{
     Keyboard
 };
 
-#warning За отдельную модель данных - зачёт)
+//#warning За отдельную модель данных - зачёт)
 
 
 @interface APMusicalInstrument : NSObject
 
-#warning (nonatomic, strong, readonly)
-@property (strong, nonatomic, readonly) NSString* name;
-@property (strong, nonatomic, readonly) NSString* instrumentDescription;
-@property (assign, nonatomic, readonly) enum MusicalInsrymentType type;
-@property (strong, nonatomic, readonly) UIImage* instrumentImage;
+//#warning (nonatomic, strong, readonly)
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSString *instrumentDescription;
+@property (nonatomic, assign, readonly) enum MusicalInsrymentType type;
+@property (nonatomic, strong, readonly) UIImage *instrumentImage;
 
++ (APMusicalInstrument *)initWithName:(NSString *)name
+                          description:(NSString *)description
+                                 type:(enum MusicalInsrymentType)type
+                             andImage:(UIImage *)image;
 
-
-+(APMusicalInstrument*) initWithName:(NSString*) name description:(NSString*) description type:(enum MusicalInsrymentType) type andImage: (UIImage*) image;
-
-#warning снова форматирование поехало
+//#warning снова форматирование поехало
 #warning init методы всегда делаются методами объекта (-). Если хочешь статически создавать объект (+), то тебе нужен так называемый фабричный инициализатор, но он должен называться instrumentWithName:..., по аналогии с [NSArray arrayWith...]
-+(APMusicalInstrument*) initWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image;
++(APMusicalInstrument *) initWithName:(NSString *)name
+                          description:(NSString *)description
+                             andImage:(UIImage *)image;
 
 
 @end

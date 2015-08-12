@@ -12,42 +12,40 @@
 
 @interface APTableViewController ()
 
-#warning Тут конечно дело каждого лично, но мы все пишем (nonatomic, strong) :)
-@property (strong, nonatomic) APMusicalInstrumentsManager* allMusicalInstruments;
+//#warning Тут конечно дело каждого лично, но мы все пишем (nonatomic, strong) :)
+@property (nonatomic, strong) APMusicalInstrumentsManager *allMusicalInstruments;
 
 @end
 
 @implementation APTableViewController
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
         NSLog(@"allMusicalInstruments initWithCoder");
 #warning чтобы не дублировать инициализацию APMusicalInstrumentsManager, можно вынести ее, скажем, во viewDidLoad. Пока нет вьюхи, тебе этот менеджер все равно не нужен
-        self.allMusicalInstruments = [APMusicalInstrumentsManager createBasicSetOfInsruments];
+        self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
     }
     return self;
 }
 
 #warning Обрати внимание, что ты по разному расставляешь открывающуюся фигурну скобку. По гайдам Ялантис она ставится на той же строке, что и имя метода, через пробел
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
     if (self) {
         NSLog(@"allMusicalInstruments initWithNibName");
-        self.allMusicalInstruments = [APMusicalInstrumentsManager createBasicSetOfInsruments];
+        self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
     }
     return self;
     
 }
 
-- (instancetype)initWithStyle:(UITableViewStyle)style
-{
+- (instancetype)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         NSLog(@"allMusicalInstruments initWithStyle");
-        self.allMusicalInstruments = [APMusicalInstrumentsManager createBasicSetOfInsruments];
+        self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
     }
     return self;
 }
@@ -78,13 +76,5 @@
     }
     return nil;
 }
-
-#warning такие пустые по факту методы надо удалять
-- (void) viewDidLoad{
-
-//    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-}
-
-
 
 @end

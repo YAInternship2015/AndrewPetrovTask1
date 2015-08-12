@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//@class UIImage;
 
 @interface UIImage (StudyingMusicalInstruments)
 
-+ (UIImage*) stubInstrumentCellImage;
-
++ (UIImage *)stubInstrumentCellImage;
 
 @end

@@ -15,12 +15,10 @@
 
 @interface APMusicalInstrumentsManager : NSObject
 
-
-+ (APMusicalInstrumentsManager*) createBasicSetOfInsruments;
-- (APMusicalInstrument*) musicalInstrumentAtIndex: (NSInteger) index;
-- (NSInteger) musicalInstrumentsCount;
-- (void) addMusicalInstrumentWithName:(NSString*) name description:(NSString*) description andImage: (UIImage*) image;
-- (void) removeMusicalInstrumentWithName:(NSString*) name;
-
++ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
+- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
+- (NSInteger)musicalInstrumentsCount;
+- (void)addMusicalInstrumentWithName:(NSString *)name description:(NSString *)description andImage:(UIImage *)image;
+- (void)removeMusicalInstrumentWithName:(NSString *)name;
 
 @end
