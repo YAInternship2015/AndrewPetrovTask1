@@ -19,35 +19,10 @@
 
 @implementation APMusicalInstrunemtsViewController
 
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        NSLog(@"allMusicalInstruments initWithCoder");
-#warning чтобы не дублировать инициализацию APMusicalInstrumentsManager, можно вынести ее, скажем, во viewDidLoad. Пока нет вьюхи, тебе этот менеджер все равно не нужен
-        self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
-    }
-    return self;
-}
-
-//#warning Обрати внимание, что ты по разному расставляешь открывающуюся фигурну скобку. По гайдам Ялантис она ставится на той же строке, что и имя метода, через пробел
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (void)viewDidLoad {
     
-    self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
-    if (self) {
-        NSLog(@"allMusicalInstruments initWithNibName");
-        self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
-    }
-    return self;
+    self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
     
-}
-
-- (instancetype)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        NSLog(@"allMusicalInstruments initWithStyle");
-        self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
-    }
-    return self;
 }
 
 #pragma mark - UITableViewDataSource
@@ -65,10 +40,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
+//#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
+//    тут будет несколько секций, т ч пока оставлю так, а потом расширю switch
     switch (section) {
         case 0:
-            return NSLocalizedString(@"Musical_Insruments", nil);
+            return NSLocalizedString(@"musical_insruments_table_header_title", nil);
             break;
             
         default:

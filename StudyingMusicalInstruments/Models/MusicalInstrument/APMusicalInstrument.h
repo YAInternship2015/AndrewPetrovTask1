@@ -33,9 +33,6 @@ enum MusicalInsrymentType{
 
 //#warning снова форматирование поехало
 //#warning init методы всегда делаются методами объекта (-). Если хочешь статически создавать объект (+), то тебе нужен так называемый фабричный инициализатор, но он должен называться instrumentWithName:..., по аналогии с [NSArray arrayWith...]
-+(APMusicalInstrument *) instrumentWithName:(NSString *)name
-                                description:(NSString *)description
-                                   andImage:(UIImage *)image;
 
 
 @end
