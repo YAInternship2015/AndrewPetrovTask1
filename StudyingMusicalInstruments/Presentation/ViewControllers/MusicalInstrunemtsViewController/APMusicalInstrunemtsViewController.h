@@ -10,6 +10,6 @@
 
 #warning В сториборде в сцене данного контроллера есть ворнинги. Попытайся их устранить. Там есть лишние констрэйнты и также некоторых не хватает. Хоть оно и работает, как ожидается, лучше ворнинги устранять
 
-@interface APTableViewController : UITableViewController 
+@interface APMusicalInstrunemtsViewController : UITableViewController 
 
 @end

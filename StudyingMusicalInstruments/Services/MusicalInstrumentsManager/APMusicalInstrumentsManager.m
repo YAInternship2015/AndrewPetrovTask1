@@ -11,8 +11,8 @@
 
 @interface APMusicalInstrumentsManager ()
 
-#warning форматирование
-@property (strong, nonatomic) NSMutableArray* musicalInstruments;
+//#warning форматирование
+@property (nonatomic, strong) NSMutableArray *musicalInstruments;
 
 @end
 

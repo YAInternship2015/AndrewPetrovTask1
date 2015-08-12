@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "APTableViewCell.h"
+#import "APMusicalInstrumentCell.h"
 #import "APMusicalInstrument.h"
 #import "UIImage+StudyingMusicalInstruments.h"
 
 NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
-@interface APTableViewCell ()
+@interface APMusicalInstrumentCell ()
 
 //#warning (nonatomic, weak)
 @property (nonatomic, weak) IBOutlet UIImageView *insrumentImageView;
@@ -21,7 +21,7 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
 @end
 
-@implementation APTableViewCell
+@implementation APMusicalInstrumentCell
 
 //#warning По правилам именования методов если ты передаешь модель Instrument, то метод должен звучать setInstrument:
 - (void)setInstrument:(APMusicalInstrument *)instrument {

@@ -13,10 +13,10 @@
 		771A05E91B6F781D00552816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771A05E71B6F781D00552816 /* Main.storyboard */; };
 		771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EC1B6F781D00552816 /* LaunchScreen.xib */; };
 		771FF5EF1B7B3B8C00BF8D94 /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5DF1B7B3B8C00BF8D94 /* APMusicalInstrument.m */; };
-		771FF5F01B7B3B8C00BF8D94 /* APTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5E31B7B3B8C00BF8D94 /* APTableViewCell.m */; };
+		771FF5F01B7B3B8C00BF8D94 /* APMusicalInstrumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5E31B7B3B8C00BF8D94 /* APMusicalInstrumentCell.m */; };
 		771FF5F11B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5E61B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m */; };
 		771FF5F31B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5EE1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m */; };
-		771FF5F81B7B3CB300BF8D94 /* APTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5F71B7B3CB300BF8D94 /* APTableViewController.m */; };
+		771FF5F81B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5F71B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.m */; };
 		77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CFE8D41B725446006A3CF5 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -31,14 +31,14 @@
 		771A05ED1B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		771FF5DE1B7B3B8C00BF8D94 /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
 		771FF5DF1B7B3B8C00BF8D94 /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
-		771FF5E21B7B3B8C00BF8D94 /* APTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewCell.h; sourceTree = "<group>"; };
-		771FF5E31B7B3B8C00BF8D94 /* APTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewCell.m; sourceTree = "<group>"; };
+		771FF5E21B7B3B8C00BF8D94 /* APMusicalInstrumentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentCell.h; sourceTree = "<group>"; };
+		771FF5E31B7B3B8C00BF8D94 /* APMusicalInstrumentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentCell.m; sourceTree = "<group>"; };
 		771FF5E51B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StudyingMusicalInstruments.h"; sourceTree = "<group>"; };
 		771FF5E61B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+StudyingMusicalInstruments.m"; sourceTree = "<group>"; };
 		771FF5ED1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentsManager.h; sourceTree = "<group>"; };
 		771FF5EE1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentsManager.m; sourceTree = "<group>"; };
-		771FF5F61B7B3CB300BF8D94 /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewController.h; sourceTree = "<group>"; };
-		771FF5F71B7B3CB300BF8D94 /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewController.m; sourceTree = "<group>"; };
+		771FF5F61B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrunemtsViewController.h; sourceTree = "<group>"; };
+		771FF5F71B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrunemtsViewController.m; sourceTree = "<group>"; };
 		77CFE8D41B725446006A3CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,8 +58,7 @@
 			children = (
 				771712B51B7233C100AFEB4D /* Localizable.strings */,
 			);
-			name = Resource;
-			path = ../Resource;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		771A05D11B6F781D00552816 = {
@@ -134,8 +133,8 @@
 		771FF5E11B7B3B8C00BF8D94 /* MusicalInstrumentCell */ = {
 			isa = PBXGroup;
 			children = (
-				771FF5E21B7B3B8C00BF8D94 /* APTableViewCell.h */,
-				771FF5E31B7B3B8C00BF8D94 /* APTableViewCell.m */,
+				771FF5E21B7B3B8C00BF8D94 /* APMusicalInstrumentCell.h */,
+				771FF5E31B7B3B8C00BF8D94 /* APMusicalInstrumentCell.m */,
 			);
 			path = MusicalInstrumentCell;
 			sourceTree = "<group>";
@@ -186,8 +185,8 @@
 		771FF5F51B7B3CB300BF8D94 /* MusicalInstrunemtsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				771FF5F61B7B3CB300BF8D94 /* APTableViewController.h */,
-				771FF5F71B7B3CB300BF8D94 /* APTableViewController.m */,
+				771FF5F61B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.h */,
+				771FF5F71B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.m */,
 			);
 			path = MusicalInstrunemtsViewController;
 			sourceTree = "<group>";
@@ -263,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771FF5F81B7B3CB300BF8D94 /* APTableViewController.m in Sources */,
+				771FF5F81B7B3CB300BF8D94 /* APMusicalInstrunemtsViewController.m in Sources */,
 				771FF5F31B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m in Sources */,
-				771FF5F01B7B3B8C00BF8D94 /* APTableViewCell.m in Sources */,
+				771FF5F01B7B3B8C00BF8D94 /* APMusicalInstrumentCell.m in Sources */,
 				771FF5EF1B7B3B8C00BF8D94 /* APMusicalInstrument.m in Sources */,
 				771A05E31B6F781D00552816 /* AppDelegate.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,

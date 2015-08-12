@@ -26,10 +26,10 @@ enum MusicalInsrymentType{
 @property (nonatomic, assign, readonly) enum MusicalInsrymentType type;
 @property (nonatomic, strong, readonly) UIImage *instrumentImage;
 
-+ (APMusicalInstrument *)initWithName:(NSString *)name
-                          description:(NSString *)description
-                                 type:(enum MusicalInsrymentType)type
-                             andImage:(UIImage *)image;
++ (APMusicalInstrument *)instrumentWithName:(NSString *)name
+                                description:(NSString *)description
+//                                       type:(enum MusicalInsrymentType)type
+                                   andImage:(UIImage *)image;
 
 //#warning снова форматирование поехало
 //#warning init методы всегда делаются методами объекта (-). Если хочешь статически создавать объект (+), то тебе нужен так называемый фабричный инициализатор, но он должен называться instrumentWithName:..., по аналогии с [NSArray arrayWith...]

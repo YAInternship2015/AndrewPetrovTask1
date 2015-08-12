@@ -20,6 +20,5 @@
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
 - (NSInteger)musicalInstrumentsCount;
 - (void)addMusicalInstrumentWithName:(NSString *)name description:(NSString *)description andImage:(UIImage *)image;
-- (void)removeMusicalInstrumentWithName:(NSString *)name;
 
 @end

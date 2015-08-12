@@ -5,19 +5,19 @@
 //  Created by Андрей on 8/3/15.
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
-#import "APTableViewController.h"
-#import "APTableViewCell.h"
+#import "APMusicalInstrunemtsViewController.h"
+#import "APMusicalInstrumentCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 
-@interface APTableViewController ()
+@interface APMusicalInstrunemtsViewController ()
 
 //#warning Тут конечно дело каждого лично, но мы все пишем (nonatomic, strong) :)
 @property (nonatomic, strong) APMusicalInstrumentsManager *allMusicalInstruments;
 
 @end
 
-@implementation APTableViewController
+@implementation APMusicalInstrunemtsViewController
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
@@ -29,7 +29,7 @@
     return self;
 }
 
-#warning Обрати внимание, что ты по разному расставляешь открывающуюся фигурну скобку. По гайдам Ялантис она ставится на той же строке, что и имя метода, через пробел
+//#warning Обрати внимание, что ты по разному расставляешь открывающуюся фигурну скобку. По гайдам Ялантис она ставится на той же строке, что и имя метода, через пробел
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil];
@@ -59,7 +59,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    APTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier];
+    APMusicalInstrumentCell* cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier];
     [cell setInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
     return cell;
 }

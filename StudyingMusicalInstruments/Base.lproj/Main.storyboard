@@ -7,16 +7,16 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Musical Instrunemts View Controller-->
         <scene sceneID="MFg-HT-QDT">
             <objects>
-                <tableViewController id="EtX-M6-bpl" customClass="APTableViewController" sceneMemberID="viewController">
+                <tableViewController id="EtX-M6-bpl" customClass="APMusicalInstrunemtsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="bFl-tM-St6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="APTableViewCellIdentifier" rowHeight="120" id="Fjf-BD-gdP" customClass="APTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="APTableViewCellIdentifier" rowHeight="120" id="Fjf-BD-gdP" customClass="APMusicalInstrumentCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fjf-BD-gdP" id="QdP-vQ-wlI">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +27,7 @@
                                                 <constraint firstAttribute="width" secondItem="e8k-HJ-1nK" secondAttribute="height" multiplier="1:1" id="t63-jf-jWh"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW0-I2-Mkx">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW0-I2-Mkx">
                                             <rect key="frame" x="117" y="10" width="465" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="L4w-M7-8am"/>
