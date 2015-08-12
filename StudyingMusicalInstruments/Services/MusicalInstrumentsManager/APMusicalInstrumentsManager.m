@@ -12,6 +12,7 @@
 const NSString *musicalInstrumentNameKey = @"name";
 const NSString *musicalInstrumentDescriptionKey = @"description";
 const NSString *musicalInstrumentImageKey = @"image";
+
 @interface APMusicalInstrumentsManager ()
 
 //#warning форматирование
@@ -28,8 +29,6 @@ const NSString *musicalInstrumentImageKey = @"image";
 
 //#warning Можно было все эти данные зашить в какой-ниюудь plist и загрузить их из файла
 //#warning И вообще, так как ты находишься внутри класса, не обязательно добавлять новые айтемы через такой интерфейс. Ты знаешь, что есть внутренний массив musicalInstruments, так что можно было создавать айтемы, складировать их в некий временный NSMutableArray и затем напрямую их засеттить в musicalInstruments
-    
-    APMusicalInstrumentsManager *allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
 
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
@@ -47,6 +46,8 @@ const NSString *musicalInstrumentImageKey = @"image";
         
         [tempArray addObject:newInstrument];
     }
+    
+    APMusicalInstrumentsManager *allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
     allMusicalInstruments.musicalInstruments = tempArray;
     return allMusicalInstruments;
 }
