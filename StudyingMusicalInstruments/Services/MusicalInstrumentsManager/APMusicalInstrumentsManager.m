@@ -75,7 +75,7 @@
 }
 
 - (void)addMusicalInstrumentWithName:(NSString *)name description:(NSString *)description andImage:(UIImage *)image {
-    
+//     убрать а выше через врем массив
     APMusicalInstrument *newMusicalInstrument = [APMusicalInstrument instrumentWithName:name
                                                                             description:description
                                                                                andImage:image];
@@ -89,9 +89,8 @@
 
 //#warning форматирование!!
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
-    // todo: add checking
     
-    if (index < 0 || index >= self.musicalInstruments.count){
+    if (index < 0 || index >= self.musicalInstruments.count) {
         return nil;
     }
     return (APMusicalInstrument *)self.musicalInstruments[index];

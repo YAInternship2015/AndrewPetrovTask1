@@ -83,7 +83,6 @@
 				771FF5DC1B7B3B8C00BF8D94 /* Models */,
 				771FF5EB1B7B3B8C00BF8D94 /* Services */,
 				771FF5E01B7B3B8C00BF8D94 /* Presentation */,
-				771FF5F41B7B3CB300BF8D94 /* ViewControllers */,
 				771A05E11B6F781D00552816 /* AppDelegate.h */,
 				771A05E21B6F781D00552816 /* AppDelegate.m */,
 				771A05E71B6F781D00552816 /* Main.storyboard */,
@@ -124,6 +123,7 @@
 		771FF5E01B7B3B8C00BF8D94 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				771FF5F41B7B3CB300BF8D94 /* ViewControllers */,
 				771FF5E41B7B3B8C00BF8D94 /* Utils */,
 				771FF5EA1B7B3B8C00BF8D94 /* Views */,
 			);

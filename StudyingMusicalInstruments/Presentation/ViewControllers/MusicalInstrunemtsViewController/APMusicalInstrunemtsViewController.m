@@ -22,7 +22,6 @@
 - (void)viewDidLoad {
     
     self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -34,7 +33,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    APMusicalInstrumentCell* cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier];
+    APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
+                                                                    forIndexPath:indexPath];
     [cell setInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
     return cell;
 }
@@ -42,15 +42,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 //#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
 //    тут будет несколько секций, т ч пока оставлю так, а потом расширю switch
-    switch (section) {
-        case 0:
-            return NSLocalizedString(@"musical_insruments_table_header_title", nil);
-            break;
-            
-        default:
-            break;
-    }
-    return nil;
+    return NSLocalizedString(@"musical_insruments_table_header_title", nil);
 }
 
 @end
