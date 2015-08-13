@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-//@class UIImage;
 
 @interface UIImage (StudyingMusicalInstruments)
 

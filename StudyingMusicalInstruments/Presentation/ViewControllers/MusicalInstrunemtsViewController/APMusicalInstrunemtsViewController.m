@@ -42,7 +42,6 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 //#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
-//    тут будет несколько секций, т ч пока оставлю так, а потом расширю switch
     return NSLocalizedString(@"musical_insruments_table_header_title", nil);
 }
 

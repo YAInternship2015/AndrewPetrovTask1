@@ -9,9 +9,9 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 
-const NSString *musicalInstrumentNameKey = @"name";
-const NSString *musicalInstrumentDescriptionKey = @"description";
-const NSString *musicalInstrumentImageKey = @"image";
+const NSString *APMusicalInstrumentNameKey = @"name";
+const NSString *APMusicalInstrumentDescriptionKey = @"description";
+const NSString *APMusicalInstrumentImageKey = @"image";
 
 @interface APMusicalInstrumentsManager ()
 
@@ -39,9 +39,10 @@ const NSString *musicalInstrumentImageKey = @"image";
         
         NSDictionary *instrumentDictionary = dictionary[musicalInstrumentKey];
         APMusicalInstrument *newInstrument =
-        [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[musicalInstrumentNameKey], nil)
-                                    description:NSLocalizedString(instrumentDictionary[musicalInstrumentDescriptionKey], nil)
-                                       andImage:[UIImage imageNamed:instrumentDictionary[musicalInstrumentImageKey]]];
+        [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
+                                    description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey],
+                                                                  nil)
+                                       andImage:[UIImage imageNamed:instrumentDictionary[APMusicalInstrumentImageKey]]];
         if (!newInstrument) continue;
         
         [tempArray addObject:newInstrument];
