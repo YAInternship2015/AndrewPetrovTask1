@@ -26,6 +26,7 @@
         return nil;
     }
     
+#warning таким выравниванием в obj-c никто не занимается
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name                  = name;
     newMusicalInstrument.instrumentDescription = description;

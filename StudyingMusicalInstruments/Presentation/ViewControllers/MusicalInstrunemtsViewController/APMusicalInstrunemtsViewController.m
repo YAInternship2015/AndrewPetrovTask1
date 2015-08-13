@@ -28,12 +28,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
+#warning здесь не нужна пустая строка
     return [self.allMusicalInstruments musicalInstrumentsCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+#warning здесь не нужна пустая строка    
     APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
     [cell setInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
