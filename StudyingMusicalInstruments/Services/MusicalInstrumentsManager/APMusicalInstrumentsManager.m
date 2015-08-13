@@ -23,7 +23,6 @@ const NSString *APMusicalInstrumentImageKey = @"image";
 @implementation APMusicalInstrumentsManager
 
 + (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments {
-    
 //#warning Статические методы в *.m файле должны идти первыми
 //#warning Есть замечание к имени данного метода. В имени ничего не сказано о создании объекта APMusicalInstrumentsManager. Это фабричный иниализатор, так что его имя должно начинаться с имени сущности. Я бы его назвал managerWithBasicSetOfInstruments
 
@@ -54,7 +53,6 @@ const NSString *APMusicalInstrumentImageKey = @"image";
 }
 
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
-    
     if (index < 0 || index >= self.musicalInstruments.count) {
         return nil;
     }
@@ -62,7 +60,6 @@ const NSString *APMusicalInstrumentImageKey = @"image";
 }
 
 - (NSInteger)musicalInstrumentsCount {
-    
     return self.musicalInstruments.count;
 }
 

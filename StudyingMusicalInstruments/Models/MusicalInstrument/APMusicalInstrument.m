@@ -21,16 +21,14 @@
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                    andImage:(UIImage *)image {
-    
     if (!(name.length > 0)) {
         return nil;
     }
-    
-#warning таким выравниванием в obj-c никто не занимается
-    APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
-    newMusicalInstrument.name                  = name;
+//#warning таким выравниванием в obj-c никто не занимается
+    APMusicalInstrument *newMusicalInstrument = [[APMusicalInstrument alloc] init];
+    newMusicalInstrument.name = name;
     newMusicalInstrument.instrumentDescription = description;
-    newMusicalInstrument.instrumentImage       = image;
+    newMusicalInstrument.instrumentImage = image;
     return newMusicalInstrument;
 }
 

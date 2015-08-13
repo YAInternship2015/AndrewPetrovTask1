@@ -20,7 +20,6 @@
 @implementation APMusicalInstrunemtsViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
 }
@@ -28,12 +27,10 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-#warning здесь не нужна пустая строка
     return [self.allMusicalInstruments musicalInstrumentsCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-#warning здесь не нужна пустая строка    
     APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
     [cell setInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
@@ -41,7 +38,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
     return NSLocalizedString(@"musical_insruments_table_header_title", nil);
 }
 
