@@ -20,7 +20,6 @@
 @implementation APMusicalInstrunemtsViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
 }
@@ -28,21 +27,39 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-    return [self.allMusicalInstruments musicalInstrumentsCount];
+    return [self.allMusicalInstruments musicalInstrumentsCountForType:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
+    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentForType:indexPath.section
+                                                                     atIndex:indexPath.row]];
     return cell;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.allMusicalInstruments musicalInstrumentsTypesCount];
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//#warning Так как и тебя есть вариант хедера только для одной секции, здесь switch не нужен. Достаточно одного if
-    return NSLocalizedString(@"musical_insruments_table_header_title", nil);
+    switch (section) {
+        case APInstrumentsTypeWind:
+            return NSLocalizedString(@"Wind_insruments_table_header_title", nil);
+            break;
+        case APInstrumentsTypeStringed:
+            return NSLocalizedString(@"Stringed_insruments_table_header_title", nil);
+            break;
+        case APInstrumentsTypePercussion:
+            return NSLocalizedString(@"Percussion_insruments_table_header_title", nil);
+            break;
+        case APInstrumentsTypeKeyboard:
+            return NSLocalizedString(@"Keyboard_insruments_table_header_title", nil);
+            break;
+        default:
+            break;
+    }
+    return nil;
 }
 
 @end

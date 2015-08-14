@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "APMusicalInstrument.h"
 
-//#warning Здесь можно было обойтись @class APMusicalInstrument; и не импортировать класс
 @class APMusicalInstrument;
 @class UIImage;
 
@@ -17,7 +17,8 @@
 @interface APMusicalInstrumentsManager : NSObject
 
 + (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
-- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
-- (NSInteger)musicalInstrumentsCount;
+- (NSInteger)musicalInstrumentsTypesCount;
+- (NSInteger)musicalInstrumentsCountForType:(APInstrumentsType)type;
+- (APMusicalInstrument *)musicalInstrumentForType:(APInstrumentsType)type atIndex:(NSInteger)index;
 
 @end

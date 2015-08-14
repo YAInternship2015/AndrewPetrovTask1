@@ -11,60 +11,55 @@
 
 const NSString *APMusicalInstrumentNameKey = @"name";
 const NSString *APMusicalInstrumentDescriptionKey = @"description";
+const NSString *APMusicalInstrumentTypeKey = @"type";
 const NSString *APMusicalInstrumentImageKey = @"image";
+const NSInteger APMusicalInstrumentTypesCount = 4;
 
 @interface APMusicalInstrumentsManager ()
 
-//#warning форматирование
-@property (nonatomic, strong) NSMutableArray *musicalInstruments;
+@property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 
 @end
 
 @implementation APMusicalInstrumentsManager
 
 + (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments {
-    
-//#warning Статические методы в *.m файле должны идти первыми
-//#warning Есть замечание к имени данного метода. В имени ничего не сказано о создании объекта APMusicalInstrumentsManager. Это фабричный иниализатор, так что его имя должно начинаться с имени сущности. Я бы его назвал managerWithBasicSetOfInstruments
-
-//#warning Можно было все эти данные зашить в какой-ниюудь plist и загрузить их из файла
-//#warning И вообще, так как ты находишься внутри класса, не обязательно добавлять новые айтемы через такой интерфейс. Ты знаешь, что есть внутренний массив musicalInstruments, так что можно было создавать айтемы, складировать их в некий временный NSMutableArray и затем напрямую их засеттить в musicalInstruments
-
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    NSMutableArray *tempInstrumentsByType = [[NSMutableArray alloc] init];
     
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < APMusicalInstrumentTypesCount; i++) {
+        NSMutableArray* tempTypeArray = [[NSMutableArray alloc] init];
+        [tempInstrumentsByType addObject:tempTypeArray];
+    }
     
-    for (NSString *musicalInstrumentKey in [dictionary allKeys]) {
-        
-        NSDictionary *instrumentDictionary = dictionary[musicalInstrumentKey];
+    for (NSString *musicalInstrumentKey in [dictionary[@"instruments"] allKeys]) {
+        NSDictionary *instrumentDictionary = dictionary[@"instruments"][musicalInstrumentKey];
         APMusicalInstrument *newInstrument =
         [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
                                     description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey],
                                                                   nil)
-                                       andImage:[UIImage imageNamed:instrumentDictionary[APMusicalInstrumentImageKey]]];
+                                           type:[instrumentDictionary[APMusicalInstrumentTypeKey] integerValue]
+                                          image:[UIImage imageNamed:instrumentDictionary[APMusicalInstrumentImageKey]]];
         if (!newInstrument) continue;
         
-        [tempArray addObject:newInstrument];
+        [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
     }
     
     APMusicalInstrumentsManager *allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
-    allMusicalInstruments.musicalInstruments = tempArray;
+    allMusicalInstruments.musicalInstrumentsByType = tempInstrumentsByType;
     return allMusicalInstruments;
 }
 
-- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
-    
-    if (index < 0 || index >= self.musicalInstruments.count) {
-        return nil;
-    }
-    return (APMusicalInstrument *)self.musicalInstruments[index];
+- (NSInteger)musicalInstrumentsTypesCount {
+    return self.musicalInstrumentsByType.count;
+}
+- (NSInteger)musicalInstrumentsCountForType:(APInstrumentsType)type {
+    return ((NSMutableArray *)self.musicalInstrumentsByType[type]).count;
 }
 
-- (NSInteger)musicalInstrumentsCount {
-    
-    return self.musicalInstruments.count;
+- (APMusicalInstrument *)musicalInstrumentForType:(APInstrumentsType)type atIndex:(NSInteger)index {
+    return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type])[index]);
 }
-
 
 @end

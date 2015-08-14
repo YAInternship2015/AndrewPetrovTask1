@@ -9,9 +9,10 @@
 #import "APMusicalInstrument.h"
 
 @interface APMusicalInstrument ()
-//#warning форматирование
+
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *instrumentDescription;
+@property (nonatomic, assign) APInstrumentsType type;
 @property (nonatomic, strong) UIImage *instrumentImage;
 
 @end
@@ -20,8 +21,8 @@
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
-                                   andImage:(UIImage *)image {
-    
+                                       type:(APInstrumentsType)type
+                                      image:(UIImage *)image {
     if (!(name.length > 0)) {
         return nil;
     }
@@ -29,6 +30,7 @@
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name                  = name;
     newMusicalInstrument.instrumentDescription = description;
+    newMusicalInstrument.type                  = type;
     newMusicalInstrument.instrumentImage       = image;
     return newMusicalInstrument;
 }
