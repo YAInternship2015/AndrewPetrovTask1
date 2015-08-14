@@ -45,7 +45,6 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
         
         [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
     }
-    
     APMusicalInstrumentsManager *allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
     allMusicalInstruments.musicalInstrumentsByType = tempInstrumentsByType;
     return allMusicalInstruments;
@@ -55,6 +54,9 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return self.musicalInstrumentsByType.count;
 }
 - (NSInteger)musicalInstrumentsCountForType:(APInstrumentsType)type {
+    if (type < 0 || type >= [self musicalInstrumentsTypesCount]) {
+        return nil;
+    }
     return ((NSMutableArray *)self.musicalInstrumentsByType[type]).count;
 }
 

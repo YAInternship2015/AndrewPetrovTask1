@@ -26,12 +26,11 @@
     if (!(name.length > 0)) {
         return nil;
     }
-    
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
-    newMusicalInstrument.name                  = name;
+    newMusicalInstrument.name = name;
     newMusicalInstrument.instrumentDescription = description;
-    newMusicalInstrument.type                  = type;
-    newMusicalInstrument.instrumentImage       = image;
+    newMusicalInstrument.type = type;
+    newMusicalInstrument.instrumentImage = image;
     return newMusicalInstrument;
 }
 

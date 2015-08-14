@@ -9,10 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-@class APMusicalInstrument;
 @class UIImage;
-
-//#warning Абсолютно правильная идея - создать отдельный "датасорс" для вью контроллера, а не лепить все данные прямо во вью контроллере. Зачёт
 
 @interface APMusicalInstrumentsManager : NSObject
 
