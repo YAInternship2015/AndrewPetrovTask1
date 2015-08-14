@@ -4,10 +4,10 @@
 <dict>
 	<key>instrument_types</key>
 	<array>
-		<string>APInstrumentsTypeWind</string>
-		<string>APInstrumentsTypeStringed</string>
-		<string>APInstrumentsTypePercussion</string>
-		<string>APInstrumentsTypeKeyboard</string>
+		<string>Wind_insruments_table_header_title</string>
+		<string>Stringed_insruments_table_header_title</string>
+		<string>Percussion_insruments_table_header_title</string>
+		<string>Keyboard_insruments_table_header_title</string>
 	</array>
 	<key>instruments</key>
 	<dict>

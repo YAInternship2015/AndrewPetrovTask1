@@ -42,24 +42,10 @@
     return [self.allMusicalInstruments musicalInstrumentsTypesCount];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    switch (section) {
-        case APInstrumentsTypeWind:
-            return NSLocalizedString(@"Wind_insruments_table_header_title", nil);
-            break;
-        case APInstrumentsTypeStringed:
-            return NSLocalizedString(@"Stringed_insruments_table_header_title", nil);
-            break;
-        case APInstrumentsTypePercussion:
-            return NSLocalizedString(@"Percussion_insruments_table_header_title", nil);
-            break;
-        case APInstrumentsTypeKeyboard:
-            return NSLocalizedString(@"Keyboard_insruments_table_header_title", nil);
-            break;
-        default:
-            break;
-    }
-    return nil;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+    NSArray *typesArray = [NSArray arrayWithArray:[NSDictionary dictionaryWithContentsOfFile:plistPath][@"instrument_types"]];
+    return NSLocalizedString(typesArray[section], nil);
 }
 
 @end
