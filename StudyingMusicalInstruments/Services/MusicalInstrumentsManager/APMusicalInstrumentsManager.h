@@ -17,6 +17,8 @@
 - (NSInteger)musicalInstrumentsTypesCount;
 - (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type;
 - (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index;
-- (NSString *)musicalInstrumentTypeStringNameAtIndex:(NSInteger)index;
+- (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index;
+- (NSInteger)musicalInstrumentsCount;
+- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
 
 @end

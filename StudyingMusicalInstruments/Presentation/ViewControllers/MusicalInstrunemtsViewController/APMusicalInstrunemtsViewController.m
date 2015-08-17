@@ -43,7 +43,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 
-    return [self.allMusicalInstruments musicalInstrumentTypeStringNameAtIndex:section];
+    return [self.allMusicalInstruments musicalInstrumentTypeNameStringAtIndex:section];
 }
 
 @end

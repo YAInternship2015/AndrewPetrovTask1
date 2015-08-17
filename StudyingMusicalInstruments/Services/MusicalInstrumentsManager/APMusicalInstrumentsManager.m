@@ -72,8 +72,15 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type])[index]);
 }
 
-- (NSString *)musicalInstrumentTypeStringNameAtIndex:(NSInteger)index {
+- (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index {
     return NSLocalizedString((NSString *)self.musicalInstrumentsTypes[index], nil);
+}
+
+- (NSInteger)musicalInstrumentsCount {
+    return self.musicalInstruments.count;
+}
+- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
+    return self.musicalInstruments[index];
 }
 
 @end
