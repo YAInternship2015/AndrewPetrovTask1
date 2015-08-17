@@ -19,7 +19,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 
 @property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;
-@property (nonatomic, strong) NSMutableArray *musicalInstrumentsTypes;
+@property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
 
 @end
 
@@ -52,8 +52,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     
     allMusicalInstruments.musicalInstrumentsByType = tempInstrumentsByType;
     allMusicalInstruments.musicalInstruments = tempInstruments;
-    allMusicalInstruments.musicalInstrumentsTypes =
-    [[NSArray arrayWithArray:[NSDictionary dictionaryWithContentsOfFile:plistPath][@"instrument_types"]] mutableCopy];
+    allMusicalInstruments.musicalInstrumentsTypes = dictionary[@"instrument_types"];
     
     return allMusicalInstruments;
 }
@@ -73,8 +72,8 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type])[index]);
 }
 
-- (NSString *)musicalInstrumentTypeNameAtIndex:(NSInteger)index {
-    return (NSString *)self.musicalInstrumentsTypes[index];
+- (NSString *)musicalInstrumentTypeStringNameAtIndex:(NSInteger)index {
+    return NSLocalizedString((NSString *)self.musicalInstrumentsTypes[index], nil);
 }
 
 @end
