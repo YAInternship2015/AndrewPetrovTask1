@@ -15,7 +15,8 @@
 
 + (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
 - (NSInteger)musicalInstrumentsTypesCount;
-- (NSInteger)musicalInstrumentsCountForType:(APInstrumentsType)type;
-- (APMusicalInstrument *)musicalInstrumentForType:(APInstrumentsType)type atIndex:(NSInteger)index;
+- (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type;
+- (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index;
+- (NSString *)musicalInstrumentTypeNameAtIndex:(NSInteger)index;
 
 @end

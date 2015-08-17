@@ -12,7 +12,6 @@
 
 @interface APMusicalInstrunemtsViewController ()
 
-//#warning Тут конечно дело каждого лично, но мы все пишем (nonatomic, strong) :)
 @property (nonatomic, strong) APMusicalInstrumentsManager *allMusicalInstruments;
 
 @end
@@ -27,13 +26,13 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.allMusicalInstruments musicalInstrumentsCountForType:section];
+    return [self.allMusicalInstruments musicalInstrumentsCountWithType:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentForType:indexPath.section
+    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithType:indexPath.section
                                                                      atIndex:indexPath.row]];
     return cell;
 }
@@ -43,9 +42,8 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
-    NSArray *typesArray = [NSArray arrayWithArray:[NSDictionary dictionaryWithContentsOfFile:plistPath][@"instrument_types"]];
-    return NSLocalizedString(typesArray[section], nil);
+
+    return NSLocalizedString([self.allMusicalInstruments musicalInstrumentTypeNameAtIndex:section], nil);
 }
 
 @end
