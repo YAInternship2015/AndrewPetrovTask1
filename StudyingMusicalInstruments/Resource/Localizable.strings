@@ -7,36 +7,41 @@
 */
 
 
-"drumkit_name"                          = "drumkit";
-"drumkit_description"                   = "drumkit description";
+"drumkit_name"               = "drumkit";
+"drumkit_description"        = "drumkit description";
 
-"electro_guitar_name"                   = "electro guitar";
-"electro_guitar_description"            = "electro guitar description";
+"electro_guitar_name"        = "electro guitar";
+"electro_guitar_description" = "electro guitar description";
 
-"guitar_name"                           = "guitar";
-"guitar_description"                    = "guitar description";
+"guitar_name"                = "guitar";
+"guitar_description"         = "guitar description";
 
-"harp_name"                             = "harp";
-"harp_description"                      = "harp description";
+"harp_name"                  = "harp";
+"harp_description"           = "harp description";
 
-"piano_name"                            = "piano";
-"piano_description"                     = "piano description";
+"piano_name"                 = "piano";
+"piano_description"          = "piano description";
 
-"tambourine_name"                       = "tambourine";
-"tambourine_description"                = "tambourine description";
+"tambourine_name"            = "tambourine";
+"tambourine_description"     = "tambourine description";
 
-"trombone_name"                         = "trombone";
-"trombone_description"                  = "trombone description";
+"trombone_name"              = "trombone";
+"trombone_description"       = "trombone description";
 
-"trumpet_name"                          = "trumpet";
-"trumpet_description"                   = "trumpet description";
+"trumpet_name"               = "trumpet";
+"trumpet_description"        = "trumpet description";
 
-"violin_name"                           = "violin";
-"violin_description"                    = "violin description";
+"violin_name"                = "violin";
+"violin_description"         = "violin description";
 
-"xylophone_name"                        = "xylophone";
-"xylophone_description"                 = "xylophone description";
+"xylophone_name"             = "xylophone";
+"xylophone_description"      = "xylophone description";
 
 " stub_instrument_name"                 = "no instrument";
 "musical_insruments_table_header_title" = "Musical Insruments";
+
+"Wind_insruments_table_header_title"       = "Wind";
+"Stringed_insruments_table_header_title"   = "Stringed";
+"Percussion_insruments_table_header_title" = "Percussion";
+"Keyboard_insruments_table_header_title"   = "Keyboard";
 
