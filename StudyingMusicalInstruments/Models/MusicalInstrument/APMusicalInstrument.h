@@ -8,21 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-//#warning За отдельную модель данных - зачёт)
+typedef NS_ENUM(NSInteger, APInstrumentsType) {
+    APInstrumentsTypeWind,
+    APInstrumentsTypeStringed,
+    APInstrumentsTypePercussion,
+    APInstrumentsTypeKeyboard
+};
 
 @interface APMusicalInstrument : NSObject
 
-//#warning (nonatomic, strong, readonly)
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *instrumentDescription;
+@property (nonatomic, assign, readonly) APInstrumentsType type;
 @property (nonatomic, strong, readonly) UIImage *instrumentImage;
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
-                                   andImage:(UIImage *)image;
+                                       type:(APInstrumentsType)type
+                                      image:(UIImage *)image;
 
-//#warning снова форматирование поехало
-//#warning init методы всегда делаются методами объекта (-). Если хочешь статически создавать объект (+), то тебе нужен так называемый фабричный инициализатор, но он должен называться instrumentWithName:..., по аналогии с [NSArray arrayWith...]
 
 
 @end
