@@ -27,6 +27,4 @@ typedef NS_ENUM(NSInteger, APInstrumentsType) {
                                        type:(APInstrumentsType)type
                                       image:(UIImage *)image;
 
-
-
 @end

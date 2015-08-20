@@ -57,6 +57,36 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return allMusicalInstruments;
 }
 
++ (void)copyInstrumentPlistToMainBundle {
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+//    NSString *docPath=[[paths objectAtIndex:0] stringByAppendingString:@"MusicInstruments.plist"];
+    NSString *docPath=[[paths objectAtIndex:0] stringByAppendingPathComponent:@"MusicInstruments.plist"];
+    BOOL fileExists = [fileManager fileExistsAtPath: docPath];
+    NSLog(@"%@", docPath);
+    NSError *error = nil;
+    if(!fileExists) {
+        NSLog(@"file exist");
+        NSLog(@"%@", docPath);
+        NSString *strSourcePath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+        [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
+    }
+}
+
+//compete saving method read https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html
++ (void)saveInstrument:(APMusicalInstrument *)instrument {
+    
+    NSDictionary *instrumentDictionary = @{
+                                           
+                                           };
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+    if ([instrumentDictionary writeToFile:plistPath atomically:YES])
+        NSLog(@"file updated");
+    else
+        NSLog(@"file not updated");
+    NSLog(@"%@", plistPath);
+}
+
 - (NSInteger)musicalInstrumentsTypesCount {
     return self.musicalInstrumentsByType.count;
 }

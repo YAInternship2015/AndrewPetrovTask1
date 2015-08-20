@@ -23,7 +23,7 @@
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
                                       image:(UIImage *)image {
-
+    
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name = name;
     newMusicalInstrument.instrumentDescription = description;
@@ -31,5 +31,6 @@
     newMusicalInstrument.instrumentImage = image;
     return newMusicalInstrument;
 }
+
 
 @end

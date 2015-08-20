@@ -14,6 +14,8 @@
 @interface APMusicalInstrumentsManager : NSObject
 
 + (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
++ (void)saveInstrument:(APMusicalInstrument *)instrument;
++ (void)copyInstrumentPlistToMainBundle;
 - (NSInteger)musicalInstrumentsTypesCount;
 - (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type;
 - (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index;
