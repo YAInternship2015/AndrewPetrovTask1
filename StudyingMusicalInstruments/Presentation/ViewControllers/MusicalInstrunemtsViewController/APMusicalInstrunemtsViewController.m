@@ -9,10 +9,12 @@
 #import "APMusicalInstrumentCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
+#import "APMusicInstrumentsDataSource.h"
+
 
 @interface APMusicalInstrunemtsViewController ()
 
-@property (nonatomic, strong) APMusicalInstrumentsManager *allMusicalInstruments;
+@property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
 
 @end
 
@@ -20,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
+    self.allMusicalInstruments = [APMusicInstrumentsDataSource new];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
     APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
     [APMusicalInstrumentsManager saveInstrument:instrunent];

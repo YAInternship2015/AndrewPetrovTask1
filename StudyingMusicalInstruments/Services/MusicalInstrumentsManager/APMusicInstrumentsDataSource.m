@@ -7,6 +7,7 @@
 //
 
 #import "APMusicInstrumentsDataSource.h"
+#import "NSString+APMusicalInstrumentsManager.h"
 
 
 const NSString *APMusicalInstrumentNameKey = @"name";
@@ -25,8 +26,17 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 
 @implementation APMusicInstrumentsDataSource
 
-+ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setBasicSetOfInstruments];
+    }
+    return self;
+}
+
+- (void)setBasicSetOfInstruments {
+    NSString *plistPath = [NSString instrumentsPlistPath];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
     NSMutableArray *tempInstrumentsByType = [[NSMutableArray alloc] init];
@@ -47,13 +57,10 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
         [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
         [tempInstruments addObject:newInstrument];
     }
-    APMusicalInstrumentsManager *allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
+    self.musicalInstrumentsByType = tempInstrumentsByType;
+    self.musicalInstruments = tempInstruments;
+    self.musicalInstrumentsTypes = dictionary[@"instrument_types"];
     
-    allMusicalInstruments.musicalInstrumentsByType = tempInstrumentsByType;
-    allMusicalInstruments.musicalInstruments = tempInstruments;
-    allMusicalInstruments.musicalInstrumentsTypes = dictionary[@"instrument_types"];
-    
-    return allMusicalInstruments;
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {

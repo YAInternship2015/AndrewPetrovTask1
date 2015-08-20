@@ -13,7 +13,7 @@
 
 @interface APMusicalInstrumentsManager : NSObject
 
-+ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
+//+ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
 + (void)saveInstrument:(APMusicalInstrument *)instrument;
 + (void)copyInstrumentPlistToMainBundle;
 

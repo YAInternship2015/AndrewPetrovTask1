@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "APMusicalInstrument.h"
+
 
 @interface APMusicInstrumentsDataSource : NSObject
 
