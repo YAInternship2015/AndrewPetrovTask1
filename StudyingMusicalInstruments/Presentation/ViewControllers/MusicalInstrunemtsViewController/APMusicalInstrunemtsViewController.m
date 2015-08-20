@@ -22,12 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.allMusicalInstruments = [APMusicInstrumentsDataSource new];
+    self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
-    self.allMusicalInstruments.delegate = self;
     APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
 //    [APMusicalInstrumentsManager saveInstrument:instrunent];
-    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
+//    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
 //    [APMusicalInstrumentsManager saveInstrument:instrunent2];
 }
 
