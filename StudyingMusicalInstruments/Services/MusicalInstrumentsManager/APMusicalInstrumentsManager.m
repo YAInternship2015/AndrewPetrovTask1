@@ -10,17 +10,7 @@
 #import "APMusicalInstrument.h"
 #import "NSString+APMusicalInstrumentsManager.h"
 
-const NSString *APMusicalInstrumentNameKey = @"name";
-const NSString *APMusicalInstrumentDescriptionKey = @"description";
-const NSString *APMusicalInstrumentTypeKey = @"type";
-const NSString *APMusicalInstrumentImageKey = @"image";
-const NSInteger APMusicalInstrumentTypesCount = 4;
-
 @interface APMusicalInstrumentsManager ()
-
-@property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
-@property (nonatomic, strong) NSMutableArray *musicalInstruments;
-@property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
 
 @end
 
@@ -31,37 +21,6 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     NSLog(@"%@", plistPath);
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     return dictionary;
-}
-
-+ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    
-    NSMutableArray *tempInstrumentsByType = [[NSMutableArray alloc] init];
-    NSMutableArray *tempInstruments = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < APMusicalInstrumentTypesCount; i++) {
-        [tempInstrumentsByType addObject:[NSMutableArray new]];
-    }
-    for (NSString *musicalInstrumentKey in [dictionary[@"instruments"] allKeys]) {
-        NSDictionary *instrumentDictionary = dictionary[@"instruments"][musicalInstrumentKey];
-        APMusicalInstrument *newInstrument =
-        [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
-                                    description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey], nil)
-                                           type:[instrumentDictionary[APMusicalInstrumentTypeKey] integerValue]
-                                          image:[UIImage imageNamed:instrumentDictionary[APMusicalInstrumentImageKey]]];
-        if (!newInstrument) continue;
-        
-        [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
-        [tempInstruments addObject:newInstrument];
-    }
-    APMusicalInstrumentsManager *allMusicalInstruments = [[APMusicalInstrumentsManager alloc] init];
-    
-    allMusicalInstruments.musicalInstrumentsByType = tempInstrumentsByType;
-    allMusicalInstruments.musicalInstruments = tempInstruments;
-    allMusicalInstruments.musicalInstrumentsTypes = dictionary[@"instrument_types"];
-    
-    return allMusicalInstruments;
 }
 
 + (void)copyInstrumentPlistToMainBundle {
@@ -86,6 +45,10 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
                                            @"type": @(instrument.type),
                                            @"image": (instrument.instrumentImage ? instrument.name : @"")
                                            };
+    /*NSMutableArray* originalArray;
+     NSMutableArray* newArray;
+     
+     newArray = (NSMutableArray*)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)originalArray, kCFPropertyListMutableContainers);*/
     /*NSMutableDictionary *tempDictionary = (NSMutableDictionary *)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)[self instrumentsPlistContent], kCFPropertyListMutableContainers);*/
     
     NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
@@ -95,44 +58,11 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
         [tempDictionary setObject:[oldDictionary[key]mutableCopy] forKey:key];
     }
     [tempDictionary[@"instruments"] setObject:instrumentDictionary forKey:instrument.name];
-//    [tempDictionary[@"instruments"] addObject:instrumentDictionary];
-    
-    /*NSMutableArray* originalArray;
-    NSMutableArray* newArray;
-    
-    newArray = (NSMutableArray*)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)originalArray, kCFPropertyListMutableContainers);*/
-    
+
     if ([tempDictionary writeToFile:[NSString instrumentsPlistPath] atomically:YES])
         NSLog(@"file updated");
     else
         NSLog(@"file not updated");
 }
-
-- (NSInteger)musicalInstrumentsTypesCount {
-    return self.musicalInstrumentsByType.count;
-}
-
-- (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type {
-    if (type < 0 || type >= [self musicalInstrumentsTypesCount]) {
-        return 0;
-    }
-    return ((NSMutableArray *)self.musicalInstrumentsByType[type]).count;
-}
-
-- (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index {
-    return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type])[index]);
-}
-
-- (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index {
-    return NSLocalizedString((NSString *)self.musicalInstrumentsTypes[index], nil);
-}
-
-- (NSInteger)musicalInstrumentsCount {
-    return self.musicalInstruments.count;
-}
-- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
-    return self.musicalInstruments[index];
-}
-
 
 @end
