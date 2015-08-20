@@ -11,10 +11,10 @@
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
 
-
 @interface APMusicalInstrunemtsViewController ()
 
 @property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
+
 
 @end
 
@@ -24,8 +24,11 @@
     [super viewDidLoad];
     self.allMusicalInstruments = [APMusicInstrumentsDataSource new];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
+    self.allMusicalInstruments.delegate = self;
     APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
-    [APMusicalInstrumentsManager saveInstrument:instrunent];
+//    [APMusicalInstrumentsManager saveInstrument:instrunent];
+    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
+//    [APMusicalInstrumentsManager saveInstrument:instrunent2];
 }
 
 #pragma mark - UITableViewDataSource
@@ -49,5 +52,12 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [self.allMusicalInstruments musicalInstrumentTypeNameStringAtIndex:section];
 }
+
+#pragma mark APMusicInstrumentsDataSourceDelegate
+
+- (void)dataSourceIsUpdated {
+    [self.tableView reloadData];
+}
+
 
 @end

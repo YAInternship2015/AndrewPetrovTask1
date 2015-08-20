@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
+extern NSString* const APModelDidChangeNotification;
+
 @class UIImage;
 
 @interface APMusicalInstrumentsManager : NSObject

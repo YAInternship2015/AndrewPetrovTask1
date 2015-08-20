@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
-
+@protocol APMusicInstrumentsDataSourceDelegate;
 
 @interface APMusicInstrumentsDataSource : NSObject
 
@@ -18,5 +18,13 @@
 - (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index;
 - (NSInteger)musicalInstrumentsCount;
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
+
+@property (nonatomic, weak) id<APMusicInstrumentsDataSourceDelegate>delegate;
+
+@end
+
+@protocol APMusicInstrumentsDataSourceDelegate <NSObject>
+
+- (void)dataSourceIsUpdated;
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APMusicInstrumentsDataSource.h"
 
-//#warning В сториборде в сцене данного контроллера есть ворнинги. Попытайся их устранить. Там есть лишние констрэйнты и также некоторых не хватает. Хоть оно и работает, как ожидается, лучше ворнинги устранять
+@interface APMusicalInstrunemtsViewController : UITableViewController <APMusicInstrumentsDataSourceDelegate>
 
-@interface APMusicalInstrunemtsViewController : UITableViewController 
+- (void)dataSourceIsUpdated;
 
 @end

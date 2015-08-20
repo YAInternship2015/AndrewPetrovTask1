@@ -7,8 +7,8 @@
 //
 
 #import "APMusicInstrumentsDataSource.h"
+#import "APMusicalInstrumentsManager.h"
 #import "NSString+APMusicalInstrumentsManager.h"
-
 
 const NSString *APMusicalInstrumentNameKey = @"name";
 const NSString *APMusicalInstrumentDescriptionKey = @"description";
@@ -30,12 +30,20 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 {
     self = [super init];
     if (self) {
-        [self setBasicSetOfInstruments];
+        [self reloadInstruments];
+        NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self
+               selector:@selector(APModelDidChange)
+                   name:APModelDidChangeNotification
+                 object:nil];
     }
     return self;
 }
-
-- (void)setBasicSetOfInstruments {
+- (void)dealloc
+{
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)reloadInstruments {
     NSString *plistPath = [NSString instrumentsPlistPath];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
@@ -60,7 +68,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     self.musicalInstrumentsByType = tempInstrumentsByType;
     self.musicalInstruments = tempInstruments;
     self.musicalInstrumentsTypes = dictionary[@"instrument_types"];
-    
+    [self.delegate dataSourceIsUpdated];
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {
@@ -89,6 +97,9 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return self.musicalInstruments[index];
 }
 
+- (void) APModelDidChange {
+    [self reloadInstruments];
+}
 
 
 @end

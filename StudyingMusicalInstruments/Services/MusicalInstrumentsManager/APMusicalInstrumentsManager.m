@@ -5,10 +5,12 @@
 //  Created by Андрей on 8/3/15.
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
-
+//TODO: add notification
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "NSString+APMusicalInstrumentsManager.h"
+
+NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
 
 @interface APMusicalInstrumentsManager ()
 
@@ -34,6 +36,8 @@
     }
     NSString *strSourcePath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
     [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
+    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotification object:nil];
+    
 
 }
 
@@ -63,6 +67,7 @@
         NSLog(@"file updated");
     else
         NSLog(@"file not updated");
+    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotification object:nil];
 }
 
 @end
