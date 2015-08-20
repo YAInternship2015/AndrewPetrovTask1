@@ -8,6 +8,7 @@
 
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
+#import "NSString+APMusicalInstrumentsManager.h"
 
 const NSString *APMusicalInstrumentNameKey = @"name";
 const NSString *APMusicalInstrumentDescriptionKey = @"description";
@@ -25,6 +26,13 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 
 @implementation APMusicalInstrumentsManager
 
++ (NSDictionary *)instrumentsPlistContent {
+    NSString *plistPath = [NSString instrumentsPlistPath];
+    NSLog(@"%@", plistPath);
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    return dictionary;
+}
+
 + (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
@@ -35,7 +43,6 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     for (int i = 0; i < APMusicalInstrumentTypesCount; i++) {
         [tempInstrumentsByType addObject:[NSMutableArray new]];
     }
-    
     for (NSString *musicalInstrumentKey in [dictionary[@"instruments"] allKeys]) {
         NSDictionary *instrumentDictionary = dictionary[@"instruments"][musicalInstrumentKey];
         APMusicalInstrument *newInstrument =
@@ -58,33 +65,47 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 }
 
 + (void)copyInstrumentPlistToMainBundle {
-    NSFileManager *fileManager=[NSFileManager defaultManager];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
-//    NSString *docPath=[[paths objectAtIndex:0] stringByAppendingString:@"MusicInstruments.plist"];
-    NSString *docPath=[[paths objectAtIndex:0] stringByAppendingPathComponent:@"MusicInstruments.plist"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *docPath = [NSString instrumentsPlistPath];
     BOOL fileExists = [fileManager fileExistsAtPath: docPath];
-    NSLog(@"%@", docPath);
     NSError *error = nil;
-    if(!fileExists) {
-        NSLog(@"file exist");
-        NSLog(@"%@", docPath);
-        NSString *strSourcePath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
-        [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
+    if(fileExists) {
+        [fileManager removeItemAtPath:docPath error:&error];
     }
+    NSString *strSourcePath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+    [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
+
 }
 
-//compete saving method read https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html
 + (void)saveInstrument:(APMusicalInstrument *)instrument {
     
     NSDictionary *instrumentDictionary = @{
-                                           
+                                           @"name": instrument.name,
+                                           @"description": instrument.instrumentDescription,
+                                           @"type": @(instrument.type),
+                                           @"image": (instrument.instrumentImage ? instrument.name : @"")
                                            };
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
-    if ([instrumentDictionary writeToFile:plistPath atomically:YES])
+    /*NSMutableDictionary *tempDictionary = (NSMutableDictionary *)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)[self instrumentsPlistContent], kCFPropertyListMutableContainers);*/
+    
+    NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
+    NSDictionary *oldDictionary = [self instrumentsPlistContent];
+    
+    for (NSString *key in [oldDictionary allKeys]) {
+        [tempDictionary setObject:[oldDictionary[key]mutableCopy] forKey:key];
+    }
+    [tempDictionary[@"instruments"] setObject:instrumentDictionary forKey:instrument.name];
+//    [tempDictionary[@"instruments"] addObject:instrumentDictionary];
+    
+    /*NSMutableArray* originalArray;
+    NSMutableArray* newArray;
+    
+    newArray = (NSMutableArray*)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)originalArray, kCFPropertyListMutableContainers);*/
+    
+    if ([tempDictionary writeToFile:[NSString instrumentsPlistPath] atomically:YES])
         NSLog(@"file updated");
     else
         NSLog(@"file not updated");
-    NSLog(@"%@", plistPath);
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {

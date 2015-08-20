@@ -22,6 +22,8 @@
     [super viewDidLoad];
     self.allMusicalInstruments = [APMusicalInstrumentsManager managerWithBasicSetOfInstruments];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
+    APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
+    [APMusicalInstrumentsManager saveInstrument:instrunent];
 }
 
 #pragma mark - UITableViewDataSource
