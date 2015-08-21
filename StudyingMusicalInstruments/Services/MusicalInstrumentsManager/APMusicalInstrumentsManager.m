@@ -47,7 +47,7 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
                                            @"name": instrument.name,
                                            @"description": instrument.instrumentDescription,
                                            @"type": @(instrument.type),
-                                           @"image": (instrument.instrumentImage ? instrument.name : @"")
+                                           @"image": (instrument.instrumentImage ? instrument.name : @"sellStubImage")
                                            };
     /*NSMutableArray* originalArray;
      NSMutableArray* newArray;

@@ -25,9 +25,9 @@
     self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
     APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
-//    [APMusicalInstrumentsManager saveInstrument:instrunent];
-//    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
-//    [APMusicalInstrumentsManager saveInstrument:instrunent2];
+    [APMusicalInstrumentsManager saveInstrument:instrunent];
+    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
+    [APMusicalInstrumentsManager saveInstrument:instrunent2];
 }
 
 #pragma mark - UITableViewDataSource
@@ -52,7 +52,7 @@
     return [self.allMusicalInstruments musicalInstrumentTypeNameStringAtIndex:section];
 }
 
-#pragma mark APMusicInstrumentsDataSourceDelegate
+#pragma mark - APMusicInstrumentsDataSourceDelegate
 
 - (void)dataSourceIsUpdated {
     [self.tableView reloadData];

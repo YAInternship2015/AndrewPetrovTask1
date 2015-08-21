@@ -14,7 +14,6 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
 @interface APMusicalInstrumentCell ()
 
-//#warning (nonatomic, weak)
 @property (nonatomic, weak) IBOutlet UIImageView *insrumentImageView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
@@ -23,13 +22,11 @@ NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
 @implementation APMusicalInstrumentCell
 
-//#warning По правилам именования методов если ты передаешь модель Instrument, то метод должен звучать setInstrument:
 - (void)setInstrument:(APMusicalInstrument *)instrument {
     if (!instrument) {
         self.nameLabel.text = NSLocalizedString(@"stub_instrument_name", nil);
         self.descriptionLabel.text = @"";
         self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
-//#warning здесь вместо return лучше было использовать if-else        
     }
     else {
         self.nameLabel.text = instrument.name;
