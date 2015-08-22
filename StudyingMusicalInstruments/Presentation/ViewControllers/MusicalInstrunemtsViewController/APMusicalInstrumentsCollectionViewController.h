@@ -8,16 +8,31 @@
 
 #import <UIKit/UIKit.h>
 #import "APMusicInstrumentsDataSource.h"
-
+@protocol APMusicalInstrumentsCollectionViewControllerDelegate;
 
 @interface APMusicalInstrumentsCollectionViewController : UICollectionViewController
 <APMusicInstrumentsDataSourceDelegate>
 
+- (instancetype)initWithDelegate:(id<APMusicalInstrumentsCollectionViewControllerDelegate>)delegate
+                          layout:(UICollectionViewLayout *)layout;
 - (void)dataSourceIsUpdated;
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
+
+@end
+
+@protocol APMusicalInstrumentsCollectionViewControllerDelegate <NSObject>
+
+- (void)addNewInstrument:(UIBarButtonItem *)sender;
+
+@end
+
+
+
+
+
 
 
 /*@protocol UICollectionViewDataSource <NSObject>
@@ -75,5 +90,3 @@
 
 @end*/
 
-
-@end

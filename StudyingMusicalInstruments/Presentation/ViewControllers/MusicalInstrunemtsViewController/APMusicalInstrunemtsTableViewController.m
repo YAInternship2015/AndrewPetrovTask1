@@ -39,8 +39,12 @@
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                    target:self.delegate
                                                    action:@selector(addNewInstrument:)];
+    UIBarButtonItem* setCollectionViewButtonItem = [[UIBarButtonItem alloc]
+                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
+                                                   target:self.delegate
+                                                   action:@selector(setCollectionView:)];
+    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
     
-    self.navigationItem.rightBarButtonItem = addNewInstrumentButtonItem;
     APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
     [APMusicalInstrumentsManager saveInstrument:instrunent];
     APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];

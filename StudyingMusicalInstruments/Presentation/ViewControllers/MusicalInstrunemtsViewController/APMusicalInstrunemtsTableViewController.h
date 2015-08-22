@@ -11,7 +11,8 @@
 #import "APMusicalInstrunemtsTableViewController.h"
 @protocol APMusicalInstrunemtsTableViewControllerDelegate;
 
-@interface APMusicalInstrunemtsTableViewController : UITableViewController <APMusicInstrumentsDataSourceDelegate>
+@interface APMusicalInstrunemtsTableViewController : UITableViewController
+<APMusicInstrumentsDataSourceDelegate>
 
 - (instancetype)initWithDelegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate;
 - (void)dataSourceIsUpdated;
