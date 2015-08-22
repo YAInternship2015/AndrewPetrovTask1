@@ -5,25 +5,42 @@
 //  Created by Андрей on 8/3/15.
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
-#import "APMusicalInstrunemtsViewController.h"
+#import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
+#import "APMusicalInstrunemtsNavigationController.h"
 
-@interface APMusicalInstrunemtsViewController ()
+@interface APMusicalInstrunemtsTableViewController ()
 
 @property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
-
+@property (nonatomic, weak) id<APMusicalInstrunemtsTableViewControllerDelegate> delegate;
 
 @end
 
-@implementation APMusicalInstrunemtsViewController
+@implementation APMusicalInstrunemtsTableViewController
+
+- (instancetype)initWithDelegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate
+{
+    self = [super init];
+    if (self) {
+        self.delegate = delegate;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
+    
+    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
+                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                   target:self.delegate
+                                                   action:@selector(addNewInstrument:)];
+    
+    self.navigationItem.rightBarButtonItem = addNewInstrumentButtonItem;
     APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
     [APMusicalInstrumentsManager saveInstrument:instrunent];
     APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];

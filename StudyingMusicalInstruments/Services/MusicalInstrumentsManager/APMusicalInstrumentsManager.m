@@ -26,7 +26,6 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
 }
 
 + (void)copyInstrumentPlistToMainBundle {
-    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *docPath = [NSString instrumentsPlistPath];
     BOOL fileExists = [fileManager fileExistsAtPath: docPath];
@@ -37,12 +36,9 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
     NSString *strSourcePath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
     [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
     [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotification object:nil];
-    
-
 }
 
 + (void)saveInstrument:(APMusicalInstrument *)instrument {
-    
     NSDictionary *instrumentDictionary = @{
                                            @"name": instrument.name,
                                            @"description": instrument.instrumentDescription,
@@ -62,7 +58,6 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
         [tempDictionary setObject:[oldDictionary[key]mutableCopy] forKey:key];
     }
     [tempDictionary[@"instruments"] setObject:instrumentDictionary forKey:instrument.name];
-
     if ([tempDictionary writeToFile:[NSString instrumentsPlistPath] atomically:YES])
         NSLog(@"file updated");
     else
