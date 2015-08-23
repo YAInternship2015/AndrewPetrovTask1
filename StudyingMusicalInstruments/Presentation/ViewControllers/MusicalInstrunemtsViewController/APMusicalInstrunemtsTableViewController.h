@@ -14,7 +14,8 @@
 @interface APMusicalInstrunemtsTableViewController : UITableViewController
 <APMusicInstrumentsDataSourceDelegate>
 
-- (instancetype)initWithDelegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate;
+- (instancetype)initWithStyle:(UITableViewStyle)style
+                     delegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate;
 - (void)dataSourceIsUpdated;
 
 @end

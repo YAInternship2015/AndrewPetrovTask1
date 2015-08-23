@@ -21,12 +21,14 @@
 
 @implementation APMusicalInstrunemtsTableViewController
 
-- (instancetype)initWithDelegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate
-{
-    self = [super init];
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+                     delegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate {
+    self = [super initWithStyle:style];
     if (self) {
         self.delegate = delegate;
     }
+    NSLog(@"APMusicalInstrunemtsTableViewController init");
     return self;
 }
 
@@ -34,8 +36,8 @@
     [super viewDidLoad];
     self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
-    
-    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
+  
+    /*UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                    target:self.delegate
                                                    action:@selector(addNewInstrument:)];
@@ -43,12 +45,12 @@
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
                                                    target:self.delegate
                                                    action:@selector(setCollectionView:)];
-    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
+    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];*/
     
-    APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
-    [APMusicalInstrumentsManager saveInstrument:instrunent];
-    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
-    [APMusicalInstrumentsManager saveInstrument:instrunent2];
+//    APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
+//    [APMusicalInstrumentsManager saveInstrument:instrunent];
+//    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
+//    [APMusicalInstrumentsManager saveInstrument:instrunent2];
 }
 
 #pragma mark - UITableViewDataSource

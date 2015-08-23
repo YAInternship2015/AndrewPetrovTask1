@@ -9,12 +9,14 @@
 #import "APMusicalInstrunemtsNavigationController.h"
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicalInstrumentCollectionCell.h"
+#import "APMusicalInstrumentTableCell.h"
 
 @interface APMusicalInstrunemtsNavigationController ()
 
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) APAddMusicalInstrumentViewController *addVC;
+@property (nonatomic, weak) UIView* currentClientView;
 
 @end
 
@@ -22,16 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"APMusicalInstrunemtsNavigationController viewDidLoad");
-    self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithDelegate:self];
     
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    /*UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(100, 100);
     flowLayout.minimumInteritemSpacing = 1;
     flowLayout.minimumInteritemSpacing = 2;
     self.collectionVC = [[APMusicalInstrumentsCollectionViewController alloc] initWithDelegate:self
                                                                                         layout:flowLayout];
-    [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];
+    [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];*/
+    
+    self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithStyle:UITableViewStylePlain
+                                                                         delegate:self];
+    [self.tableVC.tableView registerClass:[APMusicalInstrumentTableCell class]
+                   forCellReuseIdentifier:APTableViewCellIdentifier];
+    self.currentClientView = self.tableVC.view;
+    [self displayContentController:self.tableVC];
+    
     
 }
 
@@ -39,8 +47,7 @@
 - (void)displayContentController:(UIViewController *)content {
     [self addChildViewController:content];                 
     content.view.frame = self.view.frame;
-    [self.view addSubview:content.view];
-//     [self.view addSubview:self.currentClientView];
+    [self.view addSubview:self.currentClientView];
     [content didMoveToParentViewController:self];
 }
 

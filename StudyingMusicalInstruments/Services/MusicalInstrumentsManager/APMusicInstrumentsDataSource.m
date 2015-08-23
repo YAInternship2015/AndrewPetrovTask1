@@ -39,6 +39,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
                    name:APModelDidChangeNotification
                  object:nil];
     }
+    
     return self;
 }
 
@@ -48,6 +49,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     if (self) {
         self.delegate = delegate;
     }
+    NSLog(@"APMusicInstrumentsDataSource init");
     return self;
 }
 - (void)dealloc

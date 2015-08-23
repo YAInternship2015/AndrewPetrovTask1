@@ -15,9 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="EtX-M6-bpl" kind="relationship" relationship="rootViewController" id="fHg-MY-Yev"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x54-90-Baw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
