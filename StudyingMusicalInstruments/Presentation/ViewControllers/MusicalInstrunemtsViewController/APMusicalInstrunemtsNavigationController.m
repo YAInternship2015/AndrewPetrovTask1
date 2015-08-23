@@ -39,8 +39,6 @@
                    forCellReuseIdentifier:APTableViewCellIdentifier];
     self.currentClientView = self.tableVC.view;
     [self displayContentController:self.tableVC];
-    
-    
 }
 
 
