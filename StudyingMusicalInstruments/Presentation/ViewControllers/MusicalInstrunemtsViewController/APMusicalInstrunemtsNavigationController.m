@@ -10,6 +10,7 @@
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicalInstrumentCollectionCell.h"
 #import "APMusicalInstrumentTableCell.h"
+#import "APMusicalInstrumentsManager.h"
 
 @interface APMusicalInstrunemtsNavigationController ()
 
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"APMusicalInstrunemtsNavigationController init");
+    [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
     
     /*UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(100, 100);
@@ -33,12 +36,27 @@
                                                                                         layout:flowLayout];
     [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];*/
     
-    self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithStyle:UITableViewStylePlain
+    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
+                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                   target:nil
+                                                   action:nil];
+
+    self.navigationItem.rightBarButtonItem = addNewInstrumentButtonItem;
+    self.navigationItem.title = @"aaaa";
+    
+    /*self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithStyle:UITableViewStylePlain
                                                                          delegate:self];
     [self.tableVC.tableView registerClass:[APMusicalInstrumentTableCell class]
                    forCellReuseIdentifier:APTableViewCellIdentifier];
+    
+    self.tableVC.tableView.backgroundColor = [UIColor redColor];
+//    self.tableVC.navigationItem.leftBarButtonItems = self.navigationItem.leftBarButtonItems;
     self.currentClientView = self.tableVC.view;
-    [self displayContentController:self.tableVC];
+    
+
+
+
+    [self displayContentController:self.tableVC];*/
 }
 
 

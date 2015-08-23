@@ -35,9 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
-    [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
   
-    /*UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
+    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                    target:self.delegate
                                                    action:@selector(addNewInstrument:)];
@@ -45,7 +44,8 @@
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
                                                    target:self.delegate
                                                    action:@selector(setCollectionView:)];
-    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];*/
+    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
+    NSLog(@"bar created");
     
 //    APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
 //    [APMusicalInstrumentsManager saveInstrument:instrunent];
