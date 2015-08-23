@@ -12,9 +12,6 @@
 
 @interface APMusicalInstrunemtsNavigationController : UINavigationController <APMusicalInstrunemtsTableViewControllerDelegate, APMusicalInstrumentsCollectionViewControllerDelegate>
 
-@property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
-@property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
-
 - (void)addNewInstrument:(UIBarButtonItem *)sender;
 - (void)setCollectionView:(UIBarButtonItem *)sender;
 

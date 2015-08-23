@@ -12,6 +12,8 @@
 
 @interface APMusicalInstrunemtsNavigationController ()
 
+@property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
+@property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) APAddMusicalInstrumentViewController *addVC;
 
 @end
@@ -19,8 +21,10 @@
 @implementation APMusicalInstrunemtsNavigationController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     NSLog(@"APMusicalInstrunemtsNavigationController viewDidLoad");
     self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithDelegate:self];
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(100, 100);
     flowLayout.minimumInteritemSpacing = 1;
@@ -28,7 +32,6 @@
     self.collectionVC = [[APMusicalInstrumentsCollectionViewController alloc] initWithDelegate:self
                                                                                         layout:flowLayout];
     [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];
-
 }
 
 #pragma mark - APMusicalInstrunemtsTableViewController

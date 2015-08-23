@@ -14,14 +14,18 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"init");
+        NSLog(@"APAddMusicalInstrumentViewController init");
     }
     return self;
 }
 
 - (void)dealloc
 {
-    NSLog(@"dealloc");
+    NSLog(@"APAddMusicalInstrumentViewController dealloc");
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"Add viewDidLoad");
+}
 @end

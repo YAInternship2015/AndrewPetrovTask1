@@ -52,6 +52,10 @@
 
 }
 
+- (void)dealloc {
+    NSLog(@"CollectionViewController dealloc");
+}
+
 
 #pragma mark - UICollectionViewDataSource
 
