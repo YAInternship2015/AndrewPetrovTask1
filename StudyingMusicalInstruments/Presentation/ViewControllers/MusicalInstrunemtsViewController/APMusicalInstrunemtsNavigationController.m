@@ -36,27 +36,27 @@
                                                                                         layout:flowLayout];
     [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];*/
     
-    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
-                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                   target:nil
-                                                   action:nil];
-
-    self.navigationItem.rightBarButtonItem = addNewInstrumentButtonItem;
-    self.navigationItem.title = @"aaaa";
     
-    /*self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithStyle:UITableViewStylePlain
+    self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithStyle:UITableViewStylePlain
                                                                          delegate:self];
     [self.tableVC.tableView registerClass:[APMusicalInstrumentTableCell class]
                    forCellReuseIdentifier:APTableViewCellIdentifier];
     
     self.tableVC.tableView.backgroundColor = [UIColor redColor];
-//    self.tableVC.navigationItem.leftBarButtonItems = self.navigationItem.leftBarButtonItems;
+
     self.currentClientView = self.tableVC.view;
     
-
-
-
-    [self displayContentController:self.tableVC];*/
+    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
+                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                   target:self.delegate
+                                                   action:@selector(addNewInstrument:)];
+    UIBarButtonItem* setCollectionViewButtonItem = [[UIBarButtonItem alloc]
+                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
+                                                    target:self.delegate
+                                                    action:@selector(setCollectionView:)];
+     ((UIViewController *)self.childViewControllers.lastObject).navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
+    
+    [self displayContentController:self.tableVC];
 }
 
 
