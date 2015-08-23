@@ -32,6 +32,25 @@
     self.collectionVC = [[APMusicalInstrumentsCollectionViewController alloc] initWithDelegate:self
                                                                                         layout:flowLayout];
     [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];
+    
+}
+
+
+- (void)displayContentController:(UIViewController *)content {
+    [self addChildViewController:content];                 
+    content.view.frame = self.view.frame;
+    [self.view addSubview:content.view];
+//     [self.view addSubview:self.currentClientView];
+    [content didMoveToParentViewController:self];
+}
+
+
+- (void)cycleFromViewController:(UIViewController *)oldC toViewController:(UIViewController *)newC {
+    [oldC willMoveToParentViewController:nil];
+    [self addChildViewController:newC];
+    
+    [oldC removeFromParentViewController];
+    [newC didMoveToParentViewController:self];
 }
 
 #pragma mark - APMusicalInstrunemtsTableViewController
@@ -42,7 +61,7 @@
 }
 
 - (void)setCollectionView:(UIBarButtonItem *)sender {
-    [self pushViewController:self.collectionVC animated:YES];
+    [self displayContentController:self.collectionVC];
 }
 
 @end
