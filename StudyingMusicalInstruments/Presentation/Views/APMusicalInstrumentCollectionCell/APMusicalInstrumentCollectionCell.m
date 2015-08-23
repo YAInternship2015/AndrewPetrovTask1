@@ -7,7 +7,7 @@
 //
 
 #import "APMusicalInstrumentCollectionCell.h"
-#import "APMusicalInstrumentTableCell.h"
+#import "APMusicalInstrumentCell.h"
 #import "APMusicalInstrument.h"
 #import "UIImage+StudyingMusicalInstruments.h"
 

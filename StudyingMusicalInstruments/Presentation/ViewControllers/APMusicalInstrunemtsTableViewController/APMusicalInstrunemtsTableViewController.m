@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 #import "APMusicalInstrunemtsTableViewController.h"
-#import "APMusicalInstrumentTableCell.h"
+#import "APMusicalInstrumentCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
@@ -58,7 +58,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    APMusicalInstrumentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
+    APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
     [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithType:indexPath.section
                                                                      atIndex:indexPath.row]];
