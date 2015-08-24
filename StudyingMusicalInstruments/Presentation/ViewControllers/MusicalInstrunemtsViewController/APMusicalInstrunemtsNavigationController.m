@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
+//TODO - delete root viewcontroller link and add navigation without it
 #import "APMusicalInstrunemtsNavigationController.h"
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicalInstrumentCollectionCell.h"
@@ -17,7 +18,7 @@
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) APAddMusicalInstrumentViewController *addVC;
-@property (nonatomic, weak) UIView* currentClientView;
+@property (nonatomic, strong) UIViewController* currentClientViewController;
 
 @end
 
@@ -28,47 +29,41 @@
     NSLog(@"APMusicalInstrunemtsNavigationController init");
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
     
-    /*UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(100, 100);
-    flowLayout.minimumInteritemSpacing = 1;
-    flowLayout.minimumInteritemSpacing = 2;
-    self.collectionVC = [[APMusicalInstrumentsCollectionViewController alloc] initWithDelegate:self
-                                                                                        layout:flowLayout];
-    [self.collectionVC.collectionView registerClass:[APMusicalInstrumentCollectionCell class] forCellWithReuseIdentifier:@"APCollectionViewCellIdentifier"];*/
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.tableVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrunemtsTableViewController"];
+    self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrumentsCollectionViewController"];
+    self.addVC = [storyboard instantiateViewControllerWithIdentifier:@"APAddMusicalInstrumentViewController"];
     
     
-    self.tableVC = [[APMusicalInstrunemtsTableViewController alloc] initWithStyle:UITableViewStylePlain
-                                                                         delegate:self];
-    [self.tableVC.tableView registerClass:[APMusicalInstrumentTableCell class]
-                   forCellReuseIdentifier:APTableViewCellIdentifier];
-    
-    self.tableVC.tableView.backgroundColor = [UIColor redColor];
+        
+//    self.tableVC.tableView.backgroundColor = [UIColor redColor];
 
-    self.currentClientView = self.tableVC.view;
+    self.currentClientViewController = self.tableVC;
     
     UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                   target:self.delegate
+                                                   target:self
                                                    action:@selector(addNewInstrument:)];
     UIBarButtonItem* setCollectionViewButtonItem = [[UIBarButtonItem alloc]
                                                     initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
-                                                    target:self.delegate
+                                                    target:self
                                                     action:@selector(setCollectionView:)];
      ((UIViewController *)self.childViewControllers.lastObject).navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
     
-    [self displayContentController:self.tableVC];
+    [self displayContentController:self.currentClientViewController];
 }
 
 
 - (void)displayContentController:(UIViewController *)content {
     [self addChildViewController:content];                 
     content.view.frame = self.view.frame;
-    [self.view addSubview:self.currentClientView];
+    [self.view addSubview:self.currentClientViewController.view];
     [content didMoveToParentViewController:self];
 }
 
-
+//todo to figure out with this stuff
 - (void)cycleFromViewController:(UIViewController *)oldC toViewController:(UIViewController *)newC {
+    NSLog(@"cycleFromViewController");
     [oldC willMoveToParentViewController:nil];
     [self addChildViewController:newC];
     
@@ -80,7 +75,7 @@
 
 - (void)addNewInstrument:(UIBarButtonItem *)sender {
     self.addVC = [APAddMusicalInstrumentViewController new];
-    [self pushViewController:self.addVC animated:YES];
+    [self cycleFromViewController:((UIViewController *)self.childViewControllers.lastObject) toViewController:self.addVC];
 }
 
 - (void)setCollectionView:(UIBarButtonItem *)sender {
