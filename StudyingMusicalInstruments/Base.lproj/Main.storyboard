@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="EtX-M6-bpl" kind="relationship" relationship="rootViewController" id="LIL-vV-Omn"/>
+                        <segue destination="EtX-M6-bpl" kind="relationship" relationship="rootViewController" id="b5q-b7-Kt2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x54-90-Baw" userLabel="First Responder" sceneMemberID="firstResponder"/>

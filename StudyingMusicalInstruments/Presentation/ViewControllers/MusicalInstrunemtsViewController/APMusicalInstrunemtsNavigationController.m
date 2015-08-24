@@ -33,12 +33,8 @@
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrunemtsTableViewController"];
     self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrumentsCollectionViewController"];
     self.addVC = [storyboard instantiateViewControllerWithIdentifier:@"APAddMusicalInstrumentViewController"];
-    
-    
-        
-//    self.tableVC.tableView.backgroundColor = [UIColor redColor];
 
-    self.currentClientViewController = self.tableVC;
+//    self.currentClientViewController = self.tableVC;
     
     UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -48,13 +44,19 @@
                                                     initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
                                                     target:self
                                                     action:@selector(setCollectionView:)];
-     ((UIViewController *)self.childViewControllers.lastObject).navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
+     self.topViewController.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
     
-    [self displayContentController:self.currentClientViewController];
+//    self.currentClientViewController.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
+
+    
+//    NSLog(@"\n%@\n%@\n%@",self.currentClientViewController, self.topViewController, self.tableVC);
+    [self displayContentController:self.tableVC];
 }
 
 
 - (void)displayContentController:(UIViewController *)content {
+    NSLog(@"displayContentController");
+    
     [self addChildViewController:content];                 
     content.view.frame = self.view.frame;
     [self.view addSubview:self.currentClientViewController.view];
@@ -64,11 +66,53 @@
 //todo to figure out with this stuff
 - (void)cycleFromViewController:(UIViewController *)oldC toViewController:(UIViewController *)newC {
     NSLog(@"cycleFromViewController");
-    [oldC willMoveToParentViewController:nil];
-    [self addChildViewController:newC];
+//    oldC = (UIViewController *)self.childViewControllers.lastObject;
+//    newC = self.collectionVC;
     
+    [oldC willMoveToParentViewController:nil];
+    [oldC.view removeFromSuperview];
     [oldC removeFromParentViewController];
+//    [self addChildViewController:newC];
+    
+    
+//    [previousViewController willMoveToParentViewController:nil];
+//    [previousViewController.view removeFromSuperview];
+//    [previousViewController removeFromParentViewController];
+//
+    [self addChildViewController:newC];
+    [self.view addSubview:newC.view];
     [newC didMoveToParentViewController:self];
+    
+
+
+//    [oldC removeFromParentViewController];
+//    [newC didMoveToParentViewController:self];
+    
+//    [self addChildViewController:viewController];
+//    self.viewController.view.frame = self.view.bounds;
+//    self.viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    [self.view addSubview:self.viewController.view];
+//    [self.viewController didMoveToParentViewController:self];
+//    
+//    
+    
+    /*newC.view.frame = self.view.frame;
+    CGRect endFrame;
+    endFrame.origin.x = 0;
+    endFrame.origin.y = 0;
+    endFrame.size.height = 200;
+    endFrame.size.width = 200;
+    
+    [self transitionFromViewController: oldC toViewController: newC
+                              duration: 0.25 options:0
+                            animations:^{
+                                newC.view.frame = oldC.view.frame;                    
+                                oldC.view.frame = endFrame;
+                            }
+                            completion:^(BOOL finished) {
+                                [oldC removeFromParentViewController];
+                                [newC didMoveToParentViewController:self];
+                            }];*/
 }
 
 #pragma mark - APMusicalInstrunemtsTableViewController
@@ -79,7 +123,7 @@
 }
 
 - (void)setCollectionView:(UIBarButtonItem *)sender {
-    [self displayContentController:self.collectionVC];
+    [self cycleFromViewController:self.topViewController toViewController:self.collectionVC];
 }
 
 @end
