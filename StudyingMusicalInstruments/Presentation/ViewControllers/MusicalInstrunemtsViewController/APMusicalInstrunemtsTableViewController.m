@@ -10,7 +10,7 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrunemtsNavigationController.h"
+#import "APMusicalInstrunemtsContainerController.h"
 
 @interface APMusicalInstrunemtsTableViewController ()
 

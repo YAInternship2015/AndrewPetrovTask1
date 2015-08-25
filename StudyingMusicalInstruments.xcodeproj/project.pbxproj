@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		770DCF731B87D6EC00FC63E9 /* APMusicalInstrumentCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 770DCF721B87D6EC00FC63E9 /* APMusicalInstrumentCollectionCell.m */; };
-		770DCF761B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.m */; };
+		770DCF761B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m */; };
 		770DCF791B89150F00FC63E9 /* APAddMusicalInstrumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770DCF781B89150F00FC63E9 /* APAddMusicalInstrumentViewController.m */; };
 		771A05E01B6F781D00552816 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05DF1B6F781D00552816 /* main.m */; };
 		771A05E31B6F781D00552816 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05E21B6F781D00552816 /* AppDelegate.m */; };
@@ -32,8 +32,8 @@
 /* Begin PBXFileReference section */
 		770DCF711B87D6EC00FC63E9 /* APMusicalInstrumentCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentCollectionCell.h; sourceTree = "<group>"; };
 		770DCF721B87D6EC00FC63E9 /* APMusicalInstrumentCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentCollectionCell.m; sourceTree = "<group>"; };
-		770DCF741B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrunemtsNavigationController.h; sourceTree = "<group>"; };
-		770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrunemtsNavigationController.m; sourceTree = "<group>"; wrapsLines = 1; };
+		770DCF741B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrunemtsContainerController.h; sourceTree = "<group>"; };
+		770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrunemtsContainerController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		770DCF771B89150F00FC63E9 /* APAddMusicalInstrumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAddMusicalInstrumentViewController.h; sourceTree = "<group>"; };
 		770DCF781B89150F00FC63E9 /* APAddMusicalInstrumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAddMusicalInstrumentViewController.m; sourceTree = "<group>"; };
 		771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyingMusicalInstruments.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,8 +291,8 @@
 		77AF40431B8A3725002BBF95 /* APMusicalInstrunemtsNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				770DCF741B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.h */,
-				770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.m */,
+				770DCF741B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.h */,
+				770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m */,
 			);
 			name = APMusicalInstrunemtsNavigationController;
 			path = MusicalInstrunemtsViewController;
@@ -391,7 +391,7 @@
 				774F22EC1B862A3100C94414 /* APMusicInstrumentsDataSource.m in Sources */,
 				770DCF791B89150F00FC63E9 /* APAddMusicalInstrumentViewController.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,
-				770DCF761B88DD7100FC63E9 /* APMusicalInstrunemtsNavigationController.m in Sources */,
+				770DCF761B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m in Sources */,
 				770DCF731B87D6EC00FC63E9 /* APMusicalInstrumentCollectionCell.m in Sources */,
 				771FF5F11B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m in Sources */,
 				773C32451B83C5F500AA12BC /* APValidator.m in Sources */,
