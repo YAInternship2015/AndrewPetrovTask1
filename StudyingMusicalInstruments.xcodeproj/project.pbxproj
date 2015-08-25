@@ -200,7 +200,6 @@
 		771FF5EC1B7B3B8C00BF8D94 /* MusicalInstrumentsManager */ = {
 			isa = PBXGroup;
 			children = (
-				77AF40431B8A3725002BBF95 /* APMusicalInstrunemtsNavigationController */,
 				771FF5ED1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.h */,
 				771FF5EE1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m */,
 			);
@@ -210,6 +209,7 @@
 		771FF5F41B7B3CB300BF8D94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				77AF40431B8A3725002BBF95 /* APMusicalInstrunemtsContainerController */,
 				77AF40421B8A3718002BBF95 /* APAddMusicalInstrumentViewController */,
 				77AF40411B8A370F002BBF95 /* APMusicalInstrumentsCollectionViewController */,
 				771FF5F51B7B3CB300BF8D94 /* APMusicalInstrunemtsTableViewController */,
@@ -288,14 +288,14 @@
 			path = MusicalInstrunemtsViewController;
 			sourceTree = "<group>";
 		};
-		77AF40431B8A3725002BBF95 /* APMusicalInstrunemtsNavigationController */ = {
+		77AF40431B8A3725002BBF95 /* APMusicalInstrunemtsContainerController */ = {
 			isa = PBXGroup;
 			children = (
 				770DCF741B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.h */,
 				770DCF751B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m */,
 			);
-			name = APMusicalInstrunemtsNavigationController;
-			path = ../../Presentation/ViewControllers/MusicalInstrunemtsViewController;
+			name = APMusicalInstrunemtsContainerController;
+			path = MusicalInstrunemtsViewController;
 			sourceTree = "<group>";
 		};
 		77AF40441B8A373D002BBF95 /* APMusicalInstrumentCollectionCell */ = {

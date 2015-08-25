@@ -12,13 +12,6 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 
-@interface APAddMusicalInstrumentViewController ()
-
-@property (nonatomic, strong) APValidator *instrumentValidator;
-
-@end
-
-
 @implementation APAddMusicalInstrumentViewController
 
 - (instancetype)init
@@ -38,14 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameField.delegate = self;
+    self.descriptionField.delegate = self;
+    self.typeField.delegate = self;
+    [self.nameField becomeFirstResponder];
 }
-
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    return [APValidator validateName:textField.text];
-}
-
 
 
 - (IBAction)actionCheckName:(UITextField *)sender {
@@ -66,4 +55,30 @@
     [APMusicalInstrumentsManager saveInstrument:newInstrument];
     [self.navigationController popViewControllerAnimated:self];
 }
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    return [APValidator validateName:textField.text];
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField{
+    return YES;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if (textField.returnKeyType == UIReturnKeyNext) {
+        UIView *next = [[textField superview] viewWithTag:textField.tag + 1];
+        [next becomeFirstResponder];
+    }
+    else if (textField.returnKeyType == UIReturnKeyDone){
+        [textField resignFirstResponder];
+    }
+
+    return YES;
+}
+
+
+
 @end
