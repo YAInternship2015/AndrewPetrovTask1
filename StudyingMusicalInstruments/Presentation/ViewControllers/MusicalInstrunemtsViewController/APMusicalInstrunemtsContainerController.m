@@ -26,16 +26,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"APMusicalInstrunemtsNavigationController init");
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrunemtsTableViewController"];
     self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrumentsCollectionViewController"];
     self.addVC = [storyboard instantiateViewControllerWithIdentifier:@"APAddMusicalInstrumentViewController"];
-    NSLog(@"\n-------table\n%@\n-------collection\n%@\n-------add\n%@",self.tableVC, self.collectionVC, self.addVC);
-    NSLog(@"\nTop\n%@\ntableVC\n%@\n%@",self.navigationController.topViewController, self.tableVC, self.navigationController.viewControllers);
-    
+
     UIBarButtonItem *addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                    target:self
@@ -44,15 +41,10 @@
                                                     initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
                                                     target:self
                                                     action:@selector(toggleInstrumentsPresentation:)];
-    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
-    
     self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, togglePresentationButtonItem];
     self.navigationItem.title = @"Musical Instrunemts";
-    
-    NSLog(@"\nTop\n%@\ntableVC\n%@\n%@",self.navigationController.topViewController, self.tableVC, self.navigationController.viewControllers);
-    
+
     [self displayContentController:self.tableVC];
-    
 }
 
 
@@ -75,7 +67,6 @@
     }
     else {
          [self displayContentController:self.tableVC];
-        
     }
 }
 
