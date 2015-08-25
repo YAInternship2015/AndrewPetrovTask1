@@ -48,7 +48,6 @@
     
     self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, togglePresentationButtonItem];
     self.navigationItem.title = @"Musical Instrunemts";
-
     
     NSLog(@"\nTop\n%@\ntableVC\n%@\n%@",self.navigationController.topViewController, self.tableVC, self.navigationController.viewControllers);
     
@@ -58,23 +57,10 @@
 
 
 - (void)displayContentController:(UIViewController *)content {
-    NSLog(@"displayContentController");
     [self addChildViewController:content];
-    content.view.frame = self.view.frame;
+    content.view.frame = self.view.bounds;
     [self.view addSubview:content.view];
     [content didMoveToParentViewController:self];
-}
-
-- (void)cycleFromViewController:(UIViewController *)oldC toViewController:(UIViewController *)newC {
-    [oldC willMoveToParentViewController:nil];
-    [oldC.view removeFromSuperview];
-    [oldC removeFromParentViewController];
-
-    
-    [self addChildViewController:newC];
-    newC.view.frame = self.view.frame;
-    [self.view addSubview:newC.view];
-    [newC didMoveToParentViewController:self];
 }
 
 #pragma mark - APMusicalInstrunemtsTableViewController
@@ -85,10 +71,10 @@
 
 - (void)toggleInstrumentsPresentation:(UIBarButtonItem *)sender {
     if ([[self.childViewControllers lastObject] isEqual:self.tableVC]) {
-        [self cycleFromViewController:self.tableVC toViewController:self.collectionVC];
+         [self displayContentController:self.collectionVC];
     }
     else {
-        [self cycleFromViewController:self.collectionVC toViewController:self.tableVC];
+         [self displayContentController:self.tableVC];
         
     }
 }

@@ -13,6 +13,6 @@
 @interface APMusicalInstrunemtsContainerController : UIViewController <APMusicalInstrunemtsTableViewControllerDelegate, APMusicalInstrumentsCollectionViewControllerDelegate>
 
 - (void)addNewInstrument:(UIBarButtonItem *)sender;
-- (void)setCollectionView:(UIBarButtonItem *)sender;
+- (void)toggleInstrumentsPresentation:(UIBarButtonItem *)sender;
 
 @end
