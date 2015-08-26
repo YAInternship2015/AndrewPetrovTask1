@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
+extern NSString *const APMusicalInstrunemtDomain;
+
 @interface APMusicalInstrunemtValidator : NSObject
 
-+ (BOOL)validateName:(NSString *)name /*error:(NSError **)error*/;
++ (BOOL)validateName:(NSString *)name error:(NSError **)error;
 + (BOOL)validateType:(APInstrumentsType)type;
 
 @end

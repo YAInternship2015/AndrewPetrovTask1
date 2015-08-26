@@ -8,12 +8,20 @@
 
 #import "APMusicalInstrunemtValidator.h"
 
+NSString *const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
+
 @implementation APMusicalInstrunemtValidator
 
-
-+ (BOOL)validateName:(NSString *)name {
-    if (name.length < 3) {
-        return NO;
++ (BOOL)validateName:(NSString *)name error:(NSError **)error {
+    if (name.length < 5) {
+        if (error) {
+            NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"The_name_should_be_longer", nil)};
+            
+            *error = [NSError errorWithDomain:APMusicalInstrunemtDomain
+                                         code:42
+                                     userInfo:userInfo];
+            return NO;
+        }
     }
     return YES;
 }

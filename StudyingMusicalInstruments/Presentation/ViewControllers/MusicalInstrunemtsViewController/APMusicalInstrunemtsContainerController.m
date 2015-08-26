@@ -50,7 +50,8 @@
                                          target:self
                                          action:@selector(toggleInstrumentsPresentation:)];
 
-    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, self.togglePresentationButtonItem];
+    self.navigationItem.rightBarButtonItem = addNewInstrumentButtonItem;
+    self.navigationItem.leftBarButtonItem = self.togglePresentationButtonItem;
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);
 
     [self displayContentController:self.tableVC];

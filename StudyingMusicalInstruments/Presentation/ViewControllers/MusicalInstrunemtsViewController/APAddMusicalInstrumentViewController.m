@@ -41,26 +41,43 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
 }
 
 - (IBAction)actionCheckName:(UITextField *)sender {
-    if ([APMusicalInstrunemtValidator validateName:sender.text]) {
+    
+    if (sender.text.length < 3) {
+        sender.textColor = [UIColor redColor];
+        self.saveButton.enabled = NO;
+    }
+    else if (sender.text.length > 4) {
         sender.textColor = [UIColor blackColor];
         self.saveButton.enabled = YES;
     }
     else {
-        sender.textColor = [UIColor redColor];
-        self.saveButton.enabled = NO;
+        sender.textColor = [UIColor grayColor];
+        self.saveButton.enabled = YES;
     }
 }
 
 - (void)actionSave:(UIBarButtonItem *)sender {
     if (![self.nameField.text isEqualToString:@""]) {
-        APMusicalInstrument *newInstrument =
-        [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
-                                           description:self.descriptionField.text
-                                                  type:APInstrumentsTypeWind
-                                                 image:nil];
-        [APMusicalInstrumentsManager saveInstrument:newInstrument];
+        NSError *error = nil;
+        [APMusicalInstrunemtValidator validateName:self.nameField.text
+                                             error:&error];
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:error.localizedDescription
+                                        message:error.localizedRecoverySuggestion
+                                       delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                              otherButtonTitles:nil, nil] show];
+        }
+        else {
+            APMusicalInstrument *newInstrument =
+            [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
+                                               description:self.descriptionField.text
+                                                      type:APInstrumentsTypeWind
+                                                     image:nil];
+            [APMusicalInstrumentsManager saveInstrument:newInstrument];
+            [self.delegate didSaved:self];
+        }
     }
-    [self.delegate didSaved:self];
 }
 
 #pragma mark - UITextFieldDelegate
