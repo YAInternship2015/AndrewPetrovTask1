@@ -14,6 +14,12 @@
 
 NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalInstrumentViewControllerIdentifier";
 
+@interface APAddMusicalInstrumentViewController ()
+
+@property (nonatomic, strong) UIBarButtonItem *saveButton;
+
+@end
+
 @implementation APAddMusicalInstrumentViewController
 
 - (void)dealloc
@@ -28,18 +34,26 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
     self.typeField.delegate = self;
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
+    self.saveButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Save", nil)
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(actionSave:)];
+    self.saveButton.enabled = NO;
+    self.navigationItem.rightBarButtonItem = self.saveButton;
 }
 
 - (IBAction)actionCheckName:(UITextField *)sender {
     if ([APMusicalInstrunemtValidator validateName:sender.text]) {
         sender.textColor = [UIColor blackColor];
+        self.saveButton.enabled = YES;
     }
     else {
         sender.textColor = [UIColor redColor];
+        self.saveButton.enabled = NO;
     }
 }
-//todo: save to navigation bar
-- (IBAction)actionSave:(UIButton *)sender {
+
+- (void)actionSave:(UIBarButtonItem *)sender {
     if (![self.nameField.text isEqualToString:@""]) {
         APMusicalInstrument *newInstrument =
         [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
@@ -52,10 +66,6 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
 }
 
 #pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldClear:(UITextField *)textField {
-    return YES;
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     

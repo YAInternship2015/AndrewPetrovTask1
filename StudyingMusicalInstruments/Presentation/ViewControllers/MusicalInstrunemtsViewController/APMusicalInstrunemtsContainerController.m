@@ -72,11 +72,10 @@
 }
 
 #pragma mark - APAddMusicalInstrumentViewControllerDelegate
-//FIXME: if canlel addind instument just from start and try to add one more time textfield became inactive
+
 - (void)addingCanceled {
 //    here can be some other implementation
     [self.navigationController popViewControllerAnimated:YES];
-    self.addVC = nil;
 }
 
 - (void)didSaved:(APAddMusicalInstrumentViewController *)addController {

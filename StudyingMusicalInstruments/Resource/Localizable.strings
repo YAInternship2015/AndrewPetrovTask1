@@ -37,7 +37,7 @@
 "xylophone_name"             = "xylophone";
 "xylophone_description"      = "xylophone description";
 
-" stub_instrument_name"                 = "no instrument";
+"stub_instrument_name"                 = "no instrument";
 "musical_insruments_table_header_title" = "Musical Insruments";
 
 "Wind_insruments_table_header_title"       = "Wind";
@@ -47,5 +47,6 @@
 
 "Musical_instruments" = "Musical instruments";
 "Add_new_instrument" = "Add new instrument";
+"Save" = "Save";
 
 
