@@ -27,6 +27,7 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
     self.descriptionField.delegate = self;
     self.typeField.delegate = self;
     [self.nameField becomeFirstResponder];
+    self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
 }
 
 - (IBAction)actionCheckName:(UITextField *)sender {
@@ -39,23 +40,18 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
 }
 //todo: save to navigation bar
 - (IBAction)actionSave:(UIButton *)sender {
-    APMusicalInstrument *newInstrument =
-    [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
-                                       description:self.descriptionField.text
-                                              type:APInstrumentsTypeWind
-                                             image:nil];
-    [APMusicalInstrumentsManager saveInstrument:newInstrument];
+    if (![self.nameField.text isEqualToString:@""]) {
+        APMusicalInstrument *newInstrument =
+        [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
+                                           description:self.descriptionField.text
+                                                  type:APInstrumentsTypeWind
+                                                 image:nil];
+        [APMusicalInstrumentsManager saveInstrument:newInstrument];
+    }
     [self.delegate didSaved:self];
 }
 
 #pragma mark - UITextFieldDelegate
-
-/*- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    if ([textField isEqual:self.nameField]) {
-        return [APValidator validateName:textField.text];
-    }
-    return YES;
-}*/
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
     return YES;
