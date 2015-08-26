@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-//TODO - delete root viewcontroller link and add navigation without it
 #import "APMusicalInstrunemtsContainerController.h"
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicalInstrumentCollectionCell.h"
@@ -29,8 +28,8 @@
     [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.tableVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrunemtsTableViewController"];
-    self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:@"APMusicalInstrumentsCollectionViewController"];
+    self.tableVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrunemtsTableViewControllerIdentifier];
+    self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrumentsCollectionViewControllerIdentifier];
 
     UIBarButtonItem *addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -58,7 +57,7 @@
 
 - (void)addNewInstrument:(UIBarButtonItem *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.addVC = [storyboard instantiateViewControllerWithIdentifier:@"APAddMusicalInstrumentViewController"];
+    self.addVC = [storyboard instantiateViewControllerWithIdentifier:APAddMusicalInstrumentViewControllerIdentifier];
     self.addVC.delegate = self;
     [self.navigationController pushViewController:self.addVC animated:YES];
 }
@@ -80,7 +79,7 @@
     self.addVC = nil;
 }
 
-- (void)addingDone {
+- (void)didSaved:(APAddMusicalInstrumentViewController *)addController {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

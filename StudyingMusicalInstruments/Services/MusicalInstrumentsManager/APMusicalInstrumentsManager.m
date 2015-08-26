@@ -44,12 +44,6 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
                                            @"type": @(instrument.type),
                                            @"image": (instrument.instrumentImage ? instrument.name : @"sellStubImage")
                                            };
-    /*NSMutableArray* originalArray;
-     NSMutableArray* newArray;
-     
-     newArray = (NSMutableArray*)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)originalArray, kCFPropertyListMutableContainers);*/
-    /*NSMutableDictionary *tempDictionary = (NSMutableDictionary *)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)[self instrumentsPlistContent], kCFPropertyListMutableContainers);*/
-    
     NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
     NSDictionary *oldDictionary = [self instrumentsPlistContent];
     

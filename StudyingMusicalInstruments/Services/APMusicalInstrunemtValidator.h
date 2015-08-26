@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-@interface APValidator : NSObject
+@interface APMusicalInstrunemtValidator : NSObject
 
 + (BOOL)validateName:(NSString *)name;
 + (BOOL)validateType:(APInstrumentsType)type;

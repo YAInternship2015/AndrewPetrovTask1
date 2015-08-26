@@ -12,25 +12,15 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicalInstrunemtsContainerController.h"
 
+NSString* const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
+
 @interface APMusicalInstrunemtsTableViewController ()
 
 @property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
-@property (nonatomic, weak) id<APMusicalInstrunemtsTableViewControllerDelegate> delegate;
 
 @end
 
 @implementation APMusicalInstrunemtsTableViewController
-
-
-- (instancetype)initWithStyle:(UITableViewStyle)style
-                     delegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate {
-    self = [super initWithStyle:style];
-    if (self) {
-        self.delegate = delegate;
-    }
-    NSLog(@"APMusicalInstrunemtsTableViewController init");
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,7 +51,7 @@
 
 #pragma mark - APMusicInstrumentsDataSourceDelegate
 
-- (void)dataSourceIsUpdated {
+- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.tableView reloadData];
 }
 

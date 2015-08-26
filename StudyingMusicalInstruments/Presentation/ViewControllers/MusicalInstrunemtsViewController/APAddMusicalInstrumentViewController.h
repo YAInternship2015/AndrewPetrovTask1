@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @protocol APAddMusicalInstrumentViewControllerDelegate;
 
+extern NSString *const APAddMusicalInstrumentViewControllerIdentifier;
+
 @interface APAddMusicalInstrumentViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
@@ -16,12 +18,11 @@
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 - (IBAction)actionCheckName:(UITextField *)sender;
 - (IBAction)actionSave:(UIButton *)sender;
-@property (nonatomic, weak)id<APAddMusicalInstrumentViewControllerDelegate>delegate;
+@property (nonatomic, weak) id<APAddMusicalInstrumentViewControllerDelegate>delegate;
 @end
 
 @protocol APAddMusicalInstrumentViewControllerDelegate
 
-- (void)addingCanceled;
-- (void)addingDone;
+- (void)didSaved:(APAddMusicalInstrumentViewController *)addController;
 
 @end

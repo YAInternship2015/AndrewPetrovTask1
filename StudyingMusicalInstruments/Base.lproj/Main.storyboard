@@ -10,7 +10,7 @@
         <!--Add Musical Instrument View Controller-->
         <scene sceneID="iEp-q5-IQi">
             <objects>
-                <viewController storyboardIdentifier="APAddMusicalInstrumentViewController" id="Vcs-I5-Q97" customClass="APAddMusicalInstrumentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="APAddMusicalInstrumentViewControllerIdentifier" id="Vcs-I5-Q97" customClass="APAddMusicalInstrumentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gcQ-5r-cS0"/>
                         <viewControllerLayoutGuide type="bottom" id="q0y-aC-Mh2"/>
@@ -143,7 +143,7 @@
         <!--Musical Instruments Collection View Controller-->
         <scene sceneID="aT9-es-GI8">
             <objects>
-                <collectionViewController storyboardIdentifier="APMusicalInstrumentsCollectionViewController" id="S0K-ab-RyH" customClass="APMusicalInstrumentsCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="APMusicalInstrumentsCollectionViewControllerIdentifier" id="S0K-ab-RyH" customClass="APMusicalInstrumentsCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TQg-0v-HLJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,6 +183,7 @@
                             <outlet property="delegate" destination="S0K-ab-RyH" id="HKK-40-b3F"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="v0X-mt-Lwr"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHc-UH-UxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,7 +212,7 @@
         <!--Title-->
         <scene sceneID="MFg-HT-QDT">
             <objects>
-                <tableViewController storyboardIdentifier="APMusicalInstrunemtsTableViewController" id="EtX-M6-bpl" customClass="APMusicalInstrunemtsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="APMusicalInstrunemtsTableViewControllerIdentifier" id="EtX-M6-bpl" customClass="APMusicalInstrunemtsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="bFl-tM-St6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

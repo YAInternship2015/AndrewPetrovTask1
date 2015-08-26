@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "APValidator.h"
+#import "APMusicalInstrunemtValidator.h"
 
-@implementation APValidator
+@implementation APMusicalInstrunemtValidator
 
 
 + (BOOL)validateName:(NSString *)name {

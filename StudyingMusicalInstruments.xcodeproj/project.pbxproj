@@ -19,7 +19,7 @@
 		771FF5F11B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5E61B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m */; };
 		771FF5F31B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5EE1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m */; };
 		771FF5F81B7B3CB300BF8D94 /* APMusicalInstrunemtsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771FF5F71B7B3CB300BF8D94 /* APMusicalInstrunemtsTableViewController.m */; };
-		773C32451B83C5F500AA12BC /* APValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C32441B83C5F500AA12BC /* APValidator.m */; };
+		773C32451B83C5F500AA12BC /* APMusicalInstrunemtValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C32441B83C5F500AA12BC /* APMusicalInstrunemtValidator.m */; };
 		773C32481B83C7CB00AA12BC /* APMusicalInstrunemtFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C32471B83C7CB00AA12BC /* APMusicalInstrunemtFactory.m */; };
 		773C324B1B86135D00AA12BC /* NSString+APMusicalInstrumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C324A1B86135D00AA12BC /* NSString+APMusicalInstrumentsManager.m */; };
 		774A648B1B7BFD4E00C58E36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 774A648A1B7BFD4E00C58E36 /* Localizable.strings */; };
@@ -53,8 +53,8 @@
 		771FF5EE1B7B3B8C00BF8D94 /* APMusicalInstrumentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentsManager.m; sourceTree = "<group>"; };
 		771FF5F61B7B3CB300BF8D94 /* APMusicalInstrunemtsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrunemtsTableViewController.h; sourceTree = "<group>"; };
 		771FF5F71B7B3CB300BF8D94 /* APMusicalInstrunemtsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrunemtsTableViewController.m; sourceTree = "<group>"; };
-		773C32431B83C5F500AA12BC /* APValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APValidator.h; path = StudyingMusicalInstruments/Services/APValidator.h; sourceTree = "<group>"; };
-		773C32441B83C5F500AA12BC /* APValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APValidator.m; path = StudyingMusicalInstruments/Services/APValidator.m; sourceTree = "<group>"; };
+		773C32431B83C5F500AA12BC /* APMusicalInstrunemtValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMusicalInstrunemtValidator.h; path = StudyingMusicalInstruments/Services/APMusicalInstrunemtValidator.h; sourceTree = "<group>"; };
+		773C32441B83C5F500AA12BC /* APMusicalInstrunemtValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMusicalInstrunemtValidator.m; path = StudyingMusicalInstruments/Services/APMusicalInstrunemtValidator.m; sourceTree = "<group>"; };
 		773C32461B83C7CB00AA12BC /* APMusicalInstrunemtFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMusicalInstrunemtFactory.h; path = StudyingMusicalInstruments/APMusicalInstrunemtFactory.h; sourceTree = "<group>"; };
 		773C32471B83C7CB00AA12BC /* APMusicalInstrunemtFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMusicalInstrunemtFactory.m; path = StudyingMusicalInstruments/APMusicalInstrunemtFactory.m; sourceTree = "<group>"; };
 		773C32491B86135D00AA12BC /* NSString+APMusicalInstrumentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+APMusicalInstrumentsManager.h"; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 		771FF5DC1B7B3B8C00BF8D94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				77F754781B8E260E00F7C08B /* Utils */,
+				77AF403D1B8A36AC002BBF95 /* APMusicalInstrunemtValidator */,
 				771FF5DD1B7B3B8C00BF8D94 /* MusicalInstrument */,
 			);
 			path = Models;
@@ -170,9 +172,7 @@
 		771FF5E41B7B3B8C00BF8D94 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				77AF40401B8A36F4002BBF95 /* NSString+APMusicalInstrumentsManager */,
-				771FF5E51B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.h */,
-				771FF5E61B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m */,
+				77F754771B8E25FA00F7C08B /* UIImage+StudyingMusicalInstruments */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -190,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				77AF403F1B8A36E5002BBF95 /* APMusicInstrumentsDataSource */,
-				77AF403D1B8A36AC002BBF95 /* APValidator */,
 				77AF403E1B8A36B3002BBF95 /* APMusicalInstrunemtFactory */,
 				771FF5EC1B7B3B8C00BF8D94 /* MusicalInstrumentsManager */,
 			);
@@ -228,13 +227,13 @@
 			path = MusicalInstrunemtsViewController;
 			sourceTree = "<group>";
 		};
-		77AF403D1B8A36AC002BBF95 /* APValidator */ = {
+		77AF403D1B8A36AC002BBF95 /* APMusicalInstrunemtValidator */ = {
 			isa = PBXGroup;
 			children = (
-				773C32431B83C5F500AA12BC /* APValidator.h */,
-				773C32441B83C5F500AA12BC /* APValidator.m */,
+				773C32431B83C5F500AA12BC /* APMusicalInstrunemtValidator.h */,
+				773C32441B83C5F500AA12BC /* APMusicalInstrunemtValidator.m */,
 			);
-			name = APValidator;
+			name = APMusicalInstrunemtValidator;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -265,7 +264,7 @@
 				773C324A1B86135D00AA12BC /* NSString+APMusicalInstrumentsManager.m */,
 			);
 			name = "NSString+APMusicalInstrumentsManager";
-			path = ../../Services/MusicalInstrumentsManager;
+			path = ../Services/MusicalInstrumentsManager;
 			sourceTree = "<group>";
 		};
 		77AF40411B8A370F002BBF95 /* APMusicalInstrumentsCollectionViewController */ = {
@@ -306,6 +305,23 @@
 			);
 			name = APMusicalInstrumentCollectionCell;
 			path = MusicalInstrumentCell;
+			sourceTree = "<group>";
+		};
+		77F754771B8E25FA00F7C08B /* UIImage+StudyingMusicalInstruments */ = {
+			isa = PBXGroup;
+			children = (
+				771FF5E51B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.h */,
+				771FF5E61B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m */,
+			);
+			name = "UIImage+StudyingMusicalInstruments";
+			sourceTree = "<group>";
+		};
+		77F754781B8E260E00F7C08B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				77AF40401B8A36F4002BBF95 /* NSString+APMusicalInstrumentsManager */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +410,7 @@
 				770DCF761B88DD7100FC63E9 /* APMusicalInstrunemtsContainerController.m in Sources */,
 				770DCF731B87D6EC00FC63E9 /* APMusicalInstrumentCollectionCell.m in Sources */,
 				771FF5F11B7B3B8C00BF8D94 /* UIImage+StudyingMusicalInstruments.m in Sources */,
-				773C32451B83C5F500AA12BC /* APValidator.m in Sources */,
+				773C32451B83C5F500AA12BC /* APMusicalInstrunemtValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
