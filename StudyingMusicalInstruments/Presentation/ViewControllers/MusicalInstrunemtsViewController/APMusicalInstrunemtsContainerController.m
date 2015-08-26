@@ -77,7 +77,7 @@
 - (void)addingCanceled {
 //    here can be some other implementation
     [self.navigationController popViewControllerAnimated:YES];
-//    self.addVC = nil;
+    self.addVC = nil;
 }
 
 - (void)addingDone {

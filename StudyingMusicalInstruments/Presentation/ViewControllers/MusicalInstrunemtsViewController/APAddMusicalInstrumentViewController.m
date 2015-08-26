@@ -26,6 +26,10 @@
     self.typeField.delegate = self;
     [self.nameField becomeFirstResponder];
 }
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.delegate addingCanceled];
+}
 
 - (IBAction)actionCheckName:(UITextField *)sender {
     if ([APValidator validateName:sender.text]) {
@@ -45,11 +49,6 @@
     [APMusicalInstrumentsManager saveInstrument:newInstrument];
     [self.delegate addingDone];
 }
-
-- (IBAction)actionCancel:(UIButton *)sender {
-    [self.delegate addingCanceled];
-}
-
 
 #pragma mark - UITextFieldDelegate
 

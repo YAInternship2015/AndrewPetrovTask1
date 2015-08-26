@@ -84,15 +84,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZU-IX-AKU">
-                                <rect key="frame" x="36" y="246" width="48" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionCancel:" destination="Vcs-I5-Q97" eventType="touchUpInside" id="FcT-uJ-yNk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -105,7 +96,6 @@
                             <constraint firstItem="avK-we-yVa" firstAttribute="height" secondItem="TIi-3D-gfm" secondAttribute="height" id="8Mf-Of-JFB"/>
                             <constraint firstItem="avK-we-yVa" firstAttribute="leading" secondItem="CRs-hx-mU5" secondAttribute="leading" id="C8a-eI-c6N"/>
                             <constraint firstItem="avK-we-yVa" firstAttribute="leading" secondItem="rqF-fO-dWs" secondAttribute="leadingMargin" constant="20" id="HFV-we-dNd"/>
-                            <constraint firstItem="TIi-3D-gfm" firstAttribute="leading" secondItem="5ZU-IX-AKU" secondAttribute="leading" id="J1d-hT-S72"/>
                             <constraint firstItem="X7n-h4-mCx" firstAttribute="leading" secondItem="zxa-o5-DK4" secondAttribute="leading" id="KgS-fa-QIT"/>
                             <constraint firstItem="X7n-h4-mCx" firstAttribute="width" secondItem="zxa-o5-DK4" secondAttribute="width" id="LBv-bh-Jfw"/>
                             <constraint firstItem="q0y-aC-Mh2" firstAttribute="top" secondItem="TIi-3D-gfm" secondAttribute="bottom" constant="357" id="Msq-d2-Ohq"/>
@@ -128,7 +118,6 @@
                             <constraint firstItem="eJm-fT-YRF" firstAttribute="leading" secondItem="cJK-P7-ZvY" secondAttribute="leading" id="tZK-gb-K6Z"/>
                             <constraint firstItem="avK-we-yVa" firstAttribute="centerY" secondItem="zxa-o5-DK4" secondAttribute="centerY" id="wV8-YC-zRs"/>
                             <constraint firstItem="Lbg-kT-LaA" firstAttribute="top" secondItem="gcQ-5r-cS0" secondAttribute="bottom" constant="8" symbolic="YES" id="xyp-6w-leW"/>
-                            <constraint firstItem="eJm-fT-YRF" firstAttribute="centerY" secondItem="5ZU-IX-AKU" secondAttribute="centerY" id="yID-lz-9m5"/>
                             <constraint firstItem="X7n-h4-mCx" firstAttribute="leading" secondItem="cJK-P7-ZvY" secondAttribute="leading" id="ydz-6O-Gdn"/>
                             <constraint firstItem="Lbg-kT-LaA" firstAttribute="leading" secondItem="rqF-fO-dWs" secondAttribute="leadingMargin" constant="10" id="yqV-Ix-Hjt"/>
                         </constraints>

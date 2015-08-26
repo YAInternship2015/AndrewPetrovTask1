@@ -16,7 +16,6 @@
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 - (IBAction)actionCheckName:(UITextField *)sender;
 - (IBAction)actionSave:(UIButton *)sender;
-- (IBAction)actionCancel:(UIButton *)sender;
 @property (nonatomic, weak)id<APAddMusicalInstrumentViewControllerDelegate>delegate;
 @end
 
