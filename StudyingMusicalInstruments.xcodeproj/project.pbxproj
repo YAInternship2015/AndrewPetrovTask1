@@ -27,6 +27,8 @@
 		774F22EC1B862A3100C94414 /* APMusicInstrumentsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 774F22EB1B862A3100C94414 /* APMusicInstrumentsDataSource.m */; };
 		774F22EF1B877E0C00C94414 /* APMusicalInstrumentsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774F22EE1B877E0C00C94414 /* APMusicalInstrumentsCollectionViewController.m */; };
 		77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CFE8D41B725446006A3CF5 /* Images.xcassets */; };
+		77F7547A1B8E54A900F7C08B /* list-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F754791B8E54A900F7C08B /* list-simple-7.png */; };
+		77F7547C1B8E54C500F7C08B /* square-individual-nine-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F7547B1B8E54C500F7C08B /* square-individual-nine-7.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		774F22ED1B877E0C00C94414 /* APMusicalInstrumentsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentsCollectionViewController.h; sourceTree = "<group>"; };
 		774F22EE1B877E0C00C94414 /* APMusicalInstrumentsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentsCollectionViewController.m; sourceTree = "<group>"; };
 		77CFE8D41B725446006A3CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		77F754791B8E54A900F7C08B /* list-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-simple-7.png"; sourceTree = "<group>"; };
+		77F7547B1B8E54C500F7C08B /* square-individual-nine-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-individual-nine-7.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 		771A05DD1B6F781D00552816 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77F7547B1B8E54C500F7C08B /* square-individual-nine-7.png */,
+				77F754791B8E54A900F7C08B /* list-simple-7.png */,
 				771A05DE1B6F781D00552816 /* Info.plist */,
 				771A05DF1B6F781D00552816 /* main.m */,
 			);
@@ -382,8 +388,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				774A648B1B7BFD4E00C58E36 /* Localizable.strings in Resources */,
+				77F7547A1B8E54A900F7C08B /* list-simple-7.png in Resources */,
 				771A05E91B6F781D00552816 /* Main.storyboard in Resources */,
 				77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */,
+				77F7547C1B8E54C500F7C08B /* square-individual-nine-7.png in Resources */,
 				771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */,
 				774A648D1B7BFD7900C58E36 /* MusicInstruments.plist in Resources */,
 			);

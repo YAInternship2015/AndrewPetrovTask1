@@ -317,7 +317,9 @@
                             <outlet property="delegate" destination="3gY-bV-4A7" id="J1j-Tl-veY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="TW6-Kc-2rv"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="TW6-Kc-2rv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="92i-Br-ea9"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRR-m9-lbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

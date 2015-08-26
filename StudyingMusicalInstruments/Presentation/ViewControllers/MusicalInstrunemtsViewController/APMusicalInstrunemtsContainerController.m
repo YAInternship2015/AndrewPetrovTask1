@@ -17,7 +17,10 @@
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) APAddMusicalInstrumentViewController *addVC;
-@property (nonatomic, strong) UIViewController* currentClientViewController;
+@property (nonatomic, strong) UIImage *togglePresentationImage;
+@property (nonatomic, strong) UIImage *tableImage;
+@property (nonatomic, strong) UIImage *collectionImage;
+@property (nonatomic, strong) UIBarButtonItem *togglePresentationButtonItem;
 
 @end
 
@@ -30,19 +33,26 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrunemtsTableViewControllerIdentifier];
     self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrumentsCollectionViewControllerIdentifier];
+    self.tableImage = [UIImage imageNamed:@"list-simple-7"];
+    self.collectionImage = [UIImage imageNamed:@"square-individual-nine-7"];
+    self.togglePresentationImage = self.collectionImage;
+    
 
     UIBarButtonItem *addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                    target:self
                                                    action:@selector(addNewInstrument:)];
-    UIBarButtonItem *togglePresentationButtonItem = [[UIBarButtonItem alloc]
-                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
-                                                    target:self
-                                                    action:@selector(toggleInstrumentsPresentation:)];
-    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, togglePresentationButtonItem];
+    self.togglePresentationButtonItem = [[UIBarButtonItem alloc]
+                                         initWithImage:self.togglePresentationImage
+                                         style:UIBarButtonItemStyleDone
+                                         target:self
+                                         action:@selector(toggleInstrumentsPresentation:)];
+//
+    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, self.togglePresentationButtonItem];
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);
 
     [self displayContentController:self.tableVC];
+    
 }
 
 
@@ -51,6 +61,15 @@
     content.view.frame = self.view.bounds;
     [self.view addSubview:content.view];
     [content didMoveToParentViewController:self];
+}
+
+- (void)changetogglePresentationButtonItemPicture {
+    if (self.togglePresentationButtonItem.image == self.collectionImage) {
+        self.togglePresentationButtonItem.image = self.tableImage;
+    }
+    else {
+         self.togglePresentationButtonItem.image = self.collectionImage;
+    }
 }
 
 #pragma mark - APMusicalInstrunemtsTableViewController
@@ -69,6 +88,7 @@
     else {
          [self displayContentController:self.tableVC];
     }
+    [self changetogglePresentationButtonItemPicture];
 }
 
 #pragma mark - APAddMusicalInstrumentViewControllerDelegate
@@ -82,4 +102,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+                                                     
+                                                     
 @end

@@ -11,7 +11,7 @@
 
 @interface APMusicalInstrunemtValidator : NSObject
 
-+ (BOOL)validateName:(NSString *)name;
++ (BOOL)validateName:(NSString *)name /*error:(NSError **)error*/;
 + (BOOL)validateType:(APInstrumentsType)type;
 
 @end
