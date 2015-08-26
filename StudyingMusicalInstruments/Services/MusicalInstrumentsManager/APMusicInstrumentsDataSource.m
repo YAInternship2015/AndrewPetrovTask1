@@ -32,7 +32,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     self = [super init];
     if (self) {
         [self reloadInstruments];
-        NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self
                selector:@selector(APModelDidChange)
                    name:APModelDidChangeNotification

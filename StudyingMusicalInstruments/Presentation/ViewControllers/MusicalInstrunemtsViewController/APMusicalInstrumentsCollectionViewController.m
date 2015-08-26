@@ -12,10 +12,11 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
+#import "APAddMusicalInstrumentViewController.h"
 
-NSString* const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMusicalInstrumentsCollectionViewControllerIdentifier";
+NSString *const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMusicalInstrumentsCollectionViewControllerIdentifier";
 
-@interface APMusicalInstrumentsCollectionViewController ()
+@interface APMusicalInstrumentsCollectionViewController () <APMusicInstrumentsDataSourceDelegate>
 
 @property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
 
@@ -24,21 +25,9 @@ NSString* const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMus
 @implementation APMusicalInstrumentsCollectionViewController
 
 - (void)viewDidLoad {
-    NSLog(@"CollectionViewController DidLoad");
     [super viewDidLoad];
     self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
 }
-
-- (void)loadView {
-    NSLog(@"CollectionViewController loadView");
-    [super loadView];
-
-}
-
-- (void)dealloc {
-    NSLog(@"CollectionViewController dealloc");
-}
-
 
 #pragma mark - UICollectionViewDataSource
 
@@ -61,13 +50,10 @@ NSString* const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMus
     return 1;
 }
 
-
-
 #pragma mark - APMusicInstrumentsDataSourceDelegate
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.collectionView reloadData];
 }
-
 
 @end

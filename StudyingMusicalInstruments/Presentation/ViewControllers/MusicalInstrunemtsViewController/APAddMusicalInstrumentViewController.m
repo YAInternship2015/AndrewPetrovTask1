@@ -17,15 +17,13 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
 @interface APAddMusicalInstrumentViewController ()
 
 @property (nonatomic, strong) UIBarButtonItem *saveButton;
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UITextField *typeField;
+@property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 
 @end
 
 @implementation APAddMusicalInstrumentViewController
-
-- (void)dealloc
-{
-    NSLog(@"APAddMusicalInstrumentViewController dealloc");
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

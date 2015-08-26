@@ -11,6 +11,8 @@
 #import "APMusicalInstrumentCollectionCell.h"
 #import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrumentsManager.h"
+#import "APMusicalInstrunemtsTableViewController.h"
+#import "APMusicalInstrumentsCollectionViewController.h"
 
 @interface APMusicalInstrunemtsContainerController ()
 
@@ -47,7 +49,7 @@
                                          style:UIBarButtonItemStyleDone
                                          target:self
                                          action:@selector(toggleInstrumentsPresentation:)];
-//
+
     self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, self.togglePresentationButtonItem];
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);
 
@@ -98,10 +100,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)didSaved:(APAddMusicalInstrumentViewController *)addController {
+- (void)didSaved:(APAddMusicalInstrumentViewController *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-                                                     
                                                      
 @end

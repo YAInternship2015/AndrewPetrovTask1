@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrunemtsTableViewController.h"
 
 extern NSString *const APMusicalInstrunemtsTableViewControllerIdentifier;
 
 @interface APMusicalInstrunemtsTableViewController : UITableViewController
-<APMusicInstrumentsDataSourceDelegate>
-
-- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;
 
 @end
