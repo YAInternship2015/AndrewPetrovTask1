@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "APMusicInstrumentsDataSource.h"
+#import "APAddMusicalInstrumentViewController.h"
 @protocol APMusicalInstrumentsCollectionViewControllerDelegate;
 
 @interface APMusicalInstrumentsCollectionViewController : UICollectionViewController
@@ -20,6 +21,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
+
 
 @end
 

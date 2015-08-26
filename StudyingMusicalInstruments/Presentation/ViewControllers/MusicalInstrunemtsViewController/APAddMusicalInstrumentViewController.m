@@ -1,4 +1,4 @@
-//
+
 //  APAddMusicalInstrumentViewController.m
 //  StudyingMusicalInstruments
 //
@@ -14,15 +14,6 @@
 
 @implementation APAddMusicalInstrumentViewController
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        NSLog(@"APAddMusicalInstrumentViewController init");
-    }
-    return self;
-}
-
 - (void)dealloc
 {
     NSLog(@"APAddMusicalInstrumentViewController dealloc");
@@ -35,7 +26,6 @@
     self.typeField.delegate = self;
     [self.nameField becomeFirstResponder];
 }
-
 
 - (IBAction)actionCheckName:(UITextField *)sender {
     if ([APValidator validateName:sender.text]) {
@@ -53,19 +43,27 @@
                                               type:APInstrumentsTypeWind
                                              image:nil];
     [APMusicalInstrumentsManager saveInstrument:newInstrument];
-    [self.navigationController popViewControllerAnimated:self];
+    [self.delegate addingDone];
+}
+
+- (IBAction)actionCancel:(UIButton *)sender {
+    [self.delegate addingCanceled];
 }
 
 
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    return [APValidator validateName:textField.text];
+    if ([textField isEqual:self.nameField]) {
+        return [APValidator validateName:textField.text];
+    }
+    return YES;
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
     return YES;
 }
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if (textField.returnKeyType == UIReturnKeyNext) {
@@ -78,7 +76,6 @@
 
     return YES;
 }
-
 
 
 @end

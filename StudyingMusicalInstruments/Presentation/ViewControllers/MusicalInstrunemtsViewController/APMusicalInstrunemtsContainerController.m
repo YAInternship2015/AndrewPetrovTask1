@@ -59,6 +59,7 @@
 - (void)addNewInstrument:(UIBarButtonItem *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.addVC = [storyboard instantiateViewControllerWithIdentifier:@"APAddMusicalInstrumentViewController"];
+    self.addVC.delegate = self;
     [self.navigationController pushViewController:self.addVC animated:YES];
 }
 
@@ -69,6 +70,18 @@
     else {
          [self displayContentController:self.tableVC];
     }
+}
+
+#pragma mark - APAddMusicalInstrumentViewControllerDelegate
+//FIXME: if canlel addind instument just from start and try to add one more time textfield became inactive
+- (void)addingCanceled {
+//    here can be some other implementation
+    [self.navigationController popViewControllerAnimated:YES];
+//    self.addVC = nil;
+}
+
+- (void)addingDone {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

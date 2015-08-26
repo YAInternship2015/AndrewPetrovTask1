@@ -10,9 +10,13 @@
 #import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentsCollectionViewController.h"
 
-@interface APMusicalInstrunemtsContainerController : UIViewController <APMusicalInstrunemtsTableViewControllerDelegate, APMusicalInstrumentsCollectionViewControllerDelegate>
+@interface APMusicalInstrunemtsContainerController : UIViewController <APMusicalInstrunemtsTableViewControllerDelegate,
+    APMusicalInstrumentsCollectionViewControllerDelegate,
+    APAddMusicalInstrumentViewControllerDelegate>
 
 - (void)addNewInstrument:(UIBarButtonItem *)sender;
 - (void)toggleInstrumentsPresentation:(UIBarButtonItem *)sender;
+- (void)addingCanceled;
+- (void)addingDone;
 
 @end

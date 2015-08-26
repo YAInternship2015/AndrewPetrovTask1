@@ -15,7 +15,6 @@ extern NSString* const APModelDidChangeNotification;
 
 @interface APMusicalInstrumentsManager : NSObject
 
-//+ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
 + (void)saveInstrument:(APMusicalInstrument *)instrument;
 + (void)copyInstrumentPlistToMainBundle;
 

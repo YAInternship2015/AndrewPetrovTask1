@@ -20,7 +20,6 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
 
 + (NSDictionary *)instrumentsPlistContent {
     NSString *plistPath = [NSString instrumentsPlistPath];
-//    NSLog(@"%@", plistPath);
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     return dictionary;
 }
