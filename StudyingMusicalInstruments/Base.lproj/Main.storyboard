@@ -239,7 +239,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GjP-JJ-Y1Q" userLabel="Add Instrument Button">
                             <connections>
                                 <action selector="addNewInstrument:" destination="2zD-qG-45f" id="EKD-NC-AVV"/>
-                                <segue destination="Vcs-I5-Q97" kind="showDetail" identifier="AddInstrumentSegueIndentifier" id="h6k-fZ-aLf"/>
+                                <segue destination="Vcs-I5-Q97" kind="show" identifier="AddInstrumentSegueIndentifier" id="h6k-fZ-aLf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
