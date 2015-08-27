@@ -24,7 +24,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="actionCheckName:" destination="Vcs-I5-Q97" eventType="editingChanged" id="X3C-UN-TIx"/>
+                                    <action selector="instrumetnNameDidChangeInTextFiedl:" destination="Vcs-I5-Q97" eventType="editingChanged" id="BVy-P6-BkU"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRs-hx-mU5">
@@ -60,9 +60,6 @@
                                 <rect key="frame" x="160" y="239" width="95" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                <connections>
-                                    <action selector="typeSelectionAction:" destination="Vcs-I5-Q97" eventType="touchDown" id="gbH-Qz-Paw"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -21,11 +21,11 @@ NSString *const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifie
 @implementation APMusicalInstrumentCollectionCell
 
 - (void)setInstrument:(APMusicalInstrument *)instrument {
-    if (!instrument || (instrument.instrumentImage == nil)) {
+    if (!instrument || (instrument.imageName == nil)) {
         self.imageView.image = [UIImage stubInstrumentCellImage];
     }
     else {
-        self.imageView.image = [UIImage imageNamed:instrument.instrumentImage];
+        self.imageView.image = [UIImage imageNamed:instrument.imageName];
     }
 }
 //TODO: check picture

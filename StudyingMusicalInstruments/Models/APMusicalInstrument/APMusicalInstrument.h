@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, APInstrumentsType) {
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *instrumentDescription;
 @property (nonatomic, assign, readonly) APInstrumentsType type;
-@property (nonatomic, strong, readonly) NSString *instrumentImage;
+@property (nonatomic, strong, readonly) NSString *imageName;
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description

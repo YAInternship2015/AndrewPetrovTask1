@@ -44,9 +44,14 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
                                                       action:@selector(actionSave:)];
     self.saveButton.enabled = NO;
     self.navigationItem.rightBarButtonItem = self.saveButton;
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    self.typeField.inputView = pickerView;
 }
 
-- (IBAction)actionCheckName:(UITextField *)sender {
+- (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
     
     if (sender.text.length < 3) {
         sender.textColor = [UIColor redColor];
@@ -84,13 +89,6 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
             [self.delegate musicalInstrumentDidSaved:self];
         }
     }
-}
-
-- (IBAction)typeSelectionAction:(UITextField *)sender {
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
-    pickerView.dataSource = self;
-    pickerView.delegate = self;
-    sender.inputView = pickerView;
 }
 
 #pragma mark - UITextFieldDelegate
