@@ -7,13 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APAddMusicalInstrumentViewController.h"
 
 @interface APMusicalInstrunemtsContainerController : UIViewController
-<APAddMusicalInstrumentViewControllerDelegate>
-
-- (void)addNewInstrument:(UIBarButtonItem *)sender;
-- (void)toggleInstrumentsPresentation:(UIBarButtonItem *)sender;
-- (void)didSaved:(APAddMusicalInstrumentViewController *)sender;
-
 @end

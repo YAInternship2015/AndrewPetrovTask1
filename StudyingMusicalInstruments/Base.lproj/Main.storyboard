@@ -222,7 +222,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Z5N-ka-tON"/>
+                    <navigationItem key="navigationItem" id="Z5N-ka-tON">
+                        <barButtonItem key="leftBarButtonItem" image="square-individual-nine-7" id="CsR-lw-Gln" userLabel="Toggle Presentation Button">
+                            <connections>
+                                <action selector="toggleInstrumentsPresentation:" destination="2zD-qG-45f" id="vPk-fx-iTt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GjP-JJ-Y1Q" userLabel="Add Instrument Button">
+                            <connections>
+                                <action selector="addNewInstrument:" destination="2zD-qG-45f" id="EKD-NC-AVV"/>
+                                <segue destination="Vcs-I5-Q97" kind="showDetail" identifier="AddInstrumentSegueIndentifier" id="h6k-fZ-aLf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="togglePresentationButton" destination="CsR-lw-Gln" id="hT2-aO-xRf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVZ-FI-bkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,4 +392,7 @@
             <point key="canvasLocation" x="1309" y="514"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square-individual-nine-7" width="30" height="30"/>
+    </resources>
 </document>
