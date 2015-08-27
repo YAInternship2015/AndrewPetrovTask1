@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *instrumentDescription;
 @property (nonatomic, assign) APInstrumentsType type;
-@property (nonatomic, strong) UIImage *instrumentImage;
+@property (nonatomic, strong) NSString *instrumentImage;
 
 @end
 
@@ -22,7 +22,7 @@
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
-                                      image:(UIImage *)image {
+                                      image:(NSString *)image {
     
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name = name;

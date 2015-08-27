@@ -49,5 +49,6 @@
 "Add_new_instrument" = "Add new instrument";
 "Save" = "Save";
 "the_name_should_be_longer" = "The name should be longer";
+"invalid_type" = "Invalid instrument type";
 
 

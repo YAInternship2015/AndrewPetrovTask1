@@ -25,7 +25,7 @@ NSString *const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifie
         self.imageView.image = [UIImage stubInstrumentCellImage];
     }
     else {
-        self.imageView.image = instrument.instrumentImage;
+        self.imageView.image = [UIImage imageNamed:instrument.instrumentImage];
     }
 }
 

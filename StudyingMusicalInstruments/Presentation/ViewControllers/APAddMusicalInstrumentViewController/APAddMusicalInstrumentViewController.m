@@ -58,9 +58,13 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
 
 - (void)actionSave:(UIBarButtonItem *)sender {
     if (![self.nameField.text isEqualToString:@""]) {
+        APMusicalInstrument *newInstrument =
+        [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
+                                           description:self.descriptionField.text
+                                                  type:[self.typeField.text integerValue]
+                                                 image:nil];
         NSError *error = nil;
-        [APMusicalInstrunemtValidator validateName:self.nameField.text
-                                             error:&error];
+        [APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error];
         if (error) {
             [[[UIAlertView alloc] initWithTitle:error.localizedDescription
                                         message:error.localizedRecoverySuggestion
@@ -69,11 +73,6 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
                               otherButtonTitles:nil, nil] show];
         }
         else {
-            APMusicalInstrument *newInstrument =
-            [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
-                                               description:self.descriptionField.text
-                                                      type:APInstrumentsTypeWind
-                                                     image:nil];
             [APMusicalInstrumentsManager saveInstrument:newInstrument];
             [self.delegate musicalInstrumentDidSaved:self];
         }

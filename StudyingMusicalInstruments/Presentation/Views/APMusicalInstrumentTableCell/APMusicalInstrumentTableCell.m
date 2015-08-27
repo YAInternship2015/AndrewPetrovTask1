@@ -30,9 +30,9 @@ NSString *const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
     else {
         self.nameLabel.text = instrument.name;
         self.descriptionLabel.text = instrument.instrumentDescription;
-        self.insrumentImageView.image = instrument.instrumentImage;
+        self.insrumentImageView.image = [UIImage imageNamed:instrument.instrumentImage];
     }
-    if (!instrument.instrumentImage) {
+    if (!instrument.instrumentImage || [instrument.instrumentImage isEqualToString:@""]) {
         self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
     }
 }

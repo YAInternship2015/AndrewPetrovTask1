@@ -15,6 +15,6 @@
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
-                                      image:(UIImage *)image;
+                                      image:(NSString *)image;
 
 @end

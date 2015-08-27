@@ -68,7 +68,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
         [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
                                     description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey], nil)
                                            type:[instrumentDictionary[APMusicalInstrumentTypeKey] integerValue]
-                                          image:[UIImage imageNamed:instrumentDictionary[APMusicalInstrumentImageKey]]];
+                                          image:instrumentDictionary[APMusicalInstrumentImageKey]];
         if (!newInstrument) continue;
         
         [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
