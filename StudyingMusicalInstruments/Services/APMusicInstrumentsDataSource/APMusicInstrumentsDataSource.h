@@ -24,6 +24,6 @@
 
 @protocol APMusicInstrumentsDataSourceDelegate <NSObject>
 
-- (void)dataSourceIsUpdated;
+- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;
 
 @end

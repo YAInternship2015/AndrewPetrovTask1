@@ -14,7 +14,6 @@
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
                                       image:(UIImage *)image {
-    
     APMusicalInstrument *newMusicalInstrument  = [APMusicalInstrument instrumentWithName:name
                                                                              description:description
                                                                                     type:type

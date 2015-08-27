@@ -28,12 +28,11 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 
 @implementation APMusicInstrumentsDataSource
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self reloadInstruments];
-        NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self
                selector:@selector(APModelDidChange)
                    name:APModelDidChangeNotification
@@ -42,12 +41,12 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return self;
 }
 
-- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate
-{
+- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
     self = [self init];
     if (self) {
         self.delegate = delegate;
     }
+//    NSLog(@"APMusicInstrumentsDataSource init");
     return self;
 }
 - (void)dealloc
@@ -79,7 +78,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     self.musicalInstrumentsByType = tempInstrumentsByType;
     self.musicalInstruments = tempInstruments;
     self.musicalInstrumentsTypes = dictionary[@"instrument_types"];
-    [self.delegate dataSourceIsUpdated];
+    [self.delegate dataSourceIsUpdated:self];
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {

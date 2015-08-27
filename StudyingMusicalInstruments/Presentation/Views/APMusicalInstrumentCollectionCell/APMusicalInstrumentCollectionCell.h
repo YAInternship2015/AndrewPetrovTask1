@@ -14,8 +14,6 @@ extern NSString *const APCollectionViewCellIdentifier;
 
 @interface APMusicalInstrumentCollectionCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 - (void)setInstrument:(APMusicalInstrument *)instrument;
 
 @end

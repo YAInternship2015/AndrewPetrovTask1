@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol APAddMusicalInstrumentViewControllerDelegate;
 
-@interface APAddMusicalInstrumentViewController : UIViewController
+extern NSString *const APAddMusicalInstrumentViewControllerIdentifier;
 
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UITextField *typeField;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionField;
+@interface APAddMusicalInstrumentViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, weak) id<APAddMusicalInstrumentViewControllerDelegate>delegate;
+
+@end
+
+@protocol APAddMusicalInstrumentViewControllerDelegate
+
+- (void)didSaved:(APAddMusicalInstrumentViewController *)sender;
 
 @end

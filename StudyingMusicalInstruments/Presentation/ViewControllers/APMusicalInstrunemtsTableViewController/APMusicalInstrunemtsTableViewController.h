@@ -7,20 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrunemtsTableViewController.h"
-@protocol APMusicalInstrunemtsTableViewControllerDelegate;
+
+extern NSString *const APMusicalInstrunemtsTableViewControllerIdentifier;
 
 @interface APMusicalInstrunemtsTableViewController : UITableViewController
-<APMusicInstrumentsDataSourceDelegate>
-
-- (instancetype)initWithDelegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate;
-- (void)dataSourceIsUpdated;
-
-@end
-
-@protocol APMusicalInstrunemtsTableViewControllerDelegate <NSObject>
-
-- (void)addNewInstrument:(UIBarButtonItem *)sender;
 
 @end

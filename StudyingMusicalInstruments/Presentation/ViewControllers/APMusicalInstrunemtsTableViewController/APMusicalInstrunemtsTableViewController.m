@@ -6,49 +6,25 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 #import "APMusicalInstrunemtsTableViewController.h"
-#import "APMusicalInstrumentCell.h"
+#import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrunemtsNavigationController.h"
+#import "APMusicalInstrunemtsContainerController.h"
 
-@interface APMusicalInstrunemtsTableViewController ()
+NSString *const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
+
+@interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 
 @property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
-@property (nonatomic, weak) id<APMusicalInstrunemtsTableViewControllerDelegate> delegate;
 
 @end
 
 @implementation APMusicalInstrunemtsTableViewController
 
-- (instancetype)initWithDelegate:(id<APMusicalInstrunemtsTableViewControllerDelegate>)delegate
-{
-    self = [super init];
-    if (self) {
-        self.delegate = delegate;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
-    [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
-    
-    UIBarButtonItem* addNewInstrumentButtonItem = [[UIBarButtonItem alloc]
-                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                   target:self.delegate
-                                                   action:@selector(addNewInstrument:)];
-    UIBarButtonItem* setCollectionViewButtonItem = [[UIBarButtonItem alloc]
-                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
-                                                   target:self.delegate
-                                                   action:@selector(setCollectionView:)];
-    self.navigationItem.rightBarButtonItems = @[addNewInstrumentButtonItem, setCollectionViewButtonItem];
-    
-    APMusicalInstrument *instrunent = [APMusicalInstrument instrumentWithName:@"aaa" description:@"bbb" type:1 image:nil];
-    [APMusicalInstrumentsManager saveInstrument:instrunent];
-    APMusicalInstrument *instrunent2 = [APMusicalInstrument instrumentWithName:@"aaa2" description:@"bbb2" type:1 image:nil];
-    [APMusicalInstrumentsManager saveInstrument:instrunent2];
 }
 
 #pragma mark - UITableViewDataSource
@@ -58,7 +34,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    APMusicalInstrumentCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
+    APMusicalInstrumentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
     [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithType:indexPath.section
                                                                      atIndex:indexPath.row]];
@@ -75,7 +51,7 @@
 
 #pragma mark - APMusicInstrumentsDataSourceDelegate
 
-- (void)dataSourceIsUpdated {
+- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.tableView reloadData];
 }
 
