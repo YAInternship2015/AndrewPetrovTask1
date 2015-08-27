@@ -11,15 +11,21 @@
 #import "APMusicalInstrunemtFactory.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
+#import "NSFileManager+APMusicalInstrumentsManager.h"
+#import "APMusicInstrumentsDataSource.h"
+#import "APMusicalInstrument.h"
 
 NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalInstrumentViewControllerIdentifier";
 
-@interface APAddMusicalInstrumentViewController ()
+NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
+
+@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
+@property (nonatomic, assign) APInstrumentsType newInstrumentType;
 
 @end
 
@@ -58,10 +64,11 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
 
 - (void)actionSave:(UIBarButtonItem *)sender {
     if (![self.nameField.text isEqualToString:@""]) {
+        
         APMusicalInstrument *newInstrument =
         [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
                                            description:self.descriptionField.text
-                                                  type:[self.typeField.text integerValue]
+                                                  type:self.newInstrumentType
                                                  image:nil];
         NSError *error = nil;
         [APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error];
@@ -79,6 +86,13 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
     }
 }
 
+- (IBAction)typeSelectionAction:(UITextField *)sender {
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    sender.inputView = pickerView;
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -90,9 +104,40 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
     else if (textField.returnKeyType == UIReturnKeyDone) {
         [textField resignFirstResponder];
     }
-
     return YES;
 }
 
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    NSString *plistPath = [NSFileManager instrumentsPlistPath];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    NSArray *typesArray =
+    [[NSArray alloc] initWithArray:(NSArray *)dictionary[APTypesPlistKey]];
+    
+    return typesArray.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *plistPath = [NSFileManager instrumentsPlistPath];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    NSArray *typesArray =
+    [[NSArray alloc] initWithArray:(NSArray *)dictionary[APTypesPlistKey]];
+    
+    return NSLocalizedString(typesArray[row], nil);
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.newInstrumentType = row;
+    self.typeField.text = [self pickerView:pickerView titleForRow:row forComponent:component];
+}
 
 @end

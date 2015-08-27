@@ -28,5 +28,5 @@ NSString *const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifie
         self.imageView.image = [UIImage imageNamed:instrument.instrumentImage];
     }
 }
-
+//TODO: check picture
 @end
