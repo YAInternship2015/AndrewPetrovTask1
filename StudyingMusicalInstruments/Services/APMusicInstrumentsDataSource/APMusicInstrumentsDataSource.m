@@ -21,7 +21,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 @property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;
 @property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
-@property (nonatomic, weak) id<APMusicInstrumentsDataSourceDelegate>delegate;
+@property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
 
 
 @end

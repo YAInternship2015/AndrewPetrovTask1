@@ -16,16 +16,11 @@ NSString *const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalI
 
 @interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 
-@property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 
 @end
 
 @implementation APMusicalInstrunemtsTableViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
-}
 
 #pragma mark - UITableViewDataSource
 

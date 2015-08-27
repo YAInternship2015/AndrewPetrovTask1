@@ -18,16 +18,11 @@ NSString *const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMus
 
 @interface APMusicalInstrumentsCollectionViewController () <APMusicInstrumentsDataSourceDelegate>
 
-@property (nonatomic, strong) APMusicInstrumentsDataSource *allMusicalInstruments;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 
 @end
 
 @implementation APMusicalInstrumentsCollectionViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.allMusicalInstruments = [[APMusicInstrumentsDataSource alloc]initWithDelegate:self];
-}
 
 #pragma mark - UICollectionViewDataSource
 

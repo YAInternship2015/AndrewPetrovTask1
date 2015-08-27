@@ -204,8 +204,16 @@
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="v0X-mt-Lwr"/>
+                    <connections>
+                        <outlet property="allMusicalInstruments" destination="bgG-BZ-3Cr" id="U3P-Fo-46s"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHc-UH-UxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsDataSource">
+                    <connections>
+                        <outlet property="delegate" destination="S0K-ab-RyH" id="7vV-Fx-P2x"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="202" y="66"/>
         </scene>
@@ -243,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="-487" y="794"/>
         </scene>
-        <!--Title-->
+        <!--Table-->
         <scene sceneID="MFg-HT-QDT">
             <objects>
-                <tableViewController storyboardIdentifier="APMusicalInstrunemtsTableViewControllerIdentifier" id="EtX-M6-bpl" customClass="APMusicalInstrunemtsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="APMusicalInstrunemtsTableViewControllerIdentifier" id="EtX-M6-bpl" userLabel="Table" customClass="APMusicalInstrunemtsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="bFl-tM-St6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,8 +333,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="0Oh-nh-iTB"/>
+                    <connections>
+                        <outlet property="allMusicalInstruments" destination="GAF-kf-ugG" id="BSx-JY-1I4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7p-wa-2tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="GAF-kf-ugG" customClass="APMusicInstrumentsDataSource">
+                    <connections>
+                        <outlet property="delegate" destination="EtX-M6-bpl" id="YUC-yM-Xng"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="202" y="794"/>
         </scene>
