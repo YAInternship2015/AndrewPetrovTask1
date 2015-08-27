@@ -25,6 +25,6 @@ typedef NS_ENUM(NSInteger, APInstrumentsType) {
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
-                                      image:(NSString *)image;
+                                      imageName:(NSString *)imageName;
 
 @end

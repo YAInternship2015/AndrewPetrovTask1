@@ -11,6 +11,8 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentsCollectionViewController.h"
+#import "NSFileManager+APMusicalInstrumentsManager.h"
+#import "UIImage+StudyingMusicalInstruments.h"
 
 static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueIndentifier";
 
@@ -29,14 +31,11 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //???:
-    [APMusicalInstrumentsManager restoreInstrumentPlistToDocuements];
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrunemtsTableViewControllerIdentifier];
     self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrumentsCollectionViewControllerIdentifier];
-    self.tableImage = [UIImage imageNamed:@"list-simple-7"];
-    self.collectionImage = [UIImage imageNamed:@"square-individual-nine-7"];
+    self.tableImage = [UIImage tableImage];
+    self.collectionImage = [UIImage collectionImage];
     self.togglePresentationImage = self.collectionImage;
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);
     
@@ -59,7 +58,7 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
     [content didMoveToParentViewController:self];
 }
 
-- (void)changeTogglePresentationButtonItemPicture {
+- (void)updateTogglePresentationButtonItemPicture {
     if ([self.childViewControllers lastObject] == self.collectionVC) {
         self.togglePresentationButton.image = self.tableImage;
     }
@@ -75,12 +74,7 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
     else {
          [self displayContentController:self.tableVC];
     }
-    [self changeTogglePresentationButtonItemPicture];
-}
-
-- (void)addingCanceled {
-    //    here can be some other implementation
-    [self.navigationController popViewControllerAnimated:YES];
+    [self updateTogglePresentationButtonItemPicture];
 }
 
 #pragma mark - APAddMusicalInstrumentViewControllerDelegate

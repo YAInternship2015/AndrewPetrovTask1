@@ -16,8 +16,6 @@ const NSString *APMusicalInstrumentTypeKey = @"type";
 const NSString *APMusicalInstrumentImageKey = @"image";
 const NSString *APInstrumentsPlistKey = @"instruments";
 const NSString *APTypesPlistKey = @"instrument_types";
-const NSInteger APMusicalInstrumentTypesCount = 4;
-
 
 @interface APMusicInstrumentsDataSource ()
 
@@ -35,8 +33,8 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     if (self) {
         [self reloadInstruments];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(APModelDidChange)
-                                                     name:modelDidChangeHandleNotificaion
+                                                 selector:@selector(modelDidChange)
+                                                     name:APModelDidChangeNotificaion
                                                    object:nil];;
     }
     return self;
@@ -53,13 +51,16 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
      [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)reloadInstruments {
+    if(![NSFileManager isInstrumentsPlistExist]) {
+        [APMusicalInstrumentsManager restoreInstrumentPlist];
+    }
     NSString *plistPath = [NSFileManager instrumentsPlistPath];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    
+    self.musicalInstrumentsTypes = dictionary[APTypesPlistKey];
     NSMutableArray *tempInstrumentsByType = [[NSMutableArray alloc] init];
     NSMutableArray *tempInstruments = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < APMusicalInstrumentTypesCount; i++) {
+    for (int i = 0; i < self.musicalInstrumentsTypes.count; i++) {
         [tempInstrumentsByType addObject:[NSMutableArray new]];
     }
     for (NSString *musicalInstrumentKey in [dictionary[APInstrumentsPlistKey] allKeys]) {
@@ -68,7 +69,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
         [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
                                     description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey], nil)
                                            type:[instrumentDictionary[APMusicalInstrumentTypeKey] integerValue]
-                                          image:instrumentDictionary[APMusicalInstrumentImageKey]];
+                                          imageName:instrumentDictionary[APMusicalInstrumentImageKey]];
         if (!newInstrument) continue;
         
         [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
@@ -76,7 +77,6 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     }
     self.musicalInstrumentsByType = tempInstrumentsByType;
     self.musicalInstruments = tempInstruments;
-    self.musicalInstrumentsTypes = dictionary[APTypesPlistKey];
     [self.delegate dataSourceIsUpdated:self];
 }
 
@@ -106,12 +106,10 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     if (index >= 0 && index < self.musicalInstruments.count) {
         return self.musicalInstruments[index];
     }
-    else {
-        return nil;
-    }
+    return nil;
 }
 
-- (void) APModelDidChange {
+- (void) modelDidChange {
     [self reloadInstruments];
 }
 

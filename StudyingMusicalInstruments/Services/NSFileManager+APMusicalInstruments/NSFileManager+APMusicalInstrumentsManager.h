@@ -13,4 +13,5 @@
 + (NSString *)documentFolderPath;
 + (NSString *)instrumentsPlistPath;
 + (NSString *)sourceInstrumentsPlistPath;
++ (BOOL)isInstrumentsPlistExist;
 @end

@@ -13,11 +13,11 @@
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
-                                      image:(NSString *)image {
+                                  imageName:(NSString *)image {
     APMusicalInstrument *newMusicalInstrument  = [APMusicalInstrument instrumentWithName:name
                                                                              description:description
                                                                                     type:type
-                                                                                   image:image];
+                                                                               imageName:image];
     return newMusicalInstrument;
 }
 

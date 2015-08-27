@@ -68,16 +68,14 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 }
 
 - (void)actionSave:(UIBarButtonItem *)sender {
-    if (![self.nameField.text isEqualToString:@""]) {
-        
+    if ([APMusicalInstrunemtValidator validateName:self.nameField.text error:nil]) {
         APMusicalInstrument *newInstrument =
         [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
                                            description:self.descriptionField.text
                                                   type:self.newInstrumentType
-                                                 image:nil];
+                                             imageName:nil];
         NSError *error = nil;
-        [APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error];
-        if (error) {
+        if (![APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error]) {
             [[[UIAlertView alloc] initWithTitle:error.localizedDescription
                                         message:error.localizedRecoverySuggestion
                                        delegate:nil

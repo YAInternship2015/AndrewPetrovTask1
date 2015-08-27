@@ -22,13 +22,13 @@
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
-                                      image:(NSString *)image {
+                                      imageName:(NSString *)imageName {
     
     APMusicalInstrument *newMusicalInstrument  = [[APMusicalInstrument alloc] init];
     newMusicalInstrument.name = name;
     newMusicalInstrument.instrumentDescription = description;
     newMusicalInstrument.type = type;
-    newMusicalInstrument.imageName = image;
+    newMusicalInstrument.imageName = imageName;
     return newMusicalInstrument;
 }
 

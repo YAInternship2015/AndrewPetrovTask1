@@ -22,4 +22,11 @@
 + (NSString *)sourceInstrumentsPlistPath {
     return [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
 }
+
++ (BOOL)isInstrumentsPlistExist {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *docPath = [NSFileManager instrumentsPlistPath];
+    return [fileManager fileExistsAtPath: docPath];
+}
+
 @end
