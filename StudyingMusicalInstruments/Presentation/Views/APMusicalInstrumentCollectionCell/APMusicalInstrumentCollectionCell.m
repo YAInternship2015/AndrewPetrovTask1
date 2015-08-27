@@ -21,7 +21,7 @@ NSString *const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifie
 @implementation APMusicalInstrumentCollectionCell
 
 - (void)setInstrument:(APMusicalInstrument *)instrument {
-    if (!instrument) {
+    if (!instrument || (instrument.instrumentImage == nil)) {
         self.imageView.image = [UIImage stubInstrumentCellImage];
     }
     else {

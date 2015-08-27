@@ -7,9 +7,32 @@
 //
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
-#import "NSString+APMusicalInstrumentsManager.h"
+#import "NSFileManager+APMusicalInstrumentsManager.h"
+#import "APMusicInstrumentsDataSource.h"
 
-NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
+NSString* const modelDidChangeHandleNotificaion = @"APModelDidChangeNotification";
+
+@interface NSDictionary (APMusicalInstrumentsManager)
+
++ (NSDictionary *)dictionaryWithInstrument:(APMusicalInstrument *)instrument;
+
+@end
+
+@implementation NSDictionary (APMusicalInstrumentsManager)
+
++ (NSDictionary *)dictionaryWithInstrument:(APMusicalInstrument *)instrument {
+    NSDictionary *instrumentDictionary = @{
+                                           @"name": instrument.name,
+                                           @"description": instrument.instrumentDescription,
+                                           @"type": @(instrument.type),
+                                           //TODO: subclass ftom uiimage with property name
+                                           @"image": @""
+                                           };
+    return instrumentDictionary;
+}
+
+@end
+
 
 @interface APMusicalInstrumentsManager ()
 
@@ -18,43 +41,47 @@ NSString* const APModelDidChangeNotification = @"APModelDidChangeNotification";
 @implementation APMusicalInstrumentsManager
 
 + (NSDictionary *)instrumentsPlistContent {
-    NSString *plistPath = [NSString instrumentsPlistPath];
+    NSString *plistPath = [NSFileManager instrumentsPlistPath];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     return dictionary;
 }
 
-+ (void)copyInstrumentPlistToMainBundle {
++ (void)restoreInstrumentPlistToDocuements {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *docPath = [NSString instrumentsPlistPath];
+    NSString *docPath = [NSFileManager instrumentsPlistPath];
     BOOL fileExists = [fileManager fileExistsAtPath: docPath];
     NSError *error = nil;
     if(fileExists) {
         [fileManager removeItemAtPath:docPath error:&error];
     }
-    NSString *strSourcePath = [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+    NSString *strSourcePath = [NSFileManager sourceInstrumentsPlistPath];
     [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
-    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: modelDidChangeHandleNotificaion object:nil];
 }
 
 + (void)saveInstrument:(APMusicalInstrument *)instrument {
-    NSDictionary *instrumentDictionary = @{
-                                           @"name": instrument.name,
-                                           @"description": instrument.instrumentDescription,
-                                           @"type": @(instrument.type),
-                                           @"image": (instrument.instrumentImage ? instrument.name : @"sellStubImage")
-                                           };
+    NSDictionary *instrumentDictionary = [NSDictionary dictionaryWithInstrument:instrument];
     NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
     NSDictionary *oldDictionary = [self instrumentsPlistContent];
     
     for (NSString *key in [oldDictionary allKeys]) {
         [tempDictionary setObject:[oldDictionary[key]mutableCopy] forKey:key];
     }
-    [tempDictionary[@"instruments"] setObject:instrumentDictionary forKey:instrument.name];
-    if ([tempDictionary writeToFile:[NSString instrumentsPlistPath] atomically:YES])
+    [tempDictionary[APInstrumentsPlistKey] setObject:instrumentDictionary forKey:instrument.name];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *docPath = [NSFileManager instrumentsPlistPath];
+    BOOL fileExists = [fileManager fileExistsAtPath: docPath];
+    if(!fileExists) {
+        [self restoreInstrumentPlistToDocuements];
+    }
+
+    if ([tempDictionary writeToFile:[NSFileManager instrumentsPlistPath] atomically:YES]) {
         NSLog(@"file updated");
+        [[NSNotificationCenter defaultCenter] postNotificationName: modelDidChangeHandleNotificaion object:nil];
+    }
     else
         NSLog(@"file not updated");
-    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotification object:nil];
 }
 
 @end

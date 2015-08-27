@@ -8,13 +8,16 @@
 
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicalInstrumentsManager.h"
-#import "NSString+APMusicalInstrumentsManager.h"
+#import "NSFileManager+APMusicalInstrumentsManager.h"
 
 const NSString *APMusicalInstrumentNameKey = @"name";
 const NSString *APMusicalInstrumentDescriptionKey = @"description";
 const NSString *APMusicalInstrumentTypeKey = @"type";
 const NSString *APMusicalInstrumentImageKey = @"image";
+const NSString *APInstrumentsPlistKey = @"instruments";
+const NSString *APTypesPlistKey = @"instrument_types";
 const NSInteger APMusicalInstrumentTypesCount = 4;
+
 
 @interface APMusicInstrumentsDataSource ()
 
@@ -22,7 +25,6 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;
 @property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
 @property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
-
 
 @end
 
@@ -32,11 +34,10 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     self = [super init];
     if (self) {
         [self reloadInstruments];
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self
-               selector:@selector(APModelDidChange)
-                   name:APModelDidChangeNotification
-                 object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(APModelDidChange)
+                                                     name:modelDidChangeHandleNotificaion
+                                                   object:nil];;
     }
     return self;
 }
@@ -46,15 +47,13 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     if (self) {
         self.delegate = delegate;
     }
-//    NSLog(@"APMusicInstrumentsDataSource init");
     return self;
 }
-- (void)dealloc
-{
+- (void)dealloc {
      [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)reloadInstruments {
-    NSString *plistPath = [NSString instrumentsPlistPath];
+    NSString *plistPath = [NSFileManager instrumentsPlistPath];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
     NSMutableArray *tempInstrumentsByType = [[NSMutableArray alloc] init];
@@ -63,8 +62,8 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     for (int i = 0; i < APMusicalInstrumentTypesCount; i++) {
         [tempInstrumentsByType addObject:[NSMutableArray new]];
     }
-    for (NSString *musicalInstrumentKey in [dictionary[@"instruments"] allKeys]) {
-        NSDictionary *instrumentDictionary = dictionary[@"instruments"][musicalInstrumentKey];
+    for (NSString *musicalInstrumentKey in [dictionary[APInstrumentsPlistKey] allKeys]) {
+        NSDictionary *instrumentDictionary = dictionary[APInstrumentsPlistKey][musicalInstrumentKey];
         APMusicalInstrument *newInstrument =
         [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
                                     description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey], nil)
@@ -77,7 +76,7 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     }
     self.musicalInstrumentsByType = tempInstrumentsByType;
     self.musicalInstruments = tempInstruments;
-    self.musicalInstrumentsTypes = dictionary[@"instrument_types"];
+    self.musicalInstrumentsTypes = dictionary[APTypesPlistKey];
     [self.delegate dataSourceIsUpdated:self];
 }
 
@@ -104,7 +103,12 @@ const NSInteger APMusicalInstrumentTypesCount = 4;
     return self.musicalInstruments.count;
 }
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
-    return self.musicalInstruments[index];
+    if (index >= 0 && index < self.musicalInstruments.count) {
+        return self.musicalInstruments[index];
+    }
+    else {
+        return nil;
+    }
 }
 
 - (void) APModelDidChange {

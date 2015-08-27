@@ -10,7 +10,6 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrunemtsContainerController.h"
 
 NSString *const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
 
@@ -49,6 +48,5 @@ NSString *const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalI
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.tableView reloadData];
 }
-
 
 @end

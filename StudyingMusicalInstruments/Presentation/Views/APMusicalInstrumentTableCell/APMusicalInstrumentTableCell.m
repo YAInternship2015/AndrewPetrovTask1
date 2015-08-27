@@ -26,12 +26,14 @@ NSString *const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
     if (!instrument) {
         self.nameLabel.text = NSLocalizedString(@"stub_instrument_name", nil);
         self.descriptionLabel.text = @"";
-        self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
     }
     else {
         self.nameLabel.text = instrument.name;
         self.descriptionLabel.text = instrument.instrumentDescription;
         self.insrumentImageView.image = instrument.instrumentImage;
+    }
+    if (!instrument.instrumentImage) {
+        self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
     }
 }
 

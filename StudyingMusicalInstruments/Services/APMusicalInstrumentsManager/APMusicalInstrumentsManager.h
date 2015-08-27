@@ -7,15 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "APMusicalInstrument.h"
+@class APMusicalInstrument;
 
-extern NSString* const APModelDidChangeNotification;
-
-@class UIImage;
+extern NSString* const modelDidChangeHandleNotificaion;
 
 @interface APMusicalInstrumentsManager : NSObject
 
 + (void)saveInstrument:(APMusicalInstrument *)instrument;
-+ (void)copyInstrumentPlistToMainBundle;
++ (void)restoreInstrumentPlistToDocuements;
 
 @end

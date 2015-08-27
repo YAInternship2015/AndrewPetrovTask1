@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "NSString+APMusicalInstrumentsManager.h"
+#import "NSFileManager+APMusicalInstrumentsManager.h"
 
-@implementation NSString (APMusicalInstrumentsManager)
+@implementation NSFileManager (APMusicalInstrumentsManager)
 
 + (NSString *)documentFolderPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
@@ -16,7 +16,10 @@
 }
 
 + (NSString *)instrumentsPlistPath {
-    return [[NSString documentFolderPath] stringByAppendingPathComponent:@"MusicInstruments.plist"];
+    return [[NSFileManager documentFolderPath] stringByAppendingPathComponent:@"MusicInstruments.plist"];
 }
 
++ (NSString *)sourceInstrumentsPlistPath {
+    return [[NSBundle mainBundle] pathForResource:@"MusicInstruments" ofType:@"plist"];
+}
 @end

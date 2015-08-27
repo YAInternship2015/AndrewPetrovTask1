@@ -8,8 +8,6 @@
 
 #import "APMusicalInstrunemtsContainerController.h"
 #import "APAddMusicalInstrumentViewController.h"
-#import "APMusicalInstrumentCollectionCell.h"
-#import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentsCollectionViewController.h"
@@ -20,7 +18,6 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
 
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
-@property (nonatomic, strong) APAddMusicalInstrumentViewController *addVC;
 @property (nonatomic, strong) UIImage *togglePresentationImage;
 @property (nonatomic, strong) UIImage *tableImage;
 @property (nonatomic, strong) UIImage *collectionImage;
@@ -32,7 +29,8 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [APMusicalInstrumentsManager copyInstrumentPlistToMainBundle];
+    //???:
+    [APMusicalInstrumentsManager restoreInstrumentPlistToDocuements];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrunemtsTableViewControllerIdentifier];
@@ -61,7 +59,7 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
     [content didMoveToParentViewController:self];
 }
 
-- (void)changetogglePresentationButtonItemPicture {
+- (void)changeTogglePresentationButtonItemPicture {
     if ([self.childViewControllers lastObject] == self.collectionVC) {
         self.togglePresentationButton.image = self.tableImage;
     }
@@ -77,20 +75,18 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
     else {
          [self displayContentController:self.tableVC];
     }
-    [self changetogglePresentationButtonItemPicture];
+    [self changeTogglePresentationButtonItemPicture];
+}
+
+- (void)addingCanceled {
+    //    here can be some other implementation
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - APAddMusicalInstrumentViewControllerDelegate
 
-- (void)addingCanceled {
-//    here can be some other implementation
+- (void)musicalInstrumentDidSaved:(APAddMusicalInstrumentViewController *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-- (void)didSaved:(APAddMusicalInstrumentViewController *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-
 
 @end

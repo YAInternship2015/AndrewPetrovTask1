@@ -10,9 +10,13 @@
 #import "APMusicalInstrument.h"
 @protocol APMusicInstrumentsDataSourceDelegate;
 
+extern const NSString *APInstrumentsPlistKey;
+extern const NSString *APTypesPlistKey;
+
 @interface APMusicInstrumentsDataSource : NSObject
 
 - (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate;
+
 - (NSInteger)musicalInstrumentsTypesCount;
 - (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type;
 - (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index;

@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (APMusicalInstrumentsManager)
-//todo: path and to services
+@interface NSFileManager (APMusicalInstrumentsManager)
 
 + (NSString *)documentFolderPath;
 + (NSString *)instrumentsPlistPath;
-
++ (NSString *)sourceInstrumentsPlistPath;
 @end

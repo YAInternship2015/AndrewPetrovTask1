@@ -15,7 +15,7 @@ NSString *const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
 + (BOOL)validateName:(NSString *)name error:(NSError **)error {
     if (name.length < 5) {
         if (error) {
-            NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"The_name_should_be_longer", nil)};
+            NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"the_name_should_be_longer", nil)};
             
             *error = [NSError errorWithDomain:APMusicalInstrunemtDomain
                                          code:42
@@ -32,5 +32,5 @@ NSString *const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
     }
     return YES;
 }
-
+//TODO: val instr и сквозной error
 @end

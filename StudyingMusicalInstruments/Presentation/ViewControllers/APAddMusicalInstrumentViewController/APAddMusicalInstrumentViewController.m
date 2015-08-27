@@ -75,7 +75,7 @@ NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalI
                                                       type:APInstrumentsTypeWind
                                                      image:nil];
             [APMusicalInstrumentsManager saveInstrument:newInstrument];
-            [self.delegate didSaved:self];
+            [self.delegate musicalInstrumentDidSaved:self];
         }
     }
 }

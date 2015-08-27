@@ -32,7 +32,6 @@ NSString *const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMus
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     APMusicalInstrumentCollectionCell *cell =
     [collectionView dequeueReusableCellWithReuseIdentifier:APCollectionViewCellIdentifier
                                               forIndexPath:indexPath];
@@ -41,7 +40,6 @@ NSString *const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMus
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
     return 1;
 }
 
