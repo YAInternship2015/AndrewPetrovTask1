@@ -1,24 +1,34 @@
 //
-//  APAllMusicalInstruments.h
-//  studyingMusicalInstruments
+//  APMusicInstrumentsDataSource.h
+//  StudyingMusicalInstruments
 //
-//  Created by Андрей on 8/3/15.
+//  Created by Андрей on 8/20/15.
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-@class UIImage;
+@protocol APMusicInstrumentsDataSourceDelegate;
 
-@interface APMusicalInstrumentsManager : NSObject
+OBJC_EXTERN const NSString * APInstrumentsPlistKey;
+OBJC_EXTERN const NSString * APTypesPlistKey;
 
-+ (APMusicalInstrumentsManager *)managerWithBasicSetOfInstruments;
+@interface APMusicInstrumentsDataSource : NSObject
+
+- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate;
+
 - (NSInteger)musicalInstrumentsTypesCount;
 - (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type;
 - (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index;
 - (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index;
 - (NSInteger)musicalInstrumentsCount;
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
+
+@end
+
+@protocol APMusicInstrumentsDataSourceDelegate <NSObject>
+
+- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;
 
 @end

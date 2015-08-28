@@ -6,35 +6,34 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "APMusicalInstrumentCell.h"
+#import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrument.h"
 #import "UIImage+StudyingMusicalInstruments.h"
 
-NSString* const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
+NSString * const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 
-@interface APMusicalInstrumentCell ()
+@interface APMusicalInstrumentTableCell ()
 
-//#warning (nonatomic, weak)
 @property (nonatomic, weak) IBOutlet UIImageView *insrumentImageView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
 @end
 
-@implementation APMusicalInstrumentCell
+@implementation APMusicalInstrumentTableCell
 
-//#warning По правилам именования методов если ты передаешь модель Instrument, то метод должен звучать setInstrument:
 - (void)setInstrument:(APMusicalInstrument *)instrument {
     if (!instrument) {
         self.nameLabel.text = NSLocalizedString(@"stub_instrument_name", nil);
         self.descriptionLabel.text = @"";
-        self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
-//#warning здесь вместо return лучше было использовать if-else        
     }
     else {
         self.nameLabel.text = instrument.name;
         self.descriptionLabel.text = instrument.instrumentDescription;
-        self.insrumentImageView.image = instrument.instrumentImage;
+        self.insrumentImageView.image = [UIImage imageNamed:instrument.imageName];
+    }
+    if (!instrument.imageName || [instrument.imageName isEqualToString:@""]) {
+        self.insrumentImageView.image = [UIImage stubInstrumentCellImage];
     }
 }
 

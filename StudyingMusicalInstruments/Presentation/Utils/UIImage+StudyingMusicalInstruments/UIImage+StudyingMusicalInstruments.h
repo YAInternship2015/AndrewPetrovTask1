@@ -12,4 +12,7 @@
 
 + (UIImage *)stubInstrumentCellImage;
 
++ (UIImage *)tableImage;
+
++ (UIImage *)collectionImage;
 @end
