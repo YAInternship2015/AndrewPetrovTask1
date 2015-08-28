@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Add Musical Instrument View Controller-->
+        <!--Title-->
         <scene sceneID="iEp-q5-IQi">
             <objects>
                 <viewController storyboardIdentifier="APAddMusicalInstrumentViewControllerIdentifier" id="Vcs-I5-Q97" customClass="APAddMusicalInstrumentViewController" sceneMemberID="viewController">
@@ -114,9 +114,17 @@
                             <constraint firstAttribute="centerX" secondItem="94V-2t-qkp" secondAttribute="centerX" id="KSN-bE-5Xq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="5gG-c4-PE4">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="ahG-43-yUQ">
+                            <connections>
+                                <action selector="actionSave:" destination="Vcs-I5-Q97" id="lLh-2R-exq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionField" destination="cJK-P7-ZvY" id="kbk-SO-BHJ"/>
                         <outlet property="nameField" destination="zxa-o5-DK4" id="n4f-aN-ot6"/>
+                        <outlet property="saveButton" destination="ahG-43-yUQ" id="AaB-rj-mCu"/>
                         <outlet property="typeField" destination="X7n-h4-mCx" id="Gdh-mG-hep"/>
                     </connections>
                 </viewController>

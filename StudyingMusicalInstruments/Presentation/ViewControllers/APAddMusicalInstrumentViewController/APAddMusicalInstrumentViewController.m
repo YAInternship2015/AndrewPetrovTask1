@@ -21,7 +21,7 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 @interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (nonatomic, strong) UIBarButtonItem *saveButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
@@ -38,12 +38,6 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
     self.typeField.delegate = self;
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
-    self.saveButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Save", nil)
-                                                       style:UIBarButtonItemStylePlain
-                                                      target:self
-                                                      action:@selector(actionSave:)];
-    self.saveButton.enabled = NO;
-    self.navigationItem.rightBarButtonItem = self.saveButton;
     
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.dataSource = self;
@@ -67,7 +61,7 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
     }
 }
 
-- (void)actionSave:(UIBarButtonItem *)sender {
+- (IBAction)actionSave:(UIBarButtonItem *)sender {
     APMusicalInstrument *newInstrument =
     [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
                                        description:self.descriptionField.text

@@ -21,8 +21,6 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) UIImage *togglePresentationImage;
-@property (nonatomic, strong) UIImage *tableImage;
-@property (nonatomic, strong) UIImage *collectionImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *togglePresentationButton;
 
 @end
@@ -34,9 +32,8 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrunemtsTableViewControllerIdentifier];
     self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrumentsCollectionViewControllerIdentifier];
-    self.tableImage = [UIImage tableImage];
-    self.collectionImage = [UIImage collectionImage];
-    self.togglePresentationImage = self.collectionImage;
+    
+    self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);
     
     [self displayContentController:self.tableVC];
@@ -60,10 +57,10 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
 
 - (void)updateTogglePresentationButtonItemPicture {
     if ([self.childViewControllers lastObject] == self.collectionVC) {
-        self.togglePresentationButton.image = self.tableImage;
+        self.togglePresentationButton.image = [UIImage tableImage];;
     }
     else {
-         self.togglePresentationButton.image = self.collectionImage;
+         self.togglePresentationButton.image = [UIImage collectionImage];;
     }
 }
 
