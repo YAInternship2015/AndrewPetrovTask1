@@ -46,17 +46,16 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 }
 
 - (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
-    
-    if (![APMusicalInstrunemtValidator isInstrumentNameEnough:sender.text]) {
+    if (![APMusicalInstrunemtValidator validateName:sender.text error:nil]) {
         sender.textColor = [UIColor redColor];
         self.saveButton.enabled = NO;
     }
-    else if ([APMusicalInstrunemtValidator validateName:sender.text error:nil]) {
-        sender.textColor = [UIColor blackColor];
+    else if (![APMusicalInstrunemtValidator isInstrumentNameStrongEnough:sender.text]) {
+        sender.textColor = [UIColor grayColor];
         self.saveButton.enabled = YES;
     }
     else {
-        sender.textColor = [UIColor grayColor];
+        sender.textColor = [UIColor blackColor];
         self.saveButton.enabled = YES;
     }
 }
@@ -80,7 +79,6 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
         [self.delegate musicalInstrumentDidSaved:self];
     }
 }
-
 
 #pragma mark - UITextFieldDelegate
 

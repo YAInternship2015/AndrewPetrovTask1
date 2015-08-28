@@ -18,6 +18,6 @@ OBJC_EXTERN const NSInteger APMusicalInstrumentTypeValidationLengthError;
 + (BOOL)validateName:(NSString *)name error:(NSError **)error;
 + (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error;
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error;
-+ (BOOL)isInstrumentNameEnough:(NSString *)name;
++ (BOOL)isInstrumentNameStrongEnough:(NSString *)name;
 
 @end

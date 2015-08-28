@@ -9,7 +9,7 @@
 #import "APMusicalInstrunemtValidator.h"
 
 NSString * const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
-const NSInteger APMusicalInstrumentWeakNameMinLength = 3;
+const NSInteger APMusicalInstrumentNameMinLength = 3;
 const NSInteger APMusicalInstrumentStrongNameMinLength = 5;
 const NSInteger APMusicalInstrumentNameValidationLengthError = 42;
 const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
@@ -17,7 +17,7 @@ const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
 @implementation APMusicalInstrunemtValidator
 
 + (BOOL)validateName:(NSString *)name error:(NSError **)error {
-    if (name.length < APMusicalInstrumentStrongNameMinLength) {
+    if (name.length < APMusicalInstrumentNameMinLength) {
         if (error) {
             NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"the_name_should_be_longer", nil)};
             *error = [NSError errorWithDomain:APMusicalInstrunemtDomain
@@ -29,11 +29,11 @@ const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
     return YES;
 }
 
-+ (BOOL)isInstrumentNameEnough:(NSString *)name {
-    if (name.length < APMusicalInstrumentWeakNameMinLength) {
-        return NO;
++ (BOOL)isInstrumentNameStrongEnough:(NSString *)name {
+    if (name.length >= APMusicalInstrumentStrongNameMinLength) {
+        return YES;
     }
-    else return YES;
+    return NO;
 }
 
 + (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error {
