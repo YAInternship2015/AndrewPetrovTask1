@@ -24,6 +24,11 @@ NSString * const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMu
 
 @implementation APMusicalInstrumentsCollectionViewController
 
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
