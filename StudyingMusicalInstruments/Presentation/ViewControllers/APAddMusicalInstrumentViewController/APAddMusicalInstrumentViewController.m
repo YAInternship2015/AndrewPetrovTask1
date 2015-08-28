@@ -53,11 +53,11 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 - (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
     
-    if (sender.text.length < 3) {
+    if ([APMusicalInstrunemtValidator isInstrumentNameWeak:sender.text]) {
         sender.textColor = [UIColor redColor];
         self.saveButton.enabled = NO;
     }
-    else if (sender.text.length > 4) {
+    else if ([APMusicalInstrunemtValidator validateName:sender.text error:nil]) {
         sender.textColor = [UIColor blackColor];
         self.saveButton.enabled = YES;
     }
@@ -68,26 +68,25 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 }
 
 - (void)actionSave:(UIBarButtonItem *)sender {
-    if ([APMusicalInstrunemtValidator validateName:self.nameField.text error:nil]) {
-        APMusicalInstrument *newInstrument =
-        [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
-                                           description:self.descriptionField.text
-                                                  type:self.newInstrumentType
-                                             imageName:nil];
-        NSError *error = nil;
-        if (![APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error]) {
-            [[[UIAlertView alloc] initWithTitle:error.localizedDescription
-                                        message:error.localizedRecoverySuggestion
-                                       delegate:nil
-                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                              otherButtonTitles:nil, nil] show];
-        }
-        else {
-            [APMusicalInstrumentsManager saveInstrument:newInstrument];
-            [self.delegate musicalInstrumentDidSaved:self];
-        }
+    APMusicalInstrument *newInstrument =
+    [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
+                                       description:self.descriptionField.text
+                                              type:self.newInstrumentType
+                                         imageName:nil];
+    NSError *error = nil;
+    if (![APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error]) {
+        [[[UIAlertView alloc] initWithTitle:error.localizedDescription
+                                    message:error.localizedRecoverySuggestion
+                                   delegate:nil
+                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                          otherButtonTitles:nil, nil] show];
+    }
+    else {
+        [APMusicalInstrumentsManager saveInstrument:newInstrument];
+        [self.delegate musicalInstrumentDidSaved:self];
     }
 }
+
 
 #pragma mark - UITextFieldDelegate
 

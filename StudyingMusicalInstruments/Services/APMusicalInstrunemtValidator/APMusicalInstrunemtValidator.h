@@ -16,5 +16,6 @@ extern NSString *const APMusicalInstrunemtDomain;
 + (BOOL)validateName:(NSString *)name error:(NSError **)error;
 + (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error;
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error;
++ (BOOL)isInstrumentNameWeak:(NSString *)name;
 
 @end

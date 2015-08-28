@@ -48,4 +48,11 @@ NSString *const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
     return YES;
 }
 
++ (BOOL)isInstrumentNameWeak:(NSString *)name {
+    if (name.length < 3) {
+        return YES;
+    }
+    else return NO;
+}
+
 @end
