@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-extern NSString *const APMusicalInstrunemtDomain;
+NSString * const APMusicalInstrunemtDomain;
+
+const NSInteger APMusicalInstrumentNameValidationLengthError = 42;
+const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
 
 @interface APMusicalInstrunemtValidator : NSObject
 
 + (BOOL)validateName:(NSString *)name error:(NSError **)error;
 + (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error;
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error;
-+ (BOOL)isInstrumentNameWeak:(NSString *)name;
++ (BOOL)isInstrumentNameEnough:(NSString *)name;
 
 @end

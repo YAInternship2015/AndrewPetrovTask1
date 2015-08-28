@@ -11,8 +11,8 @@
 
 @protocol APMusicInstrumentsDataSourceDelegate;
 
-extern const NSString *APInstrumentsPlistKey;
-extern const NSString *APTypesPlistKey;
+OBJC_EXTERN const NSString * APInstrumentsPlistKey;
+OBJC_EXTERN const NSString * APTypesPlistKey;
 
 @interface APMusicInstrumentsDataSource : NSObject
 

@@ -15,9 +15,9 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicalInstrument.h"
 
-NSString* const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalInstrumentViewControllerIdentifier";
+NSString * const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalInstrumentViewControllerIdentifier";
 
-NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
+NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 @interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -47,7 +47,7 @@ NSString* const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 - (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
     
-    if ([APMusicalInstrunemtValidator isInstrumentNameWeak:sender.text]) {
+    if ([APMusicalInstrunemtValidator isInstrumentNameEnough:sender.text]) {
         sender.textColor = [UIColor redColor];
         self.saveButton.enabled = NO;
     }

@@ -10,7 +10,7 @@
 #import "APMusicalInstrument.h"
 #import "UIImage+StudyingMusicalInstruments.h"
 
-NSString *const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifier";
+NSString * const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifier";
 
 @interface APMusicalInstrumentCollectionCell ()
 

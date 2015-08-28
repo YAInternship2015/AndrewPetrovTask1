@@ -10,7 +10,7 @@
 
 @class APMusicalInstrument;
 
-extern NSString* const APModelDidChangeNotificaion;
+OBJC_EXTERN NSString * const APModelDidChangeNotificaion;
 
 @interface APMusicalInstrumentsManager : NSObject
 

@@ -10,7 +10,7 @@
 
 @class APMusicalInstrument;
 
-extern NSString *const APTableViewCellIdentifier;
+OBJC_EXTERN NSString * const APTableViewCellIdentifier;
 
 @interface APMusicalInstrumentTableCell : UITableViewCell
 

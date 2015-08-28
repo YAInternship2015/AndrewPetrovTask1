@@ -10,12 +10,12 @@
 #import "APMusicalInstrumentsManager.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 
-const NSString *APMusicalInstrumentNameKey = @"name";
-const NSString *APMusicalInstrumentDescriptionKey = @"description";
-const NSString *APMusicalInstrumentTypeKey = @"type";
-const NSString *APMusicalInstrumentImageKey = @"image";
-const NSString *APInstrumentsPlistKey = @"instruments";
-const NSString *APTypesPlistKey = @"instrument_types";
+const NSString * APMusicalInstrumentNameKey = @"name";
+const NSString * APMusicalInstrumentDescriptionKey = @"description";
+const NSString * APMusicalInstrumentTypeKey = @"type";
+const NSString * APMusicalInstrumentImageKey = @"image";
+const NSString * APInstrumentsPlistKey = @"instruments";
+const NSString * APTypesPlistKey = @"instrument_types";
 
 @interface APMusicInstrumentsDataSource ()
 

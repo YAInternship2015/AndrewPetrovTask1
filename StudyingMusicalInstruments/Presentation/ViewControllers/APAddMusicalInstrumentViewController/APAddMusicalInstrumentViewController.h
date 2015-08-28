@@ -10,7 +10,7 @@
 
 @protocol APAddMusicalInstrumentViewControllerDelegate;
 
-extern NSString *const APAddMusicalInstrumentViewControllerIdentifier;
+OBJC_EXTERN NSString * const APAddMusicalInstrumentViewControllerIdentifier;
 
 @interface APAddMusicalInstrumentViewController : UIViewController <UITextFieldDelegate>
 

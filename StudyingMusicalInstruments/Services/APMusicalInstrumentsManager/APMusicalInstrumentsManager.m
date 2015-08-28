@@ -10,7 +10,7 @@
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
 
-NSString* const APModelDidChangeNotificaion = @"APModelDidChangeNotificaion";
+NSString * const APModelDidChangeNotificaion = @"APModelDidChangeNotificaion";
 
 @interface NSDictionary (APMusicalInstrumentsManager)
 

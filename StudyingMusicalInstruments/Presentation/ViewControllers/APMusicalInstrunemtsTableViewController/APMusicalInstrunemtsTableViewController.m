@@ -11,7 +11,7 @@
 #import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
 
-NSString *const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
+NSString * const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
 
 @interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 
