@@ -7,7 +7,7 @@
 Добавить возможность добавлять новые элементы - пользователь может ввести текст для новой модели, этот текст не может быть короче трех символов. Картинку пока не выбыраем. Модель сохраняется в plist. После сохранения модели она должна добавиться в plist и отобразиться в таблице и collection view. 
 
 
-###Project Structure
+###Project Structure sketch
 
 ![alt tag](https://raw.githubusercontent.com/YAInternship2015/AndrewPetrovTask1/master/Task2ClassesDiagram.png)
 
