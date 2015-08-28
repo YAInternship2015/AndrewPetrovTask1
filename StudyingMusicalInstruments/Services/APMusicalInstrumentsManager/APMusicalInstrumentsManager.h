@@ -10,8 +10,7 @@
 
 @class APMusicalInstrument;
 
-#warning объявления всех нотификейшнов также выносятся в отдельный файл, вроде APNotifications
-OBJC_EXTERN NSString * const APModelDidChangeNotificaion;
+//#warning объявления всех нотификейшнов также выносятся в отдельный файл, вроде APNotifications
 
 @interface APMusicalInstrumentsManager : NSObject
 

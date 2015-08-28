@@ -13,16 +13,15 @@
 #import "APMusicalInstrumentsCollectionViewController.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "UIImage+StudyingMusicalInstruments.h"
-
-static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueIndentifier";
+#import "APMusicInstrumentsConstants.h"
 
 @interface APMusicalInstrunemtsContainerController () <APAddMusicalInstrumentViewControllerDelegate>
 
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) UIImage *togglePresentationImage;
-#warning (nonatomic, weak)
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *togglePresentationButton;
+//#warning (nonatomic, weak)
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *togglePresentationButton;
 
 @end
 

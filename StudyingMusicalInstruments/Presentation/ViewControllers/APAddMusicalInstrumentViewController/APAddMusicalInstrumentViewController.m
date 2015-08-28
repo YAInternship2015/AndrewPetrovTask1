@@ -7,25 +7,22 @@
 //
 
 #import "APAddMusicalInstrumentViewController.h"
-#import "APMusicalInstrunemtValidator.h"
-#import "APMusicalInstrunemtFactory.h"
+#import "APMusicalInstrumentValidator.h"
+#import "APMusicalInstrumentFactory.h"
 #import "APMusicalInstrumentsManager.h"
-#import "APMusicalInstrument.h"
+#import "APInstrumentsTypesEnum.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrument.h"
 
-NSString * const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalInstrumentViewControllerIdentifier";
-
-NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
-
-@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate,APMusicInstrumentsDataSourceDelegate>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, assign) APInstrumentsType newInstrumentType;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstrumentsTypes;
+
 
 @end
 
@@ -33,10 +30,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-#warning эти конфиги лучше сделать в сториборде
-    self.nameField.delegate = self;
-    self.descriptionField.delegate = self;
-    self.typeField.delegate = self;
+//#warning эти конфиги лучше сделать в сториборде
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
     
@@ -46,13 +40,13 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
     self.typeField.inputView = pickerView;
 }
 
-#warning опечатка в названии
-- (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
-    if (![APMusicalInstrunemtValidator validateName:sender.text error:nil]) {
+//#warning опечатка в названии
+- (IBAction)instrumetnNameDidChangeInTextField:(UITextField *)sender {
+    if (![APMusicalInstrumentValidator validateName:sender.text error:nil]) {
         sender.textColor = [UIColor redColor];
         self.saveButton.enabled = NO;
     }
-    else if (![APMusicalInstrunemtValidator isInstrumentNameStrongEnough:sender.text]) {
+    else if (![APMusicalInstrumentValidator isInstrumentNameStrongEnough:sender.text]) {
         sender.textColor = [UIColor grayColor];
         self.saveButton.enabled = YES;
     }
@@ -64,12 +58,12 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
     APMusicalInstrument *newInstrument =
-    [APMusicalInstrunemtFactory instrumentWithName:self.nameField.text
+    [APMusicalInstrumentFactory instrumentWithName:self.nameField.text
                                        description:self.descriptionField.text
                                               type:self.newInstrumentType
                                          imageName:nil];
     NSError *error = nil;
-    if (![APMusicalInstrunemtValidator validateInstrument:newInstrument error:&error]) {
+    if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
         [[[UIAlertView alloc] initWithTitle:error.localizedDescription
                                     message:error.localizedRecoverySuggestion
                                    delegate:nil
@@ -85,7 +79,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-#warning решение с тегами может и простое, но не самое элегантное. Но пока сойдет
+//#warning решение с тегами может и простое, но не самое элегантное. Но пока сойдет
     if (textField.returnKeyType == UIReturnKeyNext) {
         UIView *next = [[textField superview] viewWithTag:textField.tag + 1];
         [next becomeFirstResponder];
@@ -98,36 +92,24 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 #pragma mark - UIPickerViewDataSource
 
-#warning по уму, если мы выносили датасорс тадицы и коллекшн вью из контроллера, то датасорс пикера также стоило вынести в отдельный класс
+//#warning по уму, если мы выносили датасорс тадицы и коллекшн вью из контроллера, то датасорс пикера также стоило вынести в отдельный класс
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSString *plistPath = [NSFileManager instrumentsPlistPath];
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    
-    NSArray *typesArray =
-    [[NSArray alloc] initWithArray:(NSArray *)dictionary[APTypesPlistKey]];
-    
-    return typesArray.count;
+     return [self.allMusicalInstrumentsTypes musicalInstrumentsTypesCount];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *plistPath = [NSFileManager instrumentsPlistPath];
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    
-    NSArray *typesArray =
-    [[NSArray alloc] initWithArray:(NSArray *)dictionary[APTypesPlistKey]];
-    
-    return NSLocalizedString(typesArray[row], nil);
+    return NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.newInstrumentType = row;
-    self.typeField.text = [self pickerView:pickerView titleForRow:row forComponent:component];
+    self.typeField.text = NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);
 }
 
 @end

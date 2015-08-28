@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "APMusicalInstrunemtFactory.h"
+#import "APMusicalInstrumentFactory.h"
 
-@implementation APMusicalInstrunemtFactory
+@implementation APMusicalInstrumentFactory
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description

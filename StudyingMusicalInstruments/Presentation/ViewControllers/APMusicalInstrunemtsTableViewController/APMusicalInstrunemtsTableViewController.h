@@ -8,8 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-OBJC_EXTERN NSString * const APMusicalInstrunemtsTableViewControllerIdentifier;
-
 @interface APMusicalInstrunemtsTableViewController : UITableViewController
-
 @end

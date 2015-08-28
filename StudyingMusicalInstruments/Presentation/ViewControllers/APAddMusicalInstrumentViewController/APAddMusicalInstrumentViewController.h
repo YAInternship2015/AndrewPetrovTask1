@@ -10,8 +10,6 @@
 
 @protocol APAddMusicalInstrumentViewControllerDelegate;
 
-OBJC_EXTERN NSString * const APAddMusicalInstrumentViewControllerIdentifier;
-
 @interface APAddMusicalInstrumentViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) id<APAddMusicalInstrumentViewControllerDelegate> delegate;

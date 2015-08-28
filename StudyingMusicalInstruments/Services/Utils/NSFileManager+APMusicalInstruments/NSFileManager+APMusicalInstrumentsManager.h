@@ -14,4 +14,5 @@
 + (NSString *)instrumentsPlistPath;
 + (NSString *)sourceInstrumentsPlistPath;
 + (BOOL)isInstrumentsPlistExist;
+
 @end

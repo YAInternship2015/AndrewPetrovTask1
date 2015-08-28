@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APInstrumentsTypesEnum.h"
 
-#warning enum'ы лучше выносить в отдельные *.h файлы, называть их APInstrumentsTypesEnum. Это для того, чтобы в тех местах, где необходимо будет анализировать значения переменной этого энама, импортировать весь класс, а только сам энам
-typedef NS_ENUM(NSInteger, APInstrumentsType) {
-    APInstrumentsTypeWind,
-    APInstrumentsTypeStringed,
-    APInstrumentsTypePercussion,
-    APInstrumentsTypeKeyboard
-};
+//#warning enum'ы лучше выносить в отдельные *.h файлы, называть их APInstrumentsTypesEnum. Это для того, чтобы в тех местах, где необходимо будет анализировать значения переменной этого энама, импортировать весь класс, а только сам энам
 
 @interface APMusicalInstrument : NSObject
 
@@ -26,7 +21,6 @@ typedef NS_ENUM(NSInteger, APInstrumentsType) {
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
                                        type:(APInstrumentsType)type
-#warning немного съехало форматирование
-                                      imageName:(NSString *)imageName;
+                                  imageName:(NSString *)imageName;
 
 @end

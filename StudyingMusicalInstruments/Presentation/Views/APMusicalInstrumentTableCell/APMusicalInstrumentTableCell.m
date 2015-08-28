@@ -10,8 +10,6 @@
 #import "APMusicalInstrument.h"
 #import "UIImage+StudyingMusicalInstruments.h"
 
-NSString * const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
-
 @interface APMusicalInstrumentTableCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *insrumentImageView;

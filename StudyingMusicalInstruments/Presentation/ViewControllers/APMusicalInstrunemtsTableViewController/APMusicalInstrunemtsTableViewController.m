@@ -8,10 +8,8 @@
 #import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrumentsManager.h"
-#import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
-
-NSString * const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
+#import "APMusicInstrumentsConstants.h"
 
 @interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 

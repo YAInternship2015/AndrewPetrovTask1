@@ -6,19 +6,14 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-#import "APMusicalInstrunemtValidator.h"
+#import "APMusicalInstrumentValidator.h"
+#import "APMusicInstrumentsConstants.h"
 
-NSString * const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
-
-#warning чтобы не раскидывать объявления констант в *.h и *.m файлы, досточно писать в *.m
+//#warning чтобы не раскидывать объявления констант в *.h и *.m файлы, досточно писать в *.m
 // static const NSInteger APMusicalInstrumentNameMinLength = 3;
 // static NSString *const APSomeObjectConstant = @"Constant";
-const NSInteger APMusicalInstrumentNameMinLength = 3;
-const NSInteger APMusicalInstrumentStrongNameMinLength = 5;
-const NSInteger APMusicalInstrumentNameValidationLengthError = 42;
-const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
 
-@implementation APMusicalInstrunemtValidator
+@implementation APMusicalInstrumentValidator
 
 + (BOOL)validateName:(NSString *)name error:(NSError **)error {
     if (name.length < APMusicalInstrumentNameMinLength) {
@@ -60,10 +55,10 @@ const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
 }
 
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error {
-    if (![APMusicalInstrunemtValidator validateName:instrument.name error:error]) {
+    if (![APMusicalInstrumentValidator validateName:instrument.name error:error]) {
         return NO;
     }
-    else if (![APMusicalInstrunemtValidator validateType:instrument.type error:error]) {
+    else if (![APMusicalInstrumentValidator validateType:instrument.type error:error]) {
         return NO;
     }
     return YES;

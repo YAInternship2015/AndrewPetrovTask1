@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-OBJC_EXTERN NSString * const APMusicalInstrumentsCollectionViewControllerIdentifier;
-
 @interface APMusicalInstrumentsCollectionViewController : UICollectionViewController
 
 @end

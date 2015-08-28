@@ -10,8 +10,6 @@
 
 @class APMusicalInstrument;
 
-OBJC_EXTERN NSString * const APCollectionViewCellIdentifier;
-
 @interface APMusicalInstrumentCollectionCell : UICollectionViewCell
 
 - (void)setInstrument:(APMusicalInstrument *)instrument;

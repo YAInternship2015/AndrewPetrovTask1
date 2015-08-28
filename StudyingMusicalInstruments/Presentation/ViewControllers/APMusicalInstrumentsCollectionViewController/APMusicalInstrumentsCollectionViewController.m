@@ -10,11 +10,9 @@
 #import "APMusicalInstrumentsCollectionViewController.h"
 #import "APMusicalInstrumentCollectionCell.h"
 #import "APMusicalInstrumentsManager.h"
-#import "APMusicalInstrument.h"
 #import "APMusicInstrumentsDataSource.h"
 #import "APAddMusicalInstrumentViewController.h"
-
-NSString * const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMusicalInstrumentsCollectionViewControllerIdentifier";
+#import "APMusicInstrumentsConstants.h"
 
 @interface APMusicalInstrumentsCollectionViewController () <APMusicInstrumentsDataSourceDelegate>
 

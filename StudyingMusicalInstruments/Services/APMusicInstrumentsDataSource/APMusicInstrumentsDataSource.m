@@ -9,13 +9,8 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicalInstrumentsManager.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
-
-const NSString * APMusicalInstrumentNameKey = @"name";
-const NSString * APMusicalInstrumentDescriptionKey = @"description";
-const NSString * APMusicalInstrumentTypeKey = @"type";
-const NSString * APMusicalInstrumentImageKey = @"image";
-const NSString * APInstrumentsPlistKey = @"instruments";
-const NSString * APTypesPlistKey = @"instrument_types";
+#import "APMusicInstrumentsConstants.h"
+#import "APMusicalInstrumentNotifications.h"
 
 @interface APMusicInstrumentsDataSource ()
 
@@ -77,7 +72,10 @@ const NSString * APTypesPlistKey = @"instrument_types";
     }
     self.musicalInstrumentsByType = tempInstrumentsByType;
     self.musicalInstruments = tempInstruments;
-    [self.delegate dataSourceIsUpdated:self];
+    
+    if (self.delegate) {
+        [self.delegate dataSourceIsUpdated:self];
+    }
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {
