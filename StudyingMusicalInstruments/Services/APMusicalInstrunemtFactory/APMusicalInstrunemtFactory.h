@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-
+#warning опечатка в имени
 @interface APMusicalInstrunemtFactory : NSObject
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name

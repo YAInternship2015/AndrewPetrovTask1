@@ -21,6 +21,7 @@ static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueInde
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) UIImage *togglePresentationImage;
+#warning (nonatomic, weak)
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *togglePresentationButton;
 
 @end

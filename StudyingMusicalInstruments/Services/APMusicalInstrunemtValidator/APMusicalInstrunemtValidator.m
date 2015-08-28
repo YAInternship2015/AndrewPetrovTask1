@@ -9,6 +9,10 @@
 #import "APMusicalInstrunemtValidator.h"
 
 NSString * const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
+
+#warning чтобы не раскидывать объявления констант в *.h и *.m файлы, досточно писать в *.m
+// static const NSInteger APMusicalInstrumentNameMinLength = 3;
+// static NSString *const APSomeObjectConstant = @"Constant";
 const NSInteger APMusicalInstrumentNameMinLength = 3;
 const NSInteger APMusicalInstrumentStrongNameMinLength = 5;
 const NSInteger APMusicalInstrumentNameValidationLengthError = 42;

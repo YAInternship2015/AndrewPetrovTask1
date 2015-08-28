@@ -13,6 +13,7 @@ OBJC_EXTERN NSString * const APMusicalInstrunemtDomain;
 OBJC_EXTERN const NSInteger APMusicalInstrumentNameValidationLengthError;
 OBJC_EXTERN const NSInteger APMusicalInstrumentTypeValidationLengthError;
 
+#warning опечатка в имени
 @interface APMusicalInstrunemtValidator : NSObject
 
 + (BOOL)validateName:(NSString *)name error:(NSError **)error;

@@ -11,7 +11,7 @@
 @interface UIImage (StudyingMusicalInstruments)
 
 + (UIImage *)stubInstrumentCellImage;
-
+#warning можно не разделять такие методы пустыми строками
 + (UIImage *)tableImage;
 
 + (UIImage *)collectionImage;

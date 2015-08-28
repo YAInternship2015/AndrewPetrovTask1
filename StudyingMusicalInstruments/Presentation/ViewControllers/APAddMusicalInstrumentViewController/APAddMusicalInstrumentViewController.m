@@ -33,6 +33,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+#warning эти конфиги лучше сделать в сториборде
     self.nameField.delegate = self;
     self.descriptionField.delegate = self;
     self.typeField.delegate = self;
@@ -45,6 +46,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
     self.typeField.inputView = pickerView;
 }
 
+#warning опечатка в названии
 - (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
     if (![APMusicalInstrunemtValidator validateName:sender.text error:nil]) {
         sender.textColor = [UIColor redColor];
@@ -83,7 +85,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
+#warning решение с тегами может и простое, но не самое элегантное. Но пока сойдет
     if (textField.returnKeyType == UIReturnKeyNext) {
         UIView *next = [[textField superview] viewWithTag:textField.tag + 1];
         [next becomeFirstResponder];
@@ -96,6 +98,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 #pragma mark - UIPickerViewDataSource
 
+#warning по уму, если мы выносили датасорс тадицы и коллекшн вью из контроллера, то датасорс пикера также стоило вынести в отдельный класс
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
