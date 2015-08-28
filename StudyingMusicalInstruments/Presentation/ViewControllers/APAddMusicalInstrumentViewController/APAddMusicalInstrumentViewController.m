@@ -47,7 +47,7 @@ NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
 - (IBAction)instrumetnNameDidChangeInTextFiedl:(UITextField *)sender {
     
-    if ([APMusicalInstrunemtValidator isInstrumentNameEnough:sender.text]) {
+    if (![APMusicalInstrunemtValidator isInstrumentNameEnough:sender.text]) {
         sender.textColor = [UIColor redColor];
         self.saveButton.enabled = NO;
     }

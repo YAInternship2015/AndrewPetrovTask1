@@ -9,11 +9,10 @@
 #import "APMusicalInstrunemtValidator.h"
 
 NSString * const APMusicalInstrunemtDomain = @"APMusicalInstrunemtDomain";
-NSInteger const APMusicalInstrumentWeakNameMinLength = 3;
-NSInteger const APMusicalInstrumentStrongNameMinLength = 5;
-OBJC_EXTERN const NSInteger APMusicalInstrumentNameValidationLengthError;
-OBJC_EXTERN const NSInteger APMusicalInstrumentTypeValidationLengthError;
-
+const NSInteger APMusicalInstrumentWeakNameMinLength = 3;
+const NSInteger APMusicalInstrumentStrongNameMinLength = 5;
+const NSInteger APMusicalInstrumentNameValidationLengthError = 42;
+const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
 
 @implementation APMusicalInstrunemtValidator
 
@@ -30,17 +29,30 @@ OBJC_EXTERN const NSInteger APMusicalInstrumentTypeValidationLengthError;
     return YES;
 }
 
-+ (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error {
-    if (type < 0 || type > 3) {
-        if (error) {
-            NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"invalid_type", nil)};
-            *error = [NSError errorWithDomain:APMusicalInstrunemtDomain
-                                         code:APMusicalInstrumentTypeValidationLengthError
-                                     userInfo:userInfo];
-        }
++ (BOOL)isInstrumentNameEnough:(NSString *)name {
+    if (name.length < APMusicalInstrumentWeakNameMinLength) {
         return NO;
     }
-    return YES;
+    else return YES;
+}
+
++ (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error {
+    BOOL isValid = NO;
+    switch (type) {
+        case APInstrumentsTypeWind:
+        case APInstrumentsTypeStringed:
+        case APInstrumentsTypePercussion:
+        case APInstrumentsTypeKeyboard:
+            isValid = YES;
+            break;
+    }
+    if (isValid && error) {
+        NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"invalid_type", nil)};
+        *error = [NSError errorWithDomain:APMusicalInstrunemtDomain
+                                     code:APMusicalInstrumentTypeValidationLengthError
+                                 userInfo:userInfo];
+    }
+    return isValid;
 }
 
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error {
@@ -51,13 +63,6 @@ OBJC_EXTERN const NSInteger APMusicalInstrumentTypeValidationLengthError;
         return NO;
     }
     return YES;
-}
-
-+ (BOOL)isInstrumentNameEnough:(NSString *)name {
-    if (name.length < APMusicalInstrumentWeakNameMinLength) {
-        return YES;
-    }
-    else return NO;
 }
 
 @end

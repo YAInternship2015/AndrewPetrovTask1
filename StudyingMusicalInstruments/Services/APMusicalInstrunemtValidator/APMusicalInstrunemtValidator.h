@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-NSString * const APMusicalInstrunemtDomain;
-
-const NSInteger APMusicalInstrumentNameValidationLengthError = 42;
-const NSInteger APMusicalInstrumentTypeValidationLengthError = 43;
+OBJC_EXTERN NSString * const APMusicalInstrunemtDomain;
+OBJC_EXTERN const NSInteger APMusicalInstrumentNameValidationLengthError;
+OBJC_EXTERN const NSInteger APMusicalInstrumentTypeValidationLengthError;
 
 @interface APMusicalInstrunemtValidator : NSObject
 
