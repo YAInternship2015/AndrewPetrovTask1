@@ -11,6 +11,6 @@
 #ifndef StudyingMusicalInstruments_APMusicalInstrumentNotifications_h
 #define StudyingMusicalInstruments_APMusicalInstrumentNotifications_h
 
-NSString * const APModelDidChangeNotificaion = @"APModelDidChangeNotificaion";
+static NSString * const APModelDidChangeNotificaion = @"APModelDidChangeNotificaion";
 
 #endif

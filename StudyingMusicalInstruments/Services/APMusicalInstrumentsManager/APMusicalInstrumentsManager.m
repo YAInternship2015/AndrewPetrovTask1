@@ -10,29 +10,10 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicInstrumentsConstants.h"
 #import "APMusicalInstrumentNotifications.h"
+#import "APMusicalInstrument+Dictionary.h"
 
-#warning категории выносите в отдельные файлы
-#warning и здесь по смыслу все же написать категорию на APMusicalInstrument и в нее добавить метод вроде - (NSDictionary *)dictionaryRepresentation. Для класса NSDictionary слишком "жирно" знать, как разбирать модели
-@interface NSDictionary (APMusicalInstrumentsManager)
-
-+ (NSDictionary *)dictionaryWithInstrument:(APMusicalInstrument *)instrument;
-
-@end
-
-@implementation NSDictionary (APMusicalInstrumentsManager)
-
-+ (NSDictionary *)dictionaryWithInstrument:(APMusicalInstrument *)instrument {
-    NSDictionary *instrumentDictionary = @{
-                                           @"name": instrument.name,
-                                           @"description": instrument.instrumentDescription,
-                                           @"type": @(instrument.type),
-                                           @"image": instrument.imageName ? instrument.imageName : @""
-                                           };
-    return instrumentDictionary;
-}
-
-@end
-
+//#warning категории выносите в отдельные файлы
+//#warning и здесь по смыслу все же написать категорию на APMusicalInstrument и в нее добавить метод вроде - (NSDictionary *)dictionaryRepresentation. Для класса NSDictionary слишком "жирно" знать, как разбирать модели
 @implementation APMusicalInstrumentsManager
 
 + (NSDictionary *)instrumentsPlistContent {
@@ -54,7 +35,7 @@
 }
 
 + (void)saveInstrument:(APMusicalInstrument *)instrument {
-    NSDictionary *instrumentDictionary = [NSDictionary dictionaryWithInstrument:instrument];
+    NSDictionary *instrumentDictionary = [APMusicalInstrument dictionaryWithInstrument:instrument];
     NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
     NSDictionary *oldDictionary = [self instrumentsPlistContent];
     

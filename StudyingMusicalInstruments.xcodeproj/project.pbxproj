@@ -13,6 +13,7 @@
 		771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EC1B6F781D00552816 /* LaunchScreen.xib */; };
 		774A648B1B7BFD4E00C58E36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 774A648A1B7BFD4E00C58E36 /* Localizable.strings */; };
 		774A648D1B7BFD7900C58E36 /* MusicInstruments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 774A648C1B7BFD7900C58E36 /* MusicInstruments.plist */; };
+		7781BEEC1B9492C100027C94 /* APMusicalInstrument+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7781BEEB1B9492C100027C94 /* APMusicalInstrument+Dictionary.m */; };
 		77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CFE8D41B725446006A3CF5 /* Images.xcassets */; };
 		77EF240C1B90B70C00D16002 /* APMusicalInstrumentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EF240B1B90B70C00D16002 /* APMusicalInstrumentFactory.m */; };
 		77EF24101B90B79900D16002 /* APMusicalInstrumentValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EF240F1B90B79900D16002 /* APMusicalInstrumentValidator.m */; };
@@ -39,6 +40,8 @@
 		771A05ED1B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		774A648A1B7BFD4E00C58E36 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		774A648C1B7BFD7900C58E36 /* MusicInstruments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MusicInstruments.plist; sourceTree = "<group>"; };
+		7781BEEA1B9492C100027C94 /* APMusicalInstrument+Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APMusicalInstrument+Dictionary.h"; sourceTree = "<group>"; };
+		7781BEEB1B9492C100027C94 /* APMusicalInstrument+Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APMusicalInstrument+Dictionary.m"; sourceTree = "<group>"; };
 		77CFE8D41B725446006A3CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		77EF240A1B90B70C00D16002 /* APMusicalInstrumentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentFactory.h; sourceTree = "<group>"; };
 		77EF240B1B90B70C00D16002 /* APMusicalInstrumentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentFactory.m; sourceTree = "<group>"; };
@@ -165,6 +168,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		7781BEE91B9492C100027C94 /* APMusicalInstrument+Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				7781BEEA1B9492C100027C94 /* APMusicalInstrument+Dictionary.h */,
+				7781BEEB1B9492C100027C94 /* APMusicalInstrument+Dictionary.m */,
+			);
+			path = "APMusicalInstrument+Dictionary";
+			sourceTree = "<group>";
+		};
 		77EF24091B90B70C00D16002 /* APMusicalInstrumentFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +198,7 @@
 		77EF24171B90D44900D16002 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7781BEE91B9492C100027C94 /* APMusicalInstrument+Dictionary */,
 				77EF24181B90D44900D16002 /* APInstrumentsTypesEnum.h */,
 				77EF24191B90D44900D16002 /* APMusicInstrumentsConstants.h */,
 			);
@@ -407,6 +420,7 @@
 				77F754AF1B8F560800F7C08B /* APMusicalInstrumentsCollectionViewController.m in Sources */,
 				77F754931B8F53E000F7C08B /* APMusicInstrumentsDataSource.m in Sources */,
 				77F754B01B8F560800F7C08B /* APMusicalInstrunemtsContainerController.m in Sources */,
+				7781BEEC1B9492C100027C94 /* APMusicalInstrument+Dictionary.m in Sources */,
 				77EF24101B90B79900D16002 /* APMusicalInstrumentValidator.m in Sources */,
 				77F754B31B8F560800F7C08B /* APMusicalInstrumentTableCell.m in Sources */,
 				77F754801B8F529500F7C08B /* APMusicalInstrument.m in Sources */,
