@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 
-@class NSString;
-
 #ifndef StudyingMusicalInstruments_APMusicalInstrumentNotifications_h
 #define StudyingMusicalInstruments_APMusicalInstrumentNotifications_h
 
