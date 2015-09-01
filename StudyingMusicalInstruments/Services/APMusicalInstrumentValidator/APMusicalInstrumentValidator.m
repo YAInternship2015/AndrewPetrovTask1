@@ -7,7 +7,7 @@
 //
 
 #import "APMusicalInstrumentValidator.h"
-#import "APMusicInstrumentsConstants.h"
+#import "APMusicInstrumentsErrorConstants.h"
 
 //#warning чтобы не раскидывать объявления констант в *.h и *.m файлы, досточно писать в *.m
 // static const NSInteger APMusicalInstrumentNameMinLength = 3;

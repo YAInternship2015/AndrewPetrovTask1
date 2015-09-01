@@ -8,9 +8,9 @@
 #import "APMusicalInstrumentsManager.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicInstrumentsConstants.h"
 #import "APMusicalInstrumentNotifications.h"
 #import "APMusicalInstrument+Dictionary.h"
+#import "APMusicInstrumentsKeyConstants.h"
 
 //#warning категории выносите в отдельные файлы
 //#warning и здесь по смыслу все же написать категорию на APMusicalInstrument и в нее добавить метод вроде - (NSDictionary *)dictionaryRepresentation. Для класса NSDictionary слишком "жирно" знать, как разбирать модели

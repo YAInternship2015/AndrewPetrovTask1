@@ -13,7 +13,7 @@
 #import "APMusicalInstrumentsCollectionViewController.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "UIImage+StudyingMusicalInstruments.h"
-#import "APMusicInstrumentsConstants.h"
+#import "APMusicInstrumentsPresentationConstants.h"
 
 @interface APMusicalInstrunemtsContainerController () <APAddMusicalInstrumentViewControllerDelegate>
 

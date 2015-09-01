@@ -9,7 +9,7 @@
 #import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicInstrumentsConstants.h"
+#import "APMusicInstrumentsPresentationConstants.h"
 
 @interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 

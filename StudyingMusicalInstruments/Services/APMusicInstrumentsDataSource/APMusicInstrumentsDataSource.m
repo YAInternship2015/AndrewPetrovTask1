@@ -8,8 +8,8 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicalInstrumentsManager.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
-#import "APMusicInstrumentsConstants.h"
 #import "APMusicalInstrumentNotifications.h"
+#import "APMusicInstrumentsKeyConstants.h"
 
 @interface APMusicInstrumentsDataSource ()
 
