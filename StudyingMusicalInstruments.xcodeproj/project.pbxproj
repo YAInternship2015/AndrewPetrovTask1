@@ -50,8 +50,8 @@
 		77EF240E1B90B79900D16002 /* APMusicalInstrumentValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentValidator.h; sourceTree = "<group>"; };
 		77EF240F1B90B79900D16002 /* APMusicalInstrumentValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrumentValidator.m; sourceTree = "<group>"; };
 		77EF24151B90C38C00D16002 /* APMusicalInstrumentNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentNotifications.h; sourceTree = "<group>"; };
-		77EF24181B90D44900D16002 /* APInstrumentsTypesEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APInstrumentsTypesEnum.h; path = ../Utils/APInstrumentsTypesEnum.h; sourceTree = "<group>"; };
-		77EF24191B90D44900D16002 /* APMusicInstrumentsKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMusicInstrumentsKeyConstants.h; path = ../Models/Utils/APMusicInstrumentsKeyConstants.h; sourceTree = "<group>"; };
+		77EF24181B90D44900D16002 /* APInstrumentsTypesEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APInstrumentsTypesEnum.h; sourceTree = "<group>"; };
+		77EF24191B90D44900D16002 /* APMusicInstrumentsKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicInstrumentsKeyConstants.h; sourceTree = "<group>"; };
 		77F7547E1B8F529500F7C08B /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
 		77F7547F1B8F529500F7C08B /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
 		77F754821B8F53E000F7C08B /* APMusicalInstrumentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrumentsManager.h; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 		771712B41B7233A000AFEB4D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				774A648C1B7BFD7900C58E36 /* MusicInstruments.plist */,
 				774A648A1B7BFD4E00C58E36 /* Localizable.strings */,
+				774A648C1B7BFD7900C58E36 /* MusicInstruments.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -99,8 +99,8 @@
 		771A05D11B6F781D00552816 = {
 			isa = PBXGroup;
 			children = (
-				771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */,
 				771A05DB1B6F781D00552816 /* Products */,
+				771A05DC1B6F781D00552816 /* StudyingMusicalInstruments */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,15 +116,15 @@
 			isa = PBXGroup;
 			children = (
 				771FF5DC1B7B3B8C00BF8D94 /* Models */,
-				771FF5EB1B7B3B8C00BF8D94 /* Services */,
 				771FF5E01B7B3B8C00BF8D94 /* Presentation */,
+				771712B41B7233A000AFEB4D /* Resource */,
+				771FF5EB1B7B3B8C00BF8D94 /* Services */,
+				771A05DD1B6F781D00552816 /* Supporting Files */,
 				771A05E11B6F781D00552816 /* AppDelegate.h */,
 				771A05E21B6F781D00552816 /* AppDelegate.m */,
-				771A05E71B6F781D00552816 /* Main.storyboard */,
-				771A05EC1B6F781D00552816 /* LaunchScreen.xib */,
 				77CFE8D41B725446006A3CF5 /* Images.xcassets */,
-				771712B41B7233A000AFEB4D /* Resource */,
-				771A05DD1B6F781D00552816 /* Supporting Files */,
+				771A05EC1B6F781D00552816 /* LaunchScreen.xib */,
+				771A05E71B6F781D00552816 /* Main.storyboard */,
 			);
 			path = StudyingMusicalInstruments;
 			sourceTree = "<group>";
@@ -135,14 +135,14 @@
 				771A05DE1B6F781D00552816 /* Info.plist */,
 				771A05DF1B6F781D00552816 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		771FF5DC1B7B3B8C00BF8D94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				77EF24171B90D44900D16002 /* Utils */,
 				77F7547D1B8F529500F7C08B /* APMusicalInstrument */,
+				77EF24171B90D44900D16002 /* Utils */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,11 +161,11 @@
 		771FF5EB1B7B3B8C00BF8D94 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				77F754C01B90625300F7C08B /* Utils */,
-				77EF240D1B90B79900D16002 /* APMusicalInstrumentValidator */,
-				77EF24091B90B70C00D16002 /* APMusicalInstrumentFactory */,
-				77F754811B8F53E000F7C08B /* APMusicalInstrumentsManager */,
 				77F7548A1B8F53E000F7C08B /* APMusicInstrumentsDataSource */,
+				77EF24091B90B70C00D16002 /* APMusicalInstrumentFactory */,
+				77EF240D1B90B79900D16002 /* APMusicalInstrumentValidator */,
+				77F754811B8F53E000F7C08B /* APMusicalInstrumentsManager */,
+				77F754C01B90625300F7C08B /* Utils */,
 				77EF24191B90D44900D16002 /* APMusicInstrumentsKeyConstants.h */,
 				77EF24151B90C38C00D16002 /* APMusicalInstrumentNotifications.h */,
 			);
@@ -193,9 +193,9 @@
 		77EF240D1B90B79900D16002 /* APMusicalInstrumentValidator */ = {
 			isa = PBXGroup;
 			children = (
+				7740DC091B96394A006F60C9 /* APMusicInstrumentsErrorConstants.h */,
 				77EF240E1B90B79900D16002 /* APMusicalInstrumentValidator.h */,
 				77EF240F1B90B79900D16002 /* APMusicalInstrumentValidator.m */,
-				7740DC091B96394A006F60C9 /* APMusicInstrumentsErrorConstants.h */,
 			);
 			path = APMusicalInstrumentValidator;
 			sourceTree = "<group>";
@@ -211,9 +211,9 @@
 		77F7547D1B8F529500F7C08B /* APMusicalInstrument */ = {
 			isa = PBXGroup;
 			children = (
+				77EF24181B90D44900D16002 /* APInstrumentsTypesEnum.h */,
 				77F7547E1B8F529500F7C08B /* APMusicalInstrument.h */,
 				77F7547F1B8F529500F7C08B /* APMusicalInstrument.m */,
-				77EF24181B90D44900D16002 /* APInstrumentsTypesEnum.h */,
 			);
 			path = APMusicalInstrument;
 			sourceTree = "<group>";
@@ -444,6 +444,7 @@
 				771A05E81B6F781D00552816 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		771A05EC1B6F781D00552816 /* LaunchScreen.xib */ = {
@@ -452,6 +453,7 @@
 				771A05ED1B6F781D00552816 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -543,7 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = studyingMusicalInstruments/Info.plist;
+				INFOPLIST_FILE = "StudyingMusicalInstruments/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = StudyingMusicalInstruments;
@@ -554,7 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = studyingMusicalInstruments/Info.plist;
+				INFOPLIST_FILE = "StudyingMusicalInstruments/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = StudyingMusicalInstruments;
