@@ -22,6 +22,10 @@
 
 @implementation APMusicInstrumentsDataSource
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -41,9 +45,7 @@
     }
     return self;
 }
-- (void)dealloc {
-     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+
 - (void)reloadInstruments {
     if(![NSFileManager isInstrumentsPlistExist]) {
         [APMusicalInstrumentsManager restoreInstrumentPlist];
