@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="APInstrumentsType" representedClassName="APInstrumentsType" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="APMusicalInstrument" inverseName="type" inverseEntity="APMusicalInstrument" syncable="YES"/>
+    </entity>
     <entity name="APMusicalInstrument" representedClassName="APMusicalInstrument" syncable="YES">
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="instrumentDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APMusicalInstrumentType" inverseName="instruments" inverseEntity="APMusicalInstrumentType" syncable="YES"/>
-    </entity>
-    <entity name="APMusicalInstrumentType" representedClassName="APMusicalInstrumentType" syncable="YES">
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="APMusicalInstrument" inverseName="type" inverseEntity="APMusicalInstrument" syncable="YES"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APInstrumentsType" inverseName="instruments" inverseEntity="APInstrumentsType" syncable="YES"/>
     </entity>
     <elements>
-        <element name="APMusicalInstrumentType" positionX="520" positionY="-4779" width="128" height="73"/>
+        <element name="APInstrumentsType" positionX="520" positionY="-4779" width="128" height="73"/>
         <element name="APMusicalInstrument" positionX="225" positionY="-4809" width="153" height="103"/>
     </elements>
 </model>
