@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
+#import <MagicalRecord.h>
 
 @interface AppDelegate () 
 
@@ -16,18 +17,13 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // Setup CoreData with MagicalRecord
-    // Step 1. Setup Core Data Stack with Magical Record
-    // Step 2. Relax. Why not have a beer? Surely all this talk of beer is making you thirsty…
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"BeerModel"];
-    
+    [MagicalRecord setupCoreDataStack];
     return YES;
 }
 
 #pragma mark - Core Data stack
 
-@synthesize managedObjectContext = _managedObjectContext;
+/*@synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
@@ -97,6 +93,6 @@
             abort();
         }
     }
-}
+}*/
 
 @end

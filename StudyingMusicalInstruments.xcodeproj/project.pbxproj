@@ -21,10 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		770AEC231B9F024F0001E42F /* _APInstrumentsType.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC1C1B9F024F0001E42F /* _APInstrumentsType.m */; };
-		770AEC241B9F024F0001E42F /* _APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC1E1B9F024F0001E42F /* _APMusicalInstrument.m */; };
-		770AEC251B9F024F0001E42F /* APInstrumentsType.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC201B9F024F0001E42F /* APInstrumentsType.m */; };
-		770AEC261B9F024F0001E42F /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC221B9F024F0001E42F /* APMusicalInstrument.m */; };
+		770AEC311B9F5B920001E42F /* APInstrumentsType.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC291B9F5B920001E42F /* APInstrumentsType.m */; };
+		770AEC321B9F5B920001E42F /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC2B1B9F5B920001E42F /* APMusicalInstrument.m */; };
+		770AEC331B9F5B920001E42F /* _APInstrumentsType.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC2E1B9F5B920001E42F /* _APInstrumentsType.m */; };
+		770AEC341B9F5B920001E42F /* _APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 770AEC301B9F5B920001E42F /* _APMusicalInstrument.m */; };
 		771A05E01B6F781D00552816 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05DF1B6F781D00552816 /* main.m */; };
 		771A05E31B6F781D00552816 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 771A05E21B6F781D00552816 /* AppDelegate.m */; };
 		771A05E91B6F781D00552816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771A05E71B6F781D00552816 /* Main.storyboard */; };
@@ -54,14 +54,14 @@
 /* Begin PBXFileReference section */
 		2FD02A008B3C97129AF90A02 /* libPods-StudyingMusicalInstruments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StudyingMusicalInstruments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F119EED616049C10695A0C /* Pods-StudyingMusicalInstruments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyingMusicalInstruments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyingMusicalInstruments/Pods-StudyingMusicalInstruments.debug.xcconfig"; sourceTree = "<group>"; };
-		770AEC1B1B9F024F0001E42F /* _APInstrumentsType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _APInstrumentsType.h; sourceTree = "<group>"; };
-		770AEC1C1B9F024F0001E42F /* _APInstrumentsType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _APInstrumentsType.m; sourceTree = "<group>"; };
-		770AEC1D1B9F024F0001E42F /* _APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _APMusicalInstrument.h; sourceTree = "<group>"; };
-		770AEC1E1B9F024F0001E42F /* _APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _APMusicalInstrument.m; sourceTree = "<group>"; };
-		770AEC1F1B9F024F0001E42F /* APInstrumentsType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APInstrumentsType.h; sourceTree = "<group>"; };
-		770AEC201B9F024F0001E42F /* APInstrumentsType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APInstrumentsType.m; sourceTree = "<group>"; };
-		770AEC211B9F024F0001E42F /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
-		770AEC221B9F024F0001E42F /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
+		770AEC281B9F5B920001E42F /* APInstrumentsType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APInstrumentsType.h; sourceTree = "<group>"; };
+		770AEC291B9F5B920001E42F /* APInstrumentsType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APInstrumentsType.m; sourceTree = "<group>"; };
+		770AEC2A1B9F5B920001E42F /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
+		770AEC2B1B9F5B920001E42F /* APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicalInstrument.m; sourceTree = "<group>"; };
+		770AEC2D1B9F5B920001E42F /* _APInstrumentsType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _APInstrumentsType.h; sourceTree = "<group>"; };
+		770AEC2E1B9F5B920001E42F /* _APInstrumentsType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _APInstrumentsType.m; sourceTree = "<group>"; };
+		770AEC2F1B9F5B920001E42F /* _APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _APMusicalInstrument.h; sourceTree = "<group>"; };
+		770AEC301B9F5B920001E42F /* _APMusicalInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _APMusicalInstrument.m; sourceTree = "<group>"; };
 		771A05DA1B6F781D00552816 /* StudyingMusicalInstruments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyingMusicalInstruments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		771A05DE1B6F781D00552816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771A05DF1B6F781D00552816 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,16 +135,32 @@
 		770AEC1A1B9F024F0001E42F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				770AEC1B1B9F024F0001E42F /* _APInstrumentsType.h */,
-				770AEC1C1B9F024F0001E42F /* _APInstrumentsType.m */,
-				770AEC1D1B9F024F0001E42F /* _APMusicalInstrument.h */,
-				770AEC1E1B9F024F0001E42F /* _APMusicalInstrument.m */,
-				770AEC1F1B9F024F0001E42F /* APInstrumentsType.h */,
-				770AEC201B9F024F0001E42F /* APInstrumentsType.m */,
-				770AEC211B9F024F0001E42F /* APMusicalInstrument.h */,
-				770AEC221B9F024F0001E42F /* APMusicalInstrument.m */,
+				770AEC271B9F5B920001E42F /* Human */,
+				770AEC2C1B9F5B920001E42F /* Machine */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		770AEC271B9F5B920001E42F /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				770AEC281B9F5B920001E42F /* APInstrumentsType.h */,
+				770AEC291B9F5B920001E42F /* APInstrumentsType.m */,
+				770AEC2A1B9F5B920001E42F /* APMusicalInstrument.h */,
+				770AEC2B1B9F5B920001E42F /* APMusicalInstrument.m */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		770AEC2C1B9F5B920001E42F /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				770AEC2D1B9F5B920001E42F /* _APInstrumentsType.h */,
+				770AEC2E1B9F5B920001E42F /* _APInstrumentsType.m */,
+				770AEC2F1B9F5B920001E42F /* _APMusicalInstrument.h */,
+				770AEC301B9F5B920001E42F /* _APMusicalInstrument.m */,
+			);
+			path = Machine;
 			sourceTree = "<group>";
 		};
 		771712B41B7233A000AFEB4D /* Resource */ = {
@@ -517,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/mogenerator -m StudyingMusicalInstruments/StudyingMusicalInstruments.xcdatamodeld -O StudyingMusicalInstruments/Models/CoreData --template-var arc=true\n";
+			shellScript = "/usr/local/bin/mogenerator --template-var arc=true -m \"StudyingMusicalInstruments/StudyingMusicalInstruments.xcdatamodeld\" -M StudyingMusicalInstruments/Models/CoreData/Machine/ -H StudyingMusicalInstruments/Models/CoreData/Human";
 		};
 		D55800850EBCDC3791A1164F /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -542,24 +558,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F754C41B90625300F7C08B /* NSFileManager+APMusicalInstrumentsManager.m in Sources */,
-				770AEC251B9F024F0001E42F /* APInstrumentsType.m in Sources */,
 				771A05E31B6F781D00552816 /* AppDelegate.m in Sources */,
 				77EF240C1B90B70C00D16002 /* APMusicalInstrumentFactory.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,
-				770AEC241B9F024F0001E42F /* _APMusicalInstrument.m in Sources */,
 				77F754B11B8F560800F7C08B /* APMusicalInstrunemtsTableViewController.m in Sources */,
+				770AEC321B9F5B920001E42F /* APMusicalInstrument.m in Sources */,
 				77F754AF1B8F560800F7C08B /* APMusicalInstrumentsCollectionViewController.m in Sources */,
 				77F754931B8F53E000F7C08B /* APMusicInstrumentsDataSource.m in Sources */,
 				77F754B01B8F560800F7C08B /* APMusicalInstrunemtsContainerController.m in Sources */,
+				770AEC331B9F5B920001E42F /* _APInstrumentsType.m in Sources */,
 				773862331B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodeld in Sources */,
 				7781BEEC1B9492C100027C94 /* APMusicalInstrument+Dictionary.m in Sources */,
 				77EF24101B90B79900D16002 /* APMusicalInstrumentValidator.m in Sources */,
 				77F754B31B8F560800F7C08B /* APMusicalInstrumentTableCell.m in Sources */,
 				77F754801B8F529500F7C08B /* APMusicalInstrument.m in Sources */,
-				770AEC261B9F024F0001E42F /* APMusicalInstrument.m in Sources */,
+				770AEC311B9F5B920001E42F /* APInstrumentsType.m in Sources */,
 				77F754901B8F53E000F7C08B /* APMusicalInstrumentsManager.m in Sources */,
 				77F754B21B8F560800F7C08B /* APMusicalInstrumentCollectionCell.m in Sources */,
-				770AEC231B9F024F0001E42F /* _APInstrumentsType.m in Sources */,
+				770AEC341B9F5B920001E42F /* _APMusicalInstrument.m in Sources */,
 				77F754AD1B8F560800F7C08B /* UIImage+StudyingMusicalInstruments.m in Sources */,
 				77F754AE1B8F560800F7C08B /* APAddMusicalInstrumentViewController.m in Sources */,
 			);
