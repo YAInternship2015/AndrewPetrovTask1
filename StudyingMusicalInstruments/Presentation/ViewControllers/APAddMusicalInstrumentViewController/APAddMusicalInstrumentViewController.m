@@ -10,9 +10,9 @@
 #import "APMusicalInstrumentValidator.h"
 #import "APMusicalInstrumentFactory.h"
 #import "APMusicalInstrumentsManager.h"
-#import "APInstrumentsTypesEnum.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
+#import "APInstrumentsType.h"
 
 @interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate,APMusicInstrumentsDataSourceDelegate>
 
@@ -20,7 +20,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
-@property (nonatomic, assign) APInstrumentsType newInstrumentType;
+@property (nonatomic, strong) APInstrumentsType *instrumentType;
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstrumentsTypes;
 
 
@@ -60,7 +60,7 @@
     APMusicalInstrument *newInstrument =
     [APMusicalInstrumentFactory instrumentWithName:self.nameField.text
                                        description:self.descriptionField.text
-                                              type:self.newInstrumentType
+                                              type:self.instrumentType
                                          imageName:nil];
     NSError *error = nil;
     if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
@@ -108,7 +108,7 @@
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.newInstrumentType = row;
+    self.instrumentType = [APInstrumentsType typeWithNumber:row];
     self.typeField.text = NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);
 }
 

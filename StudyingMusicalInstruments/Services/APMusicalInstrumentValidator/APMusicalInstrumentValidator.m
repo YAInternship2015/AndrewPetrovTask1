@@ -8,6 +8,7 @@
 
 #import "APMusicalInstrumentValidator.h"
 #import "APMusicInstrumentsErrorConstants.h"
+#import "APInstrumentsType.h"
 
 //#warning чтобы не раскидывать объявления констант в *.h и *.m файлы, досточно писать в *.m
 // static const NSInteger APMusicalInstrumentNameMinLength = 3;
@@ -35,9 +36,9 @@
     return NO;
 }
 
-+ (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error {
++ (BOOL)validateType:(APInstrumentsType *)type error:(NSError **)error {
     BOOL isValid = NO;
-    switch (type) {
+    switch (type.typeValue) {
         case APInstrumentsTypeWind:
         case APInstrumentsTypeStringed:
         case APInstrumentsTypePercussion:

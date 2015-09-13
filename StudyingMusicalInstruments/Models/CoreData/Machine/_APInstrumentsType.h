@@ -4,7 +4,7 @@
 #import <CoreData/CoreData.h>
 
 extern const struct APInstrumentsTypeAttributes {
-	__unsafe_unretained NSString *type;
+	__unsafe_unretained NSString *typeName;
 } APInstrumentsTypeAttributes;
 
 extern const struct APInstrumentsTypeRelationships {
@@ -22,13 +22,9 @@ extern const struct APInstrumentsTypeRelationships {
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) APInstrumentsTypeID* objectID;
 
-@property (nonatomic, strong) NSNumber* type;
+@property (nonatomic, strong) NSString* typeName;
 
-@property (atomic) int16_t typeValue;
-- (int16_t)typeValue;
-- (void)setTypeValue:(int16_t)value_;
-
-//- (BOOL)validateType:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateTypeName:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSSet *instruments;
 
@@ -45,6 +41,9 @@ extern const struct APInstrumentsTypeRelationships {
 @end
 
 @interface _APInstrumentsType (CoreDataGeneratedPrimitiveAccessors)
+
+- (NSString*)primitiveTypeName;
+- (void)setPrimitiveTypeName:(NSString*)value;
 
 - (NSMutableSet*)primitiveInstruments;
 - (void)setPrimitiveInstruments:(NSMutableSet*)value;

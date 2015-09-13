@@ -1,5 +1,8 @@
 #import "_APMusicalInstrument.h"
 
 @interface APMusicalInstrument : _APMusicalInstrument {}
-// Custom logic goes here.
++ (APMusicalInstrument *)instrumentWithName:(NSString *)name
+                                description:(NSString *)description
+                                       type:(APInstrumentsType *)type
+                                  imageName:(NSString *)imageName;
 @end

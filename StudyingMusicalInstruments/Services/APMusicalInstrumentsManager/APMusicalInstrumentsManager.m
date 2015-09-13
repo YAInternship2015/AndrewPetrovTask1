@@ -11,6 +11,7 @@
 #import "APMusicalInstrumentNotifications.h"
 #import "APMusicalInstrument+Dictionary.h"
 #import "APMusicInstrumentsKeyConstants.h"
+#import <MagicalRecord.h>
 
 //#warning категории выносите в отдельные файлы
 //#warning и здесь по смыслу все же написать категорию на APMusicalInstrument и в нее добавить метод вроде - (NSDictionary *)dictionaryRepresentation. Для класса NSDictionary слишком "жирно" знать, как разбирать модели
@@ -35,6 +36,19 @@
 }
 
 + (void)saveInstrument:(APMusicalInstrument *)instrument {
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        
+        APMusicalInstrument *instrumentEntity = [APMusicalInstrument MR_createEntity];
+        instrumentEntity = instrument;
+        
+    } completion:^(BOOL success, NSError *error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
+    }];
+    
+}
+
+
+/*+ (void)saveInstrument:(APMusicalInstrument *)instrument {
     NSDictionary *instrumentDictionary = [APMusicalInstrument dictionaryWithInstrument:instrument];
     NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
     NSDictionary *oldDictionary = [self instrumentsPlistContent];
@@ -55,6 +69,6 @@
     }
     else
         NSLog(@"file not updated");
-}
+}*/
 
 @end

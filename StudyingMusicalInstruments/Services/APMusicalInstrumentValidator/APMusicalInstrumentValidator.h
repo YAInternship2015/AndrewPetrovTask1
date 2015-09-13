@@ -13,7 +13,7 @@
 @interface APMusicalInstrumentValidator : NSObject
 
 + (BOOL)validateName:(NSString *)name error:(NSError **)error;
-+ (BOOL)validateType:(APInstrumentsType)type error:(NSError **)error;
++ (BOOL)validateType:(APInstrumentsType *)type error:(NSError **)error;
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error;
 + (BOOL)isInstrumentNameStrongEnough:(NSString *)name;
 

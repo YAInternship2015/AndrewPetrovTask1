@@ -7,12 +7,13 @@
 //
 
 #import "APMusicalInstrumentFactory.h"
+#import "APMusicalInstrument.h"
 
 @implementation APMusicalInstrumentFactory
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
-                                       type:(APInstrumentsType)type
+                                       type:(APInstrumentsType *)type
                                   imageName:(NSString *)image {
     APMusicalInstrument *newMusicalInstrument  = [APMusicalInstrument instrumentWithName:name
                                                                              description:description

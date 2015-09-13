@@ -4,7 +4,7 @@
 #import "_APInstrumentsType.h"
 
 const struct APInstrumentsTypeAttributes APInstrumentsTypeAttributes = {
-	.type = @"type",
+	.typeName = @"typeName",
 };
 
 const struct APInstrumentsTypeRelationships APInstrumentsTypeRelationships = {
@@ -37,25 +37,10 @@ const struct APInstrumentsTypeRelationships APInstrumentsTypeRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"typeValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"type"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-
 	return keyPaths;
 }
 
-@dynamic type;
-
-- (int16_t)typeValue {
-	NSNumber *result = [self type];
-	return [result shortValue];
-}
-
-- (void)setTypeValue:(int16_t)value_ {
-	[self setType:[NSNumber numberWithShort:value_]];
-}
+@dynamic typeName;
 
 @dynamic instruments;
 

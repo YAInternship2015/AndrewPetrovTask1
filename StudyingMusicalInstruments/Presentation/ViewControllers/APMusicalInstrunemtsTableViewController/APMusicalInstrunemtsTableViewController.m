@@ -10,6 +10,7 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicInstrumentsPresentationConstants.h"
+#import "APInstrumentsType.h"
 
 @interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 
@@ -22,13 +23,14 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.allMusicalInstruments musicalInstrumentsCountWithType:section];
+    
+    return [self.allMusicalInstruments musicalInstrumentsCountWithType:[APInstrumentsType typeWithNumber:section]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     APMusicalInstrumentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                                                     forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithType:indexPath.section
+    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithType:[APInstrumentsType typeWithNumber:indexPath.section]
                                                                      atIndex:indexPath.row]];
     return cell;
 }

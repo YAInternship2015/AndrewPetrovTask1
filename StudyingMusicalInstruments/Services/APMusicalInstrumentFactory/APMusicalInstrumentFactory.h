@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "APMusicalInstrument.h"
+@class APInstrumentsType;
+@class APMusicalInstrument;
 
 //#warning опечатка в имени
 @interface APMusicalInstrumentFactory : NSObject
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name
                                 description:(NSString *)description
-                                       type:(APInstrumentsType)type
+                                       type:(APInstrumentsType *)type
                                       imageName:(NSString *)image;
 
 @end

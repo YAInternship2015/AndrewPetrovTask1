@@ -10,6 +10,8 @@
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "APMusicalInstrumentNotifications.h"
 #import "APMusicInstrumentsKeyConstants.h"
+#import "APInstrumentsType.h"
+#import <MagicalRecord.h>
 
 @interface APMusicInstrumentsDataSource ()
 
@@ -47,7 +49,7 @@
 }
 
 - (void)reloadInstruments {
-    if(![NSFileManager isInstrumentsPlistExist]) {
+    /*if(![NSFileManager isInstrumentsPlistExist]) {
         [APMusicalInstrumentsManager restoreInstrumentPlist];
     }
     NSString *plistPath = [NSFileManager instrumentsPlistPath];
@@ -76,31 +78,34 @@
     
     if (self.delegate) {
         [self.delegate dataSourceIsUpdated:self];
-    }
+    }*/
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {
-    return self.musicalInstrumentsByType.count;
+    
+    return ((NSArray *)[APInstrumentsType MR_findAll]).count;
 }
 
-- (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType)type {
-    if (type < 0 || type >= [self musicalInstrumentsTypesCount]) {
+- (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType *)type {
+    if (type.typeValue < 0 || type.typeValue >= [self musicalInstrumentsTypesCount]) {
         return 0;
     }
-    return ((NSMutableArray *)self.musicalInstrumentsByType[type]).count;
+    return ((NSMutableArray *)self.musicalInstrumentsByType).count;
 }
 
-- (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType)type atIndex:(NSInteger)index {
-    return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type])[index]);
+- (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType *)type atIndex:(NSInteger)index {
+    return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type.typeValue])[index]);
 }
 
 - (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index {
-    return NSLocalizedString((NSString *)self.musicalInstrumentsTypes[index], nil);
+    return NSLocalizedString([[APInstrumentsType typeWithNumber:index] nameStringFromTypeNumber], nil);
 }
 
 - (NSInteger)musicalInstrumentsCount {
-    return self.musicalInstruments.count;
+//    return self.musicalInstruments.count;
+    return ((NSArray *)[APMusicalInstrument MR_findAll]).count;
 }
+
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
     if (index >= 0 && index < self.musicalInstruments.count) {
         return self.musicalInstruments[index];

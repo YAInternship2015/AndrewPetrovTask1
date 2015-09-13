@@ -10,11 +10,5 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, APInstrumentsType) {
-    APInstrumentsTypeWind,
-    APInstrumentsTypeStringed,
-    APInstrumentsTypePercussion,
-    APInstrumentsTypeKeyboard
-};
 
 //#endif

@@ -8,6 +8,4 @@
 
 @implementation APInstrumentsType
 
-// Custom logic goes here.
-
 @end
