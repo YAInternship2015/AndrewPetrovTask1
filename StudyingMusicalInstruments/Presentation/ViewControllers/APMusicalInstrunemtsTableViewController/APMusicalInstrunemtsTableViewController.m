@@ -15,15 +15,19 @@
 @interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
+//@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation APMusicalInstrunemtsTableViewController
 
+//- (void)viewDidUnload {
+//    self.fetchedResultsController = nil;
+//}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return [self.allMusicalInstruments musicalInstrumentsCountWithType:[APInstrumentsType typeWithNumber:section]];
 }
 
