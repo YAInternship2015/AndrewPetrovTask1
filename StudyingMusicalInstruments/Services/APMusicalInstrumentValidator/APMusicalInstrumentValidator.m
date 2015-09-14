@@ -37,7 +37,7 @@
 }
 
 + (BOOL)validateType:(APInstrumentsType *)type error:(NSError **)error {
-    BOOL isValid = NO;
+    /*BOOL isValid = NO;
     switch (type.typeValue) {
         case APInstrumentsTypeWind:
         case APInstrumentsTypeStringed:
@@ -52,7 +52,8 @@
                                      code:APMusicalInstrumentTypeValidationLengthError
                                  userInfo:userInfo];
     }
-    return isValid;
+    return isValid;*/
+    return YES;
 }
 
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error {

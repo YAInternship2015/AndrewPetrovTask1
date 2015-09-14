@@ -52,14 +52,10 @@
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
-    
-    
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
     [NSEntityDescription  entityForName:@"APMusicalInstrument"
@@ -77,6 +73,7 @@
                                         managedObjectContext:context sectionNameKeyPath:@"type.typeName"
                                                    cacheName:@"Root"];
     _fetchedResultsController.delegate = self;
+    self.fetchedResultsController = theFetchedResultsController;
     
     return _fetchedResultsController;
 }
@@ -117,19 +114,20 @@
 - (NSInteger)musicalInstrumentsTypesCount {
     
 //    return ((NSArray *)[APInstrumentsType MR_findAll]).count;
-    return [self.fetchedResultsController sections].count;
+    return self.fetchedResultsController.sections.count;
     
 }
 
-- (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType *)type {
-//    return ((NSMutableArray *)self.musicalInstrumentsByType).count;
-    return [self.fetchedResultsController fetchedObjects].count;
+- (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index {
+    id <NSFetchedResultsSectionInfo> sectionInfo =
+    [[_fetchedResultsController sections] objectAtIndex:index];
+    return [sectionInfo numberOfObjects];
+
 }
 
-- (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType *)type atIndex:(NSInteger)index {
-//    return (APMusicalInstrument *)(((NSMutableArray *)self.musicalInstrumentsByType[type.typeValue])[index]);
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:[self sectionIndexFromInstrumentType:type]];
+- (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex
+                                                atIndex:(NSInteger)index {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:typeIndex];
     return [self.fetchedResultsController objectAtIndexPath:indexPath];
     
 }
@@ -153,8 +151,12 @@
     [self reloadInstruments];
 }
 
-- (NSInteger)sectionIndexFromInstrumentType:(APInstrumentsType *)type {
+/*- (NSInteger)sectionIndexFromInstrumentType:(APInstrumentsType *)type {
         return [[self.fetchedResultsController sections] indexOfObject:type];
 }
+
+- (APInstrumentsType *)instrumentTypeFromSectionIndex:(APInstrumentsType *)index {
+    return self.fetchedResultsController.sections[index];
+}*/
 
 @end

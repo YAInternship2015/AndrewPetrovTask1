@@ -15,8 +15,9 @@
 
 - (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate;
 - (NSInteger)musicalInstrumentsTypesCount;
-- (NSInteger)musicalInstrumentsCountWithType:(APInstrumentsType *)type;
-- (APMusicalInstrument *)musicalInstrumentWithType:(APInstrumentsType *)type atIndex:(NSInteger)index;
+- (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index;
+- (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex
+                                                atIndex:(NSInteger)index;
 - (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index;
 - (NSInteger)musicalInstrumentsCount;
 - (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;

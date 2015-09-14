@@ -108,8 +108,9 @@
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.instrumentType = [APInstrumentsType typeWithNumber:row];
-    self.typeField.text = NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);
+    /*self.instrumentType = [APInstrumentsType typeWithNumber:row];
+    self.typeField.text = NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);*/
+    self.typeField.text = @"aaaaa";
 }
 
 @end

@@ -28,14 +28,14 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.allMusicalInstruments musicalInstrumentsCountWithType:[APInstrumentsType typeWithNumber:section]];
+    return [self.allMusicalInstruments musicalInstrumentsCountByTypeWithIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    APMusicalInstrumentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
-                                                                    forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithType:[APInstrumentsType typeWithNumber:indexPath.section]
-                                                                     atIndex:indexPath.row]];
+    APMusicalInstrumentTableCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
+                                    forIndexPath:indexPath];
+    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithTypeIndex:indexPath.section atIndex:indexPath.row]];
     return cell;
 }
 
