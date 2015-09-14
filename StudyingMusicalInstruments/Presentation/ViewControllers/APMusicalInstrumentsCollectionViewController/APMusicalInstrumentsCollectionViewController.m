@@ -14,7 +14,7 @@
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicInstrumentsPresentationConstants.h"
 
-@interface APMusicalInstrumentsCollectionViewController () <APMusicInstrumentsDataSourceDelegate>
+@interface APMusicalInstrumentsCollectionViewController () /*<APMusicInstrumentsDataSourceDelegate>*/
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 

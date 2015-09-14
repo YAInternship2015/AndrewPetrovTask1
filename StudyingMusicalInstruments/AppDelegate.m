@@ -78,7 +78,7 @@
     _managedObjectContext = [[NSManagedObjectContext alloc] init];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
-}
+}*/
 
 #pragma mark - Core Data Saving support
 
@@ -93,6 +93,6 @@
             abort();
         }
     }
-}*/
+}
 
 @end

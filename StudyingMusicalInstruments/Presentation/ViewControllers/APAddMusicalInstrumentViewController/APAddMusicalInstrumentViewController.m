@@ -14,7 +14,7 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APInstrumentsType.h"
 
-@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate,APMusicInstrumentsDataSourceDelegate>
+@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate/*,APMusicInstrumentsDataSourceDelegate*/>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;

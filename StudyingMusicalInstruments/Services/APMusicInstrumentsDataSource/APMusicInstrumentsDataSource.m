@@ -20,8 +20,10 @@
 @property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;
 @property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
-@property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
+//@property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
+@property (nonatomic, weak) IBOutlet id<NSFetchedResultsControllerDelegate>fetchedResultsControllerdelegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
 
 @end
 
@@ -35,21 +37,21 @@
     self = [super init];
     if (self) {
         [self reloadInstruments];
-        [[NSNotificationCenter defaultCenter] addObserver:self
+        /*[[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(modelDidChange)
                                                      name:APModelDidChangeNotificaion
-                                                   object:nil];
+                                                   object:nil];*/
     }
     return self;
 }
 
-- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
+/*- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
     self = [self init];
     if (self) {
         self.delegate = delegate;
     }
     return self;
-}
+}*/
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
@@ -72,8 +74,7 @@
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:context sectionNameKeyPath:@"type.typeName"
                                                    cacheName:@"Root"];
-    _fetchedResultsController.delegate = self;
-    self.fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController = theFetchedResultsController;
     
     return _fetchedResultsController;
 }
@@ -112,10 +113,7 @@
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {
-    
-//    return ((NSArray *)[APInstrumentsType MR_findAll]).count;
     return self.fetchedResultsController.sections.count;
-    
 }
 
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index {
@@ -129,11 +127,10 @@
                                                 atIndex:(NSInteger)index {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:typeIndex];
     return [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
 }
 
 - (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index {
-    return NSLocalizedString([self.fetchedResultsController sections][index], nil);
+    return ((id <NSFetchedResultsSectionInfo>)[self.fetchedResultsController sections][index]).name;
 }
 
 - (NSInteger)musicalInstrumentsCount {
@@ -150,13 +147,5 @@
 - (void) modelDidChange {
     [self reloadInstruments];
 }
-
-/*- (NSInteger)sectionIndexFromInstrumentType:(APInstrumentsType *)type {
-        return [[self.fetchedResultsController sections] indexOfObject:type];
-}
-
-- (APInstrumentsType *)instrumentTypeFromSectionIndex:(APInstrumentsType *)index {
-    return self.fetchedResultsController.sections[index];
-}*/
 
 @end

@@ -12,18 +12,16 @@
 #import "APMusicInstrumentsPresentationConstants.h"
 #import "APInstrumentsType.h"
 
-@interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
+@interface APMusicalInstrunemtsTableViewController () <
+    /*APMusicInstrumentsDataSourceDelegate,*/
+    NSFetchedResultsControllerDelegate
+>
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
-//@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation APMusicalInstrunemtsTableViewController
-
-//- (void)viewDidUnload {
-//    self.fetchedResultsController = nil;
-//}
 
 #pragma mark - UITableViewDataSource
 
@@ -47,10 +45,17 @@
     return [self.allMusicalInstruments musicalInstrumentTypeNameStringAtIndex:section];
 }
 
-#pragma mark - APMusicInstrumentsDataSourceDelegate
+/*#pragma mark - APMusicInstrumentsDataSourceDelegate
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.tableView reloadData];
+}*/
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+    [self.tableView reloadData];
 }
+
 
 @end
