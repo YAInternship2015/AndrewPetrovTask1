@@ -39,10 +39,8 @@ APMusicInstrumentsTypesDataSourceDelegate*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.nameField becomeFirstResponder];
-//    self.delegate = self.allMusicalInstruments;
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
     self.musicalInstrumentsTypes =[self.allMusicalInstrumentsTypes musicalInstrumentTypes];
-//    sleep(3);
     NSLog(@"musicalInstrumentsTypes ++++++++++++ %@", self.musicalInstrumentsTypes);
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.dataSource = self;
@@ -84,7 +82,7 @@ APMusicInstrumentsTypesDataSourceDelegate*/
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
-//    [self.delegate musicalInstrumentDidSaved:self];
+    [self.delegate musicalInstrumentDidSaved:self];
 
     /*NSError *error = nil;
     if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
