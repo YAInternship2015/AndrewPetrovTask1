@@ -13,6 +13,7 @@
 #import "APMusicInstrumentsKeyConstants.h"
 #import <MagicalRecord.h>
 #import "APInstrumentsType.h"
+#import "APMusicInstrumentsTypesDataSource.h"
 
 //#warning категории выносите в отдельные файлы
 //#warning и здесь по смыслу все же написать категорию на APMusicalInstrument и в нее добавить метод вроде - (NSDictionary *)dictionaryRepresentation. Для класса NSDictionary слишком "жирно" знать, как разбирать модели
@@ -49,14 +50,17 @@
 }
 
 + (void)addInstrumentTypesToCoreData {
-    NSArray *namesArray = @[@"APInstrumentsTypeWind", @"APInstrumentsTypeStringed",
-                            @"APInstrumentsTypePercussion", @"APInstrumentsTypeKeyboard"];
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    for (int i = 0; i < namesArray.count; i++) {
-        APInstrumentsType *type = [APInstrumentsType MR_createEntity];
-        type.typeName = namesArray[i];
+    APMusicInstrumentsTypesDataSource *musicInstrumentsTypesDataSource = [[APMusicInstrumentsTypesDataSource alloc] init];
+    if (![musicInstrumentsTypesDataSource musicalInstrumentTypes].count) {
+        NSArray *namesArray = @[@"APInstrumentsTypeWind", @"APInstrumentsTypeStringed",
+                                @"APInstrumentsTypePercussion", @"APInstrumentsTypeKeyboard"];
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+        for (int i = 0; i < namesArray.count; i++) {
+            APInstrumentsType *type = [APInstrumentsType MR_createEntity];
+            type.typeName = namesArray[i];
+        }
+        [context MR_saveToPersistentStoreAndWait];
     }
-    [context MR_saveToPersistentStoreAndWait];
 }
 
 @end

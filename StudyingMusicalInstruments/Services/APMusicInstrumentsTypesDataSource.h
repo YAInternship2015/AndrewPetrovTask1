@@ -10,4 +10,6 @@
 
 @interface APMusicInstrumentsTypesDataSource : NSObject
 
+- (NSArray *)musicalInstrumentTypes;
+
 @end

@@ -23,8 +23,6 @@
 //@property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
 @property (nonatomic, weak) IBOutlet id<NSFetchedResultsControllerDelegate>fetchedResultsControllerdelegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsControllerForTypes;
-
 
 @end
 
@@ -37,14 +35,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-//        [MagicalRecord setupCoreDataStack];
-        
         [self reloadInstruments];
-        /*[[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(modelDidChange)
-                                                     name:APModelDidChangeNotificaion
-                                                   object:nil];*/
-        [self addInstrumentTypesToCoreData];
     }
     return self;
 }
@@ -82,32 +73,7 @@
     
     return _fetchedResultsController;
 }
-- (NSFetchedResultsController *)fetchedResultsControllerForTypes {
-    if (_fetchedResultsControllerForTypes != nil) {
-        return _fetchedResultsControllerForTypes;
-    }
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity =
-    [NSEntityDescription  entityForName:@"APInstrumentsType"
-                 inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                              initWithKey:@"typeName" ascending:NO];
-    [fetchRequest setSortDescriptors:@[sort]];
-    
-    [fetchRequest setFetchBatchSize:20];
-    
-    NSFetchedResultsController *theFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:context
-                                          sectionNameKeyPath:nil
-                                                   cacheName:@"Root"];
-    _fetchedResultsControllerForTypes = theFetchedResultsController;
-    
-    return _fetchedResultsControllerForTypes;
-}
+
 
 - (void)reloadInstruments {
     /*if(![NSFileManager isInstrumentsPlistExist]) {
@@ -143,7 +109,6 @@
 }
 
 - (NSInteger)musicalInstrumentsTypesCount {
-     NSLog(@"musicalInstrumentsTypes\n==========\n%@", [self.fetchedResultsControllerForTypes fetchedObjects]);
     return self.fetchedResultsController.sections.count;
 }
 
@@ -178,12 +143,6 @@
 
 - (void) modelDidChange {
     [self reloadInstruments];
-}
-
-
-- (NSArray *)musicalInstrumentTypes {
-    NSLog(@"%@", self.fetchedResultsController.sections);
-    return self.fetchedResultsController.sections;
 }
 
 @end
