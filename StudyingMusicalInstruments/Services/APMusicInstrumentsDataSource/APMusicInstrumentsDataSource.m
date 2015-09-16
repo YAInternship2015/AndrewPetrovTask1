@@ -20,7 +20,6 @@
 @property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;
 @property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
-//@property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
 @property (nonatomic, weak) IBOutlet id<NSFetchedResultsControllerDelegate>fetchedResultsControllerdelegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -35,7 +34,6 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-//        [self.fetchedResultsController performFetch:nil];
     }
     return self;
 }

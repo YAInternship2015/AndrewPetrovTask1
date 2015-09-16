@@ -103,6 +103,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    NSLog(@"%u", [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count);
      return [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count;
 }
 
