@@ -65,6 +65,7 @@
 
 - (void)reloadInstruments {
     [self.fetchedResultsController performFetch:nil];
+    [self.delegate dataSourceIsUpdated:self];
 }
 
 
