@@ -129,7 +129,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="allMusicalInstrumentsTypes" destination="Pgr-Fw-DHZ" id="jrD-Mn-L7u"/>
                         <outlet property="descriptionField" destination="cJK-P7-ZvY" id="kbk-SO-BHJ"/>
                         <outlet property="nameField" destination="zxa-o5-DK4" id="n4f-aN-ot6"/>
                         <outlet property="saveButton" destination="ahG-43-yUQ" id="AaB-rj-mCu"/>
@@ -137,7 +136,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqF-1t-stQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Pgr-Fw-DHZ" customClass="APMusicInstrumentsDataSource"/>
+                <customObject id="dYx-Uj-oyY" customClass="APMusicInstrumentsTypesDataSource"/>
             </objects>
             <point key="canvasLocation" x="-520" y="16"/>
         </scene>
@@ -342,13 +341,9 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7p-wa-2tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="GAF-kf-ugG" customClass="APMusicInstrumentsDataSource">
-                    <connections>
-                        <outlet property="fetchedResultsControllerdelegate" destination="EtX-M6-bpl" id="Atz-4w-BTw"/>
-                    </connections>
-                </customObject>
+                <customObject id="GAF-kf-ugG" customClass="APMusicInstrumentsDataSource"/>
             </objects>
-            <point key="canvasLocation" x="202" y="794"/>
+            <point key="canvasLocation" x="262" y="742"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MnD-LV-VuV">

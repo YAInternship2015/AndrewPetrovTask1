@@ -15,25 +15,22 @@
 #import "APMusicalInstrument.h"
 #import <CoreData/CoreData.h>
 
-@interface APMusicInstrumentsDataSource ()
+@interface APMusicInstrumentsDataSource () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;
 @property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
-@property (nonatomic, weak) IBOutlet id<NSFetchedResultsControllerDelegate>fetchedResultsControllerdelegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, weak) IBOutlet id<APMusicInstrumentsDataSourceDelegate>delegate;
 
 @end
 
 @implementation APMusicInstrumentsDataSource
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (instancetype)init {
-    self = [super init];
+- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
+    self = [self init];
     if (self) {
+        self.delegate = delegate;
     }
     return self;
 }
@@ -58,44 +55,16 @@
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:context sectionNameKeyPath:@"type.typeName"
-                                                   cacheName:@"Root"];
+                                                   cacheName:nil];
     _fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController.delegate = self;
     [_fetchedResultsController performFetch:nil];
     
     return _fetchedResultsController;
 }
 
 - (void)reloadInstruments {
-    /*if(![NSFileManager isInstrumentsPlistExist]) {
-        [APMusicalInstrumentsManager restoreInstrumentPlist];
-    }
-    NSString *plistPath = [NSFileManager instrumentsPlistPath];
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    self.musicalInstrumentsTypes = dictionary[APTypesPlistKey];
-    NSMutableArray *tempInstrumentsByType = [[NSMutableArray alloc] init];
-    NSMutableArray *tempInstruments = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < self.musicalInstrumentsTypes.count; i++) {
-        [tempInstrumentsByType addObject:[NSMutableArray new]];
-    }
-    for (NSString *musicalInstrumentKey in [dictionary[APInstrumentsPlistKey] allKeys]) {
-        NSDictionary *instrumentDictionary = dictionary[APInstrumentsPlistKey][musicalInstrumentKey];
-        APMusicalInstrument *newInstrument =
-        [APMusicalInstrument instrumentWithName:NSLocalizedString(instrumentDictionary[APMusicalInstrumentNameKey], nil)
-                                    description:NSLocalizedString(instrumentDictionary[APMusicalInstrumentDescriptionKey], nil)
-                                           type:[instrumentDictionary[APMusicalInstrumentTypeKey] integerValue]
-                                          imageName:instrumentDictionary[APMusicalInstrumentImageKey]];
-        if (!newInstrument) continue;
-        
-        [tempInstrumentsByType[newInstrument.type] addObject:newInstrument];
-        [tempInstruments addObject:newInstrument];
-    }
-    self.musicalInstrumentsByType = tempInstrumentsByType;
-    self.musicalInstruments = tempInstruments;
-    
-    if (self.delegate) {
-        [self.delegate dataSourceIsUpdated:self];
-    }*/
+    [self.fetchedResultsController performFetch:nil];
 }
 
 
@@ -124,7 +93,9 @@
     return [self.fetchedResultsController sections];
 }
 
-- (void) modelDidChange {
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self reloadInstruments];
 }
 

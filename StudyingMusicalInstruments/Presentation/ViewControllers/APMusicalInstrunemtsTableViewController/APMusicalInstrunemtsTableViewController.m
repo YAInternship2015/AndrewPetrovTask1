@@ -12,7 +12,7 @@
 #import "APMusicInstrumentsPresentationConstants.h"
 #import "APInstrumentsType.h"
 
-@interface APMusicalInstrunemtsTableViewController () <NSFetchedResultsControllerDelegate>
+@interface APMusicalInstrunemtsTableViewController ()
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 

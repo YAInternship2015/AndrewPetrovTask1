@@ -22,7 +22,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) APInstrumentsType *instrumentType;
-@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
+//@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsTypesDataSource *allMusicalInstrumentsTypes;
 
 
@@ -97,13 +97,12 @@
 
 #pragma mark - UIPickerViewDataSource
 
-//#warning по уму, если мы выносили датасорс тадицы и коллекшн вью из контроллера, то датасорс пикера также стоило вынести в отдельный класс
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSLog(@"%u", [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count);
+    NSLog(@"types count for picker ===== %u", [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count);
      return [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count;
 }
 

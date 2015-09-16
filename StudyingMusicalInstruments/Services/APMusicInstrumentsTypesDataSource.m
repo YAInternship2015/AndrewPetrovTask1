@@ -46,7 +46,7 @@
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:context
                                           sectionNameKeyPath:nil
-                                                   cacheName:@"Root"];
+                                                   cacheName:nil];
     _fetchedResultsController = theFetchedResultsController;
     [_fetchedResultsController performFetch:nil];
     
@@ -54,7 +54,7 @@
 }
 
 - (NSArray *)musicalInstrumentTypes {
-    [self.fetchedResultsController performFetch:nil];
+//    [self.fetchedResultsController performFetch:nil];
     NSLog(@" musicalInstrumentTypes ++++++++++++\n%@", [self.fetchedResultsController fetchedObjects]);
     return [self.fetchedResultsController fetchedObjects];
 }
