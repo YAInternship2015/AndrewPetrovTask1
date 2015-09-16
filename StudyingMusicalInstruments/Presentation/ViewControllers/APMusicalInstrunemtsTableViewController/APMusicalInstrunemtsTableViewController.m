@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.allMusicalInstruments musicalInstrumentsTypesCount];
+    return [self.allMusicalInstruments musicalInstrumentTypes].count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

@@ -30,7 +30,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.allMusicalInstruments musicalInstrumentsCount];
+    return [self.allMusicalInstruments musicalInstruments].count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -38,7 +38,7 @@
     APMusicalInstrumentCollectionCell *cell =
     [collectionView dequeueReusableCellWithReuseIdentifier:APCollectionViewCellIdentifier
                                               forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentAtIndex:indexPath.row]];
+    [cell setInstrument:[self.allMusicalInstruments musicalInstruments][indexPath.row]];
     return cell;
 }
 

@@ -108,9 +108,6 @@
     }*/
 }
 
-- (NSInteger)musicalInstrumentsTypesCount {
-    return self.fetchedResultsController.sections.count;
-}
 
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index {
     id <NSFetchedResultsSectionInfo> sectionInfo =
@@ -129,16 +126,12 @@
     return ((id <NSFetchedResultsSectionInfo>)[self.fetchedResultsController sections][index]).name;
 }
 
-- (NSInteger)musicalInstrumentsCount {
-    NSLog(@"musicalInstruments\n==========\n%@", [self.fetchedResultsController fetchedObjects]);
-    return [self.fetchedResultsController fetchedObjects].count;
+- (NSArray *)musicalInstruments {
+    return [self.fetchedResultsController fetchedObjects];
 }
 
-- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index {
-    if (index >= 0 && index < self.musicalInstruments.count) {
-        return [self.fetchedResultsController fetchedObjects][index];
-    }
-    return nil;
+- (NSArray *)musicalInstrumentTypes {
+    return [self.fetchedResultsController sections];
 }
 
 - (void) modelDidChange {

@@ -48,6 +48,7 @@
                                           sectionNameKeyPath:nil
                                                    cacheName:@"Root"];
     _fetchedResultsController = theFetchedResultsController;
+    [_fetchedResultsController performFetch:nil];
     
     return _fetchedResultsController;
 }

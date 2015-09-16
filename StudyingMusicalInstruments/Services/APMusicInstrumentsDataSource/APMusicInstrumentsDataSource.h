@@ -14,14 +14,12 @@
 @interface APMusicInstrumentsDataSource : NSObject
 
 //- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate;
-- (NSInteger)musicalInstrumentsTypesCount;
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index;
 - (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex
                                                 atIndex:(NSInteger)index;
 - (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index;
-- (NSInteger)musicalInstrumentsCount;
-- (APMusicalInstrument *)musicalInstrumentAtIndex:(NSInteger)index;
 - (NSArray *)musicalInstrumentTypes;
+- (NSArray *)musicalInstruments;
 
 @end
 
