@@ -14,7 +14,7 @@
 
 @interface APMusicalInstrumentsManager : NSObject
 
-+ (void)saveInstrument:(APMusicalInstrument *)instrument;
++ (void)saveInstrument;
 + (void)restoreInstrumentPlist;
 + (void)addInstrumentTypesToCoreData;
 + (void)addInstrumentsToCoreData;

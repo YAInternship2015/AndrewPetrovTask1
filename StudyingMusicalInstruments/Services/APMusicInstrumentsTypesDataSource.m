@@ -50,27 +50,12 @@
     _fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
     [_fetchedResultsController performFetch:nil];
-    NSLog(@"++++++++++APMusicInstrumentsTypesDataSource.fetchedResultsController created");
     
     return _fetchedResultsController;
 }
 
-- (void)reloadTypes {
-    [self.fetchedResultsController performFetch:nil];
-//    [self.delegate typesDataSourceIsUpdated:self];
-    
-}
-
 - (NSArray *)musicalInstrumentTypes {
-    NSLog(@" musicalInstrumentTypes ++++++++++++\n%@", [self.fetchedResultsController fetchedObjects]);
     return [self.fetchedResultsController fetchedObjects];
 }
-
-#pragma mark - NSFetchedResultsControllerDelegate
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    [self reloadTypes];
-}
-
 
 @end

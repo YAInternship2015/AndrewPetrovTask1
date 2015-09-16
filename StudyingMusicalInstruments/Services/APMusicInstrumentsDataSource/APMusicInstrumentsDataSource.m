@@ -28,23 +28,6 @@
 
 @implementation APMusicInstrumentsDataSource
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self reloadInstruments];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(modelDidChange)
-                                                     name:APModelDidChangeNotificaion
-                                                   object:nil];;
-    }
-    return self;
-}
-
-- (void)dealloc {
-    NSLog(@"-----------APMusicInstrumentsDataSource deallocated");
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
     self = [self init];
     if (self) {
@@ -82,17 +65,10 @@
     return _fetchedResultsController;
 }
 
-- (void)reloadInstruments {
-    [self.fetchedResultsController performFetch:nil];
-    [self.delegate dataSourceIsUpdated:self];
-}
-
-
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index {
     id <NSFetchedResultsSectionInfo> sectionInfo =
     [[_fetchedResultsController sections] objectAtIndex:index];
     return [sectionInfo numberOfObjects];
-
 }
 
 - (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex
@@ -113,13 +89,9 @@
     return [self.fetchedResultsController sections];
 }
 
-- (void) modelDidChange {
-//    [self reloadInstruments];
-}
-
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    NSLog(@"-----------controllerDidChangeContent");
-    [self reloadInstruments];
+    [self.delegate dataSourceIsUpdated:self];
+    
 }
 
 @end

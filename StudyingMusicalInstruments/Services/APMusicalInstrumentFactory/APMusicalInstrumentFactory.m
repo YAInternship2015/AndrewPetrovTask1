@@ -17,12 +17,12 @@
                                 description:(NSString *)description
                                        type:(APInstrumentsType *)type
                                   imageName:(NSString *)image {
-    
-    APMusicalInstrument *newMusicalInstrument  = [APMusicalInstrument instrumentWithName:name
-                                                                             description:description
-                                                                                    type:type
-                                                                               imageName:image];
-    return newMusicalInstrument;
+    APMusicalInstrument *instrument = [APMusicalInstrument MR_createEntity];
+    instrument.name = name;
+    instrument.type = type;
+    instrument.instrumentDescription = description;
+    instrument.imageName = image;
+    return instrument;
 }
 
 @end

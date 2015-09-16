@@ -17,18 +17,13 @@
 #import <MagicalRecord.h>
 #import "APMusicalInstrumentNotifications.h"
 
-@interface APAddMusicalInstrumentViewController () <
-UIPickerViewDataSource,
-UIPickerViewDelegate/*,
-APMusicInstrumentsTypesDataSourceDelegate*/
->
+@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) APInstrumentsType *instrumentType;
-@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsTypesDataSource *allMusicalInstrumentsTypes;
 @property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
 
@@ -64,24 +59,13 @@ APMusicInstrumentsTypesDataSourceDelegate*/
 }
 
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
-    APInstrumentsType *type = (APInstrumentsType *)[self.allMusicalInstrumentsTypes musicalInstrumentTypes][0];
-//    type.typeName = @"APInstrumentsTypeWind";
-    //TODO: remove stump
-    
-    /*APMusicalInstrument *newInstrument =
+    APMusicalInstrument *newInstrument =
     [APMusicalInstrumentFactory instrumentWithName:self.nameField.text
                                        description:self.descriptionField.text
-                                              type:type
-                                         imageName:nil];*/
+                                              type:self.instrumentType
+                                         imageName:nil];
+    [APMusicalInstrumentsManager saveInstrument];
     
-    //TODO: move creating to APMusicalInstrumentsManager
-    APMusicalInstrument *instrument = [APMusicalInstrument MR_createEntity];
-    instrument.name = @"0000000000000";
-    instrument.type = type;
-    instrument.instrumentDescription = @"nnn";
-    
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-//    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
     [self.delegate musicalInstrumentDidSaved:self];
 
     /*NSError *error = nil;
@@ -103,7 +87,6 @@ APMusicInstrumentsTypesDataSourceDelegate*/
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//#warning решение с тегами может и простое, но не самое элегантное. Но пока сойдет
     if (textField.returnKeyType == UIReturnKeyNext) {
         UIView *next = [[textField superview] viewWithTag:textField.tag + 1];
         [next becomeFirstResponder];
@@ -117,24 +100,20 @@ APMusicInstrumentsTypesDataSourceDelegate*/
 #pragma mark - UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    NSLog(@"numberOfComponentsInPickerView");
     return 1;
 }
-//TODO: figure out with threads
+
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSLog(@"types count for picker ===== %u", self.musicalInstrumentsTypes.count);
      return self.musicalInstrumentsTypes.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSLog(@"%@", ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName);
     return ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName;
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"%@", self.musicalInstrumentsTypes);
     self.instrumentType = self.musicalInstrumentsTypes[row];
     self.typeField.text =  self.instrumentType.typeName;
 }

@@ -20,10 +20,6 @@
 
 @implementation APMusicalInstrunemtsTableViewController
 
--(void)dealloc {
-    NSLog(@"---------------APMusicalInstrunemtsTableViewController deallocated");
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -37,16 +37,8 @@
     [fileManager copyItemAtPath:strSourcePath toPath:docPath error:&error];
 }
 
-+ (void)saveInstrument:(APMusicalInstrument *)instrument {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        
-        APMusicalInstrument *instrumentEntity = [APMusicalInstrument MR_createEntity];
-        instrumentEntity = instrument;
-        
-    } completion:^(BOOL success, NSError *error) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
-    }];
-    
++ (void)saveInstrument {
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 + (void)addInstrumentTypesToCoreData {
