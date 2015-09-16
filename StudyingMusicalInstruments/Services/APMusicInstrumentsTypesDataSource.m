@@ -53,6 +53,8 @@
 }
 
 - (NSArray *)musicalInstrumentTypes {
+    [self.fetchedResultsController performFetch:nil];
+    NSLog(@" musicalInstrumentTypes ++++++++++++\n%@", [self.fetchedResultsController fetchedObjects]);
     return [self.fetchedResultsController fetchedObjects];
 }
 

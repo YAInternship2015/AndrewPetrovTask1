@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MagicalRecord setupCoreDataStack];
     [APMusicalInstrumentsManager addInstrumentTypesToCoreData];
+    [APMusicalInstrumentsManager addInstrumentsToCoreData];
+    
     return YES;
 }
 

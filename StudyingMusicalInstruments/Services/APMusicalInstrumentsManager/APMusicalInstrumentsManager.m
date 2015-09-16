@@ -63,4 +63,21 @@
     }
 }
 
++ (void)addInstrumentsToCoreData {
+    APMusicInstrumentsTypesDataSource *musicInstrumentsTypesDataSource =
+    [[APMusicInstrumentsTypesDataSource alloc] init];
+    NSArray *typesArray = [musicInstrumentsTypesDataSource musicalInstrumentTypes];
+    NSArray *namesArray = @[@"aaa", @"bbb", @"aaa1", @"bbb2", @"ccc", @"ddd", @"ccc1", @"ddd2"];
+    int k = 0;
+    for (int i = 0; i < typesArray.count; i++) {
+        for (int j = 0; j < 2; j++) {
+            APMusicalInstrument *instrument = [APMusicalInstrument MR_createEntity];
+            instrument.name = namesArray[k++];
+            instrument.type = typesArray[i];
+            instrument.instrumentDescription = @"qqqqqq";
+        }
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 @end

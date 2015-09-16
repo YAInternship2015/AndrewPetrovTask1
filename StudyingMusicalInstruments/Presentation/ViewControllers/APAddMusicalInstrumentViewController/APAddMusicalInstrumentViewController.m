@@ -12,6 +12,7 @@
 #import "APMusicalInstrumentsManager.h"
 #import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
+#import "APMusicInstrumentsTypesDataSource.h"
 #import "APInstrumentsType.h"
 
 @interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate/*,APMusicInstrumentsDataSourceDelegate*/>
@@ -21,7 +22,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) APInstrumentsType *instrumentType;
-@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstrumentsTypes;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsTypesDataSource *allMusicalInstrumentsTypes;
 
 
 @end
@@ -101,18 +103,19 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-     return [self.allMusicalInstrumentsTypes musicalInstrumentsTypesCount];
+     return [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);
+    return [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSLog(@"%@", [self.allMusicalInstrumentsTypes musicalInstrumentTypes]);
     self.instrumentType = [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
-    self.typeField.text = [self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row];
+    self.typeField.text =  self.instrumentType.typeName;
 }
 
 @end

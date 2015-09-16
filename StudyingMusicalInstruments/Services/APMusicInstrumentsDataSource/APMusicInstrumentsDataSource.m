@@ -35,7 +35,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self reloadInstruments];
+//        [self.fetchedResultsController performFetch:nil];
     }
     return self;
 }
@@ -70,10 +70,10 @@
                                         managedObjectContext:context sectionNameKeyPath:@"type.typeName"
                                                    cacheName:@"Root"];
     _fetchedResultsController = theFetchedResultsController;
+    [_fetchedResultsController performFetch:nil];
     
     return _fetchedResultsController;
 }
-
 
 - (void)reloadInstruments {
     /*if(![NSFileManager isInstrumentsPlistExist]) {
