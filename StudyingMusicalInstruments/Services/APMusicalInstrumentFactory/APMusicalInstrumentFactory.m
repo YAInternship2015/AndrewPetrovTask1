@@ -21,7 +21,7 @@
     instrument.name = name;
     instrument.type = type;
     instrument.instrumentDescription = description;
-    instrument.imageName = image;
+    instrument.imageName = @"violin";
     return instrument;
 }
 

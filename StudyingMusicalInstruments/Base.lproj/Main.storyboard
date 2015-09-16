@@ -213,11 +213,7 @@
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHc-UH-UxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsDataSource">
-                    <connections>
-                        <outlet property="fetchedResultsControllerdelegate" destination="TQg-0v-HLJ" id="muh-BD-zJW"/>
-                    </connections>
-                </customObject>
+                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsDataSource"/>
             </objects>
             <point key="canvasLocation" x="202" y="66"/>
         </scene>
