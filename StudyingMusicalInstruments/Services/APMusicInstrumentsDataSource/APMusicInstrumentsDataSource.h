@@ -9,11 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "APMusicalInstrument.h"
 
-//@protocol APMusicInstrumentsDataSourceDelegate;
-
 @interface APMusicInstrumentsDataSource : NSObject
 
-//- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate;
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index;
 - (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex
                                                 atIndex:(NSInteger)index;
@@ -22,11 +19,3 @@
 - (NSArray *)musicalInstruments;
 
 @end
-
-/*@protocol APMusicInstrumentsDataSourceDelegate <NSObject>
-
-@optional
-
-- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;
-
-@end*/

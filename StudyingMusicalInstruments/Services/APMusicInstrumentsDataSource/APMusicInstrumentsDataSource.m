@@ -38,14 +38,6 @@
     return self;
 }
 
-/*- (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
-    self = [self init];
-    if (self) {
-        self.delegate = delegate;
-    }
-    return self;
-}*/
-
 - (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
