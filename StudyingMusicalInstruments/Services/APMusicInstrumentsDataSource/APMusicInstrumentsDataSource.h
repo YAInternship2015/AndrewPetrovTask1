@@ -17,15 +17,13 @@
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index;
 - (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex
                                                 atIndex:(NSInteger)index;
-- (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index;
+- (NSString *)musicalInstrumentTypeNameAtIndex:(NSInteger)index;
 - (NSArray *)musicalInstrumentTypes;
 - (NSArray *)musicalInstruments;
 
 @end
 
 @protocol APMusicInstrumentsDataSourceDelegate <NSObject>
-
-@optional//???: why?
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;
 

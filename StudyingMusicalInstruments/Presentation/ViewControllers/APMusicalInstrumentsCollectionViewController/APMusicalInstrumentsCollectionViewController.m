@@ -30,7 +30,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.allMusicalInstruments musicalInstruments].count;
+    return [self.allMusicalInstruments musicalInstruments];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView

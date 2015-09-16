@@ -39,12 +39,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [self.allMusicalInstruments musicalInstrumentTypeNameStringAtIndex:section];
-}
-
-- (void)configureCell:(APMusicalInstrumentTableCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    APMusicalInstrument *musicalInstrument = [self.allMusicalInstruments musicalInstruments][indexPath.row];
-    [cell setInstrument:musicalInstrument];
+    return [self.allMusicalInstruments musicalInstrumentTypeNameAtIndex:section];
 }
 
 #pragma mark - APMusicInstrumentsDataSourceDelegate

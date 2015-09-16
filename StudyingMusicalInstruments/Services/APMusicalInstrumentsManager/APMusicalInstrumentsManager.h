@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @class APMusicalInstrument;
+@class APInstrumentsType;
 
 //#warning объявления всех нотификейшнов также выносятся в отдельный файл, вроде APNotifications
 
 @interface APMusicalInstrumentsManager : NSObject
 
-+ (void)saveInstrument;
 + (void)restoreInstrumentPlist;
-+ (void)addInstrumentTypesToCoreData;
-+ (void)addInstrumentsToCoreData;
++ (void)addInstrumentTypesIfNeeded;
++ (void)createInstrumentWithName:(NSString *)name
+                     description:(NSString *)description
+                            type:(APInstrumentsType *)type
+                       imageName:(NSString *)image;
 
 @end

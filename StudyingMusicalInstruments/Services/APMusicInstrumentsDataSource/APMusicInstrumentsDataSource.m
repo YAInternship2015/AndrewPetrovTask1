@@ -77,7 +77,7 @@
     return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
-- (NSString *)musicalInstrumentTypeNameStringAtIndex:(NSInteger)index {
+- (NSString *)musicalInstrumentTypeNameAtIndex:(NSInteger)index {
     return ((id <NSFetchedResultsSectionInfo>)[self.fetchedResultsController sections][index]).name;
 }
 

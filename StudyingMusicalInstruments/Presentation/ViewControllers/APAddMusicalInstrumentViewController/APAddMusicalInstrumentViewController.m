@@ -25,7 +25,6 @@
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) APInstrumentsType *instrumentType;
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsTypesDataSource *allMusicalInstrumentsTypes;
-@property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
 
 @end
 
@@ -35,8 +34,6 @@
     [super viewDidLoad];
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
-    self.musicalInstrumentsTypes =[self.allMusicalInstrumentsTypes musicalInstrumentTypes];
-    NSLog(@"musicalInstrumentsTypes ++++++++++++ %@", self.musicalInstrumentsTypes);
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.dataSource = self;
     pickerView.delegate = self;
@@ -59,13 +56,10 @@
 }
 
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
-    APMusicalInstrument *newInstrument =
-    [APMusicalInstrumentFactory instrumentWithName:self.nameField.text
-                                       description:self.descriptionField.text
-                                              type:self.instrumentType
-                                         imageName:nil];
-    [APMusicalInstrumentsManager saveInstrument];
-    
+    [APMusicalInstrumentsManager createInstrumentWithName:self.nameField.text
+                                              description:self.descriptionField.text
+                                                     type:self.instrumentType
+                                                imageName:nil];
     [self.delegate musicalInstrumentDidSaved:self];
 
     /*NSError *error = nil;
@@ -104,17 +98,17 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-     return self.musicalInstrumentsTypes.count;
+     return [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName;
+    return ((APInstrumentsType *)[self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName;
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.instrumentType = self.musicalInstrumentsTypes[row];
+    self.instrumentType = [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
     self.typeField.text =  self.instrumentType.typeName;
 }
 
