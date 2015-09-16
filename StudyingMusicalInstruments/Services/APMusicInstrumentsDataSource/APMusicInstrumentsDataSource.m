@@ -28,6 +28,22 @@
 
 @implementation APMusicInstrumentsDataSource
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self reloadInstruments];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(modelDidChange)
+                                                     name:APModelDidChangeNotificaion
+                                                   object:nil];;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (instancetype)initWithDelegate:(id<APMusicInstrumentsDataSourceDelegate>)delegate {
     self = [self init];
     if (self) {
@@ -93,6 +109,10 @@
 
 - (NSArray *)musicalInstrumentTypes {
     return [self.fetchedResultsController sections];
+}
+
+- (void) modelDidChange {
+    [self reloadInstruments];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

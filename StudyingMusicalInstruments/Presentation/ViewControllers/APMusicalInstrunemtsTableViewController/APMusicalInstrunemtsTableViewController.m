@@ -54,7 +54,7 @@
 }
 
 
-#pragma mark - NSFetchedResultsControllerDelegate
+/*#pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
@@ -100,11 +100,12 @@
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
-}
+}*/
 
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
 }
+
 @end

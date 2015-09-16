@@ -15,6 +15,7 @@
 #import "APMusicInstrumentsTypesDataSource.h"
 #import "APInstrumentsType.h"
 #import <MagicalRecord.h>
+#import "APMusicalInstrumentNotifications.h"
 
 @interface APAddMusicalInstrumentViewController () <
 UIPickerViewDataSource,
@@ -38,7 +39,7 @@ APMusicInstrumentsTypesDataSourceDelegate*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.nameField becomeFirstResponder];
-    self.delegate = self.allMusicalInstruments;
+//    self.delegate = self.allMusicalInstruments;
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
     self.musicalInstrumentsTypes =[self.allMusicalInstrumentsTypes musicalInstrumentTypes];
 //    sleep(3);
@@ -82,7 +83,8 @@ APMusicInstrumentsTypesDataSourceDelegate*/
     instrument.instrumentDescription = @"nnn";
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    [self.delegate musicalInstrumentDidSaved:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
+//    [self.delegate musicalInstrumentDidSaved:self];
 
     /*NSError *error = nil;
     if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
