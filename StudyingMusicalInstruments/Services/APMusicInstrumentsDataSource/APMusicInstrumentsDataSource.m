@@ -112,6 +112,11 @@
 }
 
 - (void) modelDidChange {
+//    [self reloadInstruments];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    NSLog(@"-----------controllerDidChangeContent");
     [self reloadInstruments];
 }
 
