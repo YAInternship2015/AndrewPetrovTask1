@@ -9,6 +9,7 @@
 #import "APMusicalInstrumentFactory.h"
 #import "APMusicalInstrument.h"
 #import "APInstrumentsType.h"
+#import <MagicalRecord.h>
 
 @implementation APMusicalInstrumentFactory
 
@@ -16,6 +17,7 @@
                                 description:(NSString *)description
                                        type:(APInstrumentsType *)type
                                   imageName:(NSString *)image {
+    
     APMusicalInstrument *newMusicalInstrument  = [APMusicalInstrument instrumentWithName:name
                                                                              description:description
                                                                                     type:type

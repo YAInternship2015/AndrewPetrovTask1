@@ -17,7 +17,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface APMusicInstrumentsTypesDataSource ()
+@interface APMusicInstrumentsTypesDataSource () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -48,15 +48,29 @@
                                           sectionNameKeyPath:nil
                                                    cacheName:nil];
     _fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController.delegate = self;
     [_fetchedResultsController performFetch:nil];
+    NSLog(@"++++++++++APMusicInstrumentsTypesDataSource.fetchedResultsController created");
     
     return _fetchedResultsController;
 }
 
+- (void)reloadTypes {
+    [self.fetchedResultsController performFetch:nil];
+//    [self.delegate typesDataSourceIsUpdated:self];
+    
+}
+
 - (NSArray *)musicalInstrumentTypes {
-//    [self.fetchedResultsController performFetch:nil];
     NSLog(@" musicalInstrumentTypes ++++++++++++\n%@", [self.fetchedResultsController fetchedObjects]);
     return [self.fetchedResultsController fetchedObjects];
 }
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self reloadTypes];
+}
+
 
 @end

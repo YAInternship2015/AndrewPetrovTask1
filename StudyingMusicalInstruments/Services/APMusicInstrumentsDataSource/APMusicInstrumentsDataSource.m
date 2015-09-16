@@ -14,6 +14,7 @@
 #import <MagicalRecord.h>
 #import "APMusicalInstrument.h"
 #import <CoreData/CoreData.h>
+#import "APAddMusicalInstrumentViewController.h"
 
 @interface APMusicInstrumentsDataSource () <NSFetchedResultsControllerDelegate>
 
@@ -97,6 +98,11 @@
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self reloadInstruments];
+}
+#pragma mark - APAddMusicalInstrumentViewControllerDelegate
+
+- (void)musicalInstrumentDidSaved:(APAddMusicalInstrumentViewController *)sender {
     [self reloadInstruments];
 }
 

@@ -14,17 +14,22 @@
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicInstrumentsTypesDataSource.h"
 #import "APInstrumentsType.h"
+#import <MagicalRecord.h>
 
-@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate/*,APMusicInstrumentsDataSourceDelegate*/>
+@interface APAddMusicalInstrumentViewController () <
+UIPickerViewDataSource,
+UIPickerViewDelegate/*,
+APMusicInstrumentsTypesDataSourceDelegate*/
+>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *typeField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) APInstrumentsType *instrumentType;
-//@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsTypesDataSource *allMusicalInstrumentsTypes;
-
+@property (nonatomic, strong) NSArray *musicalInstrumentsTypes;
 
 @end
 
@@ -33,8 +38,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.nameField becomeFirstResponder];
+    self.delegate = self.allMusicalInstruments;
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
-    
+    self.musicalInstrumentsTypes =[self.allMusicalInstrumentsTypes musicalInstrumentTypes];
+//    sleep(3);
+    NSLog(@"musicalInstrumentsTypes ++++++++++++ %@", self.musicalInstrumentsTypes);
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.dataSource = self;
     pickerView.delegate = self;
@@ -57,17 +65,26 @@
 }
 
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
-    APInstrumentsType *type = [[APInstrumentsType alloc] init];
+    APInstrumentsType *type = (APInstrumentsType *)[self.allMusicalInstrumentsTypes musicalInstrumentTypes][0];
 //    type.typeName = @"APInstrumentsTypeWind";
-//    [type setTypeName:@"APInstrumentsTypeWind"];
-    [type setValue:@"APInstrumentsTypeWind" forKey:@"typeName"];
     //TODO: remove stump
-    APMusicalInstrument *newInstrument =
+    
+    /*APMusicalInstrument *newInstrument =
     [APMusicalInstrumentFactory instrumentWithName:self.nameField.text
                                        description:self.descriptionField.text
                                               type:type
-                                         imageName:nil];
-    NSError *error = nil;
+                                         imageName:nil];*/
+    
+    //TODO: move creating to APMusicalInstrumentsManager
+    APMusicalInstrument *instrument = [APMusicalInstrument MR_createEntity];
+    instrument.name = @"0000000000000";
+    instrument.type = type;
+    instrument.instrumentDescription = @"nnn";
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.delegate musicalInstrumentDidSaved:self];
+
+    /*NSError *error = nil;
     if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
         [[[UIAlertView alloc] initWithTitle:error.localizedDescription
                                     message:error.localizedRecoverySuggestion
@@ -78,7 +95,9 @@
     else {
         [APMusicalInstrumentsManager saveInstrument:newInstrument];
         [self.delegate musicalInstrumentDidSaved:self];
-    }
+    }*/
+    
+    
 }
 
 #pragma mark - UITextFieldDelegate
@@ -98,24 +117,28 @@
 #pragma mark - UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    NSLog(@"numberOfComponentsInPickerView");
     return 1;
 }
-
+//TODO: figure out with threads
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSLog(@"types count for picker ===== %u", [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count);
-     return [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count;
+    /*NSLog(@"types count for picker ===== %u", self.musicalInstrumentsTypes.count);
+     return self.musicalInstrumentsTypes.count;*/
+    return 4;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
+    /*NSLog(@"%@", ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName);
+    return ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName;*/
+    return @"bbbb";
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"%@", [self.allMusicalInstrumentsTypes musicalInstrumentTypes]);
-    self.instrumentType = [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
-    self.typeField.text =  self.instrumentType.typeName;
+    /*NSLog(@"%@", self.musicalInstrumentsTypes);
+    self.instrumentType = self.musicalInstrumentsTypes[row];
+    self.typeField.text =  self.instrumentType.typeName;*/
 }
 
 @end

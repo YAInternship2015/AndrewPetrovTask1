@@ -341,7 +341,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7p-wa-2tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="GAF-kf-ugG" customClass="APMusicInstrumentsDataSource"/>
+                <customObject id="GAF-kf-ugG" customClass="APMusicInstrumentsDataSource">
+                    <connections>
+                        <outlet property="delegate" destination="EtX-M6-bpl" id="5se-hE-rj5"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="262" y="742"/>
         </scene>

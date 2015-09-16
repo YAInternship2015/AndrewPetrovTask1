@@ -13,3 +13,12 @@
 - (NSArray *)musicalInstrumentTypes;
 
 @end
+
+/*@protocol APMusicInstrumentsTypesDataSourceDelegate <NSObject>
+
+@optional//???: why?
+
+- (void)typesDataSourceIsUpdated:(APMusicInstrumentsTypesDataSource *)dataSource;
+
+@end*/
+
