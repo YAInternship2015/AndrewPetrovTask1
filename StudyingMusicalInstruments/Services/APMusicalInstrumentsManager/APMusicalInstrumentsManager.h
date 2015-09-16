@@ -16,5 +16,6 @@
 
 + (void)saveInstrument:(APMusicalInstrument *)instrument;
 + (void)restoreInstrumentPlist;
++ (void)addInstrumentTypesToCoreData;
 
 @end

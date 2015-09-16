@@ -37,7 +37,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [MagicalRecord setupCoreDataStack];
+//        [MagicalRecord setupCoreDataStack];
         
         [self reloadInstruments];
         /*[[NSNotificationCenter defaultCenter] addObserver:self
@@ -180,55 +180,6 @@
     [self reloadInstruments];
 }
 
-- (void)addInstrumentTypesToCoreData {
-    NSArray *namesArray = @[@"APInstrumentsTypeWind", @"APInstrumentsTypeStringed",
-                            @"APInstrumentsTypePercussion", @"APInstrumentsTypeKeyboard"];
-     /*NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
-    for (int i = 0; i < namesArray.count; i++) {
-        APInstrumentsType *type = [APInstrumentsType MR_createEntityInContext:context];
-//        type.typeName = namesArray[i];
-        [type setValue:namesArray[i] forKey:@"typeName"];
-    }
-     NSError *error;
-    if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }*/
-    
-    
-//    APInstrumentsType *type = [APInstrumentsType MR_createEntity];
-//    [type setValue:@"aaaaaa" forKey:@"typeName"];
-//    
-//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
-    APInstrumentsType *type = [NSEntityDescription
-                                       insertNewObjectForEntityForName:@"APInstrumentsType"
-                                       inManagedObjectContext:context];
-  
-    [type setValue:@"APInstrumentsTypeWind" forKey:@"typeName"];
-    
-    
-    APMusicalInstrument *instrument = [NSEntityDescription
-                             insertNewObjectForEntityForName:@"APMusicalInstrument"
-                             inManagedObjectContext:context];
-    
-    /*instrument.name = @"aaaaaa";
-    instrument.type = type;*/
-    
-    
-    [instrument setValue:@"aaaaaa" forKey:@"name"];
-    [instrument setValue:type forKey:@"type"];
-   
-    /*NSError *error;
-    if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }*/
-    [context MR_saveToPersistentStoreAndWait];
-    [self musicalInstrumentsCount];
-    [self musicalInstrumentsTypesCount];
-    
-    
-}
 
 - (NSArray *)musicalInstrumentTypes {
     NSLog(@"%@", self.fetchedResultsController.sections);

@@ -17,7 +17,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [MagicalRecord setupCoreDataStack];
+    [MagicalRecord setupCoreDataStack];
     return YES;
 }
 

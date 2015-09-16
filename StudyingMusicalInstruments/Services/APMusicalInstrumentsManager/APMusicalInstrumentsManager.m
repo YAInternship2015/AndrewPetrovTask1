@@ -12,6 +12,7 @@
 #import "APMusicalInstrument+Dictionary.h"
 #import "APMusicInstrumentsKeyConstants.h"
 #import <MagicalRecord.h>
+#import "APInstrumentsType.h"
 
 //#warning категории выносите в отдельные файлы
 //#warning и здесь по смыслу все же написать категорию на APMusicalInstrument и в нее добавить метод вроде - (NSDictionary *)dictionaryRepresentation. Для класса NSDictionary слишком "жирно" знать, как разбирать модели
@@ -47,28 +48,15 @@
     
 }
 
-
-/*+ (void)saveInstrument:(APMusicalInstrument *)instrument {
-    NSDictionary *instrumentDictionary = [APMusicalInstrument dictionaryWithInstrument:instrument];
-    NSMutableDictionary *tempDictionary = [NSMutableDictionary new];
-    NSDictionary *oldDictionary = [self instrumentsPlistContent];
-    
-    for (NSString *key in [oldDictionary allKeys]) {
-        [tempDictionary setObject:[oldDictionary[key]mutableCopy] forKey:key];
++ (void)addInstrumentTypesToCoreData {
+    NSArray *namesArray = @[@"APInstrumentsTypeWind", @"APInstrumentsTypeStringed",
+                            @"APInstrumentsTypePercussion", @"APInstrumentsTypeKeyboard"];
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    for (int i = 0; i < namesArray.count; i++) {
+        APInstrumentsType *type = [APInstrumentsType MR_createEntity];
+        type.typeName = namesArray[i];
     }
-    [tempDictionary[APInstrumentsPlistKey] setObject:instrumentDictionary forKey:instrument.name];
-    
-    
-    if(![NSFileManager isInstrumentsPlistExist]) {
-        [self restoreInstrumentPlist];
-    }
-
-    if ([tempDictionary writeToFile:[NSFileManager instrumentsPlistPath] atomically:YES]) {
-        NSLog(@"file updated");
-        [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
-    }
-    else
-        NSLog(@"file not updated");
-}*/
+    [context MR_saveToPersistentStoreAndWait];
+}
 
 @end
