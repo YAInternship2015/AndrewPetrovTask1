@@ -20,7 +20,6 @@
 @property (nonatomic, strong) APMusicalInstrunemtsTableViewController *tableVC;
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) UIImage *togglePresentationImage;
-//#warning (nonatomic, weak)
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *togglePresentationButton;
 
 @end

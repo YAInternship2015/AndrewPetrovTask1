@@ -41,6 +41,7 @@
 }
 
 - (void)dealloc {
+    NSLog(@"-----------APMusicInstrumentsDataSource deallocated");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -71,7 +72,8 @@
     
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:context sectionNameKeyPath:@"type.typeName"
+                                        managedObjectContext:context
+                                          sectionNameKeyPath:@"type.typeName"
                                                    cacheName:nil];
     _fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;

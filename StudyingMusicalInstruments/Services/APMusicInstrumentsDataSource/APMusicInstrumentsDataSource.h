@@ -12,7 +12,7 @@
 
 @protocol APMusicInstrumentsDataSourceDelegate;
 
-@interface APMusicInstrumentsDataSource : NSObject <APAddMusicalInstrumentViewControllerDelegate>
+@interface APMusicInstrumentsDataSource : NSObject
 
 - (NSInteger)musicalInstrumentsCountByTypeWithIndex:(NSInteger)index;
 - (APMusicalInstrument *)musicalInstrumentWithTypeIndex:(NSInteger)typeIndex

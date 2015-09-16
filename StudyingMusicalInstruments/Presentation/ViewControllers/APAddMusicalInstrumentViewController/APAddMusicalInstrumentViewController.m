@@ -81,7 +81,7 @@ APMusicInstrumentsTypesDataSourceDelegate*/
     instrument.instrumentDescription = @"nnn";
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
     [self.delegate musicalInstrumentDidSaved:self];
 
     /*NSError *error = nil;
@@ -122,23 +122,21 @@ APMusicInstrumentsTypesDataSourceDelegate*/
 }
 //TODO: figure out with threads
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    /*NSLog(@"types count for picker ===== %u", self.musicalInstrumentsTypes.count);
-     return self.musicalInstrumentsTypes.count;*/
-    return 4;
+    NSLog(@"types count for picker ===== %u", self.musicalInstrumentsTypes.count);
+     return self.musicalInstrumentsTypes.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    /*NSLog(@"%@", ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName);
-    return ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName;*/
-    return @"bbbb";
+    NSLog(@"%@", ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName);
+    return ((APInstrumentsType *)self.musicalInstrumentsTypes[row]).typeName;
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    /*NSLog(@"%@", self.musicalInstrumentsTypes);
+    NSLog(@"%@", self.musicalInstrumentsTypes);
     self.instrumentType = self.musicalInstrumentsTypes[row];
-    self.typeField.text =  self.instrumentType.typeName;*/
+    self.typeField.text =  self.instrumentType.typeName;
 }
 
 @end
