@@ -41,6 +41,7 @@
                                                  selector:@selector(modelDidChange)
                                                      name:APModelDidChangeNotificaion
                                                    object:nil];*/
+        [self addInstrumentTypesToCoreData];
     }
     return self;
 }
@@ -146,6 +147,21 @@
 
 - (void) modelDidChange {
     [self reloadInstruments];
+}
+
+- (void)addInstrumentTypesToCoreData {
+    NSArray *namesArray = @[@"APInstrumentsTypeWind", @"APInstrumentsTypeStringed",
+                            @"APInstrumentsTypePercussion", @"APInstrumentsTypeKeyboard"];
+    for (int i = 0; i < namesArray.count; i++) {
+        APInstrumentsType *type = [APInstrumentsType MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
+//        type.typeName = namesArray[i];
+        [type setValue:namesArray[i] forKey:@"typeName"];
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_save];
+}
+
+- (NSArray *)musicalInstrumentTypes {
+    return self.fetchedResultsController.sections;
 }
 
 @end

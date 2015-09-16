@@ -42,7 +42,7 @@
         instrumentEntity = instrument;
         
     } completion:^(BOOL success, NSError *error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName: APModelDidChangeNotificaion object:nil];
     }];
     
 }

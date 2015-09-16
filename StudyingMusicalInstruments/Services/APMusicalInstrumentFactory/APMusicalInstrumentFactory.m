@@ -8,6 +8,7 @@
 
 #import "APMusicalInstrumentFactory.h"
 #import "APMusicalInstrument.h"
+#import "APInstrumentsType.h"
 
 @implementation APMusicalInstrumentFactory
 

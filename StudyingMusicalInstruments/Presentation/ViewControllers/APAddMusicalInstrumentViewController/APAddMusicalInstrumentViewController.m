@@ -30,7 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//#warning эти конфиги лучше сделать в сториборде
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
     
@@ -40,7 +39,6 @@
     self.typeField.inputView = pickerView;
 }
 
-//#warning опечатка в названии
 - (IBAction)instrumetnNameDidChangeInTextField:(UITextField *)sender {
     if (![APMusicalInstrumentValidator validateName:sender.text error:nil]) {
         sender.textColor = [UIColor redColor];
@@ -57,10 +55,15 @@
 }
 
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
+    APInstrumentsType *type = [[APInstrumentsType alloc] init];
+//    type.typeName = @"APInstrumentsTypeWind";
+//    [type setTypeName:@"APInstrumentsTypeWind"];
+    [type setValue:@"APInstrumentsTypeWind" forKey:@"typeName"];
+    //TODO: remove stump
     APMusicalInstrument *newInstrument =
     [APMusicalInstrumentFactory instrumentWithName:self.nameField.text
                                        description:self.descriptionField.text
-                                              type:self.instrumentType
+                                              type:type
                                          imageName:nil];
     NSError *error = nil;
     if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
@@ -108,9 +111,8 @@
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    /*self.instrumentType = [APInstrumentsType typeWithNumber:row];
-    self.typeField.text = NSLocalizedString([self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row], nil);*/
-    self.typeField.text = @"aaaaa";
+    self.instrumentType = [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
+    self.typeField.text = [self.allMusicalInstrumentsTypes musicalInstrumentTypeNameStringAtIndex:row];
 }
 
 @end
