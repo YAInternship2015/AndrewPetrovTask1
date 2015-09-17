@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface APMusicalInstrumentsCollectionViewController : UICollectionViewController
+@interface APMusicalInstrumentsCollectionViewController : UICollectionViewController <UIGestureRecognizerDelegate>
 
 @end

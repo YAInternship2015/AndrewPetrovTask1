@@ -85,8 +85,8 @@
     return [self.fetchedResultsController fetchedObjects];
 }
 
-- (NSArray *)musicalInstrumentTypes {
-    return [self.fetchedResultsController sections];
+- (NSInteger)musicalInstrumentTypesCount {
+    return [self.fetchedResultsController sections].count;
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {

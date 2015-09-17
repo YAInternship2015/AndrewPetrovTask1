@@ -20,6 +20,11 @@
 
 @implementation APMusicalInstrunemtsTableViewController
 
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -35,17 +40,28 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.allMusicalInstruments musicalInstrumentTypes].count;
+    return [self.allMusicalInstruments musicalInstrumentTypesCount];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [self.allMusicalInstruments musicalInstrumentTypeNameAtIndex:section];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [APMusicalInstrumentsManager deleteInstrument:[self.allMusicalInstruments
+                                                       musicalInstrumentWithTypeIndex:indexPath.section
+                                                       atIndex:indexPath.row]];
+    }
+}
+
+
 #pragma mark - APMusicInstrumentsDataSourceDelegate
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.tableView reloadData];
 }
+
 
 @end

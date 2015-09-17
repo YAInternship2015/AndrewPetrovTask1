@@ -47,8 +47,6 @@
                                               type:type
                                          imageName:name];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    
-    
 }
 
 + (void)addInstrumentTypesIfNeeded {
@@ -64,4 +62,8 @@
     }
 }
 
++ (void)deleteInstrument:(APMusicalInstrument *)instrument {
+    [instrument MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
 @end

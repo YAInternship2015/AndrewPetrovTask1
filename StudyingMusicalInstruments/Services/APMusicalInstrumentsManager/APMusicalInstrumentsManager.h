@@ -21,5 +21,6 @@
                      description:(NSString *)description
                             type:(APInstrumentsType *)type
                        imageName:(NSString *)image;
++ (void)deleteInstrument:(APMusicalInstrument *)instrument;
 
 @end
