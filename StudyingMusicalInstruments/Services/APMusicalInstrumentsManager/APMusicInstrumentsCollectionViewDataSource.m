@@ -94,10 +94,5 @@
         _itemChanges = nil;
     }];
 }
-//???: why nullable
-//- (nullable NSString *)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName:(NSString *)sectionName {
-//
-//}
-
 
 @end

@@ -19,7 +19,7 @@
 @implementation APMusicalInstrumentCollectionCell
 
 - (void)setInstrument:(APMusicalInstrument *)instrument {
-    if (!instrument || [instrument.imageName isEqualToString:@""]) {
+    if (!instrument || !instrument.imageName.length) {
         self.imageView.image = [UIImage stubInstrumentCellImage];
     }
     else {

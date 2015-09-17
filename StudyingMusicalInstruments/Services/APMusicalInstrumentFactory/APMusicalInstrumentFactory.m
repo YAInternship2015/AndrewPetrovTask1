@@ -21,10 +21,35 @@
     instrument.name = name;
     instrument.type = type;
     instrument.instrumentDescription = description;
-    instrument.imageName = @"violin";
+    instrument.imageName = [self randomImageNameForType:type];
     return instrument;
 }
 //TODO: add random picture by type
-//-(NSString *)
++ (NSString *)randomImageNameForType:(APInstrumentsType *)type {
+    
+    NSArray *windImageNames = @[@"trumpet", @"trombone"];
+    NSArray *stringedImageNames = @[@"violin", @"harp", @"guitar", @"electro_guitar"];
+    NSArray *percussionImageNames = @[@"tambourine", @"drumkit"];
+    NSArray *keyboardImageNames = @[@"xylophone", @"piano"];
+    
+    if ([type.typeName isEqualToString:@"APInstrumentsTypeWind"]) {
+        return windImageNames[arc4random_uniform(windImageNames.count)];
+    }
+    else if ([type.typeName isEqualToString:@"APInstrumentsTypeStringed"]) {
+        return stringedImageNames[arc4random_uniform(stringedImageNames.count)];
+    }
+    else if ([type.typeName isEqualToString:@"APInstrumentsTypePercussion"]) {
+        return percussionImageNames[arc4random_uniform(percussionImageNames.count)];
+    }
+    else if ([type.typeName isEqualToString:@"APInstrumentsTypeKeyboard"]) {
+        return keyboardImageNames[arc4random_uniform(keyboardImageNames.count)];
+    }
+    else return nil;
+}
 
 @end
+
+//APInstrumentsTypeWind,
+//APInstrumentsTypeStringed,
+//APInstrumentsTypePercussion,
+//APInstrumentsTypeKeyboard
