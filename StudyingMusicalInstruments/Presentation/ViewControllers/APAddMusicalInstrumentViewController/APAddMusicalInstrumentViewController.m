@@ -102,14 +102,16 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return ((APInstrumentsType *)[self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName;
+    return NSLocalizedString(((APInstrumentsType *)
+                              [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName, nil);
 }
 
 #pragma mark - UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.instrumentType = [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row];
-    self.typeField.text =  self.instrumentType.typeName;
+    self.typeField.text =  NSLocalizedString(((APInstrumentsType *)
+                                              [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName, nil);
 }
 
 @end

@@ -15,6 +15,7 @@
 #import <MagicalRecord.h>
 #import "APMusicalInstrument.h"
 #import <CoreData/CoreData.h>
+#import "NSFetchedResultsController+Factory.h"
 
 
 @interface APMusicInstrumentsTypesDataSource () <NSFetchedResultsControllerDelegate>
@@ -29,30 +30,11 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity =
-    [NSEntityDescription  entityForName:@"APInstrumentsType"
-                 inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                              initWithKey:@"typeName" ascending:NO];
-    [fetchRequest setSortDescriptors:@[sort]];
-    
-    [fetchRequest setFetchBatchSize:20];
-    
-    NSFetchedResultsController *theFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:context
-                                          sectionNameKeyPath:nil
-                                                   cacheName:nil];
-    _fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController = [[NSFetchedResultsController new] instrumentsTypesFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
     _fetchedResultsController.delegate = self;
-    [_fetchedResultsController performFetch:nil];
-    
     return _fetchedResultsController;
 }
+    
 
 - (NSArray *)musicalInstrumentTypes {
     return [self.fetchedResultsController fetchedObjects];

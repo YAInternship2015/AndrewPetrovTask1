@@ -44,7 +44,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [self.allMusicalInstruments musicalInstrumentTypeNameAtIndex:section];
+    return NSLocalizedString([self.allMusicalInstruments musicalInstrumentTypeNameAtIndex:section], nil);
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle

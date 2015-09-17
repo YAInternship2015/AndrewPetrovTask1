@@ -35,6 +35,7 @@
 		7741FF3B1BA971C4001320AF /* APMusicInstrumentsTypesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7741FF3A1BA971C4001320AF /* APMusicInstrumentsTypesDataSource.m */; };
 		774A648B1B7BFD4E00C58E36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 774A648A1B7BFD4E00C58E36 /* Localizable.strings */; };
 		774A648D1B7BFD7900C58E36 /* MusicInstruments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 774A648C1B7BFD7900C58E36 /* MusicInstruments.plist */; };
+		77782CC31BAB5AB8003A259A /* NSFetchedResultsController+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77782CC21BAB5AB8003A259A /* NSFetchedResultsController+Factory.m */; settings = {ASSET_TAGS = (); }; };
 		7781BEEC1B9492C100027C94 /* APMusicalInstrument+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7781BEEB1B9492C100027C94 /* APMusicalInstrument+Dictionary.m */; };
 		77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CFE8D41B725446006A3CF5 /* Images.xcassets */; };
 		77D38D831B9CE8750035B12E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D38D821B9CE8750035B12E /* CoreData.framework */; };
@@ -82,6 +83,8 @@
 		7741FF3A1BA971C4001320AF /* APMusicInstrumentsTypesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMusicInstrumentsTypesDataSource.m; path = StudyingMusicalInstruments/Services/APMusicInstrumentsTypesDataSource.m; sourceTree = SOURCE_ROOT; };
 		774A648A1B7BFD4E00C58E36 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		774A648C1B7BFD7900C58E36 /* MusicInstruments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MusicInstruments.plist; sourceTree = "<group>"; };
+		77782CC11BAB5AB8003A259A /* NSFetchedResultsController+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+Factory.h"; sourceTree = "<group>"; };
+		77782CC21BAB5AB8003A259A /* NSFetchedResultsController+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+Factory.m"; sourceTree = "<group>"; };
 		7781BEEA1B9492C100027C94 /* APMusicalInstrument+Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APMusicalInstrument+Dictionary.h"; sourceTree = "<group>"; };
 		7781BEEB1B9492C100027C94 /* APMusicalInstrument+Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APMusicalInstrument+Dictionary.m"; sourceTree = "<group>"; };
 		77CFE8D41B725446006A3CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 		771FF5EB1B7B3B8C00BF8D94 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				77782CC41BAB5AC8003A259A /* NSFetchedResultsController+Factory */,
 				7741FF3C1BA971DE001320AF /* APMusicInstrumentsDataTypesSource */,
 				77F7548A1B8F53E000F7C08B /* APMusicInstrumentsDataSource */,
 				77EF24091B90B70C00D16002 /* APMusicalInstrumentFactory */,
@@ -266,6 +270,16 @@
 			);
 			name = APMusicInstrumentsDataTypesSource;
 			path = APMusicInstrumentsDataSource;
+			sourceTree = "<group>";
+		};
+		77782CC41BAB5AC8003A259A /* NSFetchedResultsController+Factory */ = {
+			isa = PBXGroup;
+			children = (
+				77782CC11BAB5AB8003A259A /* NSFetchedResultsController+Factory.h */,
+				77782CC21BAB5AB8003A259A /* NSFetchedResultsController+Factory.m */,
+			);
+			name = "NSFetchedResultsController+Factory";
+			path = ../Presentation/ViewControllers/APMusicalInstrumentsCollectionViewController;
 			sourceTree = "<group>";
 		};
 		7781BEE91B9492C100027C94 /* APMusicalInstrument+Dictionary */ = {
@@ -612,6 +626,7 @@
 				772726B21BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m in Sources */,
 				77F754B31B8F560800F7C08B /* APMusicalInstrumentTableCell.m in Sources */,
 				77F754901B8F53E000F7C08B /* APMusicalInstrumentsManager.m in Sources */,
+				77782CC31BAB5AB8003A259A /* NSFetchedResultsController+Factory.m in Sources */,
 				77F754B21B8F560800F7C08B /* APMusicalInstrumentCollectionCell.m in Sources */,
 				77F754AD1B8F560800F7C08B /* UIImage+StudyingMusicalInstruments.m in Sources */,
 				77F754AE1B8F560800F7C08B /* APAddMusicalInstrumentViewController.m in Sources */,
