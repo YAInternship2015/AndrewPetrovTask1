@@ -142,11 +142,11 @@
             </objects>
             <point key="canvasLocation" x="-520" y="16"/>
         </scene>
-        <!--Musical Instruments Collection View Controller-->
+        <!--Delegate-->
         <scene sceneID="aT9-es-GI8">
             <objects>
                 <collectionViewController storyboardIdentifier="APMusicalInstrumentsCollectionViewControllerIdentifier" id="S0K-ab-RyH" customClass="APMusicalInstrumentsCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TQg-0v-HLJ">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TQg-0v-HLJ" userLabel="CollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JWL-0f-cR0">
@@ -210,11 +210,15 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="v0X-mt-Lwr"/>
                     <connections>
-                        <outlet property="allMusicalInstruments" destination="bgG-BZ-3Cr" id="U3P-Fo-46s"/>
+                        <outlet property="allMusicalInstruments" destination="bgG-BZ-3Cr" id="sJg-ff-uZ7"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHc-UH-UxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsDataSource"/>
+                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsDataSource">
+                    <connections>
+                        <outlet property="delegate" destination="S0K-ab-RyH" id="jC6-Dz-owe"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="202" y="66"/>
         </scene>
@@ -347,7 +351,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="262" y="742"/>
+            <point key="canvasLocation" x="838" y="66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MnD-LV-VuV">

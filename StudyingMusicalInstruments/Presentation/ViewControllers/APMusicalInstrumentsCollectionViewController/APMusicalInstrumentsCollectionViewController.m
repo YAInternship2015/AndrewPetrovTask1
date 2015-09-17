@@ -14,7 +14,7 @@
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicInstrumentsPresentationConstants.h"
 
-@interface APMusicalInstrumentsCollectionViewController ()
+@interface APMusicalInstrumentsCollectionViewController () <APMusicInstrumentsDataSourceDelegate>
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 
@@ -75,7 +75,7 @@
 }
 
 #pragma mark - APMusicInstrumentsDataSourceDelegate
-//TODO: figure out with updating
+
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
     [self.collectionView reloadData];
 }
