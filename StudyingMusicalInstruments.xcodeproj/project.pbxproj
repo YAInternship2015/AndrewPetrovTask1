@@ -26,6 +26,7 @@
 		771A05E91B6F781D00552816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771A05E71B6F781D00552816 /* Main.storyboard */; };
 		771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EC1B6F781D00552816 /* LaunchScreen.xib */; };
 		772726B21BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 772726B11BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		772726B51BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 772726B41BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m */; settings = {ASSET_TAGS = (); }; };
 		773862331B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 773862311B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodeld */; };
 		7741FF351BA5C42C001320AF /* APInstrumentsType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7741FF2D1BA5C42C001320AF /* APInstrumentsType.m */; };
 		7741FF361BA5C42C001320AF /* APMusicalInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7741FF2F1BA5C42C001320AF /* APMusicalInstrument.m */; };
@@ -64,6 +65,8 @@
 		771A05ED1B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		772726B01BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMusicInstrumentsTableViewDataSource.h; path = StudyingMusicalInstruments/Presentation/APMusicInstrumentsTableViewDataSource.h; sourceTree = SOURCE_ROOT; };
 		772726B11BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMusicInstrumentsTableViewDataSource.m; path = StudyingMusicalInstruments/Presentation/APMusicInstrumentsTableViewDataSource.m; sourceTree = SOURCE_ROOT; };
+		772726B31BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicInstrumentsCollectionViewDataSource.h; sourceTree = "<group>"; };
+		772726B41BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicInstrumentsCollectionViewDataSource.m; sourceTree = "<group>"; };
 		773862321B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyingMusicalInstruments.xcdatamodel; sourceTree = "<group>"; };
 		7740DC081B963867006F60C9 /* APMusicInstrumentsPresentationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMusicInstrumentsPresentationConstants.h; sourceTree = "<group>"; };
 		7740DC091B96394A006F60C9 /* APMusicInstrumentsErrorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMusicInstrumentsErrorConstants.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				77F754831B8F53E000F7C08B /* APMusicalInstrumentsManager.m */,
 				772726B01BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.h */,
 				772726B11BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m */,
+				772726B31BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.h */,
+				772726B41BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m */,
 			);
 			path = APMusicalInstrumentsManager;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 				77F754C41B90625300F7C08B /* NSFileManager+APMusicalInstrumentsManager.m in Sources */,
 				771A05E31B6F781D00552816 /* AppDelegate.m in Sources */,
 				77EF240C1B90B70C00D16002 /* APMusicalInstrumentFactory.m in Sources */,
+				772726B51BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,
 				77F754B11B8F560800F7C08B /* APMusicalInstrunemtsTableViewController.m in Sources */,
 				7741FF371BA5C42C001320AF /* _APInstrumentsType.m in Sources */,
