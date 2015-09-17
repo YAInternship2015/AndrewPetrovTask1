@@ -49,7 +49,3 @@
 
 @end
 
-//APInstrumentsTypeWind,
-//APInstrumentsTypeStringed,
-//APInstrumentsTypePercussion,
-//APInstrumentsTypeKeyboard
