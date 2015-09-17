@@ -203,6 +203,7 @@
 		771FF5E01B7B3B8C00BF8D94 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				77B40D1C1BAB4CE500CC84E3 /* DataSources */,
 				77F754951B8F560800F7C08B /* Utils */,
 				77F754991B8F560800F7C08B /* ViewControllers */,
 				77F754A61B8F560800F7C08B /* Views */,
@@ -276,6 +277,35 @@
 			path = "APMusicalInstrument+Dictionary";
 			sourceTree = "<group>";
 		};
+		77B40D1B1BAB4CBF00CC84E3 /* APMusicInstrumentsCollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				772726B31BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.h */,
+				772726B41BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m */,
+			);
+			name = APMusicInstrumentsCollectionViewDataSource;
+			path = ../Services/APMusicalInstrumentsManager;
+			sourceTree = "<group>";
+		};
+		77B40D1C1BAB4CE500CC84E3 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				77B40D1D1BAB4CF900CC84E3 /* APMusicInstrumentsTableViewDataSource */,
+				77B40D1B1BAB4CBF00CC84E3 /* APMusicInstrumentsCollectionViewDataSource */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		77B40D1D1BAB4CF900CC84E3 /* APMusicInstrumentsTableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				772726B01BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.h */,
+				772726B11BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m */,
+			);
+			name = APMusicInstrumentsTableViewDataSource;
+			path = ../Services/APMusicalInstrumentsManager;
+			sourceTree = "<group>";
+		};
 		77EF24091B90B70C00D16002 /* APMusicalInstrumentFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,10 +338,6 @@
 			children = (
 				77F754821B8F53E000F7C08B /* APMusicalInstrumentsManager.h */,
 				77F754831B8F53E000F7C08B /* APMusicalInstrumentsManager.m */,
-				772726B01BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.h */,
-				772726B11BAB3BB0008BD378 /* APMusicInstrumentsTableViewDataSource.m */,
-				772726B31BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.h */,
-				772726B41BAB4C82008BD378 /* APMusicInstrumentsCollectionViewDataSource.m */,
 			);
 			path = APMusicalInstrumentsManager;
 			sourceTree = "<group>";
