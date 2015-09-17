@@ -9,14 +9,17 @@
 #ifndef StudyingMusicalInstruments_APMusicInstrumentsPresentationConstants_h
 #define StudyingMusicalInstruments_APMusicInstrumentsPresentationConstants_h
 
-static NSString * const APAddMusicalInstrumentViewControllerIdentifier = @"APAddMusicalInstrumentViewControllerIdentifier";
+static NSString * const APAddMusicalInstrumentViewControllerIdentifier =
+    @"APAddMusicalInstrumentViewControllerIdentifier";
 static NSString * const APPickerViewSegueIndentifier = @"APPickerViewSegueIndentifier";
 
-static NSString * const APMusicalInstrumentsCollectionViewControllerIdentifier = @"APMusicalInstrumentsCollectionViewControllerIdentifier";
+static NSString * const APMusicalInstrumentsCollectionViewControllerIdentifier =
+    @"APMusicalInstrumentsCollectionViewControllerIdentifier";
 static NSString * const APCollectionViewCellIdentifier = @"APCollectionViewCellIdentifier";
 static NSString * const APTableViewCellIdentifier = @"APTableViewCellIdentifier";
 static NSString * const AddInstrumentSegueIndentifier = @"AddInstrumentSegueIndentifier";
-static NSString * const APMusicalInstrunemtsTableViewControllerIdentifier = @"APMusicalInstrunemtsTableViewControllerIdentifier";
+static NSString * const APMusicalInstrunemtsTableViewControllerIdentifier =
+    @"APMusicalInstrunemtsTableViewControllerIdentifier";
 
 
 

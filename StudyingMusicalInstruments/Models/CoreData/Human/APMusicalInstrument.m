@@ -1,11 +1,5 @@
 #import "APMusicalInstrument.h"
 
-@interface APMusicalInstrument ()
-
-// Private interface goes here.
-
-@end
-
 @implementation APMusicalInstrument
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name

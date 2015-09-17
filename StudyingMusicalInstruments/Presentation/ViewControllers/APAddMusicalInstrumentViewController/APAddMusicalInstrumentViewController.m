@@ -8,14 +8,9 @@
 
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicalInstrumentValidator.h"
-#import "APMusicalInstrumentFactory.h"
 #import "APMusicalInstrumentsManager.h"
-#import "NSFileManager+APMusicalInstrumentsManager.h"
-#import "APMusicInstrumentsDataSource.h"
 #import "APMusicInstrumentsTypesDataSource.h"
 #import "APInstrumentsType.h"
-#import <MagicalRecord.h>
-#import "APMusicalInstrumentNotifications.h"
 
 @interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 

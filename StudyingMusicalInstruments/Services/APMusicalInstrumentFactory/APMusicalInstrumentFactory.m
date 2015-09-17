@@ -24,7 +24,7 @@
     instrument.imageName = [self randomImageNameForType:type];
     return instrument;
 }
-//TODO: add random picture by type
+
 + (NSString *)randomImageNameForType:(APInstrumentsType *)type {
     
     NSArray *windImageNames = @[@"trumpet", @"trombone"];
@@ -33,16 +33,16 @@
     NSArray *keyboardImageNames = @[@"xylophone", @"piano"];
     
     if ([type.typeName isEqualToString:@"APInstrumentsTypeWind"]) {
-        return windImageNames[arc4random_uniform(windImageNames.count)];
+        return windImageNames[arc4random_uniform((u_int32_t)windImageNames.count)];
     }
     else if ([type.typeName isEqualToString:@"APInstrumentsTypeStringed"]) {
-        return stringedImageNames[arc4random_uniform(stringedImageNames.count)];
+        return stringedImageNames[arc4random_uniform((u_int32_t)stringedImageNames.count)];
     }
     else if ([type.typeName isEqualToString:@"APInstrumentsTypePercussion"]) {
-        return percussionImageNames[arc4random_uniform(percussionImageNames.count)];
+        return percussionImageNames[arc4random_uniform((u_int32_t)percussionImageNames.count)];
     }
     else if ([type.typeName isEqualToString:@"APInstrumentsTypeKeyboard"]) {
-        return keyboardImageNames[arc4random_uniform(keyboardImageNames.count)];
+        return keyboardImageNames[arc4random_uniform((u_int32_t)keyboardImageNames.count)];
     }
     else return nil;
 }

@@ -10,7 +10,7 @@
 
 @interface NSFetchedResultsController (Factory)
 
-- (NSFetchedResultsController *)instrumentsByTypeFRCWithContext:(NSManagedObjectContext *)moc;
-- (NSFetchedResultsController *)instrumentsTypesFRCWithContext:(NSManagedObjectContext *)moc;
++ (NSFetchedResultsController *)instrumentsByTypeFRCWithContext:(NSManagedObjectContext *)moc;
++ (NSFetchedResultsController *)instrumentsTypesFRCWithContext:(NSManagedObjectContext *)moc;
 
 @end

@@ -11,11 +11,8 @@
 @class APMusicalInstrument;
 @class APInstrumentsType;
 
-//#warning объявления всех нотификейшнов также выносятся в отдельный файл, вроде APNotifications
-
 @interface APMusicalInstrumentsManager : NSObject
 
-+ (void)restoreInstrumentPlist;
 + (void)addInstrumentTypesIfNeeded;
 + (void)createInstrumentWithName:(NSString *)name
                      description:(NSString *)description

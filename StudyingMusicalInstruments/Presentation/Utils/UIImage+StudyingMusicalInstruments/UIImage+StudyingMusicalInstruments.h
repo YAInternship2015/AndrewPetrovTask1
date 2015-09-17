@@ -15,5 +15,5 @@
 + (UIImage *)collectionImage;
 
 @end
-//#warning можно не разделять такие методы пустыми строками
+
 

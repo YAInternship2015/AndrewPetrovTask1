@@ -10,7 +10,6 @@
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsDataSource.h"
 #import "APMusicInstrumentsPresentationConstants.h"
-#import "APInstrumentsType.h"
 
 @interface APMusicalInstrunemtsTableViewController ()
 
@@ -35,7 +34,8 @@
     APMusicalInstrumentTableCell *cell =
     [tableView dequeueReusableCellWithIdentifier:APTableViewCellIdentifier
                                     forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithTypeIndex:indexPath.section atIndex:indexPath.row]];
+    [cell setInstrument:[self.allMusicalInstruments
+                         musicalInstrumentWithTypeIndex:indexPath.section atIndex:indexPath.row]];
     return cell;
 }
 
@@ -51,8 +51,7 @@
 forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [APMusicalInstrumentsManager deleteInstrument:[self.allMusicalInstruments
-                                                       musicalInstrumentWithTypeIndex:indexPath.section
-                                                       atIndex:indexPath.row]];
+                                                       musicalInstrumentWithTypeIndex:indexPath.section                                              atIndex:indexPath.row]];
     }
 }
 

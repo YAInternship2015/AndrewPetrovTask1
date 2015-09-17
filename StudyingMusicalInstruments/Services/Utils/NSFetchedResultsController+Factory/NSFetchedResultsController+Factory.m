@@ -11,7 +11,7 @@
 
 @implementation NSFetchedResultsController (Factory)
 
-- (NSFetchedResultsController *)instrumentsByTypeFRCWithContext:(NSManagedObjectContext *)moc {
++ (NSFetchedResultsController *)instrumentsByTypeFRCWithContext:(NSManagedObjectContext *)moc {
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] init];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
@@ -36,7 +36,7 @@
     return fetchedResultsController;
 }
 
-- (NSFetchedResultsController *)instrumentsTypesFRCWithContext:(NSManagedObjectContext *)moc {
++ (NSFetchedResultsController *)instrumentsTypesFRCWithContext:(NSManagedObjectContext *)moc {
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] init];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =

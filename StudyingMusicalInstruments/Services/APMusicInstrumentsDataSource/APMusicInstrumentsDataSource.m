@@ -6,17 +6,8 @@
 //  Copyright (c) 2015 Андрей. All rights reserved.
 //
 #import "APMusicInstrumentsDataSource.h"
-#import "APMusicalInstrumentsManager.h"
-#import "NSFileManager+APMusicalInstrumentsManager.h"
-#import "APMusicalInstrumentNotifications.h"
-#import "APMusicInstrumentsKeyConstants.h"
-#import "APInstrumentsType.h"
 #import <MagicalRecord.h>
-#import "APMusicalInstrument.h"
-#import <CoreData/CoreData.h>
-#import "APAddMusicalInstrumentViewController.h"
 #import "NSFetchedResultsController+Factory.h"
-
 
 @interface APMusicInstrumentsDataSource ()
 
@@ -43,7 +34,7 @@
         return _fetchedResultsController;
     }
 
-    _fetchedResultsController = [[NSFetchedResultsController new] instrumentsByTypeFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
+    _fetchedResultsController = [NSFetchedResultsController instrumentsByTypeFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
     _fetchedResultsController.delegate = self;
     return _fetchedResultsController;
 }

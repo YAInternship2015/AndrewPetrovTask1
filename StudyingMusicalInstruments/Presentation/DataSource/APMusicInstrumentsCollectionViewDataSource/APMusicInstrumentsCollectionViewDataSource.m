@@ -10,22 +10,21 @@
 
 @interface APMusicInstrumentsCollectionViewDataSource ()
 
-@property NSMutableArray *sectionChanges;
-@property NSMutableArray *itemChanges;
+@property (nonatomic, strong) NSMutableArray *sectionChanges;
+@property (nonatomic, strong) NSMutableArray *itemChanges;
 
 @end
 
 @implementation APMusicInstrumentsCollectionViewDataSource
 
-//
-//- (void)configureCell:(APMusicalInstrumentTableCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-//    APMusicalInstrument *musicalInstrument = [self musicalInstrumentWithTypeIndex:indexPath.section atIndex:indexPath.row];
-//    [cell setInstrument:musicalInstrument];
-//}
-
 #pragma mark - NSFetchedResultsControllerDelegate
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(nullable NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(nullable NSIndexPath *)newIndexPath {
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(nullable NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(nullable NSIndexPath *)newIndexPath {
+    
     NSMutableDictionary *change = [[NSMutableDictionary alloc] init];
     switch(type) {
         case NSFetchedResultsChangeInsert:
@@ -44,7 +43,11 @@
     [_itemChanges addObject:change];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type {
+    
     NSMutableDictionary *change = [[NSMutableDictionary alloc] init];
     change[@(type)] = @(sectionIndex);
     [_sectionChanges addObject:change];
@@ -66,6 +69,8 @@
                         break;
                     case NSFetchedResultsChangeDelete:
                         [self.collectionView deleteSections:[NSIndexSet indexSetWithIndex:[obj unsignedIntegerValue]]];
+                        break;
+                    default:
                         break;
                 }
             }];

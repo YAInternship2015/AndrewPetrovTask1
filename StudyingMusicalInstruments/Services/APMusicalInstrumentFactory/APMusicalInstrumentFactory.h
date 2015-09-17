@@ -10,7 +10,6 @@
 @class APInstrumentsType;
 @class APMusicalInstrument;
 
-//#warning опечатка в имени
 @interface APMusicalInstrumentFactory : NSObject
 
 + (APMusicalInstrument *)instrumentWithName:(NSString *)name

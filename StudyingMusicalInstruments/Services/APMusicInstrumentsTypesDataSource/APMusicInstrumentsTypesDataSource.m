@@ -7,16 +7,8 @@
 //
 
 #import "APMusicInstrumentsTypesDataSource.h"
-#import "APMusicalInstrumentsManager.h"
-#import "NSFileManager+APMusicalInstrumentsManager.h"
-#import "APMusicalInstrumentNotifications.h"
-#import "APMusicInstrumentsKeyConstants.h"
-#import "APInstrumentsType.h"
 #import <MagicalRecord.h>
-#import "APMusicalInstrument.h"
-#import <CoreData/CoreData.h>
 #import "NSFetchedResultsController+Factory.h"
-
 
 @interface APMusicInstrumentsTypesDataSource () <NSFetchedResultsControllerDelegate>
 
@@ -30,11 +22,11 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    _fetchedResultsController = [[NSFetchedResultsController new] instrumentsTypesFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
+    _fetchedResultsController = [NSFetchedResultsController
+                                 instrumentsTypesFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
     _fetchedResultsController.delegate = self;
     return _fetchedResultsController;
 }
-    
 
 - (NSArray *)musicalInstrumentTypes {
     return [self.fetchedResultsController fetchedObjects];

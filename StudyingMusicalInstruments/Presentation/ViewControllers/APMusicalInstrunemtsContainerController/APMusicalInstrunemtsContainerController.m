@@ -8,10 +8,8 @@
 
 #import "APMusicalInstrunemtsContainerController.h"
 #import "APAddMusicalInstrumentViewController.h"
-#import "APMusicalInstrumentsManager.h"
 #import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentsCollectionViewController.h"
-#import "NSFileManager+APMusicalInstrumentsManager.h"
 #import "UIImage+StudyingMusicalInstruments.h"
 #import "APMusicInstrumentsPresentationConstants.h"
 
@@ -30,7 +28,8 @@
     [super viewDidLoad];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrunemtsTableViewControllerIdentifier];
-    self.collectionVC = [storyboard instantiateViewControllerWithIdentifier:APMusicalInstrumentsCollectionViewControllerIdentifier];
+    self.collectionVC = [storyboard
+                         instantiateViewControllerWithIdentifier:APMusicalInstrumentsCollectionViewControllerIdentifier];
     
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);

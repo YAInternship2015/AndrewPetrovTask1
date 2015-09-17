@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "APMusicalInstrument.h"
 #import "APAddMusicalInstrumentViewController.h"
+#import <CoreData/CoreData.h>
+@class APMusicalInstrument;
 
 @protocol APMusicInstrumentsDataSourceDelegate;
 
