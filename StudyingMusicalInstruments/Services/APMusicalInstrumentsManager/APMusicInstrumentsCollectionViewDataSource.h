@@ -10,4 +10,6 @@
 
 @interface APMusicInstrumentsCollectionViewDataSource : APMusicInstrumentsDataSource
 
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
 @end

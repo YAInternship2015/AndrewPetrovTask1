@@ -73,7 +73,7 @@
 #pragma mark - APMusicInstrumentsDataSourceDelegate
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
-    [self.collectionView reloadData];
+//    [self.collectionView reloadData];
 }
 
 @end

@@ -214,9 +214,10 @@
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHc-UH-UxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsDataSource">
+                <customObject id="bgG-BZ-3Cr" customClass="APMusicInstrumentsCollectionViewDataSource">
                     <connections>
-                        <outlet property="delegate" destination="S0K-ab-RyH" id="jC6-Dz-owe"/>
+                        <outlet property="collectionView" destination="TQg-0v-HLJ" id="pmr-S4-GYV"/>
+                        <outlet property="delegate" destination="S0K-ab-RyH" id="inG-Wk-Xhe"/>
                     </connections>
                 </customObject>
             </objects>
