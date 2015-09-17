@@ -16,7 +16,7 @@
 #import <CoreData/CoreData.h>
 #import "APAddMusicalInstrumentViewController.h"
 
-@interface APMusicInstrumentsDataSource () <NSFetchedResultsControllerDelegate>
+@interface APMusicInstrumentsDataSource ()
 
 @property (nonatomic, strong) NSMutableArray *musicalInstrumentsByType;
 @property (nonatomic, strong) NSMutableArray *musicalInstruments;

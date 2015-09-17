@@ -60,7 +60,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - APMusicInstrumentsDataSourceDelegate
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 

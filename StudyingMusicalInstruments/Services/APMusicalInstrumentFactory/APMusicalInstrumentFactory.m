@@ -24,5 +24,7 @@
     instrument.imageName = @"violin";
     return instrument;
 }
+//TODO: add random picture by type
+//-(NSString *)
 
 @end

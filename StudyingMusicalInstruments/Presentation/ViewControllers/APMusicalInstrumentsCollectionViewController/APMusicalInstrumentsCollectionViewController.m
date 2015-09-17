@@ -30,7 +30,7 @@
     = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5; //seconds
     lpgr.delegate = self;
-//    lpgr.delaysTouchesBegan = YES;
+    lpgr.delaysTouchesBegan = YES;
     [self.collectionView addGestureRecognizer:lpgr];
 }
 
@@ -45,10 +45,6 @@
     if (indexPath == nil){
         NSLog(@"couldn't find index path");
     } else {
-        // get the cell at indexPath (the one you long pressed)
-        UICollectionViewCell* cell =
-        [self.collectionView cellForItemAtIndexPath:indexPath];
-        
         [APMusicalInstrumentsManager deleteInstrument:[self.allMusicalInstruments
                                                        musicalInstrumentWithTypeIndex:indexPath.section
                                                        atIndex:indexPath.row]];
