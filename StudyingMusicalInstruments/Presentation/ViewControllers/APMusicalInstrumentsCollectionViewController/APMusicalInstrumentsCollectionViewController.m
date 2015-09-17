@@ -14,7 +14,7 @@
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicInstrumentsPresentationConstants.h"
 
-@interface APMusicalInstrumentsCollectionViewController () <APMusicInstrumentsDataSourceDelegate>
+@interface APMusicalInstrumentsCollectionViewController ()
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 
@@ -62,7 +62,7 @@
     APMusicalInstrumentCollectionCell *cell =
     [collectionView dequeueReusableCellWithReuseIdentifier:APCollectionViewCellIdentifier
                                               forIndexPath:indexPath];
-    [cell setInstrument:[self.allMusicalInstruments musicalInstruments][indexPath.row]];
+    [cell setInstrument:[self.allMusicalInstruments musicalInstrumentWithTypeIndex:indexPath.section atIndex:indexPath.row]];
     return cell;
 }
 
@@ -70,22 +70,5 @@
     return [self.allMusicalInstruments musicalInstrumentTypesCount];
 }
 
-#pragma mark - APMusicInstrumentsDataSourceDelegate
-
-- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
-//    [self.collectionView reloadData];
-}
-
 @end
 
-//
-//
-//@protocol UICollectionViewDataSource <NSObject>
-//
-//@optional
-//
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
-//
-//- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0);
-//- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0);
-//

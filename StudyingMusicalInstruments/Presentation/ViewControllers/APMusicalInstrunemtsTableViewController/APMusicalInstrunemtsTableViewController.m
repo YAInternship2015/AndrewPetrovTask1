@@ -12,7 +12,7 @@
 #import "APMusicInstrumentsPresentationConstants.h"
 #import "APInstrumentsType.h"
 
-@interface APMusicalInstrunemtsTableViewController () <APMusicInstrumentsDataSourceDelegate>
+@interface APMusicalInstrunemtsTableViewController ()
 
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
 
@@ -55,13 +55,5 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
                                                        atIndex:indexPath.row]];
     }
 }
-
-
-#pragma mark - APMusicInstrumentsDataSourceDelegate
-
-- (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource {
-//    [self.tableView reloadData];
-}
-
 
 @end
