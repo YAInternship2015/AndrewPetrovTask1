@@ -24,9 +24,6 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(nullable NSIndexPath *)newIndexPath {
     
-//    if ([super respondsToSelector:@selector(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)]){
-//        [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
-//    }
     UITableView *tableView = self.tableView;
     
     switch(type) {
@@ -54,10 +51,7 @@
   didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex
      forChangeType:(NSFetchedResultsChangeType)type {
-    
-//    if ([super respondsToSelector:@selector(controller:didChangeSection:atIndex:forChangeType:)]){
-//        [super controller:controller didChangeSection:sectionInfo atIndex:sectionIndex forChangeType:type];
-//    }
+
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
@@ -73,9 +67,7 @@
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-//    if ([super respondsToSelector:@selector(controllerWillChangeContent:)]){
-//        [super controllerWillChangeContent:controller];
-//    }
+
     [self.tableView beginUpdates];
 }
 

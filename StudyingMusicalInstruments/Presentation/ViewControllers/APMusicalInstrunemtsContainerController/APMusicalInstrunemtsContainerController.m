@@ -51,6 +51,11 @@
     content.view.frame = self.view.bounds;
     [self.view addSubview:content.view];
     [content didMoveToParentViewController:self];
+    
+//    [self transitionFromViewController:oldVC toViewController:newVC
+//                              duration:0.25
+//                               options:UIViewAnimationOptionTransitionFlipFromLeft];
+
 }
 
 - (void)updateTogglePresentationButtonItemPicture {
@@ -79,3 +84,23 @@
 }
 
 @end
+
+
+/*- (void)cycleFromViewController:(UIViewController *)oldController toViewController:(UIViewController *)newController {
+    [oldController willMoveToParentViewController:nil];
+    [self addChildViewController:newController];
+    float animationTimeInSeconds = 0.2;
+    
+    [self transitionFromViewController:oldController toViewController:newController
+                              duration:animationTimeInSeconds
+                               options:0
+                            animations:^{
+                                newController.view.alpha = 1.f;
+                                oldController.view.alpha = 0.f;
+                            }
+                            completion:^(BOOL finished) {
+                                [oldController removeFromParentViewController];
+                                [newController didMoveToParentViewController:self];
+                            }];
+    
+}*/

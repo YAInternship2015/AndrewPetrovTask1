@@ -19,12 +19,12 @@
 @implementation APMusicInstrumentsTypesDataSource
 
 - (NSFetchedResultsController *)fetchedResultsController {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+    if (!_fetchedResultsController) {
+        _fetchedResultsController = [NSFetchedResultsController
+                                     instrumentsTypesFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
+        _fetchedResultsController.delegate = self;
+        [_fetchedResultsController performFetch:nil];
     }
-    _fetchedResultsController = [NSFetchedResultsController
-                                 instrumentsTypesFRCWithContext:[NSManagedObjectContext MR_defaultContext]];
-    _fetchedResultsController.delegate = self;
     return _fetchedResultsController;
 }
 

@@ -31,7 +31,6 @@
                                           sectionNameKeyPath:@"type.typeName"
                                                    cacheName:nil];
     fetchedResultsController = theFetchedResultsController;
-    [fetchedResultsController performFetch:nil];
     
     return fetchedResultsController;
 }
@@ -56,7 +55,6 @@
                                           sectionNameKeyPath:nil
                                                    cacheName:nil];
     fetchedResultsController = theFetchedResultsController;
-    [fetchedResultsController performFetch:nil];
     
     return fetchedResultsController;
 }
