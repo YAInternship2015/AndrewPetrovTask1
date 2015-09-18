@@ -67,15 +67,12 @@
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-
     [self.tableView beginUpdates];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    if ([super respondsToSelector:@selector(controllerDidChangeContent:)]){
-        [super controllerDidChangeContent:controller];
-    }
     [self.tableView endUpdates];
+    [self dataIsUpdated];
 }
 
 @end

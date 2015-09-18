@@ -21,7 +21,7 @@
 - (NSString *)musicalInstrumentTypeNameAtIndex:(NSInteger)index;
 - (NSInteger)musicalInstrumentTypesCount;
 - (NSArray *)musicalInstruments;
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller;
+- (void)dataIsUpdated;
 
 @end
 

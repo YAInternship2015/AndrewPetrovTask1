@@ -59,9 +59,7 @@
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    if ([super respondsToSelector:@selector(controllerDidChangeContent:)]){
-        [super controllerDidChangeContent:controller];
-    }
+
     [self.collectionView performBatchUpdates:^{
         for (NSDictionary *change in _sectionChanges) {
             [change enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -101,6 +99,7 @@
         _sectionChanges = nil;
         _itemChanges = nil;
     }];
+    [self dataIsUpdated];
 }
 
 @end

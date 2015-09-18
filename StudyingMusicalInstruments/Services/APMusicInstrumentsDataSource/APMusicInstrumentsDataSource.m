@@ -62,8 +62,12 @@
     return [self.fetchedResultsController sections].count;
 }
 
+- (void)dataIsUpdated {
+    [self.delegate dataSourceIsUpdated:self];
+}
+
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-//    [self.delegate dataSourceIsUpdated:self];
+    [self dataIsUpdated];
 }
 
 @end

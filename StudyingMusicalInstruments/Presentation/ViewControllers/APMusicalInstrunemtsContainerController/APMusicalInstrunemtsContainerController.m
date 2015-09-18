@@ -19,6 +19,7 @@
 @property (nonatomic, strong) APMusicalInstrumentsCollectionViewController *collectionVC;
 @property (nonatomic, strong) UIImage *togglePresentationImage;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *togglePresentationButton;
+@property (nonatomic, assign) BOOL transitionInProgress;
 
 @end
 
@@ -35,6 +36,7 @@
     self.navigationItem.title = NSLocalizedString(@"Musical_instruments", nil);
     
     [self displayContentController:self.tableVC];
+    self.transitionInProgress = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -51,11 +53,22 @@
     content.view.frame = self.view.bounds;
     [self.view addSubview:content.view];
     [content didMoveToParentViewController:self];
-    
-//    [self transitionFromViewController:oldVC toViewController:newVC
-//                              duration:0.25
-//                               options:UIViewAnimationOptionTransitionFlipFromLeft];
+}
 
+- (void)swapViewController:(UIViewController *)oldVC toViewController:(UIViewController *)newVC {
+    newVC.view.frame = self.view.bounds;
+    [oldVC willMoveToParentViewController:nil];
+    [self addChildViewController:newVC];
+    [self transitionFromViewController:oldVC
+                      toViewController:newVC
+                              duration:0.5
+                               options:UIViewAnimationOptionTransitionFlipFromLeft
+                            animations:nil
+                            completion:^(BOOL finished) {
+                                [oldVC removeFromParentViewController];
+                                [newVC didMoveToParentViewController:self];
+                                self.transitionInProgress = NO;
+    }];
 }
 
 - (void)updateTogglePresentationButtonItemPicture {
@@ -68,11 +81,16 @@
 }
 
 - (IBAction)toggleInstrumentsPresentation:(UIBarButtonItem *)sender {
-    if ([[self.childViewControllers lastObject] isEqual:self.tableVC]) {
-         [self displayContentController:self.collectionVC];
+    if (self.transitionInProgress) {
+        return;
+    }
+    self.transitionInProgress = YES;
+    UIViewController *oldVC = [self.childViewControllers lastObject];
+    if ([oldVC isEqual:self.tableVC]) {
+         [self swapViewController:oldVC toViewController:self.collectionVC];
     }
     else {
-         [self displayContentController:self.tableVC];
+         [self swapViewController:oldVC toViewController:self.tableVC];
     }
     [self updateTogglePresentationButtonItemPicture];
 }
@@ -84,23 +102,4 @@
 }
 
 @end
-
-
-/*- (void)cycleFromViewController:(UIViewController *)oldController toViewController:(UIViewController *)newController {
-    [oldController willMoveToParentViewController:nil];
-    [self addChildViewController:newController];
-    float animationTimeInSeconds = 0.2;
-    
-    [self transitionFromViewController:oldController toViewController:newController
-                              duration:animationTimeInSeconds
-                               options:0
-                            animations:^{
-                                newController.view.alpha = 1.f;
-                                oldController.view.alpha = 0.f;
-                            }
-                            completion:^(BOOL finished) {
-                                [oldController removeFromParentViewController];
-                                [newController didMoveToParentViewController:self];
-                            }];
-    
-}*/
+ 
