@@ -51,14 +51,13 @@
 }
 
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
-    [APMusicalInstrumentsManager createInstrumentWithName:self.nameField.text
-                                              description:self.descriptionField.text
-                                                     type:self.instrumentType
-                                                imageName:nil];
-    [self.delegate musicalInstrumentDidSaved:self];
-
-    /*NSError *error = nil;
-    if (![APMusicalInstrumentValidator validateInstrument:newInstrument error:&error]) {
+    
+    NSError *error = nil;
+    if ([APMusicalInstrumentValidator validateName:self.nameField.text error:&error]) {
+        [APMusicalInstrumentValidator validateType:self.instrumentType error:&error];
+    }
+    
+    if (error) {
         [[[UIAlertView alloc] initWithTitle:error.localizedDescription
                                     message:error.localizedRecoverySuggestion
                                    delegate:nil
@@ -66,11 +65,18 @@
                           otherButtonTitles:nil, nil] show];
     }
     else {
-        [APMusicalInstrumentsManager saveInstrument:newInstrument];
+        [APMusicalInstrumentsManager createInstrumentWithName:self.nameField.text
+                                                  description:self.descriptionField.text
+                                                         type:self.instrumentType
+                                                    imageName:nil];
         [self.delegate musicalInstrumentDidSaved:self];
-    }*/
+    }
     
-    
+//    [APMusicalInstrumentsManager createInstrumentWithName:self.nameField.text
+//                                              description:self.descriptionField.text
+//                                                     type:self.instrumentType
+//                                                imageName:nil];
+//    [self.delegate musicalInstrumentDidSaved:self];
 }
 
 #pragma mark - UITextFieldDelegate

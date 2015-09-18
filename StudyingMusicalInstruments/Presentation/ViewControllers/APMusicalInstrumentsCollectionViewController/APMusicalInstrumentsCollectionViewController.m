@@ -10,13 +10,13 @@
 #import "APMusicalInstrumentsCollectionViewController.h"
 #import "APMusicalInstrumentCollectionCell.h"
 #import "APMusicalInstrumentsManager.h"
-#import "APMusicInstrumentsDataSource.h"
+#import "APMusicInstrumentsCollectionViewDataSource.h"
 #import "APAddMusicalInstrumentViewController.h"
 #import "APMusicInstrumentsPresentationConstants.h"
 
 @interface APMusicalInstrumentsCollectionViewController ()
 
-@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsCollectionViewDataSource *allMusicalInstruments;
 
 @end
 

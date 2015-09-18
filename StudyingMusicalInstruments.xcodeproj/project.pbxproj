@@ -239,10 +239,10 @@
 		77047B9E1BAB6F2600B81C5F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				77047BA81BAB6F2600B81C5F /* APMusicalInstrunemtsTableViewController */,
 				77047B9F1BAB6F2600B81C5F /* APAddMusicalInstrumentViewController */,
 				77047BA21BAB6F2600B81C5F /* APMusicalInstrumentsCollectionViewController */,
 				77047BA51BAB6F2600B81C5F /* APMusicalInstrunemtsContainerController */,
-				77047BA81BAB6F2600B81C5F /* APMusicalInstrunemtsTableViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

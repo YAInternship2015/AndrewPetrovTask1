@@ -64,8 +64,7 @@
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    [self.delegate dataSourceIsUpdated:self];
-    
+//    [self.delegate dataSourceIsUpdated:self];
 }
 
 @end

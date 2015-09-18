@@ -10,10 +10,6 @@
 #import "APMusicInstrumentsErrorConstants.h"
 #import "APInstrumentsType.h"
 
-//#warning чтобы не раскидывать объявления констант в *.h и *.m файлы, досточно писать в *.m
-// static const NSInteger APMusicalInstrumentNameMinLength = 3;
-// static NSString *const APSomeObjectConstant = @"Constant";
-
 @implementation APMusicalInstrumentValidator
 
 + (BOOL)validateName:(NSString *)name error:(NSError **)error {
@@ -37,23 +33,20 @@
 }
 
 + (BOOL)validateType:(APInstrumentsType *)type error:(NSError **)error {
-    /*BOOL isValid = NO;
-    switch (type.typeValue) {
-        case APInstrumentsTypeWind:
-        case APInstrumentsTypeStringed:
-        case APInstrumentsTypePercussion:
-        case APInstrumentsTypeKeyboard:
-            isValid = YES;
-            break;
+    BOOL isValid = NO;
+    if ([type.typeName isEqualToString:@"APInstrumentsTypeWind"] ||
+        [type.typeName isEqualToString:@"APInstrumentsTypeStringed"] ||
+        [type.typeName isEqualToString:@"APInstrumentsTypePercussion"] ||
+        [type.typeName isEqualToString:@"APInstrumentsTypeKeyboard"]) {
+        isValid = YES;
     }
-    if (isValid && error) {
+    if (!isValid && error) {
         NSDictionary *userInfo = @{@"NSLocalizedDescription" : NSLocalizedString(@"invalid_type", nil)};
         *error = [NSError errorWithDomain:APMusicalInstrunemtDomain
                                      code:APMusicalInstrumentTypeValidationLengthError
                                  userInfo:userInfo];
     }
-    return isValid;*/
-    return YES;
+    return isValid;
 }
 
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error {

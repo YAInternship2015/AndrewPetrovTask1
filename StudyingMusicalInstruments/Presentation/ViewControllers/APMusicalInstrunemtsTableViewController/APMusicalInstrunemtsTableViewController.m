@@ -8,12 +8,12 @@
 #import "APMusicalInstrunemtsTableViewController.h"
 #import "APMusicalInstrumentTableCell.h"
 #import "APMusicalInstrumentsManager.h"
-#import "APMusicInstrumentsDataSource.h"
+#import "APMusicInstrumentsTableViewDataSource.h"
 #import "APMusicInstrumentsPresentationConstants.h"
 
 @interface APMusicalInstrunemtsTableViewController ()
 
-@property (nonatomic, strong) IBOutlet APMusicInstrumentsDataSource *allMusicalInstruments;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsTableViewDataSource *allMusicalInstruments;
 
 @end
 

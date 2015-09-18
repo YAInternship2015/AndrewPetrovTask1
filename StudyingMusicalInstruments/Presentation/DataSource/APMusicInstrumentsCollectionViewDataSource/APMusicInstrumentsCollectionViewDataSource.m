@@ -25,6 +25,9 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(nullable NSIndexPath *)newIndexPath {
     
+//    if ([super respondsToSelector:@selector(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)]){
+//        [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
+//    }
     NSMutableDictionary *change = [[NSMutableDictionary alloc] init];
     switch(type) {
         case NSFetchedResultsChangeInsert:
@@ -48,17 +51,26 @@
            atIndex:(NSUInteger)sectionIndex
      forChangeType:(NSFetchedResultsChangeType)type {
     
+//    if ([super respondsToSelector:@selector(controller:didChangeSection:atIndex:forChangeType:)]){
+//        [super controller:controller didChangeSection:sectionInfo atIndex:sectionIndex forChangeType:type];
+//    }
     NSMutableDictionary *change = [[NSMutableDictionary alloc] init];
     change[@(type)] = @(sectionIndex);
     [_sectionChanges addObject:change];
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+//    if ([super respondsToSelector:@selector(controllerWillChangeContent:)]){
+//        [super controllerWillChangeContent:controller];
+//    }
     _sectionChanges = [[NSMutableArray alloc] init];
     _itemChanges = [[NSMutableArray alloc] init];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+//    if ([super respondsToSelector:@selector(controllerDidChangeContent:)]){
+//        [super controllerDidChangeContent:controller];
+//    }
     [self.collectionView performBatchUpdates:^{
         for (NSDictionary *change in _sectionChanges) {
             [change enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
