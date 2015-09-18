@@ -303,11 +303,11 @@
 		77047BBB1BAB6F3500B81C5F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				77047BCA1BAB6F3500B81C5F /* APMusicInstrumentsKeyConstants.h */,
 				77047BBC1BAB6F3500B81C5F /* APMusicalInstrumentFactory */,
 				77047BC01BAB6F3500B81C5F /* APMusicalInstrumentsManager */,
 				77047BC31BAB6F3500B81C5F /* APMusicalInstrumentValidator */,
 				77047BC71BAB6F3500B81C5F /* APMusicInstrumentsDataSource */,
-				77047BCA1BAB6F3500B81C5F /* APMusicInstrumentsKeyConstants.h */,
 				77047BCB1BAB6F3500B81C5F /* APMusicInstrumentsTypesDataSource */,
 				77047BCE1BAB6F3500B81C5F /* Utils */,
 			);
