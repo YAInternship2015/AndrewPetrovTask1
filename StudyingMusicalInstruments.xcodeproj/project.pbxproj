@@ -54,7 +54,6 @@
 /* Begin PBXFileReference section */
 		2FD02A008B3C97129AF90A02 /* libPods-StudyingMusicalInstruments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StudyingMusicalInstruments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F119EED616049C10695A0C /* Pods-StudyingMusicalInstruments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyingMusicalInstruments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyingMusicalInstruments/Pods-StudyingMusicalInstruments.debug.xcconfig"; sourceTree = "<group>"; };
-		77047B7C1BAB6F1900B81C5F /* APInstrumentsTypesEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APInstrumentsTypesEnum.h; sourceTree = "<group>"; };
 		77047B7F1BAB6F1900B81C5F /* APInstrumentsType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APInstrumentsType.h; sourceTree = "<group>"; };
 		77047B801BAB6F1900B81C5F /* APInstrumentsType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APInstrumentsType.m; sourceTree = "<group>"; };
 		77047B811BAB6F1900B81C5F /* APMusicalInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicalInstrument.h; sourceTree = "<group>"; };
@@ -135,18 +134,9 @@
 		77047B7A1BAB6F1900B81C5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				77047B7B1BAB6F1900B81C5F /* APMusicalInstrument */,
 				77047B7D1BAB6F1900B81C5F /* CoreData */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		77047B7B1BAB6F1900B81C5F /* APMusicalInstrument */ = {
-			isa = PBXGroup;
-			children = (
-				77047B7C1BAB6F1900B81C5F /* APInstrumentsTypesEnum.h */,
-			);
-			path = APMusicalInstrument;
 			sourceTree = "<group>";
 		};
 		77047B7D1BAB6F1900B81C5F /* CoreData */ = {
