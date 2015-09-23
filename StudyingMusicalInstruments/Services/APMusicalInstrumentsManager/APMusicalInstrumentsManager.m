@@ -29,6 +29,13 @@
     if (![APInstrumentsType MR_countOfEntities]) {
         NSArray *namesArray = @[@"APInstrumentsTypeWind", @"APInstrumentsTypeStringed",
                                 @"APInstrumentsTypePercussion", @"APInstrumentsTypeKeyboard"];
+#warning методами MagicalRecord это можно было сделать по-другому, более потокобезопасно. С Вашим кодом могут быть проблемы, если вы работаете с ьmain queue контекстом не на главном потоке
+//        [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+//            for (int i = 0; i < namesArray.count; i++) {
+//                APInstrumentsType *type = [APInstrumentsType MR_createEntityInContext:localContext];
+//                type.typeName = namesArray[i];
+//            }
+//        }];
         NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
         for (int i = 0; i < namesArray.count; i++) {
             APInstrumentsType *type = [APInstrumentsType MR_createEntity];
@@ -39,6 +46,10 @@
 }
 
 + (void)deleteInstrument:(APMusicalInstrument *)instrument {
+#warning Здесь также с MagicalRecord потокобезопасно делать
+//    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+//        [instrument MR_deleteEntityInContext:localContext];
+//    }];
     [instrument MR_deleteEntity];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }

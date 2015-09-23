@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Mogenerator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>StudyingMusicalInstruments.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>771A05D91B6F781D00552816</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>773862341B9ECF6F008CD316</key>
 		<dict>
 			<key>primary</key>
 			<true/>

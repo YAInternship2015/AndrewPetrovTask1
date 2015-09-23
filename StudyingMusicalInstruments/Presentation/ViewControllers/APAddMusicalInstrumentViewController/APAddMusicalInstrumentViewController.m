@@ -29,6 +29,7 @@
     [super viewDidLoad];
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
+#warning создание пикера вынесите в отдельный метод
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.dataSource = self;
     pickerView.delegate = self;
@@ -50,6 +51,7 @@
     }
 }
 
+#warning saveButtonTouchedUpInside:
 - (IBAction)actionSave:(UIBarButtonItem *)sender {
     NSError *error = nil;
     if ([APMusicalInstrumentValidator validateName:self.nameField.text error:&error]) {
@@ -67,6 +69,7 @@
                                                   description:self.descriptionField.text
                                                          type:self.instrumentType
                                                     imageName:nil];
+#warning переход обратно можно делать и самостоятельно, без привлечения делегата
         [self.delegate musicalInstrumentDidSaved:self];
     }
 }
@@ -74,6 +77,7 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+#warning работа с тегами - плозая практика. Если нужно проходить по всем инпутам, проведите из сториборды IBOutletCollection и проходите по нему
     if (textField.returnKeyType == UIReturnKeyNext) {
         UIView *next = [[textField superview] viewWithTag:textField.tag + 1];
         [next becomeFirstResponder];
@@ -84,6 +88,7 @@
     return YES;
 }
 
+#warning датасорс пикера надо вынести в отдельный класс, он не особо пересекается с вью контроллером. 
 #pragma mark - UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

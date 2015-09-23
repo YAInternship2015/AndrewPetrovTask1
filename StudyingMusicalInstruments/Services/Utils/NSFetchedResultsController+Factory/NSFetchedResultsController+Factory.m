@@ -11,6 +11,8 @@
 
 @implementation NSFetchedResultsController (Factory)
 
+#warning NSFetchedResultsController значительно проще создается с помощью MagicalRecord, есть группа методов вроде [APMusicalInstrument MR_fetchAll...], которая создает NSFetchedResultsController
+
 + (NSFetchedResultsController *)instrumentsByTypeFRCWithContext:(NSManagedObjectContext *)moc {
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] init];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

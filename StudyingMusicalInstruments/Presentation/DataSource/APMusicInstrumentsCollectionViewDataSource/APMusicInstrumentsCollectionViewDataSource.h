@@ -10,6 +10,7 @@
 
 @interface APMusicInstrumentsCollectionViewDataSource : APMusicInstrumentsDataSource
 
+#warning нужно спрятать в *.m
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end

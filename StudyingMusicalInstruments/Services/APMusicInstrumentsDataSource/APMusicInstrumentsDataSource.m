@@ -62,6 +62,7 @@
     return [self.fetchedResultsController sections].count;
 }
 
+#warning не очень понял, зачем нужен данный метод. Без него по идее и так все данные обновляются
 - (void)dataIsUpdated {
     [self.delegate dataSourceIsUpdated:self];
 }

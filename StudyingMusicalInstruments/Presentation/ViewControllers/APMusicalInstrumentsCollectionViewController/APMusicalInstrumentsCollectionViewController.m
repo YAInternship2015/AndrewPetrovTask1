@@ -26,6 +26,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
     
+#warning рекогнайзер стоит создавать в сториборде
     UILongPressGestureRecognizer *lpgr
     = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5; //seconds
@@ -34,6 +35,7 @@
     [self.collectionView addGestureRecognizer:lpgr];
 }
 
+#warning тут что-то с форматированием случилось
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
