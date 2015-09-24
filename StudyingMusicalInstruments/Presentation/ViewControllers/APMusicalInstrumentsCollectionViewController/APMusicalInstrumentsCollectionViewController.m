@@ -35,9 +35,8 @@
     [self.collectionView addGestureRecognizer:lpgr];
 }
 
-#warning тут что-то с форматированием случилось
--(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
-{
+//#warning тут что-то с форматированием случилось
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
         return;
     }

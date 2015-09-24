@@ -125,7 +125,7 @@
                     <navigationItem key="navigationItem" title="Title" id="5gG-c4-PE4">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="ahG-43-yUQ">
                             <connections>
-                                <action selector="actionSave:" destination="Vcs-I5-Q97" id="lLh-2R-exq"/>
+                                <action selector="saveButtonTouchedUpInside:" destination="Vcs-I5-Q97" id="49G-Rt-xzJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -133,11 +133,13 @@
                         <outlet property="allMusicalInstrumentsTypes" destination="dYx-Uj-oyY" id="YFt-Bo-582"/>
                         <outlet property="descriptionField" destination="cJK-P7-ZvY" id="kbk-SO-BHJ"/>
                         <outlet property="nameField" destination="zxa-o5-DK4" id="n4f-aN-ot6"/>
+                        <outlet property="pickerDataSource" destination="gkN-lL-ckj" id="nVp-AP-Agm"/>
                         <outlet property="saveButton" destination="ahG-43-yUQ" id="AaB-rj-mCu"/>
                         <outlet property="typeField" destination="X7n-h4-mCx" id="Gdh-mG-hep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqF-1t-stQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="gkN-lL-ckj" customClass="APMusicInstrumentsPickerViewDataSource"/>
                 <customObject id="dYx-Uj-oyY" customClass="APMusicInstrumentsTypesDataSource"/>
             </objects>
             <point key="canvasLocation" x="-520" y="16"/>

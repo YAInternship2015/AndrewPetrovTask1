@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *sectionChanges;
 @property (nonatomic, strong) NSMutableArray *itemChanges;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end
 

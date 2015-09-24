@@ -25,8 +25,8 @@
 
 @end
 
-
-#warning этот протокол никто не реализовал - зачем он нужен?
+//#warning этот протокол никто не реализовал - зачем он нужен?
+// здась то же самое, это я сделал на будущее, "на вырост" программы.
 @protocol APMusicInstrumentsDataSourceDelegate <NSObject>
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;

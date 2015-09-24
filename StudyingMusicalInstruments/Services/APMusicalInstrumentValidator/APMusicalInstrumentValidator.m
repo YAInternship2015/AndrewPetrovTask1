@@ -50,14 +50,15 @@
 }
 
 + (BOOL)validateInstrument:(APMusicalInstrument *)instrument error:(NSError **)error {
-#warning три return в одном методе - слишеом много. Последнее время вообще наталкиваюсь на то, что в методе должен быть один return. То есть в начале метода объявляется переменная BOOL isValid = YES, и внутри if она заполняется значением.
+//#warning три return в одном методе - слишеом много. Последнее время вообще наталкиваюсь на то, что в методе должен быть один return. То есть в начале метода объявляется переменная BOOL isValid = YES, и внутри if она заполняется значением.
+    BOOL isValid = YES;
     if (![APMusicalInstrumentValidator validateName:instrument.name error:error]) {
-        return NO;
+        isValid = NO;
     }
     else if (![APMusicalInstrumentValidator validateType:instrument.type error:error]) {
-        return NO;
+        isValid = NO;
     }
-    return YES;
+    return isValid;
 }
 
 @end

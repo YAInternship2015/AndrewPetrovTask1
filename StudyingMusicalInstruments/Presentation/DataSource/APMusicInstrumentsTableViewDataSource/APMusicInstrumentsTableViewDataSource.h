@@ -10,8 +10,7 @@
 
 @interface APMusicInstrumentsTableViewDataSource : APMusicInstrumentsDataSource
 
-#warning нужно спрятать в *.m
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+//#warning нужно спрятать в *.m
 
 @end
 

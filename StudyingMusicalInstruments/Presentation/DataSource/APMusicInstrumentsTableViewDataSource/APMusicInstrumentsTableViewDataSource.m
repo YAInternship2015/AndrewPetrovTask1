@@ -9,6 +9,12 @@
 #import "APMusicInstrumentsTableViewDataSource.h"
 #import "APMusicalInstrumentTableCell.h"
 
+@interface APMusicInstrumentsTableViewDataSource ()
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+@end
+
 @implementation APMusicInstrumentsTableViewDataSource
 
 - (void)configureCell:(APMusicalInstrumentTableCell *)cell atIndexPath:(NSIndexPath *)indexPath {

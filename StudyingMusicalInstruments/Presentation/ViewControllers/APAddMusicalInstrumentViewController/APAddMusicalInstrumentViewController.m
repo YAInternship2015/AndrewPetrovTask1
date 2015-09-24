@@ -10,9 +10,10 @@
 #import "APMusicalInstrumentValidator.h"
 #import "APMusicalInstrumentsManager.h"
 #import "APMusicInstrumentsTypesDataSource.h"
+#import "APMusicInstrumentsPickerViewDataSource.h"
 #import "APInstrumentsType.h"
 
-@interface APAddMusicalInstrumentViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface APAddMusicalInstrumentViewController () <UIPickerViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
@@ -20,6 +21,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) APInstrumentsType *instrumentType;
 @property (nonatomic, strong) IBOutlet APMusicInstrumentsTypesDataSource *allMusicalInstrumentsTypes;
+@property (nonatomic, strong) IBOutlet APMusicInstrumentsPickerViewDataSource *pickerDataSource;
 
 @end
 
@@ -29,9 +31,14 @@
     [super viewDidLoad];
     [self.nameField becomeFirstResponder];
     self.navigationItem.title = NSLocalizedString(@"Add_new_instrument", nil);
-#warning создание пикера вынесите в отдельный метод
+    [self createPicker];
+//#warning создание пикера вынесите в отдельный метод
+
+}
+
+- (void)createPicker {
     UIPickerView *pickerView = [[UIPickerView alloc] init];
-    pickerView.dataSource = self;
+    pickerView.dataSource = self.pickerDataSource;
     pickerView.delegate = self;
     self.typeField.inputView = pickerView;
 }
@@ -51,8 +58,8 @@
     }
 }
 
-#warning saveButtonTouchedUpInside:
-- (IBAction)actionSave:(UIBarButtonItem *)sender {
+//#warning saveButtonTouchedUpInside:
+- (IBAction)saveButtonTouchedUpInside:(UIBarButtonItem *)sender {
     NSError *error = nil;
     if ([APMusicalInstrumentValidator validateName:self.nameField.text error:&error]) {
         [APMusicalInstrumentValidator validateType:self.instrumentType error:&error];
@@ -69,7 +76,8 @@
                                                   description:self.descriptionField.text
                                                          type:self.instrumentType
                                                     imageName:nil];
-#warning переход обратно можно делать и самостоятельно, без привлечения делегата
+//#warning переход обратно можно делать и самостоятельно, без привлечения делегата
+//  если позволите, не соглашусь. это задел на будущее, через этот делегат можно добавить логику, и если приложение разростется, то , как мне кажется, этот делегат будет необходим, например можно туда добавить показ сообщения об успешном выполнении добавления. хотя, конечно, при данном функционале, он лишний.
         [self.delegate musicalInstrumentDidSaved:self];
     }
 }
@@ -77,32 +85,23 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-#warning работа с тегами - плозая практика. Если нужно проходить по всем инпутам, проведите из сториборды IBOutletCollection и проходите по нему
+//#warning работа с тегами - плозая практика. Если нужно проходить по всем инпутам, проведите из сториборды IBOutletCollection и проходите по нему
     if (textField.returnKeyType == UIReturnKeyNext) {
-        UIView *next = [[textField superview] viewWithTag:textField.tag + 1];
-        [next becomeFirstResponder];
+        if ([textField isEqual:self.nameField]) {
+            [self.typeField becomeFirstResponder];
+        }
+        if ([textField isEqual:self.typeField]) {
+            [self.descriptionField becomeFirstResponder];
+        }
     }
     else if (textField.returnKeyType == UIReturnKeyDone) {
         [textField resignFirstResponder];
     }
+    
     return YES;
 }
 
-#warning датасорс пикера надо вынести в отдельный класс, он не особо пересекается с вью контроллером. 
-#pragma mark - UIPickerViewDataSource
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-     return [self.allMusicalInstrumentsTypes musicalInstrumentTypes].count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return NSLocalizedString(((APInstrumentsType *)
-                              [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName, nil);
-}
+//#warning датасорс пикера надо вынести в отдельный класс, он не особо пересекается с вью контроллером.
 
 #pragma mark - UIPickerViewDelegate
 
@@ -111,5 +110,14 @@
     self.typeField.text =  NSLocalizedString(((APInstrumentsType *)
                                               [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName, nil);
 }
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSLog(@"%@", ((APInstrumentsType *)
+                  [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName);
+    return NSLocalizedString(((APInstrumentsType *)
+                              [self.allMusicalInstrumentsTypes musicalInstrumentTypes][row]).typeName, nil);
+}
+
+
 
 @end

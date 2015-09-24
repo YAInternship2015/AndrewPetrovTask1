@@ -46,6 +46,7 @@
 		771A05EE1B6F781D00552816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771A05EC1B6F781D00552816 /* LaunchScreen.xib */; };
 		773862331B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 773862311B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodeld */; };
 		774A648B1B7BFD4E00C58E36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 774A648A1B7BFD4E00C58E36 /* Localizable.strings */; };
+		77BACCB61BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BACCB51BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.m */; settings = {ASSET_TAGS = (); }; };
 		77CFE8D51B725446006A3CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CFE8D41B725446006A3CF5 /* Images.xcassets */; };
 		77D38D831B9CE8750035B12E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D38D821B9CE8750035B12E /* CoreData.framework */; };
 		CD855C9868FA4F70FAB82B9A /* libPods-StudyingMusicalInstruments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD02A008B3C97129AF90A02 /* libPods-StudyingMusicalInstruments.a */; };
@@ -104,6 +105,8 @@
 		771A05ED1B6F781D00552816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		773862321B9D6BF8008CD316 /* StudyingMusicalInstruments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyingMusicalInstruments.xcdatamodel; sourceTree = "<group>"; };
 		774A648A1B7BFD4E00C58E36 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		77BACCB41BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMusicInstrumentsPickerViewDataSource.h; sourceTree = "<group>"; };
+		77BACCB51BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMusicInstrumentsPickerViewDataSource.m; sourceTree = "<group>"; };
 		77CFE8D41B725446006A3CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		77D38D821B9CE8750035B12E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7CD73DEFD9DD4C6D74257B53 /* Pods-StudyingMusicalInstruments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyingMusicalInstruments.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyingMusicalInstruments/Pods-StudyingMusicalInstruments.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 		77047B931BAB6F2600B81C5F /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				77BACCB31BB431960039A10F /* APMusicInstrumentsPickerViewDataSource */,
 				77047B941BAB6F2600B81C5F /* APMusicInstrumentsCollectionViewDataSource */,
 				77047B971BAB6F2600B81C5F /* APMusicInstrumentsTableViewDataSource */,
 			);
@@ -430,6 +434,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		77BACCB31BB431960039A10F /* APMusicInstrumentsPickerViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				77BACCB41BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.h */,
+				77BACCB51BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.m */,
+			);
+			path = APMusicInstrumentsPickerViewDataSource;
+			sourceTree = "<group>";
+		};
 		D4C37BF138BD1838F27F3161 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +584,7 @@
 				77047BD61BAB6F3500B81C5F /* APMusicalInstrumentsManager.m in Sources */,
 				77047BB81BAB6F2600B81C5F /* APMusicalInstrunemtsTableViewController.m in Sources */,
 				771A05E01B6F781D00552816 /* main.m in Sources */,
+				77BACCB61BB431960039A10F /* APMusicInstrumentsPickerViewDataSource.m in Sources */,
 				77047BD81BAB6F3500B81C5F /* APMusicInstrumentsDataSource.m in Sources */,
 				77047B8F1BAB6F1900B81C5F /* _APMusicalInstrument.m in Sources */,
 				77047BB41BAB6F2600B81C5F /* UIImage+StudyingMusicalInstruments.m in Sources */,

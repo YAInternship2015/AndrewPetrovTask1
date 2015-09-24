@@ -19,13 +19,15 @@
 @implementation APMusicalInstrumentCollectionCell
 
 - (void)setInstrument:(APMusicalInstrument *)instrument {
-#warning здесь в if лучше заполнять UIImage, и затем один раз его сеттить в UIImageView
+    //#warning здесь в if лучше заполнять UIImage, и затем один раз его сеттить в UIImageView
+    UIImage *image = [[UIImage alloc] init];
     if (!instrument || !instrument.imageName.length) {
-        self.imageView.image = [UIImage stubInstrumentCellImage];
+        image = [UIImage stubInstrumentCellImage];
     }
     else {
-        self.imageView.image = [UIImage imageNamed:instrument.imageName];
+        image = [UIImage imageNamed:instrument.imageName];
     }
+    self.imageView.image = image;
 }
 
 @end
