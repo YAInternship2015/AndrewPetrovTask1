@@ -22,21 +22,14 @@
 
 @implementation APMusicalInstrumentsCollectionViewController
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    
-#warning рекогнайзер стоит создавать в сториборде
-    UILongPressGestureRecognizer *lpgr
-    = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = .5; //seconds
-    lpgr.delegate = self;
-    lpgr.delaysTouchesBegan = YES;
-    [self.collectionView addGestureRecognizer:lpgr];
+//#warning рекогнайзер стоит создавать в сториборде
 }
 
 //#warning тут что-то с форматированием случилось
--(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+- (IBAction)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
         return;
     }

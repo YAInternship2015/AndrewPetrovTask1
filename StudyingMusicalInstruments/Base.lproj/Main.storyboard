@@ -151,6 +151,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TQg-0v-HLJ" userLabel="CollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JWL-0f-cR0">
                             <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -207,6 +208,7 @@
                         <connections>
                             <outlet property="dataSource" destination="S0K-ab-RyH" id="ZqZ-wb-elP"/>
                             <outlet property="delegate" destination="S0K-ab-RyH" id="HKK-40-b3F"/>
+                            <outletCollection property="gestureRecognizers" destination="JZa-xT-MgY" appends="YES" id="aQq-gs-0LH"/>
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -221,6 +223,12 @@
                         <outlet property="collectionView" destination="TQg-0v-HLJ" id="pmr-S4-GYV"/>
                     </connections>
                 </customObject>
+                <pongPressGestureRecognizer delaysTouchesBegan="YES" allowableMovement="10" minimumPressDuration="0.5" id="JZa-xT-MgY">
+                    <connections>
+                        <action selector="handleLongPress:" destination="S0K-ab-RyH" id="R9f-Zh-Vur"/>
+                        <outlet property="delegate" destination="S0K-ab-RyH" id="ItF-sq-xLY"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="202" y="66"/>
         </scene>
