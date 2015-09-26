@@ -23,8 +23,4 @@
     return [APInstrumentsType MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"typeName" ascending:NO];
 }
 
-- (NSString *)entityName {
-    return @"APMusicalInstrument";
-}
-
 @end
