@@ -38,7 +38,8 @@
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
     if (indexPath == nil){
         NSLog(@"couldn't find index path");
-    } else {
+    }
+    else {
         [APMusicalInstrumentsManager deleteInstrument:[self.allMusicalInstruments
                                                        musicalInstrumentWithTypeIndex:indexPath.section
                                                        atIndex:indexPath.row]];

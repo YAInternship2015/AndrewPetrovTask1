@@ -26,7 +26,7 @@
 @end
 
 //#warning этот протокол никто не реализовал - зачем он нужен?
-// здась то же самое, это я сделал на будущее, "на вырост" программы.
+// здась тот же самый вопрос, это я сделал на будущее, "на вырост" программы. стоит ли его оставить?
 @protocol APMusicInstrumentsDataSourceDelegate <NSObject>
 
 - (void)dataSourceIsUpdated:(APMusicInstrumentsDataSource *)dataSource;

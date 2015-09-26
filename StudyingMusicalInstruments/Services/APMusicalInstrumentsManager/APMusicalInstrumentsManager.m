@@ -44,7 +44,5 @@
     [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
         [instrument MR_deleteEntityInContext:localContext];
     }];
-//    [instrument MR_deleteEntity];
-//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 @end
