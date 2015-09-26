@@ -7,58 +7,24 @@
 //
 
 #import "NSFetchedResultsController+Factory.h"
+#import "APMusicalInstrument.h"
+#import "APInstrumentsType.h"
 #import <MagicalRecord.h>
 
 @implementation NSFetchedResultsController (Factory)
 
-#warning NSFetchedResultsController значительно проще создается с помощью MagicalRecord, есть группа методов вроде [APMusicalInstrument MR_fetchAll...], которая создает NSFetchedResultsController
+//#warning NSFetchedResultsController значительно проще создается с помощью MagicalRecord, есть группа методов вроде [APMusicalInstrument MR_fetchAll...], которая создает NSFetchedResultsController
 
 + (NSFetchedResultsController *)instrumentsByTypeFRCWithContext:(NSManagedObjectContext *)moc {
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] init];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity =
-    [NSEntityDescription  entityForName:@"APMusicalInstrument"
-                 inManagedObjectContext:moc];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                              initWithKey:@"name" ascending:NO];
-    [fetchRequest setSortDescriptors:@[sort]];
-    
-    [fetchRequest setFetchBatchSize:20];
-    
-    NSFetchedResultsController *theFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:moc
-                                          sectionNameKeyPath:@"type.typeName"
-                                                   cacheName:nil];
-    fetchedResultsController = theFetchedResultsController;
-    
-    return fetchedResultsController;
+    return [APMusicalInstrument MR_fetchAllGroupedBy:@"type.typeName" withPredicate:nil sortedBy:@"name" ascending:NO];
 }
 
 + (NSFetchedResultsController *)instrumentsTypesFRCWithContext:(NSManagedObjectContext *)moc {
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] init];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity =
-    [NSEntityDescription  entityForName:@"APInstrumentsType"
-                 inManagedObjectContext:moc];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                              initWithKey:@"typeName" ascending:NO];
-    [fetchRequest setSortDescriptors:@[sort]];
-    
-    [fetchRequest setFetchBatchSize:20];
-    
-    NSFetchedResultsController *theFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:moc
-                                          sectionNameKeyPath:nil
-                                                   cacheName:nil];
-    fetchedResultsController = theFetchedResultsController;
-    
-    return fetchedResultsController;
+    return [APInstrumentsType MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"typeName" ascending:NO];
+}
+
+- (NSString *)entityName {
+    return @"APMusicalInstrument";
 }
 
 @end
